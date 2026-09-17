@@ -1,0 +1,20 @@
+[
+  {
+    "repo": "Lykon/dreamshaper-xl-v2-turbo",
+    "revision": "f70ad5bce436c640d23fc02cd0a6ccc787280b6e",
+    "remote": "DreamShaperXL_Turbo_v2_1.safetensors",
+    "local": "checkpoints/DreamShaperXL_Turbo_v2_1.safetensors",
+    "size": 6939220250,
+    "sha256": "4496b36d48bfd7cfe4e5dbce3485db567bcefa2bef7238d290dbd45612125083",
+    "license": "OpenRAIL++; see upstream model card"
+  },
+  {
+    "repo": "Comfy-Org/BiRefNet",
+    "revision": "5a1bd8ae750548f8cd42e3c8afa854fd3eba0fb1",
+    "remote": "background_removal/birefnet.safetensors",
+    "local": "background_removal/birefnet.safetensors",
+    "size": 444473596,
+    "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+    "license": "See upstream BiRefNet model card"
+  }
+]

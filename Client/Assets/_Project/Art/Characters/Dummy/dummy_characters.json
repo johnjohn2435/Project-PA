@@ -1,0 +1,38 @@
+[
+  {
+    "id": "char_momo",
+    "name": "Momo",
+    "themeColor": "#F5A69B",
+    "sprite": "Assets/_Project/Art/Characters/Dummy/char_momo_dummy.png",
+    "status": "temporary",
+    "size": [
+      256,
+      256
+    ],
+    "displayName": "모모"
+  },
+  {
+    "id": "char_bori",
+    "name": "Bori",
+    "themeColor": "#B9DEC9",
+    "sprite": "Assets/_Project/Art/Characters/Dummy/char_bori_dummy.png",
+    "status": "temporary",
+    "size": [
+      256,
+      256
+    ],
+    "displayName": "보리"
+  },
+  {
+    "id": "char_nabi",
+    "name": "Nabi",
+    "themeColor": "#C6B8E8",
+    "sprite": "Assets/_Project/Art/Characters/Dummy/char_nabi_dummy.png",
+    "status": "temporary",
+    "size": [
+      256,
+      256
+    ],
+    "displayName": "나비"
+  }
+]

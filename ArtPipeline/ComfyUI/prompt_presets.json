@@ -1,0 +1,15 @@
+{
+  "style": "(flat vector illustration:1.4), minimalist 2D game sprite, (solid pastel colors:1.3), (thick dark outlines:1.3), simple rounded geometric shapes, tiny black dot eyes, tiny curved mouth, stubby short limbs, uniform color fills, full body centered, plain white background, ample empty margin",
+  "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background",
+  "characters": {
+    "char_momo": "one cute chibi cat, (pale ivory white body:1.4), (coral pink scarf:1.4), small triangle ears, huge round head, tiny round body, two tiny feet, standing upright",
+    "char_bori": "one cute chibi bear cub, (pale ivory white body:1.4), (mint green scarf:1.4), small round ears, huge round head, tiny round body, two tiny feet, standing upright",
+    "char_nabi": "one cute chibi bunny, (pale ivory white body:1.4), (lavender purple scarf:1.5), short upright ears, huge round head, tiny round body, two tiny feet, standing upright"
+  },
+  "props": {
+    "coin": "one simple golden coin, engraved tiny paw symbol, front view, flat game reward icon",
+    "block": "one rounded coral square puzzle block, simple cream highlight, straight front view, flat game icon",
+    "gift": "one small mint gift box with coral ribbon, simple front three-quarter view, flat game reward icon"
+  },
+  "notes": "Species and accessories are proposed concepts, not approved final character designs."
+}

@@ -38,3 +38,13 @@ sysinfo.txt
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# External AI model weights and incomplete downloads
+/ArtPipeline/**/*.safetensors
+/ArtPipeline/**/*.ckpt
+/ArtPipeline/**/*.pth
+/ArtPipeline/**/*.onnx
+/ArtPipeline/**/*.partial
+
+# Art pipeline Python cache
+/ArtPipeline/**/__pycache__/

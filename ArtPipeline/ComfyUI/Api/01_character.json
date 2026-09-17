@@ -1,0 +1,202 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "DreamShaperXL_Turbo_v2_1.safetensors"
+    },
+    "_meta": {
+      "title": "DreamShaper XL Turbo v2.1"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "one cute chibi cat, (pale ivory white body:1.4), (coral pink scarf:1.4), small triangle ears, huge round head, tiny round body, two tiny feet, standing upright, (flat vector illustration:1.4), minimalist 2D game sprite, (solid pastel colors:1.3), (thick dark outlines:1.3), simple rounded geometric shapes, tiny black dot eyes, tiny curved mouth, stubby short limbs, uniform color fills, full body centered, plain white background, ample empty margin"
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background"
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Batch 1 / RTX 3080 10GB"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 243517,
+      "steps": 10,
+      "cfg": 2.5,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "Turbo: CFG 2 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/01_character/raw"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  },
+  "8": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    },
+    "_meta": {
+      "title": "BiRefNet / background removal"
+    }
+  },
+  "9": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "8",
+        0
+      ],
+      "image": [
+        "6",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Foreground mask"
+    }
+  },
+  "10": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "9",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Required: foreground -> transparency"
+    }
+  },
+  "11": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "alpha": [
+        "10",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Transparent RGBA"
+    }
+  },
+  "12": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "ProjectPA/01_character/master"
+    },
+    "_meta": {
+      "title": "RGBA master 1024"
+    }
+  },
+  "13": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Unity preview 512"
+    }
+  },
+  "14": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ],
+      "filename_prefix": "ProjectPA/01_character/sprite_512"
+    },
+    "_meta": {
+      "title": "RGBA sprite 512"
+    }
+  }
+}

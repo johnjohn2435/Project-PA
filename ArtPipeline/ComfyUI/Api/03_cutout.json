@@ -1,0 +1,106 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/momo_reference.png"
+    },
+    "_meta": {
+      "title": "Approved artwork / PNG"
+    }
+  },
+  "2": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    },
+    "_meta": {
+      "title": "BiRefNet / background removal"
+    }
+  },
+  "3": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "2",
+        0
+      ],
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Foreground mask"
+    }
+  },
+  "4": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "3",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Required: foreground -> transparency"
+    }
+  },
+  "5": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "4",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Transparent RGBA"
+    }
+  },
+  "6": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ],
+      "filename_prefix": "ProjectPA/03_cutout/master"
+    },
+    "_meta": {
+      "title": "RGBA master 1024"
+    }
+  },
+  "7": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Unity preview 512"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "ProjectPA/03_cutout/sprite_512"
+    },
+    "_meta": {
+      "title": "RGBA sprite 512"
+    }
+  }
+}

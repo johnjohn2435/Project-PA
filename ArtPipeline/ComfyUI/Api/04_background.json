@@ -1,0 +1,107 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "DreamShaperXL_Turbo_v2_1.safetensors"
+    },
+    "_meta": {
+      "title": "DreamShaper XL Turbo v2.1"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "flat 2D cozy pastel mobile game background, small welcoming arcade room, rounded simple furniture, warm cream walls, coral mint lavender accents, bold clean brown outlines, gentle overhead perspective, empty open central floor for game UI, simple uncluttered shapes, no characters, no text, no signage"
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "text": "photo, 3d render, realistic textures, cluttered, text, logo, watermark, characters, people, dramatic shadows"
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 1344,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Batch 1 / RTX 3080 10GB"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 243517,
+      "steps": 10,
+      "cfg": 2.5,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "Turbo: CFG 2 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/04_background/raw"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  }
+}
