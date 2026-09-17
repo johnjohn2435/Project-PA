@@ -3,7 +3,7 @@
 > 문서 목적: 이 파일을 Unity 프로젝트 저장소 루트에 두고 Codex에 전달하여, 프로젝트 초기 세팅부터 첫 번째 미니게임 `Block Gravity`의 플레이 가능한 Android MVP까지 단계적으로 구현한다.
 >
 > 작업명(가칭): **Pocket Arcade**  
-> 최신 결정 기록: [Project_Decisions.md](Project_Decisions.md) — 경로, Addressables 패치 방향, 서버 검토안은 이 기록을 함께 확인한다.
+> 최신 결정 기록: [Project_Decisions.md](Project_Decisions.md) — 경로, 씬 흐름, 선택적 Google 계정 연동, Addressables 패치 방향, 서버 검토안은 이 기록을 함께 확인한다.
 >
 > 문서 버전: 0.1  
 > 작성일: 2026-09-17
@@ -45,7 +45,8 @@ Unity MCP가 연결되어 있으면 씬, 프리팹, ScriptableObject 생성과 P
 - 모든 핵심 조작은 세로 화면에서 한 손으로 가능해야 한다.
 - 실패 후 2회 이내의 입력으로 다시 시작할 수 있어야 한다.
 - 미니게임을 독립 모듈로 추가할 수 있어야 한다.
-- 초기 버전은 서버 없이 로컬에서 완결되어야 한다.
+- 로그인 없이 게스트로 핵심 게임을 플레이할 수 있어야 한다. Google 계정 연동은 SelectScene에서 선택적으로 시작한다.
+- 게스트 플레이는 로컬에서 완결된다. 계정 연동 구현 방식과 서버·DB 구성, 클라우드 저장 도입 여부는 추후 결정한다.
 - 첫 번째 완성 목표는 매출이 아니라 `Android 빌드 배포 가능 + 실제 플레이 루프 완성`이다.
 
 ### 1.3 레퍼런스에서 가져올 요소
@@ -71,7 +72,8 @@ MVP에 포함한다.
 
 MVP에서 제외한다.
 
-- 로그인, 서버, 클라우드 저장, 랭킹 서버
+- 필수 로그인, 클라우드 저장, 랭킹 서버
+- Google 계정 연동 및 인증 서버의 실제 구현은 도입 시점을 추후 결정한다. 선택적 연동 UX는 제품 요구사항으로 반영한다.
 - 광고, 인앱 결제, 상점
 - 일일 퀘스트, 업적, 출석
 - 캐릭터별 패시브 능력
@@ -171,26 +173,28 @@ MCP는 보조 수단이다. 게임의 런타임 코드가 MCP에 의존하면 �
 
 ```mermaid
 flowchart TD
-    A[Boot] --> B[Main Hub]
+    A[BootScene] --> B[SelectScene]
     B --> C[Game Select]
     B --> D[Character Select]
-    C --> E[Block Gravity]
+    C --> E[GameScene: Block Gravity]
     E --> F[Pause]
     F --> E
     E --> G[Result]
     G --> E
     G --> B
     D --> B
+    B --> H[Google 계정 연동: 선택 사항]
+    H --> B
 ```
 
-### 3.1 Boot
+### 3.1 BootScene
 
 - 로컬 저장 데이터 로드 및 버전 마이그레이션.
 - 데이터가 없거나 손상되면 기본값 생성.
-- 초기화가 끝나면 Main Hub로 이동.
+- 초기화가 끝나면 로그인 요구 없이 SelectScene으로 이동.
 - MVP에서는 별도 로딩 연출 없이 로고 또는 단색 화면만 사용 가능.
 
-### 3.2 Main Hub
+### 3.2 SelectScene (허브)
 
 필수 표시:
 
@@ -199,8 +203,11 @@ flowchart TD
 - `게임 시작` 버튼
 - `캐릭터` 버튼
 - 설정 버튼
+- 게스트/Google 연동 상태 표시 및 미연동 상태에서 항상 접근 가능한 `Google 계정 연동` 진입점
 
-캐릭터를 눌렀을 때 Character Select로 이동하고, 게임 시작을 누르면 Game Select로 이동한다.
+캐릭터를 눌렀을 때 Character Select 패널로 이동하고, 게임 시작을 누르면 Game Select 패널로 이동한다. 두 패널은 SelectScene 내부에서 전환한다.
+
+Google 계정 연동은 선택 사항이다. 로그인하지 않거나 연동을 취소·실패해도 게스트 플레이를 계속할 수 있어야 한다. 게임 중에는 별도 로그인 흐름을 강제하지 않고, SelectScene으로 돌아오면 언제든 연동을 시작할 수 있다. 실제 연동 기능은 추후 구현하며, 미구현 상태를 성공한 로그인처럼 표시하지 않는다.
 
 ### 3.3 Game Select
 
@@ -383,9 +390,9 @@ Assets/_Project/
     Characters/
     BlockGravity/
   Scenes/
-    Boot.unity
-    MainHub.unity
-    BlockGravity.unity
+    BootScene.unity
+    SelectScene.unity
+    GameScene.unity
   ScriptableObjects/
     Characters/
     MiniGames/
@@ -524,9 +531,9 @@ MVP는 JSON 파일 또는 PlayerPrefs에 저장된 JSON 한 덩어리를 사용�
 
 ### 5.8 씬 관리
 
-- `Boot`: 서비스 생성, 저장 로드, 초기 씬 이동
-- `MainHub`: 허브, Game Select, Character Select 패널을 한 씬에서 전환
-- `BlockGravity`: 독립 게임 씬
+- `BootScene`: 서비스 생성, 로컬 저장 로드 후 로그인 요구 없이 SelectScene 이동
+- `SelectScene`: 허브, Game Select, Character Select 패널 및 선택적 Google 계정 연동 진입점
+- `GameScene`: 선택된 미니게임 실행. 첫 게임은 Block Gravity이며 게임 이름과 씬 이름은 구분한다.
 - 씬 이름 문자열을 여러 곳에 흩뿌리지 말고 MiniGameDefinition 또는 SceneFlow 한 곳에서 관리
 
 ---
@@ -616,9 +623,9 @@ MVP는 JSON 파일 또는 PlayerPrefs에 저장된 JSON 한 덩어리를 사용�
 
 ### 7.2 Play Mode 스모크 테스트
 
-- Boot에서 Main Hub 진입
+- BootScene에서 로그인 없이 SelectScene 진입
 - 캐릭터 변경 후 허브에 반영
-- Block Gravity 진입
+- SelectScene에서 GameScene의 Block Gravity 진입
 - 조각 하나를 배치해 점수 증가
 - 일시정지 및 복귀
 - 강제 게임 오버 또는 디버그 시나리오 후 결과창 표시
@@ -646,7 +653,7 @@ MVP는 JSON 파일 또는 PlayerPrefs에 저장된 JSON 한 덩어리를 사용�
 - Git 및 `.gitignore`
 - 폴더/asmdef 생성
 - Portrait, Input System, Safe Area 기본 설정
-- Boot/MainHub/BlockGravity 빈 씬 생성 및 Build Profile 등록
+- BootScene/SelectScene/GameScene 빈 씬 생성 및 Build Profile 등록
 - Console 컴파일 오류 제거
 
 완료 조건:
@@ -664,14 +671,15 @@ MVP는 JSON 파일 또는 PlayerPrefs에 저장된 JSON 한 덩어리를 사용�
 - SaveData/ISaveRepository
 - CharacterDefinition 3종
 - MiniGameDefinition: Block Gravity 1종 + Coming Soon 2종
-- Main Hub, Game Select, Character Select
+- SelectScene의 허브, Game Select, Character Select 패널
+- 선택적 Google 계정 연동 진입점과 게스트 상태 표시 (실제 인증 연결은 별도 단계)
 - 선택 캐릭터와 코인 저장
 
 완료 조건:
 
-- Boot → Hub → Character Select → Hub 흐름 작동
+- BootScene → SelectScene → Character Select 패널 → SelectScene 흐름 작동
 - 캐릭터 선택이 재실행 후 유지
-- Block Gravity 카드로 빈 게임 씬 진입
+- 로그인 없이 Block Gravity 카드로 빈 GameScene 진입
 - 잠긴 카드는 씬을 열지 않음
 
 ### Phase 2 — Block Gravity 순수 로직
@@ -798,9 +806,9 @@ Codex는 다음 규칙을 지킨다.
 
 다음 조건을 모두 만족하면 MVP를 완료한 것으로 본다.
 
-- 앱을 켜면 허브가 열린다.
+- 앱을 켜면 BootScene 초기화 후 로그인 없이 SelectScene이 열린다.
 - 세 캐릭터 중 하나를 선택하고 선택 상태가 저장된다.
-- Game Select에서 Block Gravity를 시작할 수 있다.
+- SelectScene의 Game Select에서 로그인 없이 GameScene의 Block Gravity를 시작할 수 있다.
 - 8×8 보드에 세 조각 중 하나를 드래그해 배치할 수 있다.
 - 블록이 현재 중력 방향으로 이동한다.
 - 5개 조각마다 중력이 시계 방향으로 바뀐다.

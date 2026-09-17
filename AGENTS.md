@@ -12,3 +12,9 @@
 - 작업 전 Document/MiniGameHeaven_Unity_MVP_Spec.md와 Document/Project_Decisions.md를 함께 확인한다.
 - 최신 사용자 결정이 최초 명세와 충돌하면 최신 결정을 따른다.
 - Supabase DB와 웹서버는 미정인 검토안이다. 확정된 구현 요구사항으로 취급하지 않는다.
+
+## 씬과 계정 연동
+
+- 씬 이름과 순서는 BootScene → SelectScene → GameScene이다.
+- 게스트로 게임 플레이가 가능해야 하며 Google 계정 연동은 SelectScene에서 선택적으로 제공한다.
+- 인증 SDK·서버 구현 방식은 별도 결정 전까지 임의로 확정하지 않는다.

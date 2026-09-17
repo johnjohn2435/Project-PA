@@ -24,7 +24,7 @@
 2. 컴파일이 끝나면 `Pocket Arcade > Phase 0 > 1. Apply Foundation`을 실행한다.
    - 제품명 PocketArcade, 회사명 Kang Wanseok, 임시 Android 앱 ID `com.johnjohn2435.pocketarcade` 설정.
    - Portrait, Linear, Input System (New), 기준 해상도 1080×1920 설정.
-   - `Assets/_Project/Scenes/`에 Boot, MainHub, BlockGravity 씬 생성.
+   - `Assets/_Project/Scenes/`에 BootScene, SelectScene, GameScene 씬 생성.
    - 각 씬에 카메라, Runtime Settings, Canvas, Safe Area, Input System EventSystem 추가.
    - Canvas Scaler: Scale With Screen Size / Match 0.5.
    - Build Profiles 전역 Scene List에 위 3개 씬을 순서대로 등록.

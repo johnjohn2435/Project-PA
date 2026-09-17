@@ -11,9 +11,9 @@ namespace PocketArcade.Core
 
     public static class SceneIds
     {
-        public const string Boot = "Boot";
-        public const string MainHub = "MainHub";
-        public const string BlockGravity = "BlockGravity";
+        public const string BootScene = "BootScene";
+        public const string SelectScene = "SelectScene";
+        public const string GameScene = "GameScene";
         public const string Directory = "Assets/_Project/Scenes/";
         public static string PathFor(string sceneName) => Directory + sceneName + ".unity";
     }

@@ -17,7 +17,7 @@ namespace PocketArcade.Editor
     public static class Phase0Setup
     {
         private static readonly string[] SceneNames =
-            { SceneIds.Boot, SceneIds.MainHub, SceneIds.BlockGravity };
+            { SceneIds.BootScene, SceneIds.SelectScene, SceneIds.GameScene };
 
         [MenuItem("Pocket Arcade/Phase 0/1. Apply Foundation")]
         public static void ApplyFoundation()

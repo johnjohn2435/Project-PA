@@ -28,3 +28,7 @@ Git은 저장소 루트에서 문서와 클라이언트를 함께 관리합니�
 - [최신 결정 기록](Document/Project_Decisions.md): Addressables 패치 방향 및 미정인 서버 검토안.
 - 현재 씬 생성과 Player Settings 적용은 위 절차의 사용자 실행을 기다리고 있습니다.
 - [Phase 0 작업 결과](Document/Phase0_Status.md): 실제 테스트 결과와 남은 완료 조건.
+
+## 씬과 플레이 진입
+
+`BootScene → SelectScene → GameScene` 흐름을 사용합니다. 로그인 없이 게스트로 플레이하며, Google 계정 연동은 SelectScene에서 선택적으로 제공할 예정입니다. 실제 인증 기능은 아직 구현하지 않았습니다.
