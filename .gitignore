@@ -1,0 +1,40 @@
+# Unity generated files (including nested client projects)
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+
+# IDE-generated files
+.vs/
+**/.vs/
+**/.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Build outputs and diagnostic logs
+*.apk
+*.aab
+*.unitypackage
+*.log
+sysinfo.txt
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
