@@ -1,0 +1,9 @@
+{
+  "name": "PocketArcade.Runtime",
+  "rootNamespace": "PocketArcade",
+  "references": [
+    "PocketArcade.Core",
+    "Unity.ugui",
+    "Unity.InputSystem"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "PocketArcade.Core",
+  "rootNamespace": "PocketArcade.Core",
+  "noEngineReferences": true
+}

@@ -21,3 +21,10 @@ Pocket Arcade 모바일 미니게임 허브 프로젝트입니다.
 Universal 2D 템플릿으로 프로젝트를 생성하고 Unity Editor의 초기 임포트와 배치 실행 정상 종료를 확인했습니다. Play Mode 테스트와 Android 빌드는 아직 수행하지 않았습니다. 초기 변환에서 자동 추가된 광고·결제·분석·내비게이션·멀티플레이 센터·XR 보조 패키지는 MVP 범위에 맞게 제외했습니다.
 
 Git은 저장소 루트에서 문서와 클라이언트를 함께 관리합니다. Unity 캐시, 사용자별 설정, IDE 생성 파일과 빌드 결과물은 제외합니다.
+
+## 기반 설정 및 결정 기록
+
+- [Phase 0 설정 절차](Document/Phase0_Setup.md): Unity 메뉴에서 기본 씬과 모바일 설정 적용.
+- [최신 결정 기록](Document/Project_Decisions.md): Addressables 패치 방향 및 미정인 서버 검토안.
+- 현재 씬 생성과 Player Settings 적용은 위 절차의 사용자 실행을 기다리고 있습니다.
+- [Phase 0 작업 결과](Document/Phase0_Status.md): 실제 테스트 결과와 남은 완료 조건.

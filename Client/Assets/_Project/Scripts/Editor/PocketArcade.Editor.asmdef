@@ -1,0 +1,13 @@
+{
+  "name": "PocketArcade.Editor",
+  "rootNamespace": "PocketArcade.Editor",
+  "references": [
+    "PocketArcade.Core",
+    "PocketArcade.Runtime",
+    "Unity.ugui",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

@@ -3,6 +3,8 @@
 > 문서 목적: 이 파일을 Unity 프로젝트 저장소 루트에 두고 Codex에 전달하여, 프로젝트 초기 세팅부터 첫 번째 미니게임 `Block Gravity`의 플레이 가능한 Android MVP까지 단계적으로 구현한다.
 >
 > 작업명(가칭): **Pocket Arcade**  
+> 최신 결정 기록: [Project_Decisions.md](Project_Decisions.md) — 경로, Addressables 패치 방향, 서버 검토안은 이 기록을 함께 확인한다.
+>
 > 문서 버전: 0.1  
 > 작성일: 2026-09-17
 
@@ -74,7 +76,7 @@ MVP에서 제외한다.
 - 일일 퀘스트, 업적, 출석
 - 캐릭터별 패시브 능력
 - 멀티플레이
-- Addressables 및 원격 다운로드
+- Addressables 및 원격 다운로드의 실제 구현 (향후 패치는 Addressables 방향, 도입 시점은 결정 기록 참조)
 - DOTS/ECS
 - 과도한 연출, 고급 셰이더, 진동 플러그인
 - 두 번째 미니게임의 실제 구현
@@ -124,7 +126,7 @@ Unity Hub 설치 모듈:
 
 처음부터 넣지 않는다.
 
-- Addressables
+- Addressables (향후 패치 방향으로 기록했으나 현재 단계에서는 설치·구현 보류)
 - Entities/DOTS
 - Cinemachine
 - Localization
@@ -835,4 +837,3 @@ MVP 반응을 확인하기 전에는 구현하지 않는다.
 - Unity 최신 매뉴얼: https://docs.unity3d.com/Manual/index.html
 - Unity AI Assistant 패키지: https://docs.unity3d.com/Packages/com.unity.ai.assistant@latest
 - Unity MCP 소개: https://unity.com/blog/unity-ai-tools-beta-how-to-get-started-with-mcp
-

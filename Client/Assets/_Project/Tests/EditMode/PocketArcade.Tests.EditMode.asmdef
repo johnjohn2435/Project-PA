@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.Tests.EditMode",
+  "rootNamespace": "PocketArcade.Tests",
+  "references": [
+    "PocketArcade.Core",
+    "PocketArcade.Runtime",
+    "Unity.ugui"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
