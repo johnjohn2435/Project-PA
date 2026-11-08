@@ -1,0 +1,291 @@
+{
+  "name": "고영이",
+  "species": "고등어무늬 고양이",
+  "status": "simplification_proposal_not_approved",
+  "source": "G",
+  "seed": 721001,
+  "master_size": [
+    768,
+    768
+  ],
+  "alpha_range": [
+    0,
+    255
+  ],
+  "steps": 10,
+  "cfg": 3.5,
+  "normalization": "crop alpha>20 bounds; fit 410x410 on 512 canvas; bottom y465; no redraw/recolor",
+  "remaining": "눈 광택·발가락선·수염형 볼무늬가 남아 있음. 더 작은 점눈과 굵은 몸 옆 줄무늬는 후속 보정 필요.",
+  "explorations": [
+    {
+      "label": "A",
+      "positive": "(minimalist flat vector pictogram:1.6), (very simple kawaii doodle:1.4), one round gray tabby cat, three thick dark gray forehead stripes, striped short tail, (tiny black dot eyes:1.4), tiny mouth, huge round head, tiny bean body, stubby feet, uniform thick outline, solid light gray fill, plain white belly, front view, white background",
+      "negative": "(realistic:1.5), (3d:1.5), (shading:1.4), gradients, texture, detailed fur, hair, whiskers, large eyes, eye highlights, iris, eyelashes, eyebrows, claws, toes, clothing, scarf, collar, accessories, intricate, detailed, text, watermark, multiple characters, border",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681201,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "B",
+      "positive": "(minimalist flat vector pictogram:1.6), (very simple kawaii doodle:1.4), one round gray tabby cat, three thick dark gray forehead stripes, striped short tail, (tiny black dot eyes:1.4), tiny mouth, huge round head, tiny bean body, stubby feet, uniform thick outline, solid light gray fill, plain white belly, front view, white background",
+      "negative": "(realistic:1.5), (3d:1.5), (shading:1.4), gradients, texture, detailed fur, hair, whiskers, large eyes, eye highlights, iris, eyelashes, eyebrows, claws, toes, clothing, scarf, collar, accessories, intricate, detailed, text, watermark, multiple characters, border",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681202,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "C",
+      "positive": "(minimalist flat vector pictogram:1.6), (very simple kawaii doodle:1.4), one round gray tabby cat, three thick dark gray forehead stripes, striped short tail, (tiny black dot eyes:1.4), tiny mouth, huge round head, tiny bean body, stubby feet, uniform thick outline, solid light gray fill, plain white belly, front view, white background",
+      "negative": "(realistic:1.5), (3d:1.5), (shading:1.4), gradients, texture, detailed fur, hair, whiskers, large eyes, eye highlights, iris, eyelashes, eyebrows, claws, toes, clothing, scarf, collar, accessories, intricate, detailed, text, watermark, multiple characters, border",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681203,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "D",
+      "positive": "(extremely simple flat vector illustration:1.6), (minimal kawaii icon:1.5), tiny dot eyes, tiny mouth, round gray mackerel tabby kitten, chubby blob body, short tiny paws, three broad charcoal forehead stripes, two broad flank stripes, short striped tail, solid pale gray and charcoal colors, thick smooth outline, full body, white background",
+      "negative": "(realistic:1.6), (3d render:1.6), (shading:1.5), gradient, fur, texture, (whiskers:1.5), (large eyes:1.5), (eye highlights:1.5), iris, pupils, eyebrows, eyelashes, nose highlight, toes, fingers, scarf, collar, clothes, accessory, medallion, text, detailed, complex, busy",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681204,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "E",
+      "positive": "(extremely simple flat vector illustration:1.6), (minimal kawaii icon:1.5), tiny dot eyes, tiny mouth, round gray mackerel tabby kitten, chubby blob body, short tiny paws, three broad charcoal forehead stripes, two broad flank stripes, short striped tail, solid pale gray and charcoal colors, thick smooth outline, full body, white background",
+      "negative": "(realistic:1.6), (3d render:1.6), (shading:1.5), gradient, fur, texture, (whiskers:1.5), (large eyes:1.5), (eye highlights:1.5), iris, pupils, eyebrows, eyelashes, nose highlight, toes, fingers, scarf, collar, clothes, accessory, medallion, text, detailed, complex, busy",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681205,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "F",
+      "positive": "(extremely simple flat vector illustration:1.6), (minimal kawaii icon:1.5), tiny dot eyes, tiny mouth, round gray mackerel tabby kitten, chubby blob body, short tiny paws, three broad charcoal forehead stripes, two broad flank stripes, short striped tail, solid pale gray and charcoal colors, thick smooth outline, full body, white background",
+      "negative": "(realistic:1.6), (3d render:1.6), (shading:1.5), gradient, fur, texture, (whiskers:1.5), (large eyes:1.5), (eye highlights:1.5), iris, pupils, eyebrows, eyelashes, nose highlight, toes, fingers, scarf, collar, clothes, accessory, medallion, text, detailed, complex, busy",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 681206,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "G",
+      "positive": "(minimal flat vector illustration:1.6), (extremely simple:1.5), (two tiny black dots for eyes:1.5), small w mouth, a fat round gray striped cat, three wide dark gray head stripes, striped tail, tiny stubby paws, smooth round silhouette, pale gray solid color, thick outline, kawaii mascot icon, full body, white background",
+      "negative": "(realistic:1.5), 3d, (large eyes:1.6), (eye highlights:1.6), whiskers, eyebrows, eyelashes, toes, fingers, fur, texture, shading, gradients, clothes, collar, scarf, intricate, detailed, text, watermark",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 721001,
+        "steps": 10,
+        "cfg": 3.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "H",
+      "positive": "(minimal flat vector illustration:1.6), (extremely simple:1.5), (two tiny black dots for eyes:1.5), small w mouth, a fat round gray striped cat, three wide dark gray head stripes, striped tail, tiny stubby paws, smooth round silhouette, pale gray solid color, thick outline, kawaii mascot icon, full body, white background",
+      "negative": "(realistic:1.5), 3d, (large eyes:1.6), (eye highlights:1.6), whiskers, eyebrows, eyelashes, toes, fingers, fur, texture, shading, gradients, clothes, collar, scarf, intricate, detailed, text, watermark",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 721002,
+        "steps": 10,
+        "cfg": 3.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    },
+    {
+      "label": "I",
+      "positive": "(minimal flat vector illustration:1.6), (extremely simple:1.5), (two tiny black dots for eyes:1.5), small w mouth, a fat round gray striped cat, three wide dark gray head stripes, striped tail, tiny stubby paws, smooth round silhouette, pale gray solid color, thick outline, kawaii mascot icon, full body, white background",
+      "negative": "(realistic:1.5), 3d, (large eyes:1.6), (eye highlights:1.6), whiskers, eyebrows, eyelashes, toes, fingers, fur, texture, shading, gradients, clothes, collar, scarf, intricate, detailed, text, watermark",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 721003,
+        "steps": 10,
+        "cfg": 3.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "status": "success"
+    }
+  ]
+}

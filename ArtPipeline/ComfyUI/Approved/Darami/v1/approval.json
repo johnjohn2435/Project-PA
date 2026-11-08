@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-06",
+  "character": "다람이",
+  "approved_scope": "정지 시안의 캐릭터 외형, 꼬리 모양과 외곽선 굵기",
+  "user_message": "굿굿 좋아",
+  "source_workflow": "ArtPipeline/ComfyUI/Examples/Darami_Tail_20261106/workflow_api.json",
+  "game_integration": "기존 char_hamster 슬롯을 다람이로 변경. body/tail 파츠가 루트 좌우 반전을 따른다.",
+  "directions_workflow": "ArtPipeline/ComfyUI/Examples/Darami_Tail_20261106/directions_api.json"
+}

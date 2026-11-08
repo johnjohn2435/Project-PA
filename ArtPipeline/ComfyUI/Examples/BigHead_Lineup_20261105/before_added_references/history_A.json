@@ -1,0 +1,194 @@
+{
+  "prompt": [
+    77,
+    "5b943626-2ce3-45e2-9aa3-9ec970257700",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "A character design lineup of exactly three cute original BIPEDAL animal friends standing side by side. Left a light grey tabby CAT with triangular ears and just three grey forehead stripes. Middle a pale cream DOG with short tan floppy ears and plain cream forehead. Right a pale golden HAMSTER with little round ears and plain golden forehead. All three share IDENTICAL chibi anatomy: an ENORMOUS WIDE ROUND HEAD clearly SEPARATE from a TINY SHORT ROUND TORSO below it. The big round head is twice as wide as the tiny body. A distinct dark curved chin outline separates the head from the little torso. Head occupies TWO THIRDS of total character height, little body and legs only ONE THIRD. Huge cheeks, tiny smiling face low on the head, two tiny black dot eyes with tiny white reflections, tiny short eyebrows. Two short oval arms hanging OUTSIDE the tiny torso and two tiny rounded feet. All stand upright on TWO FEET, same height, same head and body sizes, same shoulders, same hips and same neutral pose. Very cute baby-like proportions, huge heads and tiny plump bodies, no neck. Minimal hand drawn cozy cartoon, thick uniform DARK BROWN outlines, pastel solid color fills with one soft underside shadow. Simple smooth mitten hands and round feet. Clean tailless silhouettes. No clothing, no props, no fingers, no toe lines, no fur texture, no blush, no whiskers. Plain warm ivory background. Full bodies with ample margins. A friendly interchangeable character family for one shared skeleton. Not a single egg body: distinct oversized head and distinct small body connected under the chin."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "4": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1344,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "Batch 1 / RTX 3080 10GB"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 115601,
+          "steps": 28,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "4",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/BigHeadLineup_20261105/A"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 3.5
+        }
+      }
+    },
+    {
+      "client_id": "11644041-6a32-468e-a1bf-6d2880b81ae5",
+      "create_time": 1793883292378
+    },
+    [
+      "7"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "A_00001_.png",
+          "subfolder": "ProjectPA\\BigHeadLineup_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 1344,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "5b943626-2ce3-45e2-9aa3-9ec970257700",
+          "timestamp": 1793883292379
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "5b943626-2ce3-45e2-9aa3-9ec970257700",
+          "timestamp": 1793883292380
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "5b943626-2ce3-45e2-9aa3-9ec970257700",
+          "timestamp": 1793883376414
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    }
+  }
+}

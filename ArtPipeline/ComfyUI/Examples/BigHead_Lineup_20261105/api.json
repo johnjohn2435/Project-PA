@@ -1,0 +1,336 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": "A simple hand drawn character lineup of three original cute animal friends, standing upright on two tiny feet, FULL BODY, all facing slightly right in the same neutral pose. Left a pale GREY MACKEREL TABBY CAT with small triangular ears, three simple dark grey forehead stripes. Middle a CREAM PUPPY with small tan floppy ears, plain cream face. Right a pale GOLDEN HAMSTER with tiny round ears, plain golden face. The same body proportions for all three: LARGE WIDE ROUND HEAD with a distinct curved chin line, a SEPARATE SMALL PLUMP TORSO under the head, two very short little round arms outside the torso, two tiny feet. Head about 60 percent of total height, body about 30 percent, feet about 10 percent. Small dark dot eyes, a tiny happy mouth, tiny straight brows and tiny eye reflections. Original characters, species differentiated by ears and colors. Charming cozy hand-drawn ink cartoon with slightly wobbly dark brown BLACK outlines of uniform thickness, sparse flat pastel color fills and only one tiny faint underside shadow. Simple innocent understated facial expressions. Smooth rounded hands. No fingers, no toe details, no tails, no whiskers, no props, no clothes, no blush. Neutral standing pose, NOT holding anything. Plain warm ivory background, generous empty space around three separate characters. No text. Simple friendly picture book doodle, not polished vector, not glossy, no gradients, not realistic."
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": ""
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 115630,
+      "steps": 30,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "61",
+        0
+      ],
+      "denoise": 0.82
+    },
+    "_meta": {
+      "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ReferenceLineup_20261105/redraw"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  },
+  "15": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    }
+  },
+  "16": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "17": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "2",
+        0
+      ],
+      "guidance": 3.5
+    }
+  },
+  "18": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_ref_codex-clipboard-5d188380-17a5-4cef-9cd6-f5b9a961796f.png"
+    }
+  },
+  "20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_ref_blank.png"
+    }
+  },
+  "21": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    }
+  },
+  "30": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "18",
+        0
+      ],
+      "width": 91,
+      "height": 130,
+      "x": 231,
+      "y": 147
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "bicubic",
+      "width": 260,
+      "height": 350,
+      "crop": "disabled"
+    }
+  },
+  "32": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "21",
+        0
+      ],
+      "image": [
+        "31",
+        0
+      ]
+    }
+  },
+  "33": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "20",
+        0
+      ],
+      "source": [
+        "31",
+        0
+      ],
+      "x": 76,
+      "y": 210,
+      "resize_source": false,
+      "mask": [
+        "32",
+        0
+      ]
+    }
+  },
+  "36": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "18",
+        0
+      ],
+      "width": 112,
+      "height": 160,
+      "x": 345,
+      "y": 116
+    }
+  },
+  "37": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "36",
+        0
+      ],
+      "upscale_method": "bicubic",
+      "width": 260,
+      "height": 350,
+      "crop": "disabled"
+    }
+  },
+  "38": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "21",
+        0
+      ],
+      "image": [
+        "37",
+        0
+      ]
+    }
+  },
+  "39": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "33",
+        0
+      ],
+      "source": [
+        "37",
+        0
+      ],
+      "x": 446,
+      "y": 210,
+      "resize_source": false,
+      "mask": [
+        "38",
+        0
+      ]
+    }
+  },
+  "42": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "18",
+        0
+      ],
+      "width": 66,
+      "height": 87,
+      "x": 78,
+      "y": 189
+    }
+  },
+  "43": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "42",
+        0
+      ],
+      "upscale_method": "bicubic",
+      "width": 260,
+      "height": 350,
+      "crop": "disabled"
+    }
+  },
+  "44": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "21",
+        0
+      ],
+      "image": [
+        "43",
+        0
+      ]
+    }
+  },
+  "45": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "39",
+        0
+      ],
+      "source": [
+        "43",
+        0
+      ],
+      "x": 816,
+      "y": 210,
+      "resize_source": false,
+      "mask": [
+        "44",
+        0
+      ]
+    }
+  },
+  "60": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "45",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ReferenceLineup_20261105/reference_input"
+    }
+  },
+  "61": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "45",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    }
+  }
+}

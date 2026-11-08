@@ -1,0 +1,221 @@
+{
+  "prompt": [
+    24,
+    "1b97a3e9-de9c-4042-8cd6-5df83c42779e",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "ProjectPA/FourAnimals/hamster_round2.png"
+        }
+      },
+      "2": {
+        "class_type": "LoadBackgroundRemovalModel",
+        "inputs": {
+          "bg_removal_name": "birefnet.safetensors"
+        }
+      },
+      "3": {
+        "class_type": "RemoveBackground",
+        "inputs": {
+          "bg_removal_model": [
+            "2",
+            0
+          ],
+          "image": [
+            "1",
+            0
+          ]
+        }
+      },
+      "4": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "3",
+            0
+          ],
+          "expand": 11,
+          "tapered_corners": true
+        }
+      },
+      "5": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "6": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "5",
+            0
+          ],
+          "source": [
+            "1",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "3",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "4",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "12",
+            0
+          ],
+          "alpha": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "ProjectPA/FourAnimals_20261104/Refined/hamster/master"
+        }
+      },
+      "10": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "8",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "11": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "10",
+            0
+          ],
+          "filename_prefix": "ProjectPA/FourAnimals_20261104/Refined/hamster/sprite_512"
+        }
+      },
+      "12": {
+        "class_type": "ImageQuantize",
+        "inputs": {
+          "image": [
+            "6",
+            0
+          ],
+          "colors": 16,
+          "dither": "none"
+        }
+      }
+    },
+    {
+      "create_time": 1793780913968
+    },
+    [
+      "11",
+      "9"
+    ]
+  ],
+  "outputs": {
+    "9": {
+      "images": [
+        {
+          "filename": "master_00001_.png",
+          "subfolder": "ProjectPA\\FourAnimals_20261104\\Refined\\hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "11": {
+      "images": [
+        {
+          "filename": "sprite_512_00001_.png",
+          "subfolder": "ProjectPA\\FourAnimals_20261104\\Refined\\hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "1b97a3e9-de9c-4042-8cd6-5df83c42779e",
+          "timestamp": 1793780913969
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "2",
+            "5"
+          ],
+          "prompt_id": "1b97a3e9-de9c-4042-8cd6-5df83c42779e",
+          "timestamp": 1793780913972
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "1b97a3e9-de9c-4042-8cd6-5df83c42779e",
+          "timestamp": 1793780914640
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "9": {
+      "node_id": "9",
+      "display_node": "9",
+      "parent_node": null,
+      "real_node_id": "9"
+    },
+    "11": {
+      "node_id": "11",
+      "display_node": "11",
+      "parent_node": null,
+      "real_node_id": "11"
+    }
+  }
+}

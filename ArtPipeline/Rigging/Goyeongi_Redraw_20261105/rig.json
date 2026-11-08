@@ -1,0 +1,118 @@
+{
+  "root_px": [
+    375,
+    575
+  ],
+  "ppu": 256,
+  "facing": "right_three_quarter",
+  "mirror": "whole root X",
+  "draw_order": [
+    "leg_R",
+    "arm_R",
+    "body",
+    "leg_L",
+    "arm_L"
+  ],
+  "bones": {
+    "body": {
+      "parent": "root",
+      "position_px": [
+        390,
+        430
+      ],
+      "pivot_px": [
+        390,
+        430
+      ],
+      "sprite_pivot_normalized": [
+        0.5078125,
+        0.44010416666666663
+      ],
+      "unity_local_position": [
+        0.05859375,
+        0.56640625,
+        0
+      ]
+    },
+    "arm_L": {
+      "parent": "body",
+      "position_px": [
+        300,
+        394
+      ],
+      "pivot_px": [
+        300,
+        394
+      ],
+      "sprite_pivot_normalized": [
+        0.390625,
+        0.48697916666666663
+      ],
+      "unity_local_position": [
+        -0.3515625,
+        0.140625,
+        0
+      ]
+    },
+    "arm_R": {
+      "parent": "body",
+      "position_px": [
+        525,
+        375
+      ],
+      "pivot_px": [
+        525,
+        375
+      ],
+      "sprite_pivot_normalized": [
+        0.68359375,
+        0.51171875
+      ],
+      "unity_local_position": [
+        0.52734375,
+        0.21484375,
+        0
+      ]
+    },
+    "leg_L": {
+      "parent": "body",
+      "position_px": [
+        318,
+        534
+      ],
+      "pivot_px": [
+        318,
+        534
+      ],
+      "sprite_pivot_normalized": [
+        0.4140625,
+        0.3046875
+      ],
+      "unity_local_position": [
+        -0.28125,
+        -0.40625,
+        0
+      ]
+    },
+    "leg_R": {
+      "parent": "body",
+      "position_px": [
+        462,
+        538
+      ],
+      "pivot_px": [
+        462,
+        538
+      ],
+      "sprite_pivot_normalized": [
+        0.6015625,
+        0.29947916666666663
+      ],
+      "unity_local_position": [
+        0.28125,
+        -0.421875,
+        0
+      ]
+    }
+  }
+}

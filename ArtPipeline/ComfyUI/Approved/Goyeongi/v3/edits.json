@@ -1,0 +1,33 @@
+{
+  "source": "Goyeongi/v2",
+  "edits": [
+    {
+      "role": "highlight",
+      "x": 294,
+      "y": 359,
+      "width": 8,
+      "height": 8
+    },
+    {
+      "role": "eyebrow",
+      "x": 292,
+      "y": 331,
+      "width": 24,
+      "height": 7
+    },
+    {
+      "role": "highlight",
+      "x": 453,
+      "y": 359,
+      "width": 8,
+      "height": 8
+    },
+    {
+      "role": "eyebrow",
+      "x": 451,
+      "y": 331,
+      "width": 24,
+      "height": 7
+    }
+  ]
+}

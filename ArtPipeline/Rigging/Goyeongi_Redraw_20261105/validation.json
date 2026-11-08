@@ -1,0 +1,64 @@
+{
+  "parts": [
+    {
+      "name": "body",
+      "size": [
+        768,
+        768
+      ],
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "joint_alpha": 254,
+      "body_joint_cover_alpha": 254
+    },
+    {
+      "name": "arm_L",
+      "size": [
+        768,
+        768
+      ],
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "joint_alpha": 254,
+      "body_joint_cover_alpha": 254
+    },
+    {
+      "name": "arm_R",
+      "size": [
+        768,
+        768
+      ],
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "joint_alpha": 254,
+      "body_joint_cover_alpha": 254
+    },
+    {
+      "name": "leg_L",
+      "size": [
+        768,
+        768
+      ],
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "joint_alpha": 254,
+      "body_joint_cover_alpha": 254
+    },
+    {
+      "name": "leg_R",
+      "size": [
+        768,
+        768
+      ],
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "joint_alpha": 254,
+      "body_joint_cover_alpha": 254
+    }
+  ],
+  "neutral_reassembly_rgb_mean_error": 0.5122432317218557,
+  "neutral_reassembly_rgb_max_error": 12,
+  "mesh_weights": "sum-to-one, bounds, non-degenerate triangles passed",
+  "pose_review": "24 frames, shoulder/hip pinned weights, neutral and positive/negative 12-degree extrema visually checked",
+  "unity_execution": "not run"
+}

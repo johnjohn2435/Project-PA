@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-05",
+  "status": "single_character_redraw_and_rigging_review_not_approved",
+  "character": "고영이",
+  "source_generation": "New coherent 3/4 illustration generated as B, proportional img2img refinement E; no shifted old face or synthetic ellipse limbs",
+  "comfy_processing": "Tail removal, minimal brow/cheek cleanup, original painted limb selection, hidden torso restoration, original part exports",
+  "selection_masks": "Prepared externally as edit/segmentation inputs only, never as replacement character artwork. Actual painting, restoration, color cleanup and PNG part compositing run in ComfyUI.",
+  "review_rendering": "Python only renders part assembly, linear-blend weighting preview, masks/analysis and file validation",
+  "unity_status": "not_imported_or_executed",
+  "tested_pose_range": "limb rotations +/-12 degrees with proximal body weights; larger gestures not validated",
+  "hashes": {
+    "sprites/arm_L.png": "7431189d17b555ef6380a242593573363c217d3c451e2710e533e878f1624a15",
+    "sprites/arm_R.png": "e2b2fac8873ae78cb869e0031ddc5fe8a8c322e691b035d3c3104a7105daf1af",
+    "sprites/body.png": "e4c856ce7ef25952450f63993d8deb748d8243c7e0b13e59221587a6b1bf488b",
+    "sprites/leg_L.png": "d4650137f5c8b8bee49af8ae5b6bc72640fd71009a24556c1ddd2b348ba2473a",
+    "sprites/leg_R.png": "2b5cde601c768b182e2eda16e6d26073a1b77491d6ee51153aa34ac3d9de69a7"
+  }
+}

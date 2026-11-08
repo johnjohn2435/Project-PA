@@ -1,0 +1,26 @@
+{
+  "updated_on": "2026-11-04",
+  "approved": [
+    {
+      "key": "goyeongi",
+      "name": "고영이",
+      "reference": "Goyeongi/v4/master.png"
+    },
+    {
+      "key": "dog",
+      "name": null,
+      "reference": "Dog/v3/master.png"
+    },
+    {
+      "key": "hamster",
+      "name": null,
+      "reference": "Hamster/v3/master.png"
+    }
+  ],
+  "excluded_candidates": [
+    "otter",
+    "squirrel"
+  ],
+  "notes": "Approval registry for artwork only; no runtime catalog changes. Excluded candidate files are preserved as history.",
+  "latest_revision": "2026-11-04: short rounded arms added; all characters are tailless. Chiikawa is a proportion/movement reference, not an instruction to copy character designs."
+}

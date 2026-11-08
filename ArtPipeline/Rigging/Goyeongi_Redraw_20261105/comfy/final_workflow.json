@@ -1,0 +1,5730 @@
+{
+  "version": 0.4,
+  "last_node_id": 111,
+  "last_link_id": 136,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2,
+            11,
+            37
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/raw.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 2,
+      "type": "LoadBackgroundRemovalModel",
+      "pos": [
+        0,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "bg_model",
+          "type": "BACKGROUND_REMOVAL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadBackgroundRemovalModel"
+      },
+      "widgets_values": [
+        "birefnet.safetensors"
+      ],
+      "title": "LoadBackgroundRemovalModel"
+    },
+    {
+      "id": 3,
+      "type": "RemoveBackground",
+      "pos": [
+        0,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bg_removal_model",
+          "type": "BACKGROUND_REMOVAL",
+          "link": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            4,
+            7,
+            19,
+            23,
+            27,
+            31
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RemoveBackground"
+      },
+      "widgets_values": [],
+      "title": "RemoveBackground"
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/whole_keep.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 5,
+      "type": "ImageToMask",
+      "pos": [
+        0,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 6,
+      "type": "MaskComposite",
+      "pos": [
+        0,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 4
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            67
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/body_keep.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 8,
+      "type": "ImageToMask",
+      "pos": [
+        390,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            8
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 9,
+      "type": "MaskComposite",
+      "pos": [
+        390,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 7
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            69
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 10,
+      "type": "LoadImage",
+      "pos": [
+        390,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/body_repair.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 11,
+      "type": "ImageToMask",
+      "pos": [
+        390,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 12,
+      "type": "EmptyImage",
+      "pos": [
+        390,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        25,
+        5,
+        1,
+        4797740
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 13,
+      "type": "SolidMask",
+      "pos": [
+        390,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            10
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        1.0,
+        25,
+        5
+      ],
+      "title": "SolidMask"
+    },
+    {
+      "id": 14,
+      "type": "FeatherMask",
+      "pos": [
+        390,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FeatherMask"
+      },
+      "widgets_values": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "title": "FeatherMask"
+    },
+    {
+      "id": 15,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        780,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        387,
+        222,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 16,
+      "type": "EmptyImage",
+      "pos": [
+        780,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        18,
+        4,
+        1,
+        4797740
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 17,
+      "type": "SolidMask",
+      "pos": [
+        780,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        1.0,
+        18,
+        4
+      ],
+      "title": "SolidMask"
+    },
+    {
+      "id": 18,
+      "type": "FeatherMask",
+      "pos": [
+        780,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            17
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FeatherMask"
+      },
+      "widgets_values": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "title": "FeatherMask"
+    },
+    {
+      "id": 19,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        780,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 16
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            51
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        494,
+        207,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 20,
+      "type": "LoadImage",
+      "pos": [
+        780,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/arm_L.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 21,
+      "type": "ImageToMask",
+      "pos": [
+        780,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 22,
+      "type": "MaskComposite",
+      "pos": [
+        1170,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 19
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            21,
+            81,
+            112,
+            133
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 23,
+      "type": "InvertMask",
+      "pos": [
+        1170,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            99
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 24,
+      "type": "LoadImage",
+      "pos": [
+        1170,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/arm_R.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 25,
+      "type": "ImageToMask",
+      "pos": [
+        1170,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            24
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 26,
+      "type": "MaskComposite",
+      "pos": [
+        1170,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 23
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            25,
+            49,
+            124
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 27,
+      "type": "InvertMask",
+      "pos": [
+        1170,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            102
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 28,
+      "type": "LoadImage",
+      "pos": [
+        1170,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            26
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/leg_L.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 29,
+      "type": "ImageToMask",
+      "pos": [
+        1560,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            28
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 30,
+      "type": "MaskComposite",
+      "pos": [
+        1560,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 27
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            29,
+            79,
+            130
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 31,
+      "type": "InvertMask",
+      "pos": [
+        1560,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            105
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 32,
+      "type": "LoadImage",
+      "pos": [
+        1560,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRig/leg_R.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 33,
+      "type": "ImageToMask",
+      "pos": [
+        1560,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 34,
+      "type": "MaskComposite",
+      "pos": [
+        1560,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 31
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            33,
+            47,
+            121
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 35,
+      "type": "InvertMask",
+      "pos": [
+        1560,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            108
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 36,
+      "type": "UNETLoader",
+      "pos": [
+        1950,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            40
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev-fp8.safetensors",
+        "default"
+      ],
+      "title": "UNETLoader"
+    },
+    {
+      "id": 37,
+      "type": "DualCLIPLoader",
+      "pos": [
+        1950,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            34,
+            35
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp16.safetensors",
+        "flux"
+      ],
+      "title": "DualCLIPLoader"
+    },
+    {
+      "id": 38,
+      "type": "VAELoader",
+      "pos": [
+        1950,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            38,
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "title": "VAELoader"
+    },
+    {
+      "id": 39,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1950,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            36
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Restore the uninterrupted smooth pale grey and cream torso of this simple flat cartoon tabby kitten. A clean round cream belly area with pale grey sides and a subtle soft grey shadow underneath. Plain smooth body surface only, erase the arm line and leg joint marks from the marked areas. Match the surrounding flat colors and soft shading exactly. No arms, no hands, no legs, no feet, no tail, no extra details in the torso. Keep the rest of the drawing unchanged."
+      ],
+      "title": "CLIPTextEncode"
+    },
+    {
+      "id": 40,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1950,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            42
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "title": "CLIPTextEncode"
+    },
+    {
+      "id": 41,
+      "type": "FluxGuidance",
+      "pos": [
+        1950,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            41
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ],
+      "title": "FluxGuidance"
+    },
+    {
+      "id": 42,
+      "type": "VAEEncodeForInpaint",
+      "pos": [
+        1950,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 37
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 38
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            43
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncodeForInpaint"
+      },
+      "widgets_values": [
+        4
+      ],
+      "title": "VAEEncodeForInpaint"
+    },
+    {
+      "id": 43,
+      "type": "KSampler",
+      "pos": [
+        2340,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 40
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 41
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 42
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            44
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        115315,
+        "fixed",
+        24,
+        1.0,
+        "euler",
+        "simple",
+        1.0
+      ],
+      "title": "KSampler"
+    },
+    {
+      "id": 44,
+      "type": "VAEDecode",
+      "pos": [
+        2340,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 44
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            111
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "title": "VAEDecode"
+    },
+    {
+      "id": 45,
+      "type": "EmptyImage",
+      "pos": [
+        2340,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            114
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        4797740
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 46,
+      "type": "EmptyImage",
+      "pos": [
+        2340,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            119
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        16777215
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 47,
+      "type": "SolidMask",
+      "pos": [
+        2340,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            46
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        0.0,
+        768,
+        768
+      ],
+      "title": "SolidMask"
+    },
+    {
+      "id": 48,
+      "type": "MaskComposite",
+      "pos": [
+        2340,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 46
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            48
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 49,
+      "type": "MaskComposite",
+      "pos": [
+        2340,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 48
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            76
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 50,
+      "type": "EmptyImage",
+      "pos": [
+        2730,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            52
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        13815231
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 51,
+      "type": "LoadImage",
+      "pos": [
+        2730,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            50
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/cheek_near.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 52,
+      "type": "ImageToMask",
+      "pos": [
+        2730,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            53
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 53,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        2730,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 51
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 52
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            55
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 54,
+      "type": "EmptyImage",
+      "pos": [
+        2730,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            56
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        13880511
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 55,
+      "type": "LoadImage",
+      "pos": [
+        2730,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            54
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/cheek_far.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 56,
+      "type": "ImageToMask",
+      "pos": [
+        2730,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            57
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 57,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        3120,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 55
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 56
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            59
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 58,
+      "type": "EmptyImage",
+      "pos": [
+        3120,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            60
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        13880511
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 59,
+      "type": "LoadImage",
+      "pos": [
+        3120,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            58
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/whisker_erase.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 60,
+      "type": "ImageToMask",
+      "pos": [
+        3120,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            61
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 61,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        3120,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 59
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 60
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            83
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 62,
+      "type": "EmptyImage",
+      "pos": [
+        3120,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            84
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        13880511
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 63,
+      "type": "LoadImage",
+      "pos": [
+        3120,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/near_hand_marks.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 64,
+      "type": "ImageToMask",
+      "pos": [
+        3510,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 65,
+      "type": "EmptyImage",
+      "pos": [
+        3510,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            87
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        13880254
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 66,
+      "type": "LoadImage",
+      "pos": [
+        3510,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/far_hand_marks.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 67,
+      "type": "ImageToMask",
+      "pos": [
+        3510,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 68,
+      "type": "EmptyImage",
+      "pos": [
+        3510,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            90
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        11774621
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 69,
+      "type": "LoadImage",
+      "pos": [
+        3510,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            64
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/near_toes.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 70,
+      "type": "ImageToMask",
+      "pos": [
+        3510,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 71,
+      "type": "EmptyImage",
+      "pos": [
+        3900,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            93
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        768,
+        768,
+        1,
+        11576216
+      ],
+      "title": "EmptyImage"
+    },
+    {
+      "id": 72,
+      "type": "LoadImage",
+      "pos": [
+        3900,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 71,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            65
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/far_toes.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 73,
+      "type": "ImageToMask",
+      "pos": [
+        3900,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 74,
+      "type": "LoadImage",
+      "pos": [
+        3900,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 73,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            66
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ProjectPA/GoyeongiRedrawRetouch/face_guard.png",
+        "image"
+      ],
+      "title": "LoadImage"
+    },
+    {
+      "id": 75,
+      "type": "ImageToMask",
+      "pos": [
+        3900,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            68,
+            70
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "title": "ImageToMask"
+    },
+    {
+      "id": 76,
+      "type": "MaskComposite",
+      "pos": [
+        3900,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 67
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            71
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 77,
+      "type": "MaskComposite",
+      "pos": [
+        3900,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 69
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            72,
+            73,
+            75,
+            77,
+            127
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "multiply"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 78,
+      "type": "SolidMask",
+      "pos": [
+        4290,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 77,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            85,
+            88,
+            91,
+            94
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SolidMask"
+      },
+      "widgets_values": [
+        0.0,
+        768,
+        768
+      ],
+      "title": "SolidMask"
+    },
+    {
+      "id": 79,
+      "type": "InvertMask",
+      "pos": [
+        4290,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            96
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 80,
+      "type": "GrowMask",
+      "pos": [
+        4290,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            74
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMask"
+      },
+      "widgets_values": [
+        -3,
+        true
+      ],
+      "title": "GrowMask"
+    },
+    {
+      "id": 81,
+      "type": "MaskComposite",
+      "pos": [
+        4290,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 73
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            115
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "subtract"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 82,
+      "type": "InvertMask",
+      "pos": [
+        4290,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            117
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 83,
+      "type": "MaskComposite",
+      "pos": [
+        4290,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 76
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            78
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 84,
+      "type": "MaskComposite",
+      "pos": [
+        4290,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 78
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            80
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 85,
+      "type": "MaskComposite",
+      "pos": [
+        4680,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "MASK",
+          "link": 80
+        },
+        {
+          "name": "source",
+          "type": "MASK",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            82
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskComposite"
+      },
+      "widgets_values": [
+        0,
+        0,
+        "add"
+      ],
+      "title": "MaskComposite"
+    },
+    {
+      "id": 86,
+      "type": "InvertMask",
+      "pos": [
+        4680,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            135
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": [],
+      "title": "InvertMask"
+    },
+    {
+      "id": 87,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        4680,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 83
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 84
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            86
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 88,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        4680,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 86
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 87
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            89
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 89,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        4680,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 88,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 89
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 90
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 91
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            92
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 90,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        4680,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 92
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 93
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 94
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            95,
+            98,
+            101,
+            104,
+            107,
+            110,
+            120,
+            123,
+            129,
+            132
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 91,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        4680,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 95
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 96
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            97
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 92,
+      "type": "SaveImage",
+      "pos": [
+        5070,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 91,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 97
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/source_illustration"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 93,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5070,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 92,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 98
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 99
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            100
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 94,
+      "type": "SaveImage",
+      "pos": [
+        5070,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 100
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/arm_L"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 95,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5070,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 101
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 102
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            103
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 96,
+      "type": "SaveImage",
+      "pos": [
+        5070,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 95,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 103
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/arm_R"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 97,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5070,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 96,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 104
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 105
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            106
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 98,
+      "type": "SaveImage",
+      "pos": [
+        5070,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 97,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 106
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/leg_L"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 99,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5460,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 98,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 107
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            109
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 100,
+      "type": "SaveImage",
+      "pos": [
+        5460,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 99,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 109
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/leg_R"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 101,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5460,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 100,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 110
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 111
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 112
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            113
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 102,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5460,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 101,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 113
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 114
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 115
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            116,
+            126
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 103,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5460,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 102,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 116
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 117
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            118
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 104,
+      "type": "SaveImage",
+      "pos": [
+        5460,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 103,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 118
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/body"
+      ],
+      "title": "SaveImage"
+    },
+    {
+      "id": 105,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5460,
+        1560
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 104,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 119
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 120
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 121
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            122
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 106,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5850,
+        0
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 105,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 122
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 123
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 124
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            125
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 107,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5850,
+        260
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 106,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 125
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 126
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            128
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 108,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5850,
+        520
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 107,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 128
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 129
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 130
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            131
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 109,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        5850,
+        780
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 108,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 131
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 132
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 133
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            134
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "title": "ImageCompositeMasked"
+    },
+    {
+      "id": 110,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5850,
+        1040
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 109,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 134
+        },
+        {
+          "name": "alpha",
+          "type": "MASK",
+          "link": 135
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            136
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoinImageWithAlpha"
+      },
+      "widgets_values": [],
+      "title": "JoinImageWithAlpha"
+    },
+    {
+      "id": 111,
+      "type": "SaveImage",
+      "pos": [
+        5850,
+        1300
+      ],
+      "size": [
+        350,
+        230
+      ],
+      "flags": {},
+      "order": 110,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 136
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ProjectPA/Goyeongi_RedrawRig_20261105/illustration"
+      ],
+      "title": "SaveImage"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "BACKGROUND_REMOVAL"
+    ],
+    [
+      2,
+      1,
+      0,
+      3,
+      1,
+      "IMAGE"
+    ],
+    [
+      3,
+      4,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      3,
+      0,
+      6,
+      0,
+      "MASK"
+    ],
+    [
+      5,
+      5,
+      0,
+      6,
+      1,
+      "MASK"
+    ],
+    [
+      6,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      3,
+      0,
+      9,
+      0,
+      "MASK"
+    ],
+    [
+      8,
+      8,
+      0,
+      9,
+      1,
+      "MASK"
+    ],
+    [
+      9,
+      10,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      13,
+      0,
+      14,
+      0,
+      "MASK"
+    ],
+    [
+      11,
+      1,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      12,
+      0,
+      15,
+      1,
+      "IMAGE"
+    ],
+    [
+      13,
+      14,
+      0,
+      15,
+      2,
+      "MASK"
+    ],
+    [
+      14,
+      17,
+      0,
+      18,
+      0,
+      "MASK"
+    ],
+    [
+      15,
+      15,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      16,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      17,
+      18,
+      0,
+      19,
+      2,
+      "MASK"
+    ],
+    [
+      18,
+      20,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      3,
+      0,
+      22,
+      0,
+      "MASK"
+    ],
+    [
+      20,
+      21,
+      0,
+      22,
+      1,
+      "MASK"
+    ],
+    [
+      21,
+      22,
+      0,
+      23,
+      0,
+      "MASK"
+    ],
+    [
+      22,
+      24,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      3,
+      0,
+      26,
+      0,
+      "MASK"
+    ],
+    [
+      24,
+      25,
+      0,
+      26,
+      1,
+      "MASK"
+    ],
+    [
+      25,
+      26,
+      0,
+      27,
+      0,
+      "MASK"
+    ],
+    [
+      26,
+      28,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      3,
+      0,
+      30,
+      0,
+      "MASK"
+    ],
+    [
+      28,
+      29,
+      0,
+      30,
+      1,
+      "MASK"
+    ],
+    [
+      29,
+      30,
+      0,
+      31,
+      0,
+      "MASK"
+    ],
+    [
+      30,
+      32,
+      0,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      3,
+      0,
+      34,
+      0,
+      "MASK"
+    ],
+    [
+      32,
+      33,
+      0,
+      34,
+      1,
+      "MASK"
+    ],
+    [
+      33,
+      34,
+      0,
+      35,
+      0,
+      "MASK"
+    ],
+    [
+      34,
+      37,
+      0,
+      39,
+      0,
+      "CLIP"
+    ],
+    [
+      35,
+      37,
+      0,
+      40,
+      0,
+      "CLIP"
+    ],
+    [
+      36,
+      39,
+      0,
+      41,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      37,
+      1,
+      0,
+      42,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      38,
+      0,
+      42,
+      1,
+      "VAE"
+    ],
+    [
+      39,
+      11,
+      0,
+      42,
+      2,
+      "MASK"
+    ],
+    [
+      40,
+      36,
+      0,
+      43,
+      0,
+      "MODEL"
+    ],
+    [
+      41,
+      41,
+      0,
+      43,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      42,
+      40,
+      0,
+      43,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      43,
+      42,
+      0,
+      43,
+      3,
+      "LATENT"
+    ],
+    [
+      44,
+      43,
+      0,
+      44,
+      0,
+      "LATENT"
+    ],
+    [
+      45,
+      38,
+      0,
+      44,
+      1,
+      "VAE"
+    ],
+    [
+      46,
+      47,
+      0,
+      48,
+      0,
+      "MASK"
+    ],
+    [
+      47,
+      34,
+      0,
+      48,
+      1,
+      "MASK"
+    ],
+    [
+      48,
+      48,
+      0,
+      49,
+      0,
+      "MASK"
+    ],
+    [
+      49,
+      26,
+      0,
+      49,
+      1,
+      "MASK"
+    ],
+    [
+      50,
+      51,
+      0,
+      52,
+      0,
+      "IMAGE"
+    ],
+    [
+      51,
+      19,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      52,
+      50,
+      0,
+      53,
+      1,
+      "IMAGE"
+    ],
+    [
+      53,
+      52,
+      0,
+      53,
+      2,
+      "MASK"
+    ],
+    [
+      54,
+      55,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      55,
+      53,
+      0,
+      57,
+      0,
+      "IMAGE"
+    ],
+    [
+      56,
+      54,
+      0,
+      57,
+      1,
+      "IMAGE"
+    ],
+    [
+      57,
+      56,
+      0,
+      57,
+      2,
+      "MASK"
+    ],
+    [
+      58,
+      59,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ],
+    [
+      59,
+      57,
+      0,
+      61,
+      0,
+      "IMAGE"
+    ],
+    [
+      60,
+      58,
+      0,
+      61,
+      1,
+      "IMAGE"
+    ],
+    [
+      61,
+      60,
+      0,
+      61,
+      2,
+      "MASK"
+    ],
+    [
+      62,
+      63,
+      0,
+      64,
+      0,
+      "IMAGE"
+    ],
+    [
+      63,
+      66,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      69,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ],
+    [
+      65,
+      72,
+      0,
+      73,
+      0,
+      "IMAGE"
+    ],
+    [
+      66,
+      74,
+      0,
+      75,
+      0,
+      "IMAGE"
+    ],
+    [
+      67,
+      6,
+      0,
+      76,
+      0,
+      "MASK"
+    ],
+    [
+      68,
+      75,
+      0,
+      76,
+      1,
+      "MASK"
+    ],
+    [
+      69,
+      9,
+      0,
+      77,
+      0,
+      "MASK"
+    ],
+    [
+      70,
+      75,
+      0,
+      77,
+      1,
+      "MASK"
+    ],
+    [
+      71,
+      76,
+      0,
+      79,
+      0,
+      "MASK"
+    ],
+    [
+      72,
+      77,
+      0,
+      80,
+      0,
+      "MASK"
+    ],
+    [
+      73,
+      77,
+      0,
+      81,
+      0,
+      "MASK"
+    ],
+    [
+      74,
+      80,
+      0,
+      81,
+      1,
+      "MASK"
+    ],
+    [
+      75,
+      77,
+      0,
+      82,
+      0,
+      "MASK"
+    ],
+    [
+      76,
+      49,
+      0,
+      83,
+      0,
+      "MASK"
+    ],
+    [
+      77,
+      77,
+      0,
+      83,
+      1,
+      "MASK"
+    ],
+    [
+      78,
+      83,
+      0,
+      84,
+      0,
+      "MASK"
+    ],
+    [
+      79,
+      30,
+      0,
+      84,
+      1,
+      "MASK"
+    ],
+    [
+      80,
+      84,
+      0,
+      85,
+      0,
+      "MASK"
+    ],
+    [
+      81,
+      22,
+      0,
+      85,
+      1,
+      "MASK"
+    ],
+    [
+      82,
+      85,
+      0,
+      86,
+      0,
+      "MASK"
+    ],
+    [
+      83,
+      61,
+      0,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      84,
+      62,
+      0,
+      87,
+      1,
+      "IMAGE"
+    ],
+    [
+      85,
+      78,
+      0,
+      87,
+      2,
+      "MASK"
+    ],
+    [
+      86,
+      87,
+      0,
+      88,
+      0,
+      "IMAGE"
+    ],
+    [
+      87,
+      65,
+      0,
+      88,
+      1,
+      "IMAGE"
+    ],
+    [
+      88,
+      78,
+      0,
+      88,
+      2,
+      "MASK"
+    ],
+    [
+      89,
+      88,
+      0,
+      89,
+      0,
+      "IMAGE"
+    ],
+    [
+      90,
+      68,
+      0,
+      89,
+      1,
+      "IMAGE"
+    ],
+    [
+      91,
+      78,
+      0,
+      89,
+      2,
+      "MASK"
+    ],
+    [
+      92,
+      89,
+      0,
+      90,
+      0,
+      "IMAGE"
+    ],
+    [
+      93,
+      71,
+      0,
+      90,
+      1,
+      "IMAGE"
+    ],
+    [
+      94,
+      78,
+      0,
+      90,
+      2,
+      "MASK"
+    ],
+    [
+      95,
+      90,
+      0,
+      91,
+      0,
+      "IMAGE"
+    ],
+    [
+      96,
+      79,
+      0,
+      91,
+      1,
+      "MASK"
+    ],
+    [
+      97,
+      91,
+      0,
+      92,
+      0,
+      "IMAGE"
+    ],
+    [
+      98,
+      90,
+      0,
+      93,
+      0,
+      "IMAGE"
+    ],
+    [
+      99,
+      23,
+      0,
+      93,
+      1,
+      "MASK"
+    ],
+    [
+      100,
+      93,
+      0,
+      94,
+      0,
+      "IMAGE"
+    ],
+    [
+      101,
+      90,
+      0,
+      95,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      27,
+      0,
+      95,
+      1,
+      "MASK"
+    ],
+    [
+      103,
+      95,
+      0,
+      96,
+      0,
+      "IMAGE"
+    ],
+    [
+      104,
+      90,
+      0,
+      97,
+      0,
+      "IMAGE"
+    ],
+    [
+      105,
+      31,
+      0,
+      97,
+      1,
+      "MASK"
+    ],
+    [
+      106,
+      97,
+      0,
+      98,
+      0,
+      "IMAGE"
+    ],
+    [
+      107,
+      90,
+      0,
+      99,
+      0,
+      "IMAGE"
+    ],
+    [
+      108,
+      35,
+      0,
+      99,
+      1,
+      "MASK"
+    ],
+    [
+      109,
+      99,
+      0,
+      100,
+      0,
+      "IMAGE"
+    ],
+    [
+      110,
+      90,
+      0,
+      101,
+      0,
+      "IMAGE"
+    ],
+    [
+      111,
+      44,
+      0,
+      101,
+      1,
+      "IMAGE"
+    ],
+    [
+      112,
+      22,
+      0,
+      101,
+      2,
+      "MASK"
+    ],
+    [
+      113,
+      101,
+      0,
+      102,
+      0,
+      "IMAGE"
+    ],
+    [
+      114,
+      45,
+      0,
+      102,
+      1,
+      "IMAGE"
+    ],
+    [
+      115,
+      81,
+      0,
+      102,
+      2,
+      "MASK"
+    ],
+    [
+      116,
+      102,
+      0,
+      103,
+      0,
+      "IMAGE"
+    ],
+    [
+      117,
+      82,
+      0,
+      103,
+      1,
+      "MASK"
+    ],
+    [
+      118,
+      103,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      119,
+      46,
+      0,
+      105,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      90,
+      0,
+      105,
+      1,
+      "IMAGE"
+    ],
+    [
+      121,
+      34,
+      0,
+      105,
+      2,
+      "MASK"
+    ],
+    [
+      122,
+      105,
+      0,
+      106,
+      0,
+      "IMAGE"
+    ],
+    [
+      123,
+      90,
+      0,
+      106,
+      1,
+      "IMAGE"
+    ],
+    [
+      124,
+      26,
+      0,
+      106,
+      2,
+      "MASK"
+    ],
+    [
+      125,
+      106,
+      0,
+      107,
+      0,
+      "IMAGE"
+    ],
+    [
+      126,
+      102,
+      0,
+      107,
+      1,
+      "IMAGE"
+    ],
+    [
+      127,
+      77,
+      0,
+      107,
+      2,
+      "MASK"
+    ],
+    [
+      128,
+      107,
+      0,
+      108,
+      0,
+      "IMAGE"
+    ],
+    [
+      129,
+      90,
+      0,
+      108,
+      1,
+      "IMAGE"
+    ],
+    [
+      130,
+      30,
+      0,
+      108,
+      2,
+      "MASK"
+    ],
+    [
+      131,
+      108,
+      0,
+      109,
+      0,
+      "IMAGE"
+    ],
+    [
+      132,
+      90,
+      0,
+      109,
+      1,
+      "IMAGE"
+    ],
+    [
+      133,
+      22,
+      0,
+      109,
+      2,
+      "MASK"
+    ],
+    [
+      134,
+      109,
+      0,
+      110,
+      0,
+      "IMAGE"
+    ],
+    [
+      135,
+      86,
+      0,
+      110,
+      1,
+      "MASK"
+    ],
+    [
+      136,
+      110,
+      0,
+      111,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {}
+}

@@ -1,0 +1,18 @@
+{
+  "status": "applied_to_game",
+  "source": "Approved/Poodle/v1 preserved; original rig parts reused",
+  "workflow": "pose_api.json",
+  "head_rotation_degrees": 8,
+  "head_overlap_shift_y_px": 28,
+  "arm_rotation_degrees": {
+    "left": 26,
+    "right": -26
+  },
+  "game_changes": "Four part textures, portrait, two arm meshes and their prefab bounds; existing GUIDs and shared controller preserved",
+  "verification": {
+    "unity_compile": "passed",
+    "playmode_integration": "1/1 passed: current character card selection, saved choice, game entry, right/left Walk capture",
+    "device_test": "not run"
+  },
+  "approval": "User requested pose correction; no new character design approval claimed"
+}

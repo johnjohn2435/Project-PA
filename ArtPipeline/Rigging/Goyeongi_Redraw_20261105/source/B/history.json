@@ -1,0 +1,340 @@
+{
+  "prompt": [
+    60,
+    "96bff343-6736-4cd7-bc47-bd35023aee44",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "An original simple kawaii 2D cartoon character. An anthropomorphic TAILLESS pale grey tabby kitten standing UPRIGHT ON TWO FEET, in a natural THREE QUARTER VIEW facing RIGHT. Huge wide rounded head, very small extra plump pear-shaped torso, round tummy, two very short rounded mitten arms and two short stubby feet. Face and torso are turned together to the right, the far eye is smaller. Three broad dark grey forehead stripes, tiny black dot eyes with tiny white reflections, short simple eyebrows, a tiny cheerful mouth. Thick warm dark brown outlines. Flat pale grey color with one soft grey underside shadow, clean sharp linework, a simple charming casual game illustration. Neutral standing pose with hands slightly away from the sides. Full body, plain white background, ample margins. NO TAIL, no clothes, no props, no fur texture, no fingers, no toe lines. Draw the entire natural character as one coherent illustration."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "4": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "Batch 1 / RTX 3080 10GB"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 115302,
+          "steps": 28,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "4",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_Redraw_20261105/B/raw"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "8": {
+        "class_type": "LoadBackgroundRemovalModel",
+        "inputs": {
+          "bg_removal_name": "birefnet.safetensors"
+        },
+        "_meta": {
+          "title": "BiRefNet / background removal"
+        }
+      },
+      "9": {
+        "class_type": "RemoveBackground",
+        "inputs": {
+          "bg_removal_model": [
+            "8",
+            0
+          ],
+          "image": [
+            "6",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Foreground mask"
+        }
+      },
+      "10": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "9",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Required: foreground -> transparency"
+        }
+      },
+      "11": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "6",
+            0
+          ],
+          "alpha": [
+            "10",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Transparent RGBA"
+        }
+      },
+      "12": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_Redraw_20261105/B/master"
+        },
+        "_meta": {
+          "title": "RGBA master 768"
+        }
+      },
+      "13": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        },
+        "_meta": {
+          "title": "Unity preview 512"
+        }
+      },
+      "14": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_Redraw_20261105/B/sprite_512"
+        },
+        "_meta": {
+          "title": "RGBA sprite 512"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 3.0
+        }
+      }
+    },
+    {
+      "client_id": "f90449ef-721b-40e6-9b3a-bfee4a33d7f4",
+      "create_time": 1793879081404
+    },
+    [
+      "7",
+      "14",
+      "12"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "raw_00001_.png",
+          "subfolder": "ProjectPA\\Goyeongi_Redraw_20261105\\B",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "12": {
+      "images": [
+        {
+          "filename": "master_00001_.png",
+          "subfolder": "ProjectPA\\Goyeongi_Redraw_20261105\\B",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "14": {
+      "images": [
+        {
+          "filename": "sprite_512_00001_.png",
+          "subfolder": "ProjectPA\\Goyeongi_Redraw_20261105\\B",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "96bff343-6736-4cd7-bc47-bd35023aee44",
+          "timestamp": 1793879081406
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "8",
+            "15",
+            "16",
+            "17"
+          ],
+          "prompt_id": "96bff343-6736-4cd7-bc47-bd35023aee44",
+          "timestamp": 1793879081409
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "96bff343-6736-4cd7-bc47-bd35023aee44",
+          "timestamp": 1793879107089
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    },
+    "12": {
+      "node_id": "12",
+      "display_node": "12",
+      "parent_node": null,
+      "real_node_id": "12"
+    },
+    "14": {
+      "node_id": "14",
+      "display_node": "14",
+      "parent_node": null,
+      "real_node_id": "14"
+    }
+  }
+}

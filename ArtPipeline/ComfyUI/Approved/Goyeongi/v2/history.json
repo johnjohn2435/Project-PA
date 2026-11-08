@@ -1,0 +1,355 @@
+{
+  "prompt": [
+    9,
+    "cee761ad-8da0-4838-8075-4597de24334b",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "ProjectPA/20261104/goyeongi_minimal_F.png"
+        }
+      },
+      "2": {
+        "class_type": "LoadBackgroundRemovalModel",
+        "inputs": {
+          "bg_removal_name": "birefnet.safetensors"
+        }
+      },
+      "3": {
+        "class_type": "RemoveBackground",
+        "inputs": {
+          "bg_removal_model": [
+            "2",
+            0
+          ],
+          "image": [
+            "1",
+            0
+          ]
+        }
+      },
+      "4": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "20",
+            0
+          ],
+          "expand": 11,
+          "tapered_corners": true
+        }
+      },
+      "5": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "6": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "5",
+            0
+          ],
+          "source": [
+            "22",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "20",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "4",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "6",
+            0
+          ],
+          "alpha": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_TailRemoved_20261104/Final2/master"
+        }
+      },
+      "10": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "8",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "11": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "10",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_TailRemoved_20261104/Final2/sprite_512"
+        }
+      },
+      "12": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "3",
+            0
+          ]
+        }
+      },
+      "13": {
+        "class_type": "ImageFlip",
+        "inputs": {
+          "image": [
+            "12",
+            0
+          ],
+          "flip_method": "y-axis: horizontally"
+        }
+      },
+      "14": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "13",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "15": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "16": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 135,
+          "height": 285
+        }
+      },
+      "17": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "15",
+            0
+          ],
+          "source": [
+            "16",
+            0
+          ],
+          "x": 540,
+          "y": 280,
+          "operation": "add"
+        }
+      },
+      "18": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "17",
+            0
+          ]
+        }
+      },
+      "19": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "14",
+            0
+          ],
+          "source": [
+            "18",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "20": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "19",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "21": {
+        "class_type": "ImageFlip",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "flip_method": "y-axis: horizontally"
+        }
+      },
+      "22": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "1",
+            0
+          ],
+          "source": [
+            "21",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "17",
+            0
+          ]
+        }
+      }
+    },
+    {
+      "create_time": 1793780201732
+    },
+    [
+      "11",
+      "9"
+    ]
+  ],
+  "outputs": {
+    "9": {
+      "images": [
+        {
+          "filename": "master_00001_.png",
+          "subfolder": "ProjectPA\\Goyeongi_TailRemoved_20261104\\Final2",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "11": {
+      "images": [
+        {
+          "filename": "sprite_512_00001_.png",
+          "subfolder": "ProjectPA\\Goyeongi_TailRemoved_20261104\\Final2",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "cee761ad-8da0-4838-8075-4597de24334b",
+          "timestamp": 1793780201733
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"
+          ],
+          "prompt_id": "cee761ad-8da0-4838-8075-4597de24334b",
+          "timestamp": 1793780201736
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "cee761ad-8da0-4838-8075-4597de24334b",
+          "timestamp": 1793780201840
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "9": {
+      "node_id": "9",
+      "display_node": "9",
+      "parent_node": null,
+      "real_node_id": "9"
+    },
+    "11": {
+      "node_id": "11",
+      "display_node": "11",
+      "parent_node": null,
+      "real_node_id": "11"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "pa_common_inputs_char_dog_tint.png": "inputs\\char_dog_tint.png",
+  "pa_common_char_cat_body.png": "sprites\\char_cat\\body.png",
+  "pa_common_char_cat_arm_L.png": "sprites\\char_cat\\arm_L.png",
+  "pa_common_char_cat_arm_R.png": "sprites\\char_cat\\arm_R.png",
+  "pa_common_char_cat_leg_L.png": "sprites\\char_cat\\leg_L.png",
+  "pa_common_char_cat_leg_R.png": "sprites\\char_cat\\leg_R.png",
+  "pa_common_inputs_char_hamster_tint.png": "inputs\\char_hamster_tint.png"
+}

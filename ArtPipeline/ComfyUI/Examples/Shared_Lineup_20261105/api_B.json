@@ -1,0 +1,129 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": "Minimal hand drawn cartoon character model sheet. Three original animal friends side by side, full body, same size, same squat anatomy, same standing pose, turned slightly right. Exactly matching short wide round bodies and small heads merged together without a neck, two short arms sticking out from the sides, two stubby rounded legs. LEFT a light grey tabby cat with triangular ears and three grey forehead stripes. CENTER a cream puppy with SMALL tan floppy ears and plain forehead. RIGHT a light beige hamster with SMALL round ears and plain forehead. The bodies are identical, only ears, color and forehead markings distinguish the species. Warm dark brown BOLD continuous outlines surrounding EVERY shape. Tiny widely spaced dot eyes, tiny happy mouth, tiny straight eyebrows. Plain flat pale colors with a single subtle shadow shape. Clean simple doodle like a cozy children's cafe cartoon. Very short chubby figures, not tall. All three have bare plain colored bellies. All three have smooth round mitten hands and plain round feet. All three are TAILLESS with clean empty space around their bodies. Plain ivory background. No writing, no accessories, no rosy cheeks, no whiskers, no belly patches, no detailed shading, no gradients, no fur, no fingers."
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": ""
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1344,
+      "height": 768,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Batch 1 / RTX 3080 10GB"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 115504,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SharedLineup_20261105/B"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  },
+  "15": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    }
+  },
+  "16": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "17": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "2",
+        0
+      ],
+      "guidance": 4.0
+    }
+  }
+}

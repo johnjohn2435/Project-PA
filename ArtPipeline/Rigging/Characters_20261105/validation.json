@@ -1,0 +1,79 @@
+{
+  "png_and_pivot_checks": "passed",
+  "joints": [
+    {
+      "character": "goyeongi",
+      "part": "arm_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "goyeongi",
+      "part": "arm_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "goyeongi",
+      "part": "leg_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "goyeongi",
+      "part": "leg_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "dog",
+      "part": "arm_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "dog",
+      "part": "arm_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 253
+    },
+    {
+      "character": "dog",
+      "part": "leg_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "dog",
+      "part": "leg_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "hamster",
+      "part": "arm_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "hamster",
+      "part": "arm_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "hamster",
+      "part": "leg_L",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    },
+    {
+      "character": "hamster",
+      "part": "leg_R",
+      "joint_alpha": 255,
+      "body_cover_alpha": 254
+    }
+  ],
+  "motion_preview": "16 raster frames, same common curves and hierarchy for all skins",
+  "unity_editor_rig_validation": "not_run"
+}

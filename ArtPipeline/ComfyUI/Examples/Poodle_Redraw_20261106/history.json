@@ -1,0 +1,275 @@
+{
+  "prompt": [
+    110,
+    "a397bf60-86ec-4bc9-80a9-606a2b4fedf2",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "A very simple clean ink cartoon of ONE cute small APRICOT TOY POODLE animal friend. Full body standing upright on two tiny rounded feet, gently facing right in a nearly frontal three-quarter view. Oversized wide softly rounded head takes 65 percent of the total height. Tiny plump pear-shaped body, very short rounded arms resting at the sides, very short legs. Rounded shoulders connect gently under the head. Short rounded drooping ears close to the cheeks, only TWO broad rounded lobes per ear. Top of head is a simple soft fluffy cap with only THREE broad round bumps. Barely any interior fur detail. Two tiny black round DOT eyes with one pinpoint white glint each, tiny straight eyebrows, a small black oval button nose and a very small smiling mouth. Very sparse features. Flat warm light apricot fill, pale cream short muzzle, a small soft cream belly patch, one subdued tan underside shadow. Bold smooth continuous BLACK outlines with perfectly clean rounded joins and consistent thickness all around head, ears, arms, body and feet. The outlines are single ink strokes. Simple quiet cozy picture-book cartoon aesthetic, like a small animal character relaxing in a cafe. Clear head and body shapes suitable for cutout animation. Plain warm ivory background. No tail. No fingers, no toes, no fur hatching, no hair strands, no tiny curls, no glossy anime eyes, no white rim lighting, no realistic texture, no collar, no clothes, no props, no letters."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 116011,
+          "steps": 25,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "80",
+            0
+          ],
+          "denoise": 0.76
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleRedraw_20261106/A"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 3.5
+        }
+      },
+      "18": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_redraw_source.png"
+        }
+      },
+      "80": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "18",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        }
+      },
+      "105": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 116012,
+          "steps": 25,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "80",
+            0
+          ],
+          "denoise": 0.84
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "106": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "105",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        }
+      },
+      "107": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "106",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleRedraw_20261106/B"
+        }
+      }
+    },
+    {
+      "create_time": 1793931197747
+    },
+    [
+      "107",
+      "7"
+    ]
+  ],
+  "outputs": {
+    "107": {
+      "images": [
+        {
+          "filename": "B_00001_.png",
+          "subfolder": "ProjectPA\\PoodleRedraw_20261106",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "A_00001_.png",
+          "subfolder": "ProjectPA\\PoodleRedraw_20261106",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "a397bf60-86ec-4bc9-80a9-606a2b4fedf2",
+          "timestamp": 1793931197752
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "a397bf60-86ec-4bc9-80a9-606a2b4fedf2",
+          "timestamp": 1793931197778
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "a397bf60-86ec-4bc9-80a9-606a2b4fedf2",
+          "timestamp": 1793931258213
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "107": {
+      "node_id": "107",
+      "display_node": "107",
+      "parent_node": null,
+      "real_node_id": "107"
+    },
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    }
+  }
+}

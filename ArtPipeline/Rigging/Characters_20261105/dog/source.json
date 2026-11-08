@@ -1,0 +1,15 @@
+{
+  "approved_source": "Dog/v2",
+  "base_color": [
+    251,
+    244,
+    209
+  ],
+  "shadow_color": [
+    218,
+    212,
+    181
+  ],
+  "facing": "right_three_quarter_feature_perspective",
+  "notes": "Existing approved face features repositioned in ComfyUI; no regeneration of identity. Five complete parts."
+}

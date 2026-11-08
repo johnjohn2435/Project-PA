@@ -1,0 +1,199 @@
+{
+  "prompt": [
+    69,
+    "0080532d-56e2-4020-86ea-371c7726aa43",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "A clean character design lineup sheet, exactly THREE different cute animal friends standing side by side with generous empty space between them on a plain warm ivory background. Full bodies at the same scale and same height on one baseline. Left: pale grey mackerel tabby CAT with tiny triangular ears and only three broad charcoal forehead stripes. Middle: warm cream DOG with small tan floppy ears. Right: pale golden HAMSTER with tiny round ears. All three have the EXACT SAME short plump rounded body silhouette, identical body width, identical shoulder height, identical hip height, identical very short rounded mitten arms and tiny rounded feet, matching proportions like interchangeable skins on one common animation skeleton. Small simple heads flow into the round body, no neck. Bodies only one and a half heads tall. All are in the SAME mild three-quarter standing pose facing RIGHT, arms resting slightly away from sides. A charming minimal hand-drawn 2D cartoon with warm thick dark brown outlines, slightly wobbly simple lines, large plain color areas and only a faint underside shadow. Tiny black dot eyes with one tiny white speck, short tiny eyebrows, tiny simple happy mouth. Unclothed. No tails. No fingers. No toe lines. No cheek blush. No belly patches. No fur texture. No accessories. No props. No text. No panels. No scene. Very simple friendly understated characters from a cozy illustrated jazz cafe, but an original design, not realistic, not detailed, not glossy. Most of each character is one plain pale color. Species are distinguished only by ears, base colors and sparse forehead markings. Same camera, same pose, same anatomy."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "4": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1344,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "Batch 1 / RTX 3080 10GB"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 115501,
+          "steps": 26,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "4",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SharedLineup_20261105/A"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 3.5
+        }
+      }
+    },
+    {
+      "client_id": "bcc70fdc-ae98-4ff3-943d-474c51b4c315",
+      "create_time": 1793882471452
+    },
+    [
+      "7"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "A_00001_.png",
+          "subfolder": "ProjectPA\\SharedLineup_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 1344,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "0080532d-56e2-4020-86ea-371c7726aa43",
+          "timestamp": 1793882471454
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "3",
+            "15",
+            "16"
+          ],
+          "prompt_id": "0080532d-56e2-4020-86ea-371c7726aa43",
+          "timestamp": 1793882471456
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "0080532d-56e2-4020-86ea-371c7726aa43",
+          "timestamp": 1793882518591
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    }
+  }
+}

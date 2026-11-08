@@ -1,0 +1,2295 @@
+{
+  "prompt": [
+    57,
+    "bde91253-291b-4440-b7ce-8eeabefe96fd",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "ProjectPA/RigReady/dog_rig_source.png"
+        }
+      },
+      "2": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "1",
+            1
+          ]
+        }
+      },
+      "3": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 330,
+          "height": 210
+        }
+      },
+      "4": {
+        "class_type": "FeatherMask",
+        "inputs": {
+          "mask": [
+            "3",
+            0
+          ],
+          "left": 40,
+          "top": 35,
+          "right": 40,
+          "bottom": 40
+        }
+      },
+      "5": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 330,
+          "height": 210,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "6": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "1",
+            0
+          ],
+          "source": [
+            "5",
+            0
+          ],
+          "x": 230,
+          "y": 280,
+          "resize_source": false,
+          "mask": [
+            "4",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "8": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 768,
+          "height": 315
+        }
+      },
+      "9": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "7",
+            0
+          ],
+          "source": [
+            "8",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "10": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "6",
+            0
+          ],
+          "source": [
+            "1",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "9",
+            0
+          ]
+        }
+      },
+      "11": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "width": 37,
+          "height": 65,
+          "x": 294,
+          "y": 326
+        }
+      },
+      "12": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "13": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "12",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "13",
+            0
+          ],
+          "value": 0.45
+        }
+      },
+      "15": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "14",
+            0
+          ],
+          "expand": 5,
+          "tapered_corners": true
+        }
+      },
+      "16": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "15",
+            0
+          ],
+          "expand": -2,
+          "tapered_corners": true
+        }
+      },
+      "17": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "16",
+            0
+          ]
+        }
+      },
+      "18": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "17",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 44,
+          "height": 70,
+          "crop": "disabled"
+        }
+      },
+      "19": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "18",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "20": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 44,
+          "height": 70,
+          "crop": "disabled"
+        }
+      },
+      "21": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "10",
+            0
+          ],
+          "source": [
+            "20",
+            0
+          ],
+          "x": 355,
+          "y": 323,
+          "resize_source": false,
+          "mask": [
+            "19",
+            0
+          ]
+        }
+      },
+      "22": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "width": 37,
+          "height": 65,
+          "x": 453,
+          "y": 326
+        }
+      },
+      "23": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "22",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "24": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "23",
+            0
+          ]
+        }
+      },
+      "25": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "24",
+            0
+          ],
+          "value": 0.45
+        }
+      },
+      "26": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "25",
+            0
+          ],
+          "expand": 5,
+          "tapered_corners": true
+        }
+      },
+      "27": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "26",
+            0
+          ],
+          "expand": -2,
+          "tapered_corners": true
+        }
+      },
+      "28": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "27",
+            0
+          ]
+        }
+      },
+      "29": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "28",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 29,
+          "height": 60,
+          "crop": "disabled"
+        }
+      },
+      "30": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "29",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "22",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 29,
+          "height": 60,
+          "crop": "disabled"
+        }
+      },
+      "32": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "21",
+            0
+          ],
+          "source": [
+            "31",
+            0
+          ],
+          "x": 492,
+          "y": 328,
+          "resize_source": false,
+          "mask": [
+            "30",
+            0
+          ]
+        }
+      },
+      "33": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "width": 87,
+          "height": 46,
+          "x": 348,
+          "y": 371
+        }
+      },
+      "34": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "33",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "35": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "34",
+            0
+          ]
+        }
+      },
+      "36": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "35",
+            0
+          ],
+          "value": 0.45
+        }
+      },
+      "37": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "36",
+            0
+          ],
+          "expand": 5,
+          "tapered_corners": true
+        }
+      },
+      "38": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "37",
+            0
+          ],
+          "expand": -2,
+          "tapered_corners": true
+        }
+      },
+      "39": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "38",
+            0
+          ]
+        }
+      },
+      "40": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "39",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 75,
+          "height": 42,
+          "crop": "disabled"
+        }
+      },
+      "41": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "40",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "42": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "33",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 75,
+          "height": 42,
+          "crop": "disabled"
+        }
+      },
+      "43": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "32",
+            0
+          ],
+          "source": [
+            "42",
+            0
+          ],
+          "x": 435,
+          "y": 381,
+          "resize_source": false,
+          "mask": [
+            "41",
+            0
+          ]
+        }
+      },
+      "44": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "45": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "46": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 85,
+          "height": 110
+        }
+      },
+      "47": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "45",
+            0
+          ],
+          "source": [
+            "46",
+            0
+          ],
+          "x": 140,
+          "y": 415,
+          "operation": "add"
+        }
+      },
+      "48": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "43",
+            0
+          ],
+          "source": [
+            "44",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "47",
+            0
+          ]
+        }
+      },
+      "49": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "50": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "51": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 85,
+          "height": 110
+        }
+      },
+      "52": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "50",
+            0
+          ],
+          "source": [
+            "51",
+            0
+          ],
+          "x": 580,
+          "y": 415,
+          "operation": "add"
+        }
+      },
+      "53": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "48",
+            0
+          ],
+          "source": [
+            "49",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "52",
+            0
+          ]
+        }
+      },
+      "54": {
+        "class_type": "ImageFlip",
+        "inputs": {
+          "image": [
+            "53",
+            0
+          ],
+          "flip_method": "y-axis: horizontally"
+        }
+      },
+      "55": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "2",
+            0
+          ]
+        }
+      },
+      "56": {
+        "class_type": "ImageFlip",
+        "inputs": {
+          "image": [
+            "55",
+            0
+          ],
+          "flip_method": "y-axis: horizontally"
+        }
+      },
+      "57": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "56",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "58": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "59": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 115,
+          "height": 150
+        }
+      },
+      "60": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "58",
+            0
+          ],
+          "source": [
+            "59",
+            0
+          ],
+          "x": 575,
+          "y": 290,
+          "operation": "add"
+        }
+      },
+      "61": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "60",
+            0
+          ]
+        }
+      },
+      "62": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "57",
+            0
+          ],
+          "source": [
+            "61",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "63": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "2",
+            0
+          ],
+          "source": [
+            "62",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "64": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "53",
+            0
+          ],
+          "source": [
+            "54",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "60",
+            0
+          ]
+        }
+      },
+      "65": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "64",
+            0
+          ],
+          "width": 505,
+          "height": 400,
+          "x": 135,
+          "y": 155
+        }
+      },
+      "66": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "65",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 400,
+          "height": 470,
+          "crop": "disabled"
+        }
+      },
+      "67": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "63",
+            0
+          ]
+        }
+      },
+      "68": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "67",
+            0
+          ],
+          "width": 505,
+          "height": 400,
+          "x": 135,
+          "y": 155
+        }
+      },
+      "69": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "68",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 400,
+          "height": 470,
+          "crop": "disabled"
+        }
+      },
+      "70": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "69",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "71": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 128,
+          "height": 128
+        }
+      },
+      "72": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 1,
+          "height": 1
+        }
+      },
+      "73": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "71",
+            0
+          ],
+          "source": [
+            "72",
+            0
+          ],
+          "x": 64,
+          "y": 64,
+          "operation": "add"
+        }
+      },
+      "74": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "73",
+            0
+          ]
+        }
+      },
+      "75": {
+        "class_type": "ImageBlur",
+        "inputs": {
+          "image": [
+            "74",
+            0
+          ],
+          "blur_radius": 31,
+          "sigma": 0.33
+        }
+      },
+      "76": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "75",
+            0
+          ],
+          "width": 33,
+          "height": 33,
+          "x": 48,
+          "y": 48
+        }
+      },
+      "77": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "76",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 400,
+          "height": 420,
+          "crop": "disabled"
+        }
+      },
+      "78": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "77",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "79": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "78",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "80": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 400,
+          "height": 470
+        }
+      },
+      "81": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "80",
+            0
+          ],
+          "source": [
+            "79",
+            0
+          ],
+          "x": 0,
+          "y": 50,
+          "operation": "add"
+        }
+      },
+      "82": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 400,
+          "height": 470
+        }
+      },
+      "83": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 400,
+          "height": 250
+        }
+      },
+      "84": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "82",
+            0
+          ],
+          "source": [
+            "83",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "85": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "81",
+            0
+          ],
+          "source": [
+            "84",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "86": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "70",
+            0
+          ],
+          "source": [
+            "85",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "87": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "86",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "88": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "86",
+            0
+          ],
+          "source": [
+            "87",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "subtract"
+        }
+      },
+      "89": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 400,
+          "height": 470,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "90": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "66",
+            0
+          ],
+          "source": [
+            "89",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "88",
+            0
+          ]
+        }
+      },
+      "91": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "92": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "91",
+            0
+          ],
+          "source": [
+            "90",
+            0
+          ],
+          "x": 184,
+          "y": 180,
+          "resize_source": false
+        }
+      },
+      "93": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "94": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "93",
+            0
+          ],
+          "source": [
+            "86",
+            0
+          ],
+          "x": 184,
+          "y": 180,
+          "operation": "add"
+        }
+      },
+      "95": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "94",
+            0
+          ]
+        }
+      },
+      "96": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "92",
+            0
+          ],
+          "alpha": [
+            "95",
+            0
+          ]
+        }
+      },
+      "97": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "96",
+            0
+          ],
+          "filename_prefix": "ProjectPA/RigParts_20261105/dog/body"
+        }
+      },
+      "98": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "76",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 62,
+          "height": 112,
+          "crop": "disabled"
+        }
+      },
+      "99": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "98",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "100": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "99",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "101": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 144
+        }
+      },
+      "102": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "101",
+            0
+          ],
+          "source": [
+            "100",
+            0
+          ],
+          "x": 17,
+          "y": 10,
+          "operation": "add"
+        }
+      },
+      "103": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "102",
+            0
+          ],
+          "expand": -5,
+          "tapered_corners": true
+        }
+      },
+      "104": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "105": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "106": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "104",
+            0
+          ],
+          "source": [
+            "105",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "103",
+            0
+          ]
+        }
+      },
+      "107": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 144
+        }
+      },
+      "108": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 96,
+          "height": 48
+        }
+      },
+      "109": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "107",
+            0
+          ],
+          "source": [
+            "108",
+            0
+          ],
+          "x": 0,
+          "y": 96,
+          "operation": "add"
+        }
+      },
+      "110": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "103",
+            0
+          ],
+          "source": [
+            "109",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "111": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "112": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "106",
+            0
+          ],
+          "source": [
+            "111",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "110",
+            0
+          ]
+        }
+      },
+      "113": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "102",
+            0
+          ]
+        }
+      },
+      "114": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "112",
+            0
+          ],
+          "alpha": [
+            "113",
+            0
+          ]
+        }
+      },
+      "115": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "114",
+            0
+          ],
+          "filename_prefix": "ProjectPA/RigParts_20261105/dog/arm_L"
+        }
+      },
+      "116": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "76",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 62,
+          "height": 112,
+          "crop": "disabled"
+        }
+      },
+      "117": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "116",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "118": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "117",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "119": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 144
+        }
+      },
+      "120": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "119",
+            0
+          ],
+          "source": [
+            "118",
+            0
+          ],
+          "x": 17,
+          "y": 10,
+          "operation": "add"
+        }
+      },
+      "121": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "120",
+            0
+          ],
+          "expand": -5,
+          "tapered_corners": true
+        }
+      },
+      "122": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "123": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "124": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "122",
+            0
+          ],
+          "source": [
+            "123",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "121",
+            0
+          ]
+        }
+      },
+      "125": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 144
+        }
+      },
+      "126": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 96,
+          "height": 48
+        }
+      },
+      "127": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "125",
+            0
+          ],
+          "source": [
+            "126",
+            0
+          ],
+          "x": 0,
+          "y": 96,
+          "operation": "add"
+        }
+      },
+      "128": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "121",
+            0
+          ],
+          "source": [
+            "127",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "129": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "130": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "124",
+            0
+          ],
+          "source": [
+            "129",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "128",
+            0
+          ]
+        }
+      },
+      "131": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 144,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "132": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "130",
+            0
+          ],
+          "source": [
+            "131",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "121",
+            0
+          ]
+        }
+      },
+      "133": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "120",
+            0
+          ]
+        }
+      },
+      "134": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "132",
+            0
+          ],
+          "alpha": [
+            "133",
+            0
+          ]
+        }
+      },
+      "135": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "134",
+            0
+          ],
+          "filename_prefix": "ProjectPA/RigParts_20261105/dog/arm_R"
+        }
+      },
+      "136": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "76",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 76,
+          "height": 90,
+          "crop": "disabled"
+        }
+      },
+      "137": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "136",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "138": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "137",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "139": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 128
+        }
+      },
+      "140": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "139",
+            0
+          ],
+          "source": [
+            "138",
+            0
+          ],
+          "x": 10,
+          "y": 16,
+          "operation": "add"
+        }
+      },
+      "141": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "140",
+            0
+          ],
+          "expand": -5,
+          "tapered_corners": true
+        }
+      },
+      "142": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "143": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "144": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "142",
+            0
+          ],
+          "source": [
+            "143",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "141",
+            0
+          ]
+        }
+      },
+      "145": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 128
+        }
+      },
+      "146": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 96,
+          "height": 42
+        }
+      },
+      "147": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "145",
+            0
+          ],
+          "source": [
+            "146",
+            0
+          ],
+          "x": 0,
+          "y": 85,
+          "operation": "add"
+        }
+      },
+      "148": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "141",
+            0
+          ],
+          "source": [
+            "147",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "149": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "150": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "144",
+            0
+          ],
+          "source": [
+            "149",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "148",
+            0
+          ]
+        }
+      },
+      "151": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "140",
+            0
+          ]
+        }
+      },
+      "152": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "150",
+            0
+          ],
+          "alpha": [
+            "151",
+            0
+          ]
+        }
+      },
+      "153": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "152",
+            0
+          ],
+          "filename_prefix": "ProjectPA/RigParts_20261105/dog/leg_L"
+        }
+      },
+      "154": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "76",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 76,
+          "height": 90,
+          "crop": "disabled"
+        }
+      },
+      "155": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "154",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "156": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "155",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "157": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 128
+        }
+      },
+      "158": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "157",
+            0
+          ],
+          "source": [
+            "156",
+            0
+          ],
+          "x": 10,
+          "y": 16,
+          "operation": "add"
+        }
+      },
+      "159": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "158",
+            0
+          ],
+          "expand": -5,
+          "tapered_corners": true
+        }
+      },
+      "160": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "161": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 16512209
+        }
+      },
+      "162": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "160",
+            0
+          ],
+          "source": [
+            "161",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "159",
+            0
+          ]
+        }
+      },
+      "163": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 96,
+          "height": 128
+        }
+      },
+      "164": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 96,
+          "height": 42
+        }
+      },
+      "165": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "163",
+            0
+          ],
+          "source": [
+            "164",
+            0
+          ],
+          "x": 0,
+          "y": 85,
+          "operation": "add"
+        }
+      },
+      "166": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "159",
+            0
+          ],
+          "source": [
+            "165",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "167": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "168": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "162",
+            0
+          ],
+          "source": [
+            "167",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "166",
+            0
+          ]
+        }
+      },
+      "169": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 96,
+          "height": 128,
+          "batch_size": 1,
+          "color": 14341301
+        }
+      },
+      "170": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "168",
+            0
+          ],
+          "source": [
+            "169",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "159",
+            0
+          ]
+        }
+      },
+      "171": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "158",
+            0
+          ]
+        }
+      },
+      "172": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "170",
+            0
+          ],
+          "alpha": [
+            "171",
+            0
+          ]
+        }
+      },
+      "173": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "172",
+            0
+          ],
+          "filename_prefix": "ProjectPA/RigParts_20261105/dog/leg_R"
+        }
+      }
+    },
+    {
+      "create_time": 1793805669401
+    },
+    [
+      "173",
+      "115",
+      "135",
+      "153",
+      "97"
+    ]
+  ],
+  "outputs": {
+    "173": {
+      "images": [
+        {
+          "filename": "leg_R_00004_.png",
+          "subfolder": "ProjectPA\\RigParts_20261105\\dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 96,
+            "height": 128
+          }
+        }
+      ]
+    },
+    "115": {
+      "images": [
+        {
+          "filename": "arm_L_00004_.png",
+          "subfolder": "ProjectPA\\RigParts_20261105\\dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 96,
+            "height": 144
+          }
+        }
+      ]
+    },
+    "135": {
+      "images": [
+        {
+          "filename": "arm_R_00004_.png",
+          "subfolder": "ProjectPA\\RigParts_20261105\\dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 96,
+            "height": 144
+          }
+        }
+      ]
+    },
+    "153": {
+      "images": [
+        {
+          "filename": "leg_L_00004_.png",
+          "subfolder": "ProjectPA\\RigParts_20261105\\dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 96,
+            "height": 128
+          }
+        }
+      ]
+    },
+    "97": {
+      "images": [
+        {
+          "filename": "body_00004_.png",
+          "subfolder": "ProjectPA\\RigParts_20261105\\dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "bde91253-291b-4440-b7ce-8eeabefe96fd",
+          "timestamp": 1793805669403
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "3",
+            "4",
+            "7",
+            "8",
+            "9",
+            "45",
+            "50",
+            "58",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "89",
+            "91",
+            "93",
+            "98",
+            "99",
+            "100",
+            "101",
+            "102",
+            "103",
+            "104",
+            "107",
+            "108",
+            "109",
+            "110",
+            "113",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "122",
+            "125",
+            "126",
+            "127",
+            "128",
+            "133",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "145",
+            "146",
+            "147",
+            "148",
+            "151",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "163",
+            "164",
+            "165",
+            "166",
+            "171"
+          ],
+          "prompt_id": "bde91253-291b-4440-b7ce-8eeabefe96fd",
+          "timestamp": 1793805669453
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "bde91253-291b-4440-b7ce-8eeabefe96fd",
+          "timestamp": 1793805669823
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "173": {
+      "node_id": "173",
+      "display_node": "173",
+      "parent_node": null,
+      "real_node_id": "173"
+    },
+    "115": {
+      "node_id": "115",
+      "display_node": "115",
+      "parent_node": null,
+      "real_node_id": "115"
+    },
+    "135": {
+      "node_id": "135",
+      "display_node": "135",
+      "parent_node": null,
+      "real_node_id": "135"
+    },
+    "153": {
+      "node_id": "153",
+      "display_node": "153",
+      "parent_node": null,
+      "real_node_id": "153"
+    },
+    "97": {
+      "node_id": "97",
+      "display_node": "97",
+      "parent_node": null,
+      "real_node_id": "97"
+    }
+  }
+}

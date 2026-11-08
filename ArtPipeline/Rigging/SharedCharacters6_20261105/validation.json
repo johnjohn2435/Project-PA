@@ -1,0 +1,245 @@
+{
+  "pngs": [
+    {
+      "skin": "char_cat",
+      "part": "body",
+      "sha256": "6ce16174c5fdd8c8d9ada46646b41096baf8317a42bf976a80efcb11a2d367a1",
+      "bounds": [
+        249,
+        470,
+        519,
+        664
+      ],
+      "opaque_pixels": 42995,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_cat",
+      "part": "head",
+      "sha256": "c2e75db4dfeaa9d32c45ace97fee9592a4fdaa482e44592ba0c205e0b13753bf",
+      "bounds": [
+        85,
+        55,
+        684,
+        505
+      ],
+      "opaque_pixels": 162133,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_cat",
+      "part": "arm_L",
+      "sha256": "b42554862f7f488a7ff332bf395ddc4a95852181bf33631c61ca36c7aa3888bd",
+      "bounds": [
+        253,
+        508,
+        339,
+        621
+      ],
+      "opaque_pixels": 6939,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_cat",
+      "part": "arm_R",
+      "sha256": "ee018a9a3dfd2601a38ca50ac88e1d2c97828c7dfe0f3550e8999462a699b6ce",
+      "bounds": [
+        457,
+        508,
+        517,
+        615
+      ],
+      "opaque_pixels": 4408,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_cat",
+      "part": "leg_L",
+      "sha256": "484f5748c2c4807dcf3218a2c6b4a620d7d25cf8f3211b2741cec6392586c8d1",
+      "bounds": [
+        270,
+        585,
+        370,
+        706
+      ],
+      "opaque_pixels": 8650,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_cat",
+      "part": "leg_R",
+      "sha256": "1b76a4f5d1cdcbb5417dd971fc5064d7be91a12019717ccdf406b2fb34e82c44",
+      "bounds": [
+        398,
+        585,
+        498,
+        701
+      ],
+      "opaque_pixels": 8360,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "body",
+      "sha256": "af5c40aabe2eddc9c9f675382aedec1144aae308febb4f2cf04a4451a401c453",
+      "bounds": [
+        249,
+        470,
+        519,
+        664
+      ],
+      "opaque_pixels": 42995,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "head",
+      "sha256": "18c99e9c67c254ccbc9c39dada205895fa548658073ee0de74a5e6285d11b2f1",
+      "bounds": [
+        85,
+        55,
+        679,
+        505
+      ],
+      "opaque_pixels": 201643,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "arm_L",
+      "sha256": "a92c975a6228c00dffd229b6238c263d81fffc55260768ab0fc4107f2cdeb089",
+      "bounds": [
+        253,
+        508,
+        339,
+        621
+      ],
+      "opaque_pixels": 6939,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "arm_R",
+      "sha256": "910f2fe0a15a1ec6ae923faf219818663f6ed4ab29b22ecabf34028a4af01a86",
+      "bounds": [
+        457,
+        509,
+        517,
+        615
+      ],
+      "opaque_pixels": 4408,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "leg_L",
+      "sha256": "bca51024b6bb05522016ef5cf4e273c1be38f93eece76922dfab3a179c660d30",
+      "bounds": [
+        270,
+        585,
+        370,
+        706
+      ],
+      "opaque_pixels": 8650,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_dog",
+      "part": "leg_R",
+      "sha256": "6d8674f334c560d54de1cc9e7f0e146af2694fa033a5b1bf1f9046fe27ecb467",
+      "bounds": [
+        398,
+        585,
+        498,
+        701
+      ],
+      "opaque_pixels": 8360,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "body",
+      "sha256": "8a9c5f93890f87470c3baa75d9a5d0ac1a1bf6206f2b35f684eda9e27ca390ca",
+      "bounds": [
+        249,
+        470,
+        519,
+        664
+      ],
+      "opaque_pixels": 42995,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "head",
+      "sha256": "f8c4add176bf36ec0dd032e016711ca17e8c166b643b3982466144edc5a11a65",
+      "bounds": [
+        84,
+        56,
+        683,
+        505
+      ],
+      "opaque_pixels": 176250,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "arm_L",
+      "sha256": "650c612ad142a4537ef09f26803d50b2710a0d8e47a40e95b17f6d6205e3289a",
+      "bounds": [
+        253,
+        508,
+        339,
+        621
+      ],
+      "opaque_pixels": 6939,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "arm_R",
+      "sha256": "1a7f55e51a33e52a25326655f5bcaedaa45745fb2a3a4d512ecb0e16f9a5aaad",
+      "bounds": [
+        457,
+        509,
+        517,
+        615
+      ],
+      "opaque_pixels": 4408,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "leg_L",
+      "sha256": "7d017fc90cf7765d0989cb9736c13b855d8d8c4028b4b96c2f61fad020574fc4",
+      "bounds": [
+        270,
+        585,
+        370,
+        706
+      ],
+      "opaque_pixels": 8650,
+      "pivot_alpha": 254
+    },
+    {
+      "skin": "char_hamster",
+      "part": "leg_R",
+      "sha256": "1d06d99d33a0e99a09b2cd3fcd22802f6bf6220a74264622f8e579e57de41a83",
+      "bounds": [
+        398,
+        585,
+        498,
+        701
+      ],
+      "opaque_pixels": 8360,
+      "pivot_alpha": 254
+    }
+  ],
+  "curves_reused_for_all_skins": true,
+  "shared_hierarchy_and_pivots": true,
+  "unity_execution": "Unity 6000.3.16f1 isolated import/native clip sampling/rendering passed; not integrated in Client game",
+  "scope": "Idle and small in-place Walk; not a validated side view or attack/jump",
+  "visual_review": "neutral, +/- small walking extremes, native idle and walking captures checked",
+  "anatomy": "All skins share cat-source torso and limb alpha silhouettes, pivots and hierarchy. Species body colors are ComfyUI overlay tints; heads preserve approved portraits.",
+  "common_anatomy_alpha_max_difference": 1
+}

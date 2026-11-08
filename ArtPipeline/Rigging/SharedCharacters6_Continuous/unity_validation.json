@@ -1,0 +1,27 @@
+{
+    "unity_version": "6000.3.16f1",
+    "sprites": 18,
+    "prefabs": 3,
+    "clips": 2,
+    "pose_samples": 198,
+    "shared_controller": true,
+    "identical_local_poses": true,
+    "captures": [
+        "unity_idle_00.png",
+        "unity_idle_01.png",
+        "unity_idle_02.png",
+        "unity_idle_03.png",
+        "unity_idle_04.png",
+        "unity_idle_05.png",
+        "unity_idle_06.png",
+        "unity_idle_07.png",
+        "unity_walk_00.png",
+        "unity_walk_01.png",
+        "unity_walk_02.png",
+        "unity_walk_03.png",
+        "unity_walk_04.png",
+        "unity_walk_05.png",
+        "unity_walk_06.png",
+        "unity_walk_07.png"
+    ]
+}

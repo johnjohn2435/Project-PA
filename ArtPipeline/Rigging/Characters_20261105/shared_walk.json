@@ -1,0 +1,26 @@
+{
+  "duration_seconds": 0.64,
+  "loop": true,
+  "tracks": {
+    "body.localPositionY": {
+      "function": "base + 4*abs(sin(2*pi*t/duration)) pixels"
+    },
+    "arm_L.localRotationZ": {
+      "amplitude_degrees": -18,
+      "phase": 0
+    },
+    "arm_R.localRotationZ": {
+      "amplitude_degrees": 18,
+      "phase": 0
+    },
+    "leg_L.localRotationZ": {
+      "amplitude_degrees": 22,
+      "phase": 0
+    },
+    "leg_R.localRotationZ": {
+      "amplitude_degrees": -22,
+      "phase": 0
+    }
+  },
+  "note": "Same transforms/curves used for every skin. Raster GIF is a review render, not Unity runtime validation."
+}

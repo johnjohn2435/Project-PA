@@ -1,0 +1,619 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_master.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_face_clean_mask.png"
+    }
+  },
+  "3": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "4": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14261340
+    }
+  },
+  "5": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "4",
+        0
+      ],
+      "mask": [
+        "3",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_muzzle_clean_mask.png"
+    }
+  },
+  "7": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "8": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16245683
+    }
+  },
+  "9": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "5",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "mask": [
+        "7",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_eyes_mask.png"
+    }
+  },
+  "11": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "12": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 2366232
+    }
+  },
+  "13": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "12",
+        0
+      ],
+      "mask": [
+        "11",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_eye_glints_mask.png"
+    }
+  },
+  "15": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "14",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "16": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16776175
+    }
+  },
+  "17": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "13",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "mask": [
+        "15",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "18": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_brows_mask.png"
+    }
+  },
+  "19": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "18",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "20": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 4731173
+    }
+  },
+  "21": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "17",
+        0
+      ],
+      "source": [
+        "20",
+        0
+      ],
+      "mask": [
+        "19",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "22": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_round_nose_mask.png"
+    }
+  },
+  "23": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "22",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "24": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 3153948
+    }
+  },
+  "25": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "21",
+        0
+      ],
+      "source": [
+        "24",
+        0
+      ],
+      "mask": [
+        "23",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "26": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_nose_glint_mask.png"
+    }
+  },
+  "27": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "26",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "28": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14336675
+    }
+  },
+  "29": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "25",
+        0
+      ],
+      "source": [
+        "28",
+        0
+      ],
+      "mask": [
+        "27",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_mouth_mask.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "32": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 3153948
+    }
+  },
+  "33": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "29",
+        0
+      ],
+      "source": [
+        "32",
+        0
+      ],
+      "mask": [
+        "31",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "34": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_tongue_mask.png"
+    }
+  },
+  "35": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "34",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "36": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14257541
+    }
+  },
+  "37": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "33",
+        0
+      ],
+      "source": [
+        "36",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "38": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_smile_mask.png"
+    }
+  },
+  "39": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "38",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "40": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 3153948
+    }
+  },
+  "41": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "37",
+        0
+      ],
+      "source": [
+        "40",
+        0
+      ],
+      "mask": [
+        "39",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "42": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_foot_clean_mask.png"
+    }
+  },
+  "43": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "42",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "44": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14525024
+    }
+  },
+  "45": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "41",
+        0
+      ],
+      "source": [
+        "44",
+        0
+      ],
+      "mask": [
+        "43",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "46": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "poodle_poodle_outline_repair_mask.png"
+    }
+  },
+  "47": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "46",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "48": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 1380890
+    }
+  },
+  "49": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "45",
+        0
+      ],
+      "source": [
+        "48",
+        0
+      ],
+      "mask": [
+        "47",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "50": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "49",
+        0
+      ],
+      "alpha": [
+        "1",
+        1
+      ]
+    }
+  },
+  "51": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "50",
+        0
+      ],
+      "filename_prefix": "PA_FaceIdentity/poodle_master"
+    }
+  },
+  "52": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16381935
+    }
+  },
+  "53": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "1",
+        1
+      ]
+    }
+  },
+  "54": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "52",
+        0
+      ],
+      "source": [
+        "49",
+        0
+      ],
+      "mask": [
+        "53",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "55": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "54",
+        0
+      ],
+      "filename_prefix": "PA_FaceIdentity/poodle_preview"
+    }
+  }
+}

@@ -1,0 +1,1312 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/raw.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "2",
+        0
+      ],
+      "image": [
+        "1",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/whole_keep.png"
+    }
+  },
+  "5": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "4",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "6": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "5",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "7": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/body_keep.png"
+    }
+  },
+  "8": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "9": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/body_repair.png"
+    }
+  },
+  "11": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "12": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 25,
+      "height": 5,
+      "batch_size": 1,
+      "color": 4797740
+    }
+  },
+  "13": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 25,
+      "height": 5
+    }
+  },
+  "14": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "13",
+        0
+      ],
+      "left": 2,
+      "top": 1,
+      "right": 2,
+      "bottom": 1
+    }
+  },
+  "15": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "12",
+        0
+      ],
+      "mask": [
+        "14",
+        0
+      ],
+      "x": 387,
+      "y": 222,
+      "resize_source": false
+    }
+  },
+  "16": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 18,
+      "height": 4,
+      "batch_size": 1,
+      "color": 4797740
+    }
+  },
+  "17": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 18,
+      "height": 4
+    }
+  },
+  "18": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "17",
+        0
+      ],
+      "left": 2,
+      "top": 1,
+      "right": 2,
+      "bottom": 1
+    }
+  },
+  "19": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "15",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "mask": [
+        "18",
+        0
+      ],
+      "x": 494,
+      "y": 207,
+      "resize_source": false
+    }
+  },
+  "20": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "109",
+        0
+      ]
+    }
+  },
+  "21": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        0
+      ],
+      "alpha": [
+        "20",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "21",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/source_illustration"
+    }
+  },
+  "23": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/arm_L.png"
+    }
+  },
+  "24": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "23",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "25": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "24",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "26": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "25",
+        0
+      ]
+    }
+  },
+  "27": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        0
+      ],
+      "alpha": [
+        "26",
+        0
+      ]
+    }
+  },
+  "28": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "27",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/arm_L"
+    }
+  },
+  "29": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/arm_R.png"
+    }
+  },
+  "30": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "29",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "31": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "30",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "32": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "31",
+        0
+      ]
+    }
+  },
+  "33": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        0
+      ],
+      "alpha": [
+        "32",
+        0
+      ]
+    }
+  },
+  "34": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "33",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/arm_R"
+    }
+  },
+  "35": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/leg_L.png"
+    }
+  },
+  "36": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "35",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "37": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "36",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "38": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "37",
+        0
+      ]
+    }
+  },
+  "39": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        0
+      ],
+      "alpha": [
+        "38",
+        0
+      ]
+    }
+  },
+  "40": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "39",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/leg_L"
+    }
+  },
+  "41": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRig/leg_R.png"
+    }
+  },
+  "42": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "41",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "43": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "42",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "44": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "43",
+        0
+      ]
+    }
+  },
+  "45": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "106",
+        0
+      ],
+      "alpha": [
+        "44",
+        0
+      ]
+    }
+  },
+  "46": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "45",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/leg_R"
+    }
+  },
+  "47": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "48": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    }
+  },
+  "49": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "50": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "48",
+        0
+      ],
+      "text": "Restore the uninterrupted smooth pale grey and cream torso of this simple flat cartoon tabby kitten. A clean round cream belly area with pale grey sides and a subtle soft grey shadow underneath. Plain smooth body surface only, erase the arm line and leg joint marks from the marked areas. Match the surrounding flat colors and soft shading exactly. No arms, no hands, no legs, no feet, no tail, no extra details in the torso. Keep the rest of the drawing unchanged."
+    }
+  },
+  "51": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "48",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "52": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "50",
+        0
+      ],
+      "guidance": 3.5
+    }
+  },
+  "53": {
+    "class_type": "VAEEncodeForInpaint",
+    "inputs": {
+      "pixels": [
+        "1",
+        0
+      ],
+      "vae": [
+        "49",
+        0
+      ],
+      "mask": [
+        "11",
+        0
+      ],
+      "grow_mask_by": 4
+    }
+  },
+  "54": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "47",
+        0
+      ],
+      "seed": 115315,
+      "steps": 24,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "52",
+        0
+      ],
+      "negative": [
+        "51",
+        0
+      ],
+      "latent_image": [
+        "53",
+        0
+      ],
+      "denoise": 1.0
+    }
+  },
+  "55": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "54",
+        0
+      ],
+      "vae": [
+        "49",
+        0
+      ]
+    }
+  },
+  "56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "106",
+        0
+      ],
+      "source": [
+        "55",
+        0
+      ],
+      "mask": [
+        "25",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "57": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "110",
+        0
+      ],
+      "expand": -3,
+      "tapered_corners": true
+    }
+  },
+  "58": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "110",
+        0
+      ],
+      "source": [
+        "57",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "subtract"
+    }
+  },
+  "59": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 4797740
+    }
+  },
+  "60": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "56",
+        0
+      ],
+      "source": [
+        "59",
+        0
+      ],
+      "mask": [
+        "58",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "61": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "110",
+        0
+      ]
+    }
+  },
+  "62": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "60",
+        0
+      ],
+      "alpha": [
+        "61",
+        0
+      ]
+    }
+  },
+  "63": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "62",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/body"
+    }
+  },
+  "64": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16777215
+    }
+  },
+  "65": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "66": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "64",
+        0
+      ],
+      "source": [
+        "106",
+        0
+      ],
+      "mask": [
+        "43",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "67": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "65",
+        0
+      ],
+      "source": [
+        "43",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "add"
+    }
+  },
+  "68": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "66",
+        0
+      ],
+      "source": [
+        "106",
+        0
+      ],
+      "mask": [
+        "31",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "69": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "67",
+        0
+      ],
+      "source": [
+        "31",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "add"
+    }
+  },
+  "70": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "68",
+        0
+      ],
+      "source": [
+        "60",
+        0
+      ],
+      "mask": [
+        "110",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "71": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "69",
+        0
+      ],
+      "source": [
+        "110",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "add"
+    }
+  },
+  "72": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "70",
+        0
+      ],
+      "source": [
+        "106",
+        0
+      ],
+      "mask": [
+        "37",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "73": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "71",
+        0
+      ],
+      "source": [
+        "37",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "add"
+    }
+  },
+  "74": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "72",
+        0
+      ],
+      "source": [
+        "106",
+        0
+      ],
+      "mask": [
+        "25",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "75": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "73",
+        0
+      ],
+      "source": [
+        "25",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "add"
+    }
+  },
+  "76": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "75",
+        0
+      ]
+    }
+  },
+  "77": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "74",
+        0
+      ],
+      "alpha": [
+        "76",
+        0
+      ]
+    }
+  },
+  "78": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "77",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Goyeongi_RedrawRig_20261105/illustration"
+    }
+  },
+  "79": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 13815231
+    }
+  },
+  "80": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/cheek_near.png"
+    }
+  },
+  "81": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "80",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "82": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "19",
+        0
+      ],
+      "source": [
+        "79",
+        0
+      ],
+      "mask": [
+        "81",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "83": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 13880511
+    }
+  },
+  "84": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/cheek_far.png"
+    }
+  },
+  "85": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "84",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "86": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "82",
+        0
+      ],
+      "source": [
+        "83",
+        0
+      ],
+      "mask": [
+        "85",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "87": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 13880511
+    }
+  },
+  "88": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/whisker_erase.png"
+    }
+  },
+  "89": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "88",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "90": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "86",
+        0
+      ],
+      "source": [
+        "87",
+        0
+      ],
+      "mask": [
+        "89",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "91": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 13880511
+    }
+  },
+  "92": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/near_hand_marks.png"
+    }
+  },
+  "93": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "92",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "94": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "90",
+        0
+      ],
+      "source": [
+        "91",
+        0
+      ],
+      "mask": [
+        "111",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "95": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 13880254
+    }
+  },
+  "96": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/far_hand_marks.png"
+    }
+  },
+  "97": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "96",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "98": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "94",
+        0
+      ],
+      "source": [
+        "95",
+        0
+      ],
+      "mask": [
+        "111",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "99": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 11774621
+    }
+  },
+  "100": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/near_toes.png"
+    }
+  },
+  "101": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "100",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "102": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "98",
+        0
+      ],
+      "source": [
+        "99",
+        0
+      ],
+      "mask": [
+        "111",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "103": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 11576216
+    }
+  },
+  "104": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/far_toes.png"
+    }
+  },
+  "105": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "104",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "106": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "102",
+        0
+      ],
+      "source": [
+        "103",
+        0
+      ],
+      "mask": [
+        "111",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "107": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/GoyeongiRedrawRetouch/face_guard.png"
+    }
+  },
+  "108": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "107",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "109": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "6",
+        0
+      ],
+      "source": [
+        "108",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "110": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "108",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "111": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 768,
+      "height": 768
+    }
+  }
+}

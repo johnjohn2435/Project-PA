@@ -1,0 +1,10 @@
+{
+  "status": "review_candidate",
+  "generator": "ComfyUI FLUX.1 dev fp8 with mask-based cleanup",
+  "reference": "Ganaji_Poodle_20261105/reference.png",
+  "selected_generation": "candidate_A.png",
+  "preview": "preview.png",
+  "transparent": "master.png",
+  "game_integration": "pending",
+  "notes": "고유 실루엣을 유지한 통합 원화. 공용 본 연결은 별도 검증 필요."
+}

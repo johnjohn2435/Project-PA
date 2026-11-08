@@ -1,0 +1,13 @@
+{
+  "updated_on": "2026-11-04",
+  "status": "user_requested_eye_highlight_and_eyebrow_revision",
+  "source": "Goyeongi/v2",
+  "request": "눈에 반사광 같은 것도 넣어주고 눈썹도 넣어줘",
+  "method": "ComfyUI EmptyImage + feathered small masks + ImageCompositeMasked; preserved alpha via JoinImageWithAlpha",
+  "validation": "Edits limited to four eye/brow patches. Outside patches and alpha have at most 1/255 round-trip rounding difference.",
+  "hashes": {
+    "master.png": "f9957ab7309870a669bb66cec5d5073471c595608a0a1a17dd0f4c146d5352aa",
+    "sprite_512.png": "4cc79964f3a1327ac12f3a18af1fd354e68b8b816288df33612b45c9573b32da"
+  },
+  "unity_status": "not_integrated"
+}

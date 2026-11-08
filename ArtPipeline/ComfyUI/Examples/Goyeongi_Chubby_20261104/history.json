@@ -1,0 +1,1101 @@
+{
+  "prompt": [
+    38,
+    "aecd6528-4bc9-4081-9440-9c88ff14566a",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "ProjectPA/Chubby/goyeongi_head_source.png"
+        }
+      },
+      "2": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "1",
+            1
+          ]
+        }
+      },
+      "3": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "4": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 128,
+          "height": 128
+        }
+      },
+      "5": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 1,
+          "height": 1
+        }
+      },
+      "6": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "4",
+            0
+          ],
+          "source": [
+            "5",
+            0
+          ],
+          "x": 64,
+          "y": 64,
+          "operation": "add"
+        }
+      },
+      "7": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "6",
+            0
+          ]
+        }
+      },
+      "8": {
+        "class_type": "ImageBlur",
+        "inputs": {
+          "image": [
+            "7",
+            0
+          ],
+          "blur_radius": 31,
+          "sigma": 0.33
+        }
+      },
+      "9": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "8",
+            0
+          ],
+          "width": 33,
+          "height": 33,
+          "x": 48,
+          "y": 48
+        }
+      },
+      "10": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "11": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 15921899
+        }
+      },
+      "12": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 13948110
+        }
+      },
+      "13": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 88,
+          "height": 74,
+          "crop": "disabled"
+        }
+      },
+      "14": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "13",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "15": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "14",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "16": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "15",
+            0
+          ],
+          "x": 270,
+          "y": 641,
+          "operation": "add"
+        }
+      },
+      "17": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "16",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "18": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "11",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "16",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "19": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "18",
+            0
+          ],
+          "source": [
+            "12",
+            0
+          ],
+          "mask": [
+            "17",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "20": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "16",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "21": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 88,
+          "height": 74,
+          "crop": "disabled"
+        }
+      },
+      "22": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "21",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "23": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "22",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "24": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "23",
+            0
+          ],
+          "x": 410,
+          "y": 641,
+          "operation": "add"
+        }
+      },
+      "25": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "24",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "26": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "19",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "24",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "27": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "26",
+            0
+          ],
+          "source": [
+            "12",
+            0
+          ],
+          "mask": [
+            "25",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "28": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "20",
+            0
+          ],
+          "source": [
+            "24",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "29": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 400,
+          "height": 260,
+          "crop": "disabled"
+        }
+      },
+      "30": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "29",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "31": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "30",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "32": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "31",
+            0
+          ],
+          "x": 184,
+          "y": 425,
+          "operation": "add"
+        }
+      },
+      "33": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "32",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "34": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "27",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "32",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "35": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "34",
+            0
+          ],
+          "source": [
+            "11",
+            0
+          ],
+          "mask": [
+            "33",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "36": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 768,
+          "height": 170
+        }
+      },
+      "37": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "36",
+            0
+          ],
+          "x": 0,
+          "y": 605,
+          "operation": "add"
+        }
+      },
+      "38": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "33",
+            0
+          ],
+          "source": [
+            "37",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "39": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "35",
+            0
+          ],
+          "source": [
+            "12",
+            0
+          ],
+          "mask": [
+            "38",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "40": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "28",
+            0
+          ],
+          "source": [
+            "32",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "41": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 100,
+          "height": 68,
+          "crop": "disabled"
+        }
+      },
+      "42": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "41",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "43": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "42",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "44": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "43",
+            0
+          ],
+          "x": 155,
+          "y": 494,
+          "operation": "add"
+        }
+      },
+      "45": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "44",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "46": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "39",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "44",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "47": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "46",
+            0
+          ],
+          "source": [
+            "11",
+            0
+          ],
+          "mask": [
+            "45",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "48": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "40",
+            0
+          ],
+          "source": [
+            "44",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "49": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 100,
+          "height": 68,
+          "crop": "disabled"
+        }
+      },
+      "50": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "49",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "51": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "50",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "52": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "51",
+            0
+          ],
+          "x": 513,
+          "y": 494,
+          "operation": "add"
+        }
+      },
+      "53": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "52",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "54": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "47",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "52",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "55": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "54",
+            0
+          ],
+          "source": [
+            "11",
+            0
+          ],
+          "mask": [
+            "53",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "56": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "48",
+            0
+          ],
+          "source": [
+            "52",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "57": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 450,
+          "height": 300,
+          "crop": "disabled"
+        }
+      },
+      "58": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "57",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "59": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "58",
+            0
+          ],
+          "value": 0.0005
+        }
+      },
+      "60": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "59",
+            0
+          ],
+          "x": 159,
+          "y": 200,
+          "operation": "add"
+        }
+      },
+      "61": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 768,
+          "height": 350
+        }
+      },
+      "62": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "3",
+            0
+          ],
+          "source": [
+            "61",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "63": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "60",
+            0
+          ],
+          "source": [
+            "62",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "64": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "63",
+            0
+          ],
+          "source": [
+            "2",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "65": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "55",
+            0
+          ],
+          "source": [
+            "1",
+            0
+          ],
+          "mask": [
+            "64",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "66": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "64",
+            0
+          ],
+          "expand": -8,
+          "tapered_corners": true
+        }
+      },
+      "67": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "64",
+            0
+          ],
+          "source": [
+            "66",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "subtract"
+        }
+      },
+      "68": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "65",
+            0
+          ],
+          "source": [
+            "10",
+            0
+          ],
+          "mask": [
+            "67",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "69": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "56",
+            0
+          ],
+          "source": [
+            "64",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "add"
+        }
+      },
+      "70": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "69",
+            0
+          ]
+        }
+      },
+      "71": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "68",
+            0
+          ],
+          "alpha": [
+            "70",
+            0
+          ]
+        }
+      },
+      "72": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "71",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_Chubby_20261104/Composed/master"
+        }
+      },
+      "73": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "71",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "74": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "73",
+            0
+          ],
+          "filename_prefix": "ProjectPA/Goyeongi_Chubby_20261104/Composed/sprite_512"
+        }
+      }
+    },
+    {
+      "create_time": 1793804519430
+    },
+    [
+      "72",
+      "74"
+    ]
+  ],
+  "outputs": {
+    "72": {
+      "images": [
+        {
+          "filename": "master_00002_.png",
+          "subfolder": "ProjectPA\\Goyeongi_Chubby_20261104\\Composed",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "74": {
+      "images": [
+        {
+          "filename": "sprite_512_00002_.png",
+          "subfolder": "ProjectPA\\Goyeongi_Chubby_20261104\\Composed",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "aecd6528-4bc9-4081-9440-9c88ff14566a",
+          "timestamp": 1793804519431
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "10",
+            "11",
+            "12",
+            "36",
+            "37",
+            "61",
+            "62"
+          ],
+          "prompt_id": "aecd6528-4bc9-4081-9440-9c88ff14566a",
+          "timestamp": 1793804519456
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "aecd6528-4bc9-4081-9440-9c88ff14566a",
+          "timestamp": 1793804520152
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "72": {
+      "node_id": "72",
+      "display_node": "72",
+      "parent_node": null,
+      "real_node_id": "72"
+    },
+    "74": {
+      "node_id": "74",
+      "display_node": "74",
+      "parent_node": null,
+      "real_node_id": "74"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "status": "additional poodle-style Ganaji candidate; not approved; existing Ganaji retained",
+  "art_source": "user photo right-hand apricot toy poodle; ComfyUI FLUX img2img; source photo only reference",
+  "parts": [
+    {
+      "name": "arm_L",
+      "sha256": "da8ae559ccad1a12618c9658b0d669052a5df093c295929f0890b140acb071a6"
+    },
+    {
+      "name": "arm_R",
+      "sha256": "0b8c7c9aed1232c6eca4ca6328d83f9341f805bfeabedea890754cb415471b96"
+    },
+    {
+      "name": "body",
+      "sha256": "ab828efba6c39b474d6a6efd7012055c58e1c60baaa95bab8b2020ddba4cc76a"
+    },
+    {
+      "name": "head",
+      "sha256": "73d79182c1949fdf40413b196b5bd0d4a34567bbe912dae82f971f69f304f1e5"
+    },
+    {
+      "name": "leg_L",
+      "sha256": "b0fdbe45cda0473cd5c631562aedcbecd1e79655dc7b2bf1250e57cf3bcfc17e"
+    },
+    {
+      "name": "leg_R",
+      "sha256": "18e4bbe08af4e165d468b1e0eaf4c3d8fa8136cb8a24876a4e28c858532bbad0"
+    }
+  ],
+  "native_unity_validation": "not run for additional poodle candidate; original three-skin shared rig verified separately"
+}

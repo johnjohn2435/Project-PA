@@ -1,0 +1,194 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/FaceDetails/hamster_approved.png"
+    }
+  },
+  "2": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 8,
+      "height": 8,
+      "batch_size": 1,
+      "color": 16777215
+    }
+  },
+  "3": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 8,
+      "height": 8
+    }
+  },
+  "4": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "3",
+        0
+      ],
+      "left": 3,
+      "top": 3,
+      "right": 3,
+      "bottom": 3
+    }
+  },
+  "5": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 24,
+      "height": 7,
+      "batch_size": 1,
+      "color": 2367775
+    }
+  },
+  "6": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 24,
+      "height": 7
+    }
+  },
+  "7": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "6",
+        0
+      ],
+      "left": 3,
+      "top": 2,
+      "right": 3,
+      "bottom": 2
+    }
+  },
+  "8": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "mask": [
+        "4",
+        0
+      ],
+      "x": 302,
+      "y": 360,
+      "resize_source": false
+    }
+  },
+  "9": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "8",
+        0
+      ],
+      "source": [
+        "5",
+        0
+      ],
+      "mask": [
+        "7",
+        0
+      ],
+      "x": 299,
+      "y": 332,
+      "resize_source": false
+    }
+  },
+  "10": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "mask": [
+        "4",
+        0
+      ],
+      "x": 463,
+      "y": 360,
+      "resize_source": false
+    }
+  },
+  "11": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "10",
+        0
+      ],
+      "source": [
+        "5",
+        0
+      ],
+      "mask": [
+        "7",
+        0
+      ],
+      "x": 460,
+      "y": 332,
+      "resize_source": false
+    }
+  },
+  "12": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "alpha": [
+        "1",
+        1
+      ]
+    }
+  },
+  "13": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "filename_prefix": "ProjectPA/FaceDetails_20261104/hamster/master"
+    }
+  },
+  "14": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "12",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "15": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ],
+      "filename_prefix": "ProjectPA/FaceDetails_20261104/hamster/sprite_512"
+    }
+  }
+}

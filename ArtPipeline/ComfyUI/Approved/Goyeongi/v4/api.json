@@ -1,0 +1,289 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ProjectPA/ShortArms/goyeongi_before_arms.png"
+    }
+  },
+  "2": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "1",
+        1
+      ]
+    }
+  },
+  "3": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 128,
+      "height": 128
+    }
+  },
+  "4": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 1,
+      "height": 1
+    }
+  },
+  "5": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "4",
+        0
+      ],
+      "x": 64,
+      "y": 64,
+      "operation": "add"
+    }
+  },
+  "6": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "5",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "ImageBlur",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "blur_radius": 31,
+      "sigma": 0.33
+    }
+  },
+  "8": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "9": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "8",
+        0
+      ],
+      "value": 0.0005
+    }
+  },
+  "10": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "9",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "width": 37,
+      "height": 37,
+      "x": 46,
+      "y": 46
+    }
+  },
+  "12": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "upscale_method": "bicubic",
+      "width": 56,
+      "height": 96,
+      "crop": "disabled"
+    }
+  },
+  "13": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "12",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "14": {
+    "class_type": "GrowMask",
+    "inputs": {
+      "mask": [
+        "13",
+        0
+      ],
+      "expand": -5,
+      "tapered_corners": true
+    }
+  },
+  "15": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "13",
+        0
+      ],
+      "source": [
+        "14",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "subtract"
+    }
+  },
+  "16": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 56,
+      "height": 42
+    }
+  },
+  "17": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "15",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "subtract"
+    }
+  },
+  "18": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 56,
+      "height": 96,
+      "batch_size": 1,
+      "color": 4143154
+    }
+  },
+  "19": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "18",
+        0
+      ],
+      "x": 230,
+      "y": 415,
+      "resize_source": false,
+      "mask": [
+        "17",
+        0
+      ]
+    }
+  },
+  "20": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "19",
+        0
+      ],
+      "source": [
+        "18",
+        0
+      ],
+      "x": 480,
+      "y": 415,
+      "resize_source": false,
+      "mask": [
+        "17",
+        0
+      ]
+    }
+  },
+  "21": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "2",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "20",
+        0
+      ],
+      "alpha": [
+        "21",
+        0
+      ]
+    }
+  },
+  "23": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ShortArms_20261104/goyeongi/master"
+    }
+  },
+  "24": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "22",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "25": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "24",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ShortArms_20261104/goyeongi/sprite_512"
+    }
+  }
+}

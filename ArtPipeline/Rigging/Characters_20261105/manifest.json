@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-05",
+  "status": "rigging_asset_prototype_not_new_design_approval",
+  "parts_per_character": [
+    "body",
+    "arm_L",
+    "arm_R",
+    "leg_L",
+    "leg_R"
+  ],
+  "characters": [
+    "goyeongi",
+    "dog",
+    "hamster"
+  ],
+  "facing": "right-biased three-quarter facial arrangement, mirrored for left; not a fully redrawn anatomical profile",
+  "art_pipeline": "ComfyUI approved-source edits, masks, feature perspective layout, body cleaning, separate complete limbs; tail-free",
+  "review_only": "Python renders composite/GIF and validates PNGs/pivots; it does not draw source sprite parts",
+  "unity_status": "optional importer source prepared; not compiled or executed; no SpriteSkin mesh weights created",
+  "hashes": {
+    "lineup.png": "bcf23aea7da9ab5eb48d56b5d530af9f57bfdd643da49b2d18f0ecff89b8e202",
+    "parts_sheet.png": "ea709152bc046aa36f8fde5bfd1434828e449d60e06f3f6f567063729b6b1316",
+    "dog\\arm_L.png": "d0ca9d67f3edf9ba507b2571c58bb2fe7b27e5da21316e6e1618169aa9639c94",
+    "dog\\arm_R.png": "41056b97f8a50b103a87a2d58b943207c56ffc489280e7a0fcf8b14e96d62806",
+    "dog\\assembled_left.png": "e25f3f2c0b38725e9ceef68ad44684bba0b850df3b7cfe459165ddecd13cb300",
+    "dog\\assembled_right.png": "dd1d69e96ea72f6b6e1e38fc2471c5c7b9a80fb74c053789794a297814ef22b4",
+    "dog\\body.png": "83c91b989dd977ca4bff6a3f6356fc62e68f562d477bf9d797a523f412fe8859",
+    "dog\\leg_L.png": "d5d76d5c9cea3a5e6c3f118e24c17c71a8f0d98436b9041ca32e80df59b9acb4",
+    "dog\\leg_R.png": "fcaae286fd53cf93f1be5a8ecdbdd8176580a7783c71e4738c4b02d2739bdef6",
+    "goyeongi\\arm_L.png": "57e3f9a29858d83c2cdaf9e698c865dc1d52af0aadacd88a73c8f5f3dedac8e7",
+    "goyeongi\\arm_R.png": "1fb81a15ac679cc5e1edb2493f9c6faf83213e8f1125cc65a5338b9e18c56ffa",
+    "goyeongi\\assembled_left.png": "16bcc35c5b05dd98126b4d9c67dc52563064435a9233657637109786f22ff959",
+    "goyeongi\\assembled_right.png": "24aafa494b7b7db7d0f9a777114284f79db42ad8d7ff71f69ceef5fce01e72bc",
+    "goyeongi\\body.png": "b9ea6a75b5a653c347f948cfcfa18c2c4a6e2f44a04b1dc89f6962f139b510dd",
+    "goyeongi\\leg_L.png": "f90efc7ba43acf4163869327708bed3386ae381fc3ebf9f5b301faf2ff927b6e",
+    "goyeongi\\leg_R.png": "18bf6f79a2b4aa240c62da45db68ae3bdb88f745b6cefa9704810e5ec20f709a",
+    "hamster\\arm_L.png": "0c36b1cfe00efa5ff269cf6e41a4208ff6e62bc92593609c186b6e3ddf6d088a",
+    "hamster\\arm_R.png": "28df5684139b2c067305b43bdde3d6b9b385b1bb5ac23192374a3a367a4d617a",
+    "hamster\\assembled_left.png": "674d560a559bad671a3cad3a4feeee926a91f42d461d4e07fe0a1b51e1d8f716",
+    "hamster\\assembled_right.png": "8eec44c74b3d3e7a7a127fbae57c493180824f958a8e28c4b5325f663e3ba357",
+    "hamster\\body.png": "ca3295dc375d1b294daa370ea7d1b4458b65c15b79d2057b8c5d4c0cd065aaed",
+    "hamster\\leg_L.png": "7c8ef20976c61bb16665a3df1010f7d49e6c0c4290dd169ea6b408f4bd17c8ad",
+    "hamster\\leg_R.png": "2937b80f4518097d8caf8f284fef98afbdc196706c22c2094f14f45eff633f96",
+    "sources\\dog.png": "50c0fcae3ce82cbb906b6f0d82536d0679070b8c9d37607627ef067206c8856d",
+    "sources\\goyeongi.png": "f9957ab7309870a669bb66cec5d5073471c595608a0a1a17dd0f4c146d5352aa",
+    "sources\\hamster.png": "a74e434b25b254b5a1bed315d7ff71580065896a03f6d5d1f1fafabb7aff9ca0"
+  }
+}

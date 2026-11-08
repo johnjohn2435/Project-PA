@@ -1,0 +1,111 @@
+#if UNITY_EDITOR
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
+using UnityEditor.Animations;
+using UnityEngine;
+namespace ProjectPA.ArtPipeline.Editor
+{
+    public static class ImportSharedCharacterRig
+    {
+        [Serializable] public sealed class Spec { public float pixels_per_unit; public Bone[] bones; public string[] draw_order; public Skin[] skins; }
+        [Serializable] public sealed class Bone { public string name; public string parent; public float[] unity_local_position; public float[] sprite_pivot_normalized; }
+        [Serializable] public sealed class Skin { public string key; }
+        const string Target = "Assets/_Project/Art/Characters/RigPrototype_20261105";
+        [MenuItem("Tools/Project PA/Art/Import Shared Rig Prototype")]
+        public static void Import()
+        {
+            var client = Directory.GetParent(Application.dataPath).FullName;
+            var repo = Directory.GetParent(client).FullName;
+            var source = Path.Combine(repo, "ArtPipeline/Rigging/Characters_20261105");
+            var spec = JsonUtility.FromJson<Spec>(File.ReadAllText(Path.Combine(source, "shared_rig_unity.json")));
+            var destination = Path.Combine(client, Target);
+            if (Directory.Exists(destination)) throw new InvalidOperationException(destination);
+            foreach (var skin in spec.skins)
+            {
+                Directory.CreateDirectory(Path.Combine(destination, skin.key));
+                foreach (var bone in spec.bones)
+                    File.Copy(Path.Combine(source, skin.key, bone.name + ".png"), Path.Combine(destination, skin.key, bone.name + ".png"), false);
+            }
+            AssetDatabase.Refresh();
+            foreach (var skin in spec.skins) foreach (var bone in spec.bones)
+            {
+                var path = Target + "/" + skin.key + "/" + bone.name + ".png";
+                var importer = (TextureImporter)AssetImporter.GetAtPath(path);
+                importer.textureType = TextureImporterType.Sprite;
+                importer.spriteImportMode = SpriteImportMode.Single;
+                importer.spritePixelsPerUnit = spec.pixels_per_unit;
+                importer.alphaIsTransparency = true;
+                importer.mipmapEnabled = false;
+                importer.filterMode = FilterMode.Bilinear;
+                importer.textureCompression = TextureImporterCompression.Uncompressed;
+                var settings = new TextureImporterSettings();
+                importer.ReadTextureSettings(settings);
+                settings.spriteAlignment = (int)SpriteAlignment.Custom;
+                settings.spritePivot = new Vector2(bone.sprite_pivot_normalized[0], bone.sprite_pivot_normalized[1]);
+                settings.spriteMeshType = SpriteMeshType.FullRect;
+                importer.SetTextureSettings(settings);
+                importer.SaveAndReimport();
+            }
+            var body = Array.Find(spec.bones, b => b.name == "body");
+            var idle = MakeClip(Target + "/Idle.anim", "Idle", 1f, false, body.unity_local_position[1], spec.pixels_per_unit);
+            var walk = MakeClip(Target + "/Walk.anim", "Walk", .64f, true, body.unity_local_position[1], spec.pixels_per_unit);
+            var controller = AnimatorController.CreateAnimatorControllerAtPath(Target + "/SharedCharacter.controller");
+            controller.AddParameter("Speed", AnimatorControllerParameterType.Float);
+            var machine = controller.layers[0].stateMachine;
+            var idleState = machine.AddState("Idle"); idleState.motion = idle;
+            var walkState = machine.AddState("Walk"); walkState.motion = walk;
+            machine.defaultState = idleState;
+            var toWalk = idleState.AddTransition(walkState); toWalk.hasExitTime = false; toWalk.duration = .1f; toWalk.AddCondition(AnimatorConditionMode.Greater, .05f, "Speed");
+            var toIdle = walkState.AddTransition(idleState); toIdle.hasExitTime = false; toIdle.duration = .1f; toIdle.AddCondition(AnimatorConditionMode.Less, .05f, "Speed");
+            foreach (var skin in spec.skins)
+            {
+                var root = new GameObject("CharacterRig");
+                try
+                {
+                    var transforms = new Dictionary<string, Transform>(StringComparer.Ordinal) { ["root"] = root.transform };
+                    foreach (var bone in spec.bones)
+                    {
+                        var node = new GameObject(bone.name);
+                        node.transform.SetParent(transforms[bone.parent], false);
+                        var xyz = bone.unity_local_position;
+                        node.transform.localPosition = new Vector3(xyz[0], xyz[1], xyz[2]);
+                        transforms.Add(bone.name, node.transform);
+                        var renderer = node.AddComponent<SpriteRenderer>();
+                        renderer.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(Target + "/" + skin.key + "/" + bone.name + ".png");
+                        renderer.sortingOrder = Array.IndexOf(spec.draw_order, bone.name);
+                    }
+                    var animator = root.AddComponent<Animator>();
+                    animator.runtimeAnimatorController = controller;
+                    animator.applyRootMotion = false;
+                    PrefabUtility.SaveAsPrefabAsset(root, Target + "/" + skin.key + "/CharacterRig.prefab");
+                }
+                finally { UnityEngine.Object.DestroyImmediate(root); }
+            }
+            AssetDatabase.SaveAssets();
+        }
+        static AnimationClip MakeClip(string path, string name, float duration, bool moving, float baseY, float ppu)
+        {
+            var clip = new AnimationClip { name = name, frameRate = 30f, wrapMode = WrapMode.Loop };
+            var body = new AnimationCurve();
+            for (int i = 0; i <= 32; i++)
+            {
+                float t = duration * i / 32f, phase = 2f * Mathf.PI * i / 32f;
+                body.AddKey(t, baseY + (moving ? 4f * Mathf.Abs(Mathf.Sin(phase)) : 2f * Mathf.Sin(phase)) / ppu);
+            }
+            AnimationUtility.SetEditorCurve(clip, EditorCurveBinding.FloatCurve("body", typeof(Transform), "m_LocalPosition.y"), body);
+            foreach (var part in new[] { "arm_L", "arm_R", "leg_L", "leg_R" })
+            {
+                float amplitude = moving ? (part == "arm_L" ? -18f : part == "arm_R" ? 18f : part == "leg_L" ? 22f : -22f) : 0f;
+                var curve = new AnimationCurve();
+                for (int i = 0; i <= 32; i++) curve.AddKey(duration * i / 32f, amplitude * Mathf.Sin(2f * Mathf.PI * i / 32f));
+                AnimationUtility.SetEditorCurve(clip, EditorCurveBinding.FloatCurve("body/" + part, typeof(Transform), "localEulerAnglesRaw.z"), curve);
+            }
+            var settings = AnimationUtility.GetAnimationClipSettings(clip); settings.loopTime = true; AnimationUtility.SetAnimationClipSettings(clip, settings);
+            AssetDatabase.CreateAsset(clip, path);
+            return clip;
+        }
+    }
+}
+#endif

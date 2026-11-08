@@ -1,0 +1,1017 @@
+{
+  "prompt": [
+    91,
+    "a818494c-b17e-4190-a5e0-1e583eee34df",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_poodle_ganaji_20261105_raw.png"
+        }
+      },
+      "2": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_black.png"
+        }
+      },
+      "3": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_eye_fill.png"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_eye_erase.png"
+        }
+      },
+      "5": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "4",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "6": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "1",
+            0
+          ],
+          "source": [
+            "3",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "5",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "x": 291,
+          "y": 304,
+          "width": 51,
+          "height": 69
+        }
+      },
+      "8": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "7",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 25,
+          "height": 34,
+          "crop": "disabled"
+        }
+      },
+      "9": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_eye_small_mask.png"
+        }
+      },
+      "10": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "9",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "11": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "6",
+            0
+          ],
+          "source": [
+            "8",
+            0
+          ],
+          "x": 303,
+          "y": 321,
+          "resize_source": false,
+          "mask": [
+            "10",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "x": 426,
+          "y": 316,
+          "width": 54,
+          "height": 71
+        }
+      },
+      "13": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "12",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 25,
+          "height": 34,
+          "crop": "disabled"
+        }
+      },
+      "14": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_eye_small_mask.png"
+        }
+      },
+      "15": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "14",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "16": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "11",
+            0
+          ],
+          "source": [
+            "13",
+            0
+          ],
+          "x": 440,
+          "y": 333,
+          "resize_source": false,
+          "mask": [
+            "15",
+            0
+          ]
+        }
+      },
+      "17": {
+        "class_type": "LoadBackgroundRemovalModel",
+        "inputs": {
+          "bg_removal_name": "birefnet.safetensors"
+        }
+      },
+      "18": {
+        "class_type": "RemoveBackground",
+        "inputs": {
+          "bg_removal_model": [
+            "17",
+            0
+          ],
+          "image": [
+            "1",
+            0
+          ]
+        }
+      },
+      "19": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_head_keep.png"
+        }
+      },
+      "20": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "19",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "21": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "18",
+            0
+          ],
+          "source": [
+            "20",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "22": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "16",
+            0
+          ],
+          "x": 103,
+          "y": 90,
+          "width": 545,
+          "height": 385
+        }
+      },
+      "23": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "21",
+            0
+          ]
+        }
+      },
+      "24": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "23",
+            0
+          ],
+          "x": 103,
+          "y": 90,
+          "width": 545,
+          "height": 385
+        }
+      },
+      "25": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "22",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 600,
+          "height": 450,
+          "crop": "disabled"
+        }
+      },
+      "26": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "24",
+            0
+          ],
+          "upscale_method": "bicubic",
+          "width": 600,
+          "height": 450,
+          "crop": "disabled"
+        }
+      },
+      "27": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "26",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "28": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 0.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "29": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "28",
+            0
+          ],
+          "source": [
+            "27",
+            0
+          ],
+          "x": 84,
+          "y": 55,
+          "operation": "add"
+        }
+      },
+      "30": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "2",
+            0
+          ],
+          "source": [
+            "25",
+            0
+          ],
+          "x": 84,
+          "y": 55,
+          "resize_source": false
+        }
+      },
+      "31": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "29",
+            0
+          ]
+        }
+      },
+      "32": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "30",
+            0
+          ],
+          "alpha": [
+            "31",
+            0
+          ]
+        }
+      },
+      "33": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "32",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/head"
+        }
+      },
+      "34": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_inputs_body_tint.png"
+        }
+      },
+      "35": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_char_cat_body.png"
+        }
+      },
+      "36": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "35",
+            0
+          ],
+          "image2": [
+            "34",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "multiply"
+        }
+      },
+      "37": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "36",
+            0
+          ],
+          "alpha": [
+            "35",
+            1
+          ]
+        }
+      },
+      "38": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "37",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/body"
+        }
+      },
+      "39": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "35",
+            1
+          ]
+        }
+      },
+      "40": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_char_cat_arm_L.png"
+        }
+      },
+      "41": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "40",
+            0
+          ],
+          "image2": [
+            "34",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "multiply"
+        }
+      },
+      "42": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "41",
+            0
+          ],
+          "alpha": [
+            "40",
+            1
+          ]
+        }
+      },
+      "43": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "42",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/arm_L"
+        }
+      },
+      "44": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "40",
+            1
+          ]
+        }
+      },
+      "45": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_char_cat_arm_R.png"
+        }
+      },
+      "46": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "45",
+            0
+          ],
+          "image2": [
+            "34",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "multiply"
+        }
+      },
+      "47": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "46",
+            0
+          ],
+          "alpha": [
+            "45",
+            1
+          ]
+        }
+      },
+      "48": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "47",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/arm_R"
+        }
+      },
+      "49": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "45",
+            1
+          ]
+        }
+      },
+      "50": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_char_cat_leg_L.png"
+        }
+      },
+      "51": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "50",
+            0
+          ],
+          "image2": [
+            "34",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "multiply"
+        }
+      },
+      "52": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "51",
+            0
+          ],
+          "alpha": [
+            "50",
+            1
+          ]
+        }
+      },
+      "53": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "52",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/leg_L"
+        }
+      },
+      "54": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "50",
+            1
+          ]
+        }
+      },
+      "55": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_char_cat_leg_R.png"
+        }
+      },
+      "56": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "55",
+            0
+          ],
+          "image2": [
+            "34",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "multiply"
+        }
+      },
+      "57": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "56",
+            0
+          ],
+          "alpha": [
+            "55",
+            1
+          ]
+        }
+      },
+      "58": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "57",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/leg_R"
+        }
+      },
+      "59": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "55",
+            1
+          ]
+        }
+      },
+      "60": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_poodle_final_poodle_ganaji_20261105_blank.png"
+        }
+      },
+      "61": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "60",
+            0
+          ],
+          "source": [
+            "56",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "59",
+            0
+          ]
+        }
+      },
+      "62": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "61",
+            0
+          ],
+          "source": [
+            "51",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "54",
+            0
+          ]
+        }
+      },
+      "63": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "62",
+            0
+          ],
+          "source": [
+            "36",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "39",
+            0
+          ]
+        }
+      },
+      "64": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "63",
+            0
+          ],
+          "source": [
+            "46",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "49",
+            0
+          ]
+        }
+      },
+      "65": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "64",
+            0
+          ],
+          "source": [
+            "41",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "44",
+            0
+          ]
+        }
+      },
+      "66": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "65",
+            0
+          ],
+          "source": [
+            "30",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "29",
+            0
+          ]
+        }
+      },
+      "67": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "66",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleGanaji_20261105/preview"
+        }
+      }
+    },
+    {
+      "client_id": "10978f8d-1409-4508-b46e-71de5600b612",
+      "create_time": 1793885580809
+    },
+    [
+      "53",
+      "33",
+      "48",
+      "43",
+      "67",
+      "58",
+      "38"
+    ]
+  ],
+  "outputs": {
+    "33": {
+      "images": [
+        {
+          "filename": "head_00002_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "53": {
+      "images": [
+        {
+          "filename": "leg_L_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "48": {
+      "images": [
+        {
+          "filename": "arm_R_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "43": {
+      "images": [
+        {
+          "filename": "arm_L_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "38": {
+      "images": [
+        {
+          "filename": "body_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "58": {
+      "images": [
+        {
+          "filename": "leg_R_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "67": {
+      "images": [
+        {
+          "filename": "preview_00003_.png",
+          "subfolder": "ProjectPA\\PoodleGanaji_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "a818494c-b17e-4190-a5e0-1e583eee34df",
+          "timestamp": 1793885580811
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "35",
+            "39",
+            "40",
+            "44",
+            "45",
+            "49",
+            "50",
+            "54",
+            "55",
+            "59",
+            "60"
+          ],
+          "prompt_id": "a818494c-b17e-4190-a5e0-1e583eee34df",
+          "timestamp": 1793885580875
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "a818494c-b17e-4190-a5e0-1e583eee34df",
+          "timestamp": 1793885581277
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "33": {
+      "node_id": "33",
+      "display_node": "33",
+      "parent_node": null,
+      "real_node_id": "33"
+    },
+    "53": {
+      "node_id": "53",
+      "display_node": "53",
+      "parent_node": null,
+      "real_node_id": "53"
+    },
+    "48": {
+      "node_id": "48",
+      "display_node": "48",
+      "parent_node": null,
+      "real_node_id": "48"
+    },
+    "43": {
+      "node_id": "43",
+      "display_node": "43",
+      "parent_node": null,
+      "real_node_id": "43"
+    },
+    "38": {
+      "node_id": "38",
+      "display_node": "38",
+      "parent_node": null,
+      "real_node_id": "38"
+    },
+    "58": {
+      "node_id": "58",
+      "display_node": "58",
+      "parent_node": null,
+      "real_node_id": "58"
+    },
+    "67": {
+      "node_id": "67",
+      "display_node": "67",
+      "parent_node": null,
+      "real_node_id": "67"
+    }
+  }
+}

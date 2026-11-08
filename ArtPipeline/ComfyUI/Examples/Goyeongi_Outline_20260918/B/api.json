@@ -1,0 +1,224 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": "A very simple cute hand-drawn 2D cartoon mascot of ONE small grey mackerel tabby cat, full body alone centered on a plain warm cream background. Very thick soft dark brown outlines around the entire silhouette and every paw. The cat is a single squat round potato shape with small rounded triangle ears and a tiny short body merging into its wide face. Two TINY solid dark brown dots for eyes, with no white dots or eye shine. A tiny joyful open mouth with a peach tongue, a small cream muzzle patch. Warm light grey flat solid body color. Only three short dark brown strokes on the forehead and two short broad dark brown stripe marks on each cheek, two bands on a small curved tail. Very short mitten arms and rounded feet with no fingers or toe lines. No clothes, no scarf, no hat, no objects. Simple charming Korean casual game cartoon doodle, maximum simplicity, only four flat colors. No shading, no gradients, no fur texture, no fine lines, no eyelashes, no text. The head takes up seventy percent of the overall height. The body below the face is extremely short and wide, with two tiny rounded arms attached to the sides and two tiny semicircle feet without toe marks. Rounded ear tips. A little cheerful open U-shaped mouth with a pink tongue. No large belly patch. No ground shadow. The final shape is much wider than it is tall, a low squat dumpling shape. The whole cat should be easily drawn by a child in twenty strokes."
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": ""
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Batch 1 / RTX 3080 10GB"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 182902,
+      "steps": 20,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "Turbo: CFG 2 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/GoyeongiReference_v2/Flux2/raw"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  },
+  "8": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    },
+    "_meta": {
+      "title": "BiRefNet / background removal"
+    }
+  },
+  "9": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "8",
+        0
+      ],
+      "image": [
+        "6",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Foreground mask"
+    }
+  },
+  "10": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "9",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Required: foreground -> transparency"
+    }
+  },
+  "11": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "alpha": [
+        "10",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Transparent RGBA"
+    }
+  },
+  "12": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "ProjectPA/GoyeongiReference_v2/Flux2/master"
+    },
+    "_meta": {
+      "title": "RGBA master 1024"
+    }
+  },
+  "13": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Unity preview 512"
+    }
+  },
+  "14": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ],
+      "filename_prefix": "ProjectPA/GoyeongiReference_v2/Flux2/sprite_512"
+    },
+    "_meta": {
+      "title": "RGBA sprite 512"
+    }
+  },
+  "15": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    }
+  },
+  "16": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "17": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "2",
+        0
+      ],
+      "guidance": 3.5
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_dir_tail.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_dir_Portrait.png"
+    }
+  },
+  "3": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "1",
+        1
+      ]
+    }
+  },
+  "4": {
+    "class_type": "ImageFlip",
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "flip_method": "y-axis: horizontally"
+    }
+  },
+  "5": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "4",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "2",
+        0
+      ],
+      "source_alpha": [
+        "2",
+        1
+      ],
+      "destination": [
+        "5",
+        0
+      ],
+      "destination_alpha": [
+        "5",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "7": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "alpha": [
+        "6",
+        1
+      ]
+    }
+  },
+  "8": {
+    "class_type": "ImageFlip",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "flip_method": "y-axis: horizontally"
+    }
+  },
+  "9": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 1536,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16447471
+    }
+  },
+  "11": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "9",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "10",
+        0
+      ],
+      "source": [
+        "9",
+        0
+      ],
+      "mask": [
+        "11",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "13": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "6",
+        1
+      ]
+    }
+  },
+  "14": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "12",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "mask": [
+        "13",
+        0
+      ],
+      "x": 768,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "15": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Darami/left"
+    }
+  },
+  "16": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Darami/right"
+    }
+  },
+  "17": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "14",
+        0
+      ],
+      "width": 1024,
+      "height": 512,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "18": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "17",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Darami/directions"
+    }
+  }
+}

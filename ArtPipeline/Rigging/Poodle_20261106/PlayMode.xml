@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="43" result="Passed" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:35Z" duration="8.8912891">
+  <test-suite type="TestSuite" id="1067" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:35Z" duration="8.891289" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1026" name="PocketArcade.BlockGravity.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.BlockGravity.PlayMode.Tests.dll" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:34Z" duration="8.316033" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="61364" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1027" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:34Z" duration="8.315313" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1028" name="Tests" fullname="PocketArcade.Tests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:34Z" duration="8.314953" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1029" name="BlockGravityPlayMode" fullname="PocketArcade.Tests.BlockGravityPlayMode" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:34Z" duration="8.314611" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="GameplayTests" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:34Z" duration="8.313366" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="AudioIconsAreDisabledWithoutDataAndRefreshWhileOpen" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.AudioIconsAreDisabledWithoutDataAndRefreshWhileOpen" methodname="AudioIconsAreDisabledWithoutDataAndRefreshWhileOpen" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="92773975" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:26Z" duration="0.281743" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="AudioIconSaveFailureKeepsSavedStateAndCanRetry" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.AudioIconSaveFailureKeepsSavedStateAndCanRetry" methodname="AudioIconSaveFailureKeepsSavedStateAndCanRetry" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="558523866" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:26Z" duration="0.015787" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="AudioIconsToggleIndependentlySaveAndApplyToSoundManager" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.AudioIconsToggleIndependentlySaveAndApplyToSoundManager" methodname="AudioIconsToggleIndependentlySaveAndApplyToSoundManager" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1577295309" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:26Z" duration="0.019324" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+              </test-case>
+              <test-case id="1020" name="ComboShakeStopsAtPauseAndDoesNotMoveHud" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.ComboShakeStopsAtPauseAndDoesNotMoveHud" methodname="ComboShakeStopsAtPauseAndDoesNotMoveHud" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="755125791" result="Passed" start-time="2026-11-06 03:35:26Z" end-time="2026-11-06 03:35:28Z" duration="1.283046" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="ContinuedComboPulsesOnceAndRefreshDoesNotReplayFeedback" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.ContinuedComboPulsesOnceAndRefreshDoesNotReplayFeedback" methodname="ContinuedComboPulsesOnceAndRefreshDoesNotReplayFeedback" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1170872796" result="Passed" start-time="2026-11-06 03:35:28Z" end-time="2026-11-06 03:35:29Z" duration="1.027933" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1002" name="DragPlacesPieceAnimatesAndRefreshesHud" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.DragPlacesPieceAnimatesAndRefreshesHud" methodname="DragPlacesPieceAnimatesAndRefreshesHud" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1678196123" result="Passed" start-time="2026-11-06 03:35:29Z" end-time="2026-11-06 03:35:29Z" duration="0.458624" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="ExitMenuShadeClosesAndCardDoesNotDismiss" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.ExitMenuShadeClosesAndCardDoesNotDismiss" methodname="ExitMenuShadeClosesAndCardDoesNotDismiss" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="897039317" result="Passed" start-time="2026-11-06 03:35:29Z" end-time="2026-11-06 03:35:29Z" duration="0.019605" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="FailedResultSaveBlocksNavigationAndRetryDoesNotDuplicateCoins" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.FailedResultSaveBlocksNavigationAndRetryDoesNotDuplicateCoins" methodname="FailedResultSaveBlocksNavigationAndRetryDoesNotDuplicateCoins" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="159786297" result="Passed" start-time="2026-11-06 03:35:29Z" end-time="2026-11-06 03:35:30Z" duration="0.523689" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="FiveTurnsRotateGravityAndRefillTray" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.FiveTurnsRotateGravityAndRefillTray" methodname="FiveTurnsRotateGravityAndRefillTray" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1502258275" result="Passed" start-time="2026-11-06 03:35:30Z" end-time="2026-11-06 03:35:31Z" duration="1.598495" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="FocusLossCancelsDragAndRequiresExplicitResume" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.FocusLossCancelsDragAndRequiresExplicitResume" methodname="FocusLossCancelsDragAndRequiresExplicitResume" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1739422619" result="Passed" start-time="2026-11-06 03:35:31Z" end-time="2026-11-06 03:35:31Z" duration="0.011117" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="GameOverSavesOnceReopensSafelyAndRestartsWithNewResultId" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.GameOverSavesOnceReopensSafelyAndRestartsWithNewResultId" methodname="GameOverSavesOnceReopensSafelyAndRestartsWithNewResultId" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1495525685" result="Passed" start-time="2026-11-06 03:35:31Z" end-time="2026-11-06 03:35:32Z" duration="1.031512" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="GameplaySoundCuesAreRequestedAtPlacementBoundary" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.GameplaySoundCuesAreRequestedAtPlacementBoundary" methodname="GameplaySoundCuesAreRequestedAtPlacementBoundary" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1271232105" result="Passed" start-time="2026-11-06 03:35:32Z" end-time="2026-11-06 03:35:33Z" duration="0.187229" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+]]></output>
+              </test-case>
+              <test-case id="1025" name="HiddenHubDoesNotSpawnPreviewAndReleasesItOnHide" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.HiddenHubDoesNotSpawnPreviewAndReleasesItOnHide" methodname="HiddenHubDoesNotSpawnPreviewAndReleasesItOnHide" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1771415034" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:33Z" duration="0.070068" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="InputSystemMouseEventsDriveTheActualUpdateLoop" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.InputSystemMouseEventsDriveTheActualUpdateLoop" methodname="InputSystemMouseEventsDriveTheActualUpdateLoop" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1463214006" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:33Z" duration="0.219152" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="InputSystemTouchCancellationDoesNotPromoteSecondFinger" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.InputSystemTouchCancellationDoesNotPromoteSecondFinger" methodname="InputSystemTouchCancellationDoesNotPromoteSecondFinger" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1559978883" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:33Z" duration="0.075997" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="InvalidReleaseAndCancellationLeaveSessionUntouched" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.InvalidReleaseAndCancellationLeaveSessionUntouched" methodname="InvalidReleaseAndCancellationLeaveSessionUntouched" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1375396848" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:33Z" duration="0.007515" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="MissingDataManagerKeepsResultPendingUntilItBecomesAvailable" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.MissingDataManagerKeepsResultPendingUntilItBecomesAvailable" methodname="MissingDataManagerKeepsResultPendingUntilItBecomesAvailable" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1360696912" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:33Z" duration="0.518866" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1003" name="NineCellPieceCanBeDraggedSettledAndRestarted" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.NineCellPieceCanBeDraggedSettledAndRestarted" methodname="NineCellPieceCanBeDraggedSettledAndRestarted" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1472606583" result="Passed" start-time="2026-11-06 03:35:33Z" end-time="2026-11-06 03:35:34Z" duration="0.187046" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="PausePopupFreezesAnimationAndResumeCompletesIt" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.PausePopupFreezesAnimationAndResumeCompletesIt" methodname="PausePopupFreezesAnimationAndResumeCompletesIt" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1411165530" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.489870" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="RaycastedUIAndHiddenHudBlockWorldInput" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.RaycastedUIAndHiddenHudBlockWorldInput" methodname="RaycastedUIAndHiddenHudBlockWorldInput" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1074087084" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.008442" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="RestartAndUnmountClearWorldAndSubscriptions" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.RestartAndUnmountClearWorldAndSubscriptions" methodname="RestartAndUnmountClearWorldAndSubscriptions" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="951581033" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.186766" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="SharedRigWalkAndFacingReuseAllSkins" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.SharedRigWalkAndFacingReuseAllSkins" methodname="SharedRigWalkAndFacingReuseAllSkins" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1713623136" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.046919" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="TutorialFirstVisitCompletesAndDoesNotAutoReopen" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.TutorialFirstVisitCompletesAndDoesNotAutoReopen" methodname="TutorialFirstVisitCompletesAndDoesNotAutoReopen" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="1950321540" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.017189" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="TutorialSaveFailureCanBeDeferredWithoutBlockingGame" fullname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests.TutorialSaveFailureCanBeDeferredWithoutBlockingGame" methodname="TutorialSaveFailureCanBeDeferredWithoutBlockingGame" classname="PocketArcade.Tests.BlockGravityPlayMode.GameplayTests" runstate="Runnable" seed="511631312" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.013203" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1038" name="PocketArcade.EchoRoom.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.EchoRoom.PlayMode.Tests.dll" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.146323" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="61364" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1039" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.145720" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1040" name="Tests" fullname="PocketArcade.Tests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.145454" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1041" name="EchoPlay" fullname="PocketArcade.Tests.EchoPlay" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.145231" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1030" name="EchoPlayTests" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.144947" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1037" name="EverySelectedSkinHidesUnusedGhostsAndKeepsTheirBodyWithTheirHead" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.EverySelectedSkinHidesUnusedGhostsAndKeepsTheirBodyWithTheirHead" methodname="EverySelectedSkinHidesUnusedGhostsAndKeepsTheirBodyWithTheirHead" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="685816661" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:34Z" duration="0.068549" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="FocusLossPausesAndUnmountReleasesAllCharacterInstances" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.FocusLossPausesAndUnmountReleasesAllCharacterInstances" methodname="FocusLossPausesAndUnmountReleasesAllCharacterInstances" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="1187574000" result="Passed" start-time="2026-11-06 03:35:34Z" end-time="2026-11-06 03:35:35Z" duration="0.014014" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="PauseFreezesClockGhostPlaybackAndAnimation" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.PauseFreezesClockGhostPlaybackAndAnimation" methodname="PauseFreezesClockGhostPlaybackAndAnimation" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="481398733" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.013692" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="RecordedRouteReplaysAndDeliversThroughPrefabScreen" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.RecordedRouteReplaysAndDeliversThroughPrefabScreen" methodname="RecordedRouteReplaysAndDeliversThroughPrefabScreen" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="810719629" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.010741" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="RestartHidesRecordedSkinnedGhostsAgain" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.RestartHidesRecordedSkinnedGhostsAgain" methodname="RestartHidesRecordedSkinnedGhostsAgain" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="2061717804" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.012628" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="RetryClearsTracesAndDoesNotSpawnExtraWorld" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.RetryClearsTracesAndDoesNotSpawnExtraWorld" methodname="RetryClearsTracesAndDoesNotSpawnExtraWorld" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="1718781540" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.013213" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="UnspawnedGhostsHideEveryRendererIncludingSkinnedBodies" fullname="PocketArcade.Tests.EchoPlay.EchoPlayTests.UnspawnedGhostsHideEveryRendererIncludingSkinnedBodies" methodname="UnspawnedGhostsHideEveryRendererIncludingSkinnedBodies" classname="PocketArcade.Tests.EchoPlay.EchoPlayTests" runstate="Runnable" seed="664430155" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.010667" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1048" name="PocketArcade.TiltFloor.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.TiltFloor.PlayMode.Tests.dll" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.080318" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="61364" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1049" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.080069" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1050" name="Tests" fullname="PocketArcade.Tests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.079819" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1051" name="FloorPlay" fullname="PocketArcade.Tests.FloorPlay" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.079567" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1042" name="FloorPlayTests" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.079319" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1043" name="DragMovesCharacterAndPauseCancelsInput" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests.DragMovesCharacterAndPauseCancelsInput" methodname="DragMovesCharacterAndPauseCancelsInput" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" seed="1247579723" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.031495" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1047" name="EnemyContactShowsDeathAndRetryRestartsCharacter" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests.EnemyContactShowsDeathAndRetryRestartsCharacter" methodname="EnemyContactShowsDeathAndRetryRestartsCharacter" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" seed="4277401" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.012444" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="FocusLossKeepsPauseUntilResumeAndUnmountReleasesWorld" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests.FocusLossKeepsPauseUntilResumeAndUnmountReleasesWorld" methodname="FocusLossKeepsPauseUntilResumeAndUnmountReleasesWorld" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" seed="984905191" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.012352" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1045" name="RetryResetsBoardWithoutSpawningExtraWorld" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests.RetryResetsBoardWithoutSpawningExtraWorld" methodname="RetryResetsBoardWithoutSpawningExtraWorld" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" seed="83783101" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.012772" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1044" name="SecondaryPointerCannotStealJoystick" fullname="PocketArcade.Tests.FloorPlay.FloorPlayTests.SecondaryPointerCannotStealJoystick" methodname="SecondaryPointerCannotStealJoystick" classname="PocketArcade.Tests.FloorPlay.FloorPlayTests" runstate="Runnable" seed="958252173" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.009198" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1060" name="PocketArcade.UdadaDelivery.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.UdadaDelivery.PlayMode.Tests.dll" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.341288" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="61364" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1061" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.340983" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1062" name="Tests" fullname="PocketArcade.Tests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.340765" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1063" name="UdadaDeliveryPlay" fullname="PocketArcade.Tests.UdadaDeliveryPlay" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.340477" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1052" name="DeliveryPlayTests" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.340203" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1059" name="AirborneParcelStopsTogetherWithPauseMenu" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.AirborneParcelStopsTogetherWithPauseMenu" methodname="AirborneParcelStopsTogetherWithPauseMenu" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="1334667104" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.263059" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1058" name="BrakePointerKeepsOwnerAndCancelsOnPause" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.BrakePointerKeepsOwnerAndCancelsOnPause" methodname="BrakePointerKeepsOwnerAndCancelsOnPause" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="228200882" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.007966" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1056" name="FailedSaveKeepsResultAndBackCannotDiscardIt" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.FailedSaveKeepsResultAndBackCannotDiscardIt" methodname="FailedSaveKeepsResultAndBackCannotDiscardIt" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="16318108" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.021954" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1057" name="FocusLossPausesUntilExplicitResume" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.FocusLossPausesUntilExplicitResume" methodname="FocusLossPausesUntilExplicitResume" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="1334080894" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.009392" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="ReadyPauseBackAndRestartUseCachedWindows" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.ReadyPauseBackAndRestartUseCachedWindows" methodname="ReadyPauseBackAndRestartUseCachedWindows" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="1593097506" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.010941" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1055" name="ResultPaysOnceAndRestartCreatesFreshSession" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.ResultPaysOnceAndRestartCreatesFreshSession" methodname="ResultPaysOnceAndRestartCreatesFreshSession" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="64517726" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.010183" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="SelectedRigRunsInDeliveryWorld" fullname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests.SelectedRigRunsInDeliveryWorld" methodname="SelectedRigRunsInDeliveryWorld" classname="PocketArcade.Tests.UdadaDeliveryPlay.DeliveryPlayTests" runstate="Runnable" seed="1641463433" result="Passed" start-time="2026-11-06 03:35:35Z" end-time="2026-11-06 03:35:35Z" duration="0.015291" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/wsuk2/AppData/LocalLow/Kang Wanseok/PocketArcade\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

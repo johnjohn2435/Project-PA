@@ -1,0 +1,18 @@
+{
+  "ProjectPA/GoyeongiRedrawRig/raw.png": "inputs/1_raw.png",
+  "ProjectPA/GoyeongiRedrawRig/whole_keep.png": "inputs/4_whole_keep.png",
+  "ProjectPA/GoyeongiRedrawRig/body_keep.png": "inputs/7_body_keep.png",
+  "ProjectPA/GoyeongiRedrawRig/body_repair.png": "inputs/10_body_repair.png",
+  "ProjectPA/GoyeongiRedrawRig/arm_L.png": "inputs/23_arm_L.png",
+  "ProjectPA/GoyeongiRedrawRig/arm_R.png": "inputs/29_arm_R.png",
+  "ProjectPA/GoyeongiRedrawRig/leg_L.png": "inputs/35_leg_L.png",
+  "ProjectPA/GoyeongiRedrawRig/leg_R.png": "inputs/41_leg_R.png",
+  "ProjectPA/GoyeongiRedrawRetouch/cheek_near.png": "inputs/80_cheek_near.png",
+  "ProjectPA/GoyeongiRedrawRetouch/cheek_far.png": "inputs/84_cheek_far.png",
+  "ProjectPA/GoyeongiRedrawRetouch/whisker_erase.png": "inputs/88_whisker_erase.png",
+  "ProjectPA/GoyeongiRedrawRetouch/near_hand_marks.png": "inputs/92_near_hand_marks.png",
+  "ProjectPA/GoyeongiRedrawRetouch/far_hand_marks.png": "inputs/96_far_hand_marks.png",
+  "ProjectPA/GoyeongiRedrawRetouch/near_toes.png": "inputs/100_near_toes.png",
+  "ProjectPA/GoyeongiRedrawRetouch/far_toes.png": "inputs/104_far_toes.png",
+  "ProjectPA/GoyeongiRedrawRetouch/face_guard.png": "inputs/107_face_guard.png"
+}

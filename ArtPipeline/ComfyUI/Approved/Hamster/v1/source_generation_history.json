@@ -1,0 +1,388 @@
+{
+  "prompt": [
+    16,
+    "f7e0c9bb-8280-4b4c-8d70-daa07837d2c3",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "Minimalist bold vector game icon. A very short wide pale golden bean creature with two round ears and wide round cheeks on top and a little curved tail, and two tiny round feet. The entire character is a single horizontal oval, twice as wide as it is tall. Two small round black dots and a tiny horizontal black dash form the entire face. Uniform extra thick black outline around every shape. Flat pale golden fill. Only two flat color areas. Pure white background. Very simple iconic silhouette, clean crisp graphic shapes, no shading, no highlights, no texture, no other facial details. The character resembles a tiny minimalist hamster from a casual mobile action game."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "4": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "Batch 1 / RTX 3080 10GB"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 110406,
+          "steps": 20,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "4",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/FourAnimals_20261104/hamster/raw"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "8": {
+        "class_type": "LoadBackgroundRemovalModel",
+        "inputs": {
+          "bg_removal_name": "birefnet.safetensors"
+        },
+        "_meta": {
+          "title": "BiRefNet / background removal"
+        }
+      },
+      "9": {
+        "class_type": "RemoveBackground",
+        "inputs": {
+          "bg_removal_model": [
+            "8",
+            0
+          ],
+          "image": [
+            "6",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Foreground mask"
+        }
+      },
+      "10": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "9",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Required: foreground -> transparency"
+        }
+      },
+      "11": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "20",
+            0
+          ],
+          "alpha": [
+            "21",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Transparent RGBA"
+        }
+      },
+      "12": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "ProjectPA/FourAnimals_20261104/hamster/master"
+        },
+        "_meta": {
+          "title": "RGBA master 768"
+        }
+      },
+      "13": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        },
+        "_meta": {
+          "title": "Unity preview 512"
+        }
+      },
+      "14": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ],
+          "filename_prefix": "ProjectPA/FourAnimals_20261104/hamster/sprite_512"
+        },
+        "_meta": {
+          "title": "RGBA sprite 512"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 3.5
+        }
+      },
+      "18": {
+        "class_type": "GrowMask",
+        "inputs": {
+          "mask": [
+            "9",
+            0
+          ],
+          "expand": 11,
+          "tapered_corners": true
+        }
+      },
+      "19": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 2367775
+        }
+      },
+      "20": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "19",
+            0
+          ],
+          "source": [
+            "6",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "9",
+            0
+          ]
+        }
+      },
+      "21": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "18",
+            0
+          ]
+        }
+      }
+    },
+    {
+      "client_id": "426082de-d5ff-4dac-addb-3f542d48d8fc",
+      "create_time": 1793780690260
+    },
+    [
+      "7",
+      "14",
+      "12"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "raw_00002_.png",
+          "subfolder": "ProjectPA\\FourAnimals_20261104\\hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "12": {
+      "images": [
+        {
+          "filename": "master_00002_.png",
+          "subfolder": "ProjectPA\\FourAnimals_20261104\\hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "14": {
+      "images": [
+        {
+          "filename": "sprite_512_00002_.png",
+          "subfolder": "ProjectPA\\FourAnimals_20261104\\hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "f7e0c9bb-8280-4b4c-8d70-daa07837d2c3",
+          "timestamp": 1793780690261
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "3",
+            "4",
+            "8",
+            "15",
+            "16",
+            "19"
+          ],
+          "prompt_id": "f7e0c9bb-8280-4b4c-8d70-daa07837d2c3",
+          "timestamp": 1793780690263
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "f7e0c9bb-8280-4b4c-8d70-daa07837d2c3",
+          "timestamp": 1793780716960
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    },
+    "12": {
+      "node_id": "12",
+      "display_node": "12",
+      "parent_node": null,
+      "real_node_id": "12"
+    },
+    "14": {
+      "node_id": "14",
+      "display_node": "14",
+      "parent_node": null,
+      "real_node_id": "14"
+    }
+  }
+}

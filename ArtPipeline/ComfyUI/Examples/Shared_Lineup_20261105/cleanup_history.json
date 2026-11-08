@@ -1,0 +1,531 @@
+{
+  "prompt": [
+    76,
+    "dec05af4-f878-4f51-94ec-5a01715502e7",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_lineup_E.png"
+        }
+      },
+      "2": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_forehead_mask.png"
+        }
+      },
+      "3": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "2",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "4": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_forehead_color.png"
+        }
+      },
+      "5": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "1",
+            0
+          ],
+          "source": [
+            "4",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_hamster_forehead_mask.png"
+        }
+      },
+      "7": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "6",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "8": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_hamster_forehead_color.png"
+        }
+      },
+      "9": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "5",
+            0
+          ],
+          "source": [
+            "8",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "7",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_cat_l_mask.png"
+        }
+      },
+      "11": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "10",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "12": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_cat_l_color.png"
+        }
+      },
+      "13": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "9",
+            0
+          ],
+          "source": [
+            "12",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "11",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_cat_r_mask.png"
+        }
+      },
+      "15": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "14",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "16": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_cat_r_color.png"
+        }
+      },
+      "17": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "13",
+            0
+          ],
+          "source": [
+            "16",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "15",
+            0
+          ]
+        }
+      },
+      "18": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_l_mask.png"
+        }
+      },
+      "19": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "18",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "20": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_l_color.png"
+        }
+      },
+      "21": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "17",
+            0
+          ],
+          "source": [
+            "20",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "19",
+            0
+          ]
+        }
+      },
+      "22": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_r_mask.png"
+        }
+      },
+      "23": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "22",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "24": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_dog_r_color.png"
+        }
+      },
+      "25": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "21",
+            0
+          ],
+          "source": [
+            "24",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "23",
+            0
+          ]
+        }
+      },
+      "26": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_ham_l_mask.png"
+        }
+      },
+      "27": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "26",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "28": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_ham_l_color.png"
+        }
+      },
+      "29": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "25",
+            0
+          ],
+          "source": [
+            "28",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "27",
+            0
+          ]
+        }
+      },
+      "30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_ham_r_mask.png"
+        }
+      },
+      "31": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "30",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "32": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_ham_r_color.png"
+        }
+      },
+      "33": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "29",
+            0
+          ],
+          "source": [
+            "32",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "31",
+            0
+          ]
+        }
+      },
+      "34": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_brows_mask.png"
+        }
+      },
+      "35": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "34",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "36": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_brows_color.png"
+        }
+      },
+      "37": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "33",
+            0
+          ],
+          "source": [
+            "36",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "35",
+            0
+          ]
+        }
+      },
+      "38": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_eye_glints_mask.png"
+        }
+      },
+      "39": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "38",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "40": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_lineup_eye_glints_color.png"
+        }
+      },
+      "41": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "37",
+            0
+          ],
+          "source": [
+            "40",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false,
+          "mask": [
+            "39",
+            0
+          ]
+        }
+      },
+      "42": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "41",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SharedLineup_20261105/final"
+        }
+      }
+    },
+    {
+      "client_id": "d5ff7ce2-43a5-4a1f-a9e6-5558cd019550",
+      "create_time": 1793883033076
+    },
+    [
+      "42"
+    ]
+  ],
+  "outputs": {
+    "42": {
+      "images": [
+        {
+          "filename": "final_00003_.png",
+          "subfolder": "ProjectPA\\SharedLineup_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 1344,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "dec05af4-f878-4f51-94ec-5a01715502e7",
+          "timestamp": 1793883033077
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "4",
+            "8",
+            "10",
+            "11",
+            "12",
+            "14",
+            "15",
+            "16",
+            "18",
+            "19",
+            "20",
+            "22",
+            "23",
+            "24",
+            "26",
+            "27",
+            "28",
+            "30",
+            "31",
+            "32",
+            "34",
+            "35",
+            "36",
+            "38",
+            "39",
+            "40"
+          ],
+          "prompt_id": "dec05af4-f878-4f51-94ec-5a01715502e7",
+          "timestamp": 1793883033113
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "dec05af4-f878-4f51-94ec-5a01715502e7",
+          "timestamp": 1793883033507
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "42": {
+      "node_id": "42",
+      "display_node": "42",
+      "parent_node": null,
+      "real_node_id": "42"
+    }
+  }
+}

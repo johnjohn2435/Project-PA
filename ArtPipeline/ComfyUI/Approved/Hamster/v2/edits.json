@@ -1,0 +1,33 @@
+{
+  "source": "Hamster/v1",
+  "edits": [
+    {
+      "role": "highlight",
+      "x": 302,
+      "y": 360,
+      "width": 8,
+      "height": 8
+    },
+    {
+      "role": "eyebrow",
+      "x": 299,
+      "y": 332,
+      "width": 24,
+      "height": 7
+    },
+    {
+      "role": "highlight",
+      "x": 463,
+      "y": 360,
+      "width": 8,
+      "height": 8
+    },
+    {
+      "role": "eyebrow",
+      "x": 460,
+      "y": 332,
+      "width": 24,
+      "height": 7
+    }
+  ]
+}

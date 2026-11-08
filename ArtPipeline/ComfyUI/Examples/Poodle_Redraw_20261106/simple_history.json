@@ -1,0 +1,269 @@
+{
+  "prompt": [
+    112,
+    "4e4015f8-438a-4c70-a701-354b46c71d54",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "Minimalist 2D storybook game character, ONE small apricot toy poodle. A HUGE round head above a TINY smooth plump bean-shaped torso, short mitten arms and two tiny round feet. Head occupies two thirds of total height. Solid pale caramel peach fur, simple light cream muzzle and belly. Short chubby drooping ears and a fluffy crown made of three broad round bumps. Tiny black pin-dot eyes, tiny straight eyebrows, a tiny black nose and tiny smiling w-shaped mouth. Smooth black outlines, consistent bold stroke, simple flat pastel colors, faint underside shadow. Sparse minimal details, quiet adorable expression. Full body, upright neutral pose, facing slightly right. Plain warm ivory background. Smooth bare body, tailless animal. Simple shapes with minimal interior lines."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 116041,
+          "steps": 22,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "80",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleRedraw_20261106/E"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 2.7
+        }
+      },
+      "80": {
+        "class_type": "EmptySD3LatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1
+        }
+      },
+      "105": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 116042,
+          "steps": 22,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "80",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "106": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "105",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        }
+      },
+      "107": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "106",
+            0
+          ],
+          "filename_prefix": "ProjectPA/PoodleRedraw_20261106/F"
+        }
+      }
+    },
+    {
+      "create_time": 1793931373158
+    },
+    [
+      "107",
+      "7"
+    ]
+  ],
+  "outputs": {
+    "107": {
+      "images": [
+        {
+          "filename": "F_00001_.png",
+          "subfolder": "ProjectPA\\PoodleRedraw_20261106",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "E_00001_.png",
+          "subfolder": "ProjectPA\\PoodleRedraw_20261106",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "4e4015f8-438a-4c70-a701-354b46c71d54",
+          "timestamp": 1793931373160
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "3",
+            "15",
+            "16"
+          ],
+          "prompt_id": "4e4015f8-438a-4c70-a701-354b46c71d54",
+          "timestamp": 1793931373162
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "4e4015f8-438a-4c70-a701-354b46c71d54",
+          "timestamp": 1793931420991
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "107": {
+      "node_id": "107",
+      "display_node": "107",
+      "parent_node": null,
+      "real_node_id": "107"
+    },
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    }
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_master.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_head_mask.png"
+    }
+  },
+  "3": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "4": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "3",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "4",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/head"
+    }
+  },
+  "7": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_torso_mesh_mask.png"
+    }
+  },
+  "8": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "9": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "9",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "10",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/torso_mesh"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_arm_L_mask.png"
+    }
+  },
+  "13": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "12",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "14": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "13",
+        0
+      ]
+    }
+  },
+  "15": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "14",
+        0
+      ]
+    }
+  },
+  "16": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/arm_L"
+    }
+  },
+  "17": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_arm_R_mask.png"
+    }
+  },
+  "18": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "17",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "19": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "18",
+        0
+      ]
+    }
+  },
+  "20": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "19",
+        0
+      ]
+    }
+  },
+  "21": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "20",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/arm_R"
+    }
+  },
+  "22": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_body_mask.png"
+    }
+  },
+  "23": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "22",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "24": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "23",
+        0
+      ]
+    }
+  },
+  "25": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "24",
+        0
+      ]
+    }
+  },
+  "26": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "25",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/body"
+    }
+  },
+  "27": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_leg_L_mask.png"
+    }
+  },
+  "28": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "27",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "29": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "28",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "29",
+        0
+      ]
+    }
+  },
+  "31": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "30",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/leg_L"
+    }
+  },
+  "32": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_parts_leg_R_mask.png"
+    }
+  },
+  "33": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "32",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "34": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "33",
+        0
+      ]
+    }
+  },
+  "35": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "34",
+        0
+      ]
+    }
+  },
+  "36": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "35",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRig/leg_R"
+    }
+  }
+}

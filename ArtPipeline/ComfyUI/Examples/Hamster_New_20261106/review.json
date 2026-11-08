@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-06",
+  "status": "review_candidate",
+  "source": "SharedFamily/v1 base proportions before Darami tail",
+  "workflow": "round_brows_api.json",
+  "design": "우유빛 아이보리 단색 털, 연분홍 귀·코, 은은한 베이지 그림자. 원래 동그란 눈과 흰 반사광 복원, 끝이 둥근 짧은 아치형 눈썹.",
+  "game_integration": "pending",
+  "preview": "round_brows_preview.png",
+  "transparent": "round_brows_master.png",
+  "latest_face_review": "../FaceIdentity_20261106/review.json"
+}

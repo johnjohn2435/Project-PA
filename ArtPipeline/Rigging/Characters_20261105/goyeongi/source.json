@@ -1,0 +1,15 @@
+{
+  "approved_source": "Goyeongi/v3",
+  "base_color": [
+    243,
+    241,
+    236
+  ],
+  "shadow_color": [
+    211,
+    209,
+    205
+  ],
+  "facing": "right_three_quarter_feature_perspective",
+  "notes": "Existing approved face features repositioned in ComfyUI; no regeneration of identity. Five complete parts."
+}

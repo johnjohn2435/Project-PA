@@ -1,0 +1,26 @@
+{
+  "api.json": {
+    "pa_poodle_reference.png": "comfy_inputs/api_18.png",
+    "pa_poodle_blank.png": "comfy_inputs/api_23.png",
+    "pa_poodle_leg_R.png": "comfy_inputs/api_30.png",
+    "pa_poodle_leg_L.png": "comfy_inputs/api_32.png",
+    "pa_poodle_body.png": "comfy_inputs/api_34.png",
+    "pa_poodle_arm_R.png": "comfy_inputs/api_36.png",
+    "pa_poodle_arm_L.png": "comfy_inputs/api_38.png"
+  },
+  "final_api.json": {
+    "pa_poodle_final_poodle_ganaji_20261105_raw.png": "comfy_inputs/final_api_1.png",
+    "pa_poodle_final_inputs_black.png": "comfy_inputs/final_api_2.png",
+    "pa_poodle_final_inputs_eye_fill.png": "comfy_inputs/final_api_3.png",
+    "pa_poodle_final_inputs_eye_erase.png": "comfy_inputs/final_api_4.png",
+    "pa_poodle_final_inputs_eye_small_mask.png": "comfy_inputs/final_api_14.png",
+    "pa_poodle_final_inputs_head_keep.png": "comfy_inputs/final_api_19.png",
+    "pa_poodle_final_inputs_body_tint.png": "comfy_inputs/final_api_34.png",
+    "pa_poodle_final_char_cat_body.png": "comfy_inputs/final_api_35.png",
+    "pa_poodle_final_char_cat_arm_L.png": "comfy_inputs/final_api_40.png",
+    "pa_poodle_final_char_cat_arm_R.png": "comfy_inputs/final_api_45.png",
+    "pa_poodle_final_char_cat_leg_L.png": "comfy_inputs/final_api_50.png",
+    "pa_poodle_final_char_cat_leg_R.png": "comfy_inputs/final_api_55.png",
+    "pa_poodle_final_poodle_ganaji_20261105_blank.png": "comfy_inputs/final_api_60.png"
+  }
+}

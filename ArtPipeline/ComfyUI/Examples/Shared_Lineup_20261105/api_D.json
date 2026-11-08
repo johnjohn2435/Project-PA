@@ -1,0 +1,129 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": "Three simple original animal mascots standing UPRIGHT on TWO legs, side by side in a character lineup. Anthropomorphic BIPEDAL cartoon friends. Left a light grey tabby CAT with triangular ears and three dark grey forehead stripes. Middle a cream DOG with small tan floppy ears and an unmarked forehead. Right a golden HAMSTER with small round ears and an unmarked forehead. They all share the EXACT SAME chubby rounded UPRIGHT egg-shaped body template, same height, same width, same shoulder and hip positions, same small oval arms hanging OUTSIDE their sides, same two short rounded legs standing on the same floor line. Head blends into body without a neck. Each body only slightly taller than wide. Two arms, two legs each. Same mild three-quarter pose facing right. Uniform thick DARK BROWN outline around all three characters and every limb. Minimal cozy storybook cartoon. Simple flat pale colors, tiny dot eyes, tiny straight brows, a tiny smile, one faint underside shadow. TAILLESS characters. Bare plain colored bellies, plain cheeks, smooth hands and feet. Clean ivory background. No text, no props, no clothes, no fur texture, no fingers, no toe marks, no whiskers. Very simple shapes like small animals in a hand drawn cozy jazz cafe cartoon."
+    },
+    "_meta": {
+      "title": "Positive / subject + shared style"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "15",
+        0
+      ],
+      "text": ""
+    },
+    "_meta": {
+      "title": "Negative / avoid detail and realism"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1344,
+      "height": 768,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Batch 1 / RTX 3080 10GB"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "seed": 115511,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Decode artwork"
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SharedLineup_20261105/D"
+    },
+    "_meta": {
+      "title": "Raw master / preserve for refinement"
+    }
+  },
+  "15": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    }
+  },
+  "16": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    }
+  },
+  "17": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": [
+        "2",
+        0
+      ],
+      "guidance": 4.0
+    }
+  }
+}

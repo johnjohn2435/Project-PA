@@ -1,0 +1,708 @@
+{
+  "prompt": [
+    87,
+    "23627e6a-b0f8-48af-9c69-6b56899b07cc",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_inputs_char_dog_tint.png"
+        }
+      },
+      "2": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_body.png"
+        }
+      },
+      "3": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "2",
+            0
+          ],
+          "image2": [
+            "1",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "4": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "3",
+            0
+          ],
+          "alpha": [
+            "2",
+            1
+          ]
+        }
+      },
+      "5": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "4",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_dog/body"
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_arm_L.png"
+        }
+      },
+      "7": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "6",
+            0
+          ],
+          "image2": [
+            "1",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "8": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "7",
+            0
+          ],
+          "alpha": [
+            "6",
+            1
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_dog/arm_L"
+        }
+      },
+      "10": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_arm_R.png"
+        }
+      },
+      "11": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "10",
+            0
+          ],
+          "image2": [
+            "1",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "12": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "11",
+            0
+          ],
+          "alpha": [
+            "10",
+            1
+          ]
+        }
+      },
+      "13": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "12",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_dog/arm_R"
+        }
+      },
+      "14": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_leg_L.png"
+        }
+      },
+      "15": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "14",
+            0
+          ],
+          "image2": [
+            "1",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "16": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "15",
+            0
+          ],
+          "alpha": [
+            "14",
+            1
+          ]
+        }
+      },
+      "17": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "16",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_dog/leg_L"
+        }
+      },
+      "18": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_leg_R.png"
+        }
+      },
+      "19": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "18",
+            0
+          ],
+          "image2": [
+            "1",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "20": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "19",
+            0
+          ],
+          "alpha": [
+            "18",
+            1
+          ]
+        }
+      },
+      "21": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "20",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_dog/leg_R"
+        }
+      },
+      "22": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_inputs_char_hamster_tint.png"
+        }
+      },
+      "23": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_body.png"
+        }
+      },
+      "24": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "23",
+            0
+          ],
+          "image2": [
+            "22",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "25": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "24",
+            0
+          ],
+          "alpha": [
+            "23",
+            1
+          ]
+        }
+      },
+      "26": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "25",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_hamster/body"
+        }
+      },
+      "27": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_arm_L.png"
+        }
+      },
+      "28": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "27",
+            0
+          ],
+          "image2": [
+            "22",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "29": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "28",
+            0
+          ],
+          "alpha": [
+            "27",
+            1
+          ]
+        }
+      },
+      "30": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "29",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_hamster/arm_L"
+        }
+      },
+      "31": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_arm_R.png"
+        }
+      },
+      "32": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "31",
+            0
+          ],
+          "image2": [
+            "22",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "33": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "32",
+            0
+          ],
+          "alpha": [
+            "31",
+            1
+          ]
+        }
+      },
+      "34": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "33",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_hamster/arm_R"
+        }
+      },
+      "35": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_leg_L.png"
+        }
+      },
+      "36": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "35",
+            0
+          ],
+          "image2": [
+            "22",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "37": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "36",
+            0
+          ],
+          "alpha": [
+            "35",
+            1
+          ]
+        }
+      },
+      "38": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "37",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_hamster/leg_L"
+        }
+      },
+      "39": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_common_char_cat_leg_R.png"
+        }
+      },
+      "40": {
+        "class_type": "ImageBlend",
+        "inputs": {
+          "image1": [
+            "39",
+            0
+          ],
+          "image2": [
+            "22",
+            0
+          ],
+          "blend_factor": 1.0,
+          "blend_mode": "overlay"
+        }
+      },
+      "41": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "40",
+            0
+          ],
+          "alpha": [
+            "39",
+            1
+          ]
+        }
+      },
+      "42": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "41",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SixPartRig_20261105/common/char_hamster/leg_R"
+        }
+      }
+    },
+    {
+      "client_id": "de967462-565a-4988-aad5-35446826e1a4",
+      "create_time": 1793885068262
+    },
+    [
+      "5",
+      "13",
+      "30",
+      "26",
+      "34",
+      "42",
+      "9",
+      "21",
+      "17",
+      "38"
+    ]
+  ],
+  "outputs": {
+    "5": {
+      "images": [
+        {
+          "filename": "body_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "13": {
+      "images": [
+        {
+          "filename": "arm_R_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "9": {
+      "images": [
+        {
+          "filename": "arm_L_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "21": {
+      "images": [
+        {
+          "filename": "leg_R_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "17": {
+      "images": [
+        {
+          "filename": "leg_L_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_dog",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "30": {
+      "images": [
+        {
+          "filename": "arm_L_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "26": {
+      "images": [
+        {
+          "filename": "body_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "34": {
+      "images": [
+        {
+          "filename": "arm_R_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "42": {
+      "images": [
+        {
+          "filename": "leg_R_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "38": {
+      "images": [
+        {
+          "filename": "leg_L_00002_.png",
+          "subfolder": "ProjectPA\\SixPartRig_20261105\\common\\char_hamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "23627e6a-b0f8-48af-9c69-6b56899b07cc",
+          "timestamp": 1793885068262
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "23627e6a-b0f8-48af-9c69-6b56899b07cc",
+          "timestamp": 1793885068308
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "23627e6a-b0f8-48af-9c69-6b56899b07cc",
+          "timestamp": 1793885069133
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "5": {
+      "node_id": "5",
+      "display_node": "5",
+      "parent_node": null,
+      "real_node_id": "5"
+    },
+    "13": {
+      "node_id": "13",
+      "display_node": "13",
+      "parent_node": null,
+      "real_node_id": "13"
+    },
+    "9": {
+      "node_id": "9",
+      "display_node": "9",
+      "parent_node": null,
+      "real_node_id": "9"
+    },
+    "21": {
+      "node_id": "21",
+      "display_node": "21",
+      "parent_node": null,
+      "real_node_id": "21"
+    },
+    "17": {
+      "node_id": "17",
+      "display_node": "17",
+      "parent_node": null,
+      "real_node_id": "17"
+    },
+    "30": {
+      "node_id": "30",
+      "display_node": "30",
+      "parent_node": null,
+      "real_node_id": "30"
+    },
+    "26": {
+      "node_id": "26",
+      "display_node": "26",
+      "parent_node": null,
+      "real_node_id": "26"
+    },
+    "34": {
+      "node_id": "34",
+      "display_node": "34",
+      "parent_node": null,
+      "real_node_id": "34"
+    },
+    "42": {
+      "node_id": "42",
+      "display_node": "42",
+      "parent_node": null,
+      "real_node_id": "42"
+    },
+    "38": {
+      "node_id": "38",
+      "display_node": "38",
+      "parent_node": null,
+      "real_node_id": "38"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "species": "dog",
+  "approved_on": "2026-11-04",
+  "status": "user_approved_design",
+  "user_decision": "다람쥐 수달 빼고 햄스터랑 강아지만 픽스하자",
+  "source": "Examples/FourAnimals_20261104/ColorRevision/dog",
+  "display_name": "미정",
+  "unity_status": "not_integrated",
+  "hashes": {
+    "master.png": "308ae58edba65823e60ab865fd2656133a9bae3cd8de624c499e4ebbd34604b7",
+    "sprite_512.png": "c4e3341ae624c483a84af1c04dcd2a6a890621ebece80cc030ea49fad7b4c564"
+  }
+}

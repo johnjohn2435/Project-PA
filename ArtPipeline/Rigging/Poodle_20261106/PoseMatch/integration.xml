@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-06 06:38:52Z" end-time="2026-11-06 06:38:53Z" duration="1.6724177">
+  <test-suite type="TestSuite" id="1070" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="45" result="Passed" start-time="2026-11-06 06:38:52Z" end-time="2026-11-06 06:38:53Z" duration="1.672418" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1051" name="PocketArcade.TiltFloor.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.TiltFloor.PlayMode.Tests.dll" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-06 06:38:52Z" end-time="2026-11-06 06:38:53Z" duration="1.665794" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="66412" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1042" name="PoodleIntegrationTest" fullname="PoodleIntegrationTest" classname="PoodleIntegrationTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-06 06:38:52Z" end-time="2026-11-06 06:38:53Z" duration="1.664375" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1043" name="ChoosePoodleAndWalkInGame" fullname="PoodleIntegrationTest.ChoosePoodleAndWalkInGame" methodname="ChoosePoodleAndWalkInGame" classname="PoodleIntegrationTest" runstate="Runnable" seed="2051298349" result="Passed" start-time="2026-11-06 06:38:52Z" end-time="2026-11-06 06:38:53Z" duration="1.654192" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+CARD_RUNTIME ParkCharacterCard(Clone) sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=0 rect=(x:-189.60, y:-115.50, width:379.20, height:231.00) scale=(0.00, 0.00, 0.00) material=Default UI Material
+GRAPHIC ParkCharacterCard(Clone) 0 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Portrait 0 True UnityEngine.UI.Image
+GRAPHIC Name 1 True TMPro.TextMeshProUGUI
+GRAPHIC Selected 2 False UnityEngine.UI.Image
+GRAPHIC Locked 3 False UnityEngine.UI.Image
+CARD_RUNTIME ParkCharacterCard(Clone) sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=0 rect=(x:-189.60, y:-115.50, width:379.20, height:231.00) scale=(0.00, 0.00, 0.00) material=Default UI Material
+GRAPHIC ParkCharacterCard(Clone) 3 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Portrait 0 True UnityEngine.UI.Image
+GRAPHIC Name 1 True TMPro.TextMeshProUGUI
+GRAPHIC Selected 2 True UnityEngine.UI.Image
+GRAPHIC Locked 3 False UnityEngine.UI.Image
+CARD_RUNTIME ParkCharacterCard(Clone) sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=0 rect=(x:-189.60, y:-115.50, width:379.20, height:231.00) scale=(0.00, 0.00, 0.00) material=Default UI Material
+GRAPHIC ParkCharacterCard(Clone) 2 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Portrait 0 True UnityEngine.UI.Image
+GRAPHIC Name 1 True TMPro.TextMeshProUGUI
+GRAPHIC Selected 2 False UnityEngine.UI.Image
+GRAPHIC Locked 3 False UnityEngine.UI.Image
+CARD_RUNTIME ParkCharacterCard(Clone) sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=0 rect=(x:-189.60, y:-115.50, width:379.20, height:231.00) scale=(0.00, 0.00, 0.00) material=Default UI Material
+GRAPHIC ParkCharacterCard(Clone) 1 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Portrait 0 True UnityEngine.UI.Image
+GRAPHIC Name 1 True TMPro.TextMeshProUGUI
+GRAPHIC Selected 2 False UnityEngine.UI.Image
+GRAPHIC Locked 3 False UnityEngine.UI.Image
+Saving results to: C:/Users/wsuk2/AppData/LocalLow/Kang Wanseok/PocketArcade\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

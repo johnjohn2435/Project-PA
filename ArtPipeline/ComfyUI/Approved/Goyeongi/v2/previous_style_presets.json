@@ -1,0 +1,31 @@
+{
+  "approved_reference": "Approved/Goyeongi/v1/master.png",
+  "preferred_workflow": "Workflows/05_character_flux.json",
+  "common_style": "Very simple flat 2D cartoon game mascot. Very thick smooth dark brown outline, tiny solid dark brown dot eyes without highlights, a simple cheerful mouth. Head and body form one rounded continuous silhouette. Small rounded arms and feet without fingers or toes. Broad simple markings, muted pastel solid fills, minimal details. One character, full body centered. Match the approved Goyeongi B reference in line weight, face simplicity and overall proportions. No realistic fur, intricate texture, eyelashes or elaborate shading.",
+  "character_template": "ONE {species} mascot named {name}, {base_color} body with {simple_markings}. Very simple flat 2D cartoon game mascot. Very thick smooth dark brown outline, tiny solid dark brown dot eyes without highlights, a simple cheerful mouth. Head and body form one rounded continuous silhouette. Small rounded arms and feet without fingers or toes. Broad simple markings, muted pastel solid fills, minimal details. One character, full body centered. Match the approved Goyeongi B reference in line weight, face simplicity and overall proportions. No realistic fur, intricate texture, eyelashes or elaborate shading.",
+  "goyeongi_exact_positive": "A very simple cute hand-drawn 2D cartoon mascot of ONE small grey mackerel tabby cat, full body alone centered on a plain warm cream background. Very thick soft dark brown outlines around the entire silhouette and every paw. The cat is a single squat round potato shape with small rounded triangle ears and a tiny short body merging into its wide face. Two TINY solid dark brown dots for eyes, with no white dots or eye shine. A tiny joyful open mouth with a peach tongue, a small cream muzzle patch. Warm light grey flat solid body color. Only three short dark brown strokes on the forehead and two short broad dark brown stripe marks on each cheek, two bands on a small curved tail. Very short mitten arms and rounded feet with no fingers or toe lines. No clothes, no scarf, no hat, no objects. Simple charming Korean casual game cartoon doodle, maximum simplicity, only four flat colors. No shading, no gradients, no fur texture, no fine lines, no eyelashes, no text. The head takes up seventy percent of the overall height. The body below the face is extremely short and wide, with two tiny rounded arms attached to the sides and two tiny semicircle feet without toe marks. Rounded ear tips. A little cheerful open U-shaped mouth with a pink tongue. No large belly patch. No ground shadow. The final shape is much wider than it is tall, a low squat dumpling shape. The whole cat should be easily drawn by a child in twenty strokes.",
+  "goyeongi_exact_negative": "",
+  "settings": {
+    "model": "flux1-dev-fp8.safetensors",
+    "text_encoders": [
+      "clip_l.safetensors",
+      "t5xxl_fp16.safetensors"
+    ],
+    "vae": "ae.safetensors",
+    "steps": 20,
+    "cfg": 1,
+    "guidance": 3.5,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "width": 768,
+    "height": 768,
+    "batch_size": 1,
+    "goyeongi_seed": 182902
+  },
+  "notes": [
+    "Approved artwork overrides contradictory wording in the historical prompt (e.g. belly patch, aspect ratio).",
+    "Exact approved prompt is preserved for provenance; generalized template has not been generation-tested.",
+    "Seed alone does not guarantee consistent characters. Compare each output with the approved image.",
+    "Existing prompt_presets.json and 01-04 workflows are legacy exploration; use this approved style for future characters."
+  ]
+}

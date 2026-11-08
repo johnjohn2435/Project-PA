@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-06 03:34:21Z" end-time="2026-11-06 03:34:22Z" duration="1.5504485">
+  <test-suite type="TestSuite" id="1069" name="PocketArcade" fullname="PocketArcade" runstate="Runnable" testcasecount="44" result="Passed" start-time="2026-11-06 03:34:21Z" end-time="2026-11-06 03:34:22Z" duration="1.550449" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1050" name="PocketArcade.TiltFloor.PlayMode.Tests.dll" fullname="C:/Users/wsuk2/AppData/Local/Temp/PA_Playable_Verify_1105/Library/ScriptAssemblies/PocketArcade.TiltFloor.PlayMode.Tests.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-06 03:34:21Z" end-time="2026-11-06 03:34:22Z" duration="1.543951" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="51920" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1042" name="PoodleIntegrationTest" fullname="PoodleIntegrationTest" classname="PoodleIntegrationTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-06 03:34:21Z" end-time="2026-11-06 03:34:22Z" duration="1.542723" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1043" name="ChoosePoodleAndWalkInGame" fullname="PoodleIntegrationTest.ChoosePoodleAndWalkInGame" methodname="ChoosePoodleAndWalkInGame" classname="PoodleIntegrationTest" runstate="Runnable" seed="178741256" result="Passed" start-time="2026-11-06 03:34:21Z" end-time="2026-11-06 03:34:22Z" duration="1.532736" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[There are no audio listeners in the scene. Please ensure there is always one audio listener in the scene
+CARD_RUNTIME Character Card 2 sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=5 rect=(x:-104.98, y:-67.09, width:209.95, height:134.19) scale=(0.01, 0.01, 0.01) material=Default UI Material
+GRAPHIC Character Card 2 3 True UnityEngine.UI.Image
+GRAPHIC Select 0 True UnityEngine.UI.Image
+GRAPHIC Paper surface 0 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Label 1 True TMPro.TextMeshProUGUI
+GRAPHIC selectedBadge 1 False UnityEngine.UI.Image
+GRAPHIC lockedBadge 2 False UnityEngine.UI.Image
+GRAPHIC Selected 3 False UnityEngine.UI.Image
+GRAPHIC Locked 4 False UnityEngine.UI.Image
+GRAPHIC Portrait 5 True UnityEngine.UI.Image
+CARD_RUNTIME Character Card 0 sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=5 rect=(x:-104.98, y:-67.09, width:209.95, height:134.19) scale=(0.01, 0.01, 0.01) material=Default UI Material
+GRAPHIC Character Card 0 1 True UnityEngine.UI.Image
+GRAPHIC Select 0 True UnityEngine.UI.Image
+GRAPHIC Paper surface 0 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Label 1 True TMPro.TextMeshProUGUI
+GRAPHIC selectedBadge 1 False UnityEngine.UI.Image
+GRAPHIC lockedBadge 2 False UnityEngine.UI.Image
+GRAPHIC Selected 3 False UnityEngine.UI.Image
+GRAPHIC Locked 4 False UnityEngine.UI.Image
+GRAPHIC Portrait 5 True UnityEngine.UI.Image
+CARD_RUNTIME Character Card 1 sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=5 rect=(x:-104.98, y:-67.09, width:209.95, height:134.19) scale=(0.01, 0.01, 0.01) material=Default UI Material
+GRAPHIC Character Card 1 2 True UnityEngine.UI.Image
+GRAPHIC Select 0 True UnityEngine.UI.Image
+GRAPHIC Paper surface 0 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Label 1 True TMPro.TextMeshProUGUI
+GRAPHIC selectedBadge 1 False UnityEngine.UI.Image
+GRAPHIC lockedBadge 2 False UnityEngine.UI.Image
+GRAPHIC Selected 3 False UnityEngine.UI.Image
+GRAPHIC Locked 4 False UnityEngine.UI.Image
+GRAPHIC Portrait 5 True UnityEngine.UI.Image
+CARD_RUNTIME PoodleCard sprite=Portrait (UnityEngine.Sprite) color=RGBA(1.000, 1.000, 1.000, 1.000) enabled=True active=True sibling=5 rect=(x:-104.98, y:-67.09, width:209.95, height:134.19) scale=(0.01, 0.01, 0.01) material=Default UI Material
+GRAPHIC PoodleCard 5 True UnityEngine.UI.Image
+GRAPHIC Select 0 True UnityEngine.UI.Image
+GRAPHIC Paper surface 0 True PocketArcade.UI.ArcadePaperGraphic
+GRAPHIC Label 1 True TMPro.TextMeshProUGUI
+GRAPHIC TMP SubMeshUI [Jua - Regular Material + NanumGothic - Regular Atlas] 0 True TMPro.TMP_SubMeshUI
+GRAPHIC selectedBadge 1 False UnityEngine.UI.Image
+GRAPHIC lockedBadge 2 False UnityEngine.UI.Image
+GRAPHIC Selected 3 True UnityEngine.UI.Image
+GRAPHIC Locked 4 False UnityEngine.UI.Image
+GRAPHIC Portrait 5 True UnityEngine.UI.Image
+Saving results to: C:/Users/wsuk2/AppData/LocalLow/Kang Wanseok/PocketArcade\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

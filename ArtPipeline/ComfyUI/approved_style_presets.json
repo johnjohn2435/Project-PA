@@ -1,0 +1,74 @@
+{
+  "approved_reference": "Approved/SharedFamily/v1/lineup.png",
+  "preferred_workflow": "Workflows/06_character_minimal.json",
+  "common_style": "Extremely simple rounded 2D game mascot matching Approved/Goyeongi/v2/master.png. Compact single rounded body, tiny solid dot eyes, small simple mouth, few broad markings, smooth, continuous single dark outline with even stroke weight. Limited light neutral or muted pastel color fields. No cheek blush, separate decorative belly patch, fur texture, fingers or toe lines. Keep details readable at small size. Actual approved artwork is the visual authority. Preserve subtle light/shadow tone differences and species-specific accent colors, matching Goyeongi v2. Simple shape does not mean monochrome. Do not flatten all characters to 2-4 colors. Small subtle white catchlights in the dot eyes and short soft eyebrows are now requested. Keep them tiny and simple. Add two tiny short rounded arms without fingers. All characters must have NO TAIL. Use large head / tiny rounded body / very short limbs. Proportion and future movement reference: Chiikawa-like short steps, small arm swings and light body bounces; preserve our original character designs.",
+  "character_template": "ONE {species} with {base_color} fill and {few_simple_markings}. Extremely simple rounded 2D game mascot matching Approved/Goyeongi/v2/master.png. Compact single rounded body, tiny solid dot eyes, small simple mouth, few broad markings, smooth, continuous single dark outline with even stroke weight. Limited light neutral or muted pastel color fields. No cheek blush, separate decorative belly patch, fur texture, fingers or toe lines. Keep details readable at small size. Actual approved artwork is the visual authority.",
+  "goyeongi_exact_positive": "Minimalist bold vector game icon. A very short wide light-grey bean creature with two tiny pointed ears on top and a little curved tail, and two tiny round feet. The entire character is a single horizontal oval, twice as wide as it is tall. Two small round black dots and a tiny horizontal black dash form the entire face. There are three short charcoal stripes on its forehead and two stripes on the tail. Uniform extra thick black outline around every shape. Flat light-grey fill. Flat charcoal markings. Pure white background. Very simple iconic silhouette, clean crisp graphic shapes, no shading, no highlights, no texture, no other facial details. The character resembles a tiny minimalist cat from a casual mobile action game.",
+  "goyeongi_exact_negative": "",
+  "settings": {
+    "model": "flux1-dev-fp8.safetensors",
+    "text_encoders": [
+      "clip_l.safetensors",
+      "t5xxl_fp16.safetensors"
+    ],
+    "vae": "ae.safetensors",
+    "steps": 20,
+    "cfg": 1,
+    "guidance": 3.5,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "width": 768,
+    "height": 768,
+    "batch_size": 1,
+    "goyeongi_seed": 110406
+  },
+  "notes": [
+    "The v2 image overrides previous B style and contradictory historical prompt wording.",
+    "06 reproduces the generation stage only; its seed-110406 source includes a tail and lacks the final contour. Final reference uses ComfyUI mask/outline finishing.",
+    "Goyeongi cleanup mask is specific to this image; do not apply its coordinates to other characters.",
+    "New-character template is a starting point, not a guarantee of matching identity/style.",
+    "2026-11-04 feedback: retain subtle shading and accent colors; no fixed universal palette size.",
+    "Latest request overrides historical tail prompts: no tails for any character. Historical exact prompts remain provenance only.",
+    "2026-11-05: new art must be planned as five complete parts for a common skeleton; a flattened PNG alone is not rig-ready."
+  ],
+  "approved_on": "2026-11-04",
+  "goyeongi_final_requirement": "고영이는 꼬리 없음. 원본 생성 프롬프트에는 꼬리가 있지만 최종 기준 원화는 제거 후 master.png.",
+  "postprocessing": {
+    "outline_color": "#24211f",
+    "grow_mask_px_at_768": 11,
+    "goyeongi_cleanup_api": "Approved/Goyeongi/v2/cleanup_api.json"
+  },
+  "face_finishing": {
+    "highlight": "one small feathered 8x8 white dot per eye at 768px",
+    "eyebrow": "one short feathered 24x7 dark stroke per eye",
+    "example_api": "Approved/Goyeongi/v3/api.json",
+    "note": "Coordinates are specific to each image; align to eye positions for other characters."
+  },
+  "anatomy": {
+    "arms": "short rounded mitten-like limbs, no fingers",
+    "tails": "Darami has a rounded squirrel tail behind its body opposite its facing direction. Other playable characters have no tail.",
+    "proportions": "large head, tiny body, very short arms and legs",
+    "movement_reference": "Chiikawa-like small steps and small arm gestures; no animation produced yet",
+    "example_edit_api": "Approved/Goyeongi/v4/api.json"
+  },
+  "rigging_target": {
+    "parts": [
+      "head",
+      "body",
+      "arm_L",
+      "arm_R",
+      "leg_L",
+      "leg_R"
+    ],
+    "facing": "right three-quarter bias; mirror whole root for left; keep last horizontal facing for vertical motion",
+    "reference_spec": "ArtPipeline/Rigging/SharedCharacters6_20261105/shared_rig.json",
+    "status": "six-part shared Idle/Walk native Unity validation passed in isolated project; main game not integrated",
+    "anatomy": "complete connection overlap, no tails, one bone per short limb as initial cutout rig",
+    "redraw_review": "ArtPipeline/Rigging/Goyeongi_Redraw_20261105/rig.json"
+  },
+  "latest_design_target": {
+    "description": "Large separate round head over tiny plump torso, same six-part anatomy for cat/dog/hamster. Smooth continuous single dark ink outlines with rounded curves and consistent weight and sparse flat pastel fills from user reference screenshots. No tails.",
+    "review": "Examples/BigHead_Lineup_20261105/lineup_final.png",
+    "status": "proportion/design direction accepted by user; detailed design editable"
+  }
+}

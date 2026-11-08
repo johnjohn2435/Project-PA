@@ -1,0 +1,13 @@
+{
+  "species": "hamster",
+  "approved_on": "2026-11-04",
+  "status": "user_approved_design",
+  "user_decision": "다람쥐 수달 빼고 햄스터랑 강아지만 픽스하자",
+  "source": "Examples/FourAnimals_20261104/ColorRevision/hamster",
+  "display_name": "미정",
+  "unity_status": "not_integrated",
+  "hashes": {
+    "master.png": "abc839ed2a8ec81d172638f71292c57fa3ece59ea981d81088efde07681e5e3e",
+    "sprite_512.png": "b1c5aeb9e603b49b9d9416d468d4b536cf3846a941721833b32c0c434eaf6fb2"
+  }
+}

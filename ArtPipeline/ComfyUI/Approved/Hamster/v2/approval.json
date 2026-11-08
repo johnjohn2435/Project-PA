@@ -1,0 +1,13 @@
+{
+  "updated_on": "2026-11-04",
+  "status": "user_requested_eye_highlight_and_eyebrow_revision",
+  "source": "Hamster/v1",
+  "request": "눈에 반사광 같은 것도 넣어주고 눈썹도 넣어줘",
+  "method": "ComfyUI EmptyImage + feathered small masks + ImageCompositeMasked; preserved alpha via JoinImageWithAlpha",
+  "validation": "Edits limited to four eye/brow patches. Outside patches and alpha have at most 1/255 round-trip rounding difference.",
+  "hashes": {
+    "master.png": "a74e434b25b254b5a1bed315d7ff71580065896a03f6d5d1f1fafabb7aff9ca0",
+    "sprite_512.png": "996fc662552c68ef8637e19460177e6245b5395d113b8f82dd2c17fd2b2cc848"
+  },
+  "unity_status": "not_integrated"
+}

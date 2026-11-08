@@ -1,0 +1,17 @@
+{
+  "Assets/_Project/ScriptableObjects/GameCatalog.asset": "147554dcacecfdda13c7cbfe25edf52eb0b92d34f893a37fbfe0c0c4e6914aa7",
+  "Assets/_Project/Resources/UI/Screens/Hub.prefab": "ce6bd0efbb91a310de21ec2b6c8d336f4cbc0df9d1b39a72f81312bd90c6b9b0",
+  "Assets/_Project/Resources/UI/Common/CharacterCard.prefab": "54884edf9cbf9e6b8e9196dc8faa6f90055e770a7bf92b56391e29dc8f885eb9",
+  "Assets/_Project/Resources/Boot/BootResources.json": "cef310177db223609986e6f511f9f4ccff2f5b66865cd5e9b1621b91a1dc0313",
+  "Assets/_Project/Resources/Data/StringTable.json": "ef66d387db2928e6d8c688072facd572a40d46e287f0179f5d89541b774136c7",
+  "Assets/_Project/Scripts/Core/Save/SaveData.cs": "b57b7cb9043ecb3ba106d7adcf672900f1b639c75b4ec9f6fe3efcc8fa23ca44",
+  "Assets/_Project/Scripts/Core/Save/CharacterIds.cs": "a4e55114e5f7eb21bb2ab7a689f358ddec8d01d566673fee91c8d549c6e33174",
+  "Assets/_Project/Tests/EditMode/OnboardingTests.cs": "08283015ada2700f2d7b4d3dba5c4f58455ce4ead4e749a52ea8d7523273c1e6",
+  "Assets/_Project/Tests/EditMode/UIReferenceRemapperTests.cs": "84cca2dd115f41486102de3f3e8ec791215ab67d6587e8dd8d69837826f9d29f",
+  "Assets/_Project/Tests/EditMode/SaveRepositoryTests.cs": "6915306ef7e7da9100f1f94775e24ad748fbfb9541b06e1060c1fcf1c07928f5",
+  "Assets/_Project/Tests/PlayMode/BlockGravity/GameplayTests.cs": "f1f7eeab67a3f6647ad03c65bf144cc6d6104e4f0365c49296eb4aaefe9174f6",
+  "Assets/_Project/Art/Characters/Playable/char_poodle.meta": "42fe9588bb60307616fc3e589ac5e756ec86d55331902e31439738cc7a112a8c",
+  "Assets/_Project/Resources/Characters/char_poodle.meta": "3c6c3bd986b6907fb491d3ef1d6701dcbbfcf593ac091e9b1b8105ddfa0e5891",
+  "Assets/_Project/ScriptableObjects/Characters/char_poodle.asset": "f148a7d71ed8531f81d0f21fb3fc97e45f29d95d60e94d391ed75a8d7881aa70",
+  "Assets/_Project/ScriptableObjects/Characters/char_poodle.asset.meta": "5313595f454823c653adc9637dbe3730f579e8257479be6753addde9d25986b8"
+}

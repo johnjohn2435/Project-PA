@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "canvas": [
+    768,
+    768
+  ],
+  "pixels_per_unit": 256,
+  "root_pixel": [
+    384,
+    710
+  ],
+  "draw_order": [
+    "leg_R",
+    "leg_L",
+    "body",
+    "arm_R",
+    "arm_L",
+    "head"
+  ],
+  "skins": [
+    {
+      "key": "char_cat",
+      "label": "고영이"
+    },
+    {
+      "key": "char_dog",
+      "label": "가나지"
+    },
+    {
+      "key": "char_hamster",
+      "label": "햄쥐"
+    }
+  ],
+  "bones": [
+    {
+      "name": "body",
+      "parent": "root",
+      "path": "body",
+      "pivot_pixel": [
+        384,
+        580
+      ],
+      "unity_local_position": [
+        0.0,
+        0.5078125,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.24479166666666663
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "body",
+      "path": "body/head",
+      "pivot_pixel": [
+        384,
+        480
+      ],
+      "unity_local_position": [
+        0.0,
+        0.390625,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.375
+      ]
+    },
+    {
+      "name": "arm_L",
+      "parent": "body",
+      "path": "body/arm_L",
+      "pivot_pixel": [
+        280,
+        520
+      ],
+      "unity_local_position": [
+        -0.40625,
+        0.234375,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.3645833333333333,
+        0.32291666666666663
+      ]
+    },
+    {
+      "name": "arm_R",
+      "parent": "body",
+      "path": "body/arm_R",
+      "pivot_pixel": [
+        484,
+        520
+      ],
+      "unity_local_position": [
+        0.390625,
+        0.234375,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.6302083333333334,
+        0.32291666666666663
+      ]
+    },
+    {
+      "name": "leg_L",
+      "parent": "body",
+      "path": "body/leg_L",
+      "pivot_pixel": [
+        320,
+        640
+      ],
+      "unity_local_position": [
+        -0.25,
+        -0.234375,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.4166666666666667,
+        0.16666666666666663
+      ]
+    },
+    {
+      "name": "leg_R",
+      "parent": "body",
+      "path": "body/leg_R",
+      "pivot_pixel": [
+        448,
+        640
+      ],
+      "unity_local_position": [
+        0.25,
+        -0.234375,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5833333333333334,
+        0.16666666666666663
+      ]
+    }
+  ],
+  "art_facing": "front-biased; current artwork is not a side-view solution",
+  "rig_type": "six rigid cutout transforms; no SpriteSkin required"
+}

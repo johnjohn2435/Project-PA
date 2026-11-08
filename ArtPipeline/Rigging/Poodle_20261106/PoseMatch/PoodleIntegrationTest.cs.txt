@@ -1,0 +1,67 @@
+using PocketArcade;
+using System.Collections;
+using System.IO;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.TestTools;
+using UnityEditor;
+using PocketArcade.Meta;
+using PocketArcade.UI;
+using PocketArcade.Core.Save;
+using PocketArcade.TiltFloor.Unity;
+public sealed class PoodleIntegrationTest {
+ sealed class MemoryStore:ISaveRepository {
+  public SaveData value=new SaveData{coins=123,selectedCharacterId="char_dog",unlockedCharacterIds=new System.Collections.Generic.List<string>{"char_cat","char_dog","char_hamster"}};
+  public SaveData Load()=>value.Copy();public void Save(SaveData d){value=d.Copy();}
+ }
+ const string Output=@"D:/Project PA/ArtPipeline/Rigging/Poodle_20261106/PoseMatch/";
+ ResourceManager resources;DataManager data;SoundManager sound;SceneFlowManager scenes;UIManager ui;
+ void Capture(Camera camera,string name){
+  var before=camera.targetTexture;var active=RenderTexture.active;var rt=RenderTexture.GetTemporary(540,960,24);
+  camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;var image=new Texture2D(540,960,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,540,960),0,0);image.Apply();File.WriteAllBytes(Output+name+".png",image.EncodeToPNG());camera.targetTexture=before;RenderTexture.active=active;RenderTexture.ReleaseTemporary(rt);Object.Destroy(image);
+ }
+ IEnumerator CaptureUI(string name){
+  var go=new GameObject("Review Camera");var cam=go.AddComponent<Camera>();cam.cullingMask=~(1<<31);cam.orthographic=true;cam.transform.position=new Vector3(0,0,-10);cam.backgroundColor=new Color(.98f,.96f,.9f);
+  var target=RenderTexture.GetTemporary(540,960,24);cam.targetTexture=target;
+  var canvases=Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);var cameras=new Camera[canvases.Length];var modes=new RenderMode[canvases.Length];var distances=new float[canvases.Length];
+  for(int i=0;i<canvases.Length;i++){cameras[i]=canvases[i].worldCamera;modes[i]=canvases[i].renderMode;distances[i]=canvases[i].planeDistance;if(canvases[i].isRootCanvas){canvases[i].renderMode=RenderMode.ScreenSpaceCamera;canvases[i].worldCamera=cam;canvases[i].planeDistance=1;}}
+  yield return null;yield return null;Canvas.ForceUpdateCanvases();Capture(cam,name);
+  for(int i=0;i<canvases.Length;i++){canvases[i].renderMode=modes[i];canvases[i].worldCamera=cameras[i];canvases[i].planeDistance=distances[i];}
+  cam.targetTexture=null;RenderTexture.ReleaseTemporary(target);Object.Destroy(go);
+ }
+ [UnityTest] public IEnumerator ChoosePoodleAndWalkInGame(){
+  PocketArcade.L10n.Initialize(Resources.Load<TextAsset>("Data/StringTable").text);
+  var catalog=AssetDatabase.LoadAssetAtPath<GameCatalog>("Assets/_Project/ScriptableObjects/GameCatalog.asset");
+  resources=new GameObject("Resources").AddComponent<ResourceManager>();resources.Initialize();
+  yield return resources.Preload(BootResourceManifest.Parse(Resources.Load<TextAsset>("Boot/BootResources").text,catalog));Assert.That(resources.PreloadError,Is.Null);
+  var store=new MemoryStore();data=new GameObject("Data").AddComponent<DataManager>();data.Initialize(catalog,store);Assert.That(data.IsUnlocked("char_poodle"),Is.True);Assert.That(data.Coins,Is.EqualTo(123));Assert.That(data.SelectedCharacterId,Is.EqualTo("char_dog"));
+  sound=new GameObject("Sound").AddComponent<SoundManager>();sound.Initialize(data);sound.UseBootResources(resources);
+  scenes=new GameObject("Scenes").AddComponent<SceneFlowManager>();scenes.Initialize(catalog);ui=new GameObject("UI").AddComponent<UIManager>();ui.Initialize();
+  Assert.That(scenes.OpenHub(out var error),Is.True,error);HubView hub=null;
+  for(int i=0;i<180;i++){yield return null;hub=Object.FindFirstObjectByType<HubView>();if(hub!=null && hub.isActiveAndEnabled && !scenes.IsLoading)break;}
+  Assert.That(hub,Is.Not.Null);yield return null;yield return null;
+  hub.DisplayPanel(UIPage.Characters);yield return null;yield return null;
+  Button selectedButton=null;
+  foreach(var card in Object.FindObjectsByType<CharacterCardView>(FindObjectsInactive.Include,FindObjectsSortMode.None)){
+   var so=new SerializedObject(card);var portrait=(Image)so.FindProperty("portrait").objectReferenceValue;
+   if(portrait.sprite!=null && AssetDatabase.GetAssetPath(portrait.sprite).Contains("char_poodle"))selectedButton=(Button)so.FindProperty("button").objectReferenceValue;
+  }
+  Assert.That(selectedButton,Is.Not.Null);selectedButton.onClick.Invoke();yield return null;Assert.That(data.SelectedCharacterId,Is.EqualTo("char_poodle"));Assert.That(store.value.selectedCharacterId,Is.EqualTo("char_poodle"));
+  yield return CaptureUI("hub");
+  hub.DisplayPanel(UIPage.Characters);yield return null;yield return null;yield return CaptureUI("cards"); foreach(var card in Object.FindObjectsByType<CharacterCardView>(FindObjectsInactive.Include,FindObjectsSortMode.None)){var cs=new SerializedObject(card);var img=(Image)cs.FindProperty("portrait").objectReferenceValue;Debug.Log("CARD_RUNTIME "+card.name+" sprite="+img.sprite+" color="+img.color+" enabled="+img.enabled+" active="+img.gameObject.activeInHierarchy+" sibling="+img.transform.GetSiblingIndex()+" rect="+img.rectTransform.rect+" scale="+img.transform.lossyScale+" material="+img.material.name); foreach(var t in card.GetComponentsInChildren<Graphic>(true))Debug.Log("GRAPHIC "+t.name+" "+t.transform.GetSiblingIndex()+" "+t.enabled+" "+t.GetType());}
+  Assert.That(scenes.OpenGame("tilt_floor",out error),Is.True,error);
+  FloorHud hud=null;for(int i=0;i<180;i++){yield return null;hud=Object.FindFirstObjectByType<FloorHud>();if(hud!=null && hud.IsOpen && !scenes.IsLoading)break;}
+  Assert.That(hud,Is.Not.Null);hud.SendMessage("OnApplicationFocus",true);hud.Play();yield return null;
+  var world=Object.FindFirstObjectByType<FloorWorldView>();var actor=world.GetComponentInChildren<PocketArcade.Characters.CharacterRigController>();Assert.That(actor,Is.Not.Null);
+  Assert.That(actor.transform.Find("body/head").GetComponent<SpriteRenderer>().sprite.texture.name,Is.EqualTo("head"));
+  var cam=world.PlayCamera;cam.orthographicSize=.99f;cam.transform.position=actor.transform.position+new Vector3(0,.45f,-10);
+  foreach(var side in new[]{"right","left"}){
+   actor.SetMovement(side=="right"?Vector2.right:Vector2.left);var animator=actor.GetComponent<Animator>();animator.Play("Walk",0,.25f);animator.Update(0);
+   Capture(cam,"walk_"+side);
+  }
+ }
+ [UnityTearDown]public IEnumerator Cleanup(){
+  if(ui){ui.Shutdown();Object.Destroy(ui.gameObject);}if(scenes){scenes.Shutdown();Object.Destroy(scenes.gameObject);}if(sound){sound.Shutdown();Object.Destroy(sound.gameObject);}if(data){data.Shutdown();Object.Destroy(data.gameObject);}if(resources){resources.Shutdown();Object.Destroy(resources.gameObject);}yield return null;PocketArcade.L10n.Reset();
+ }
+}

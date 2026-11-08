@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "canvas_px": [
+    768,
+    768
+  ],
+  "pixels_per_unit": 256,
+  "root_px": [
+    384,
+    700
+  ],
+  "default_facing": "right_three_quarter",
+  "left_facing": "mirror_root_x",
+  "vertical_motion": "reuse last left/right facing",
+  "draw_order": [
+    "leg_R",
+    "arm_R",
+    "leg_L",
+    "arm_L",
+    "body"
+  ],
+  "bones": {
+    "body": {
+      "parent": "root",
+      "position_px": [
+        384,
+        500
+      ],
+      "pivot_px": [
+        384,
+        500
+      ],
+      "size": [
+        768,
+        768
+      ],
+      "unity_local_position": [
+        0.0,
+        0.78125,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.34895833333333337
+      ]
+    },
+    "arm_L": {
+      "parent": "body",
+      "position_px": [
+        228,
+        500
+      ],
+      "pivot_px": [
+        48,
+        30
+      ],
+      "size": [
+        96,
+        144
+      ],
+      "unity_local_position": [
+        -0.609375,
+        0.0,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.7916666666666666
+      ]
+    },
+    "arm_R": {
+      "parent": "body",
+      "position_px": [
+        540,
+        490
+      ],
+      "pivot_px": [
+        48,
+        30
+      ],
+      "size": [
+        96,
+        144
+      ],
+      "unity_local_position": [
+        0.609375,
+        0.0390625,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.7916666666666666
+      ]
+    },
+    "leg_L": {
+      "parent": "body",
+      "position_px": [
+        350,
+        615
+      ],
+      "pivot_px": [
+        48,
+        27
+      ],
+      "size": [
+        96,
+        128
+      ],
+      "unity_local_position": [
+        -0.1328125,
+        -0.44921875,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.7890625
+      ]
+    },
+    "leg_R": {
+      "parent": "body",
+      "position_px": [
+        430,
+        605
+      ],
+      "pivot_px": [
+        48,
+        27
+      ],
+      "size": [
+        96,
+        128
+      ],
+      "unity_local_position": [
+        0.1796875,
+        -0.41015625,
+        0
+      ],
+      "sprite_pivot_normalized": [
+        0.5,
+        0.7890625
+      ]
+    }
+  },
+  "note": "L/R are fixed skeleton slot names, never renamed on mirroring. Both arms are drawn behind body to hide shoulder caps."
+}

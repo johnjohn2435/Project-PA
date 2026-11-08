@@ -1,0 +1,692 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_candidate_A.png"
+    }
+  },
+  "2": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14524253
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_face_clean.png"
+    }
+  },
+  "4": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "5": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "mask": [
+        "4",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_dot_eyes.png"
+    }
+  },
+  "7": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "8": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 394247
+    }
+  },
+  "9": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "5",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "mask": [
+        "7",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "10": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16777215
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_glints.png"
+    }
+  },
+  "12": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "11",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "13": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "10",
+        0
+      ],
+      "mask": [
+        "12",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "14": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_fringe_clean.png"
+    }
+  },
+  "15": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "14",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "16": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "13",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "mask": [
+        "15",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "17": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16442806
+    }
+  },
+  "18": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_belly_clean.png"
+    }
+  },
+  "19": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "18",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "20": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "16",
+        0
+      ],
+      "source": [
+        "17",
+        0
+      ],
+      "mask": [
+        "19",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "21": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14722143
+    }
+  },
+  "22": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_toes_clean.png"
+    }
+  },
+  "23": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "22",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "24": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "20",
+        0
+      ],
+      "source": [
+        "21",
+        0
+      ],
+      "mask": [
+        "23",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "25": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_cutout_mask.png"
+    }
+  },
+  "26": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "27": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16447471
+    }
+  },
+  "28": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "29": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "26",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ],
+      "x": 180,
+      "y": 440,
+      "width": 400,
+      "height": 278
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "width": 280,
+      "height": 269,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "32": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "29",
+        0
+      ],
+      "x": 180,
+      "y": 440,
+      "width": 400,
+      "height": 278
+    }
+  },
+  "33": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "32",
+        0
+      ],
+      "width": 280,
+      "height": 269,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "34": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "33",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "35": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "27",
+        0
+      ],
+      "source": [
+        "31",
+        0
+      ],
+      "mask": [
+        "34",
+        0
+      ],
+      "x": 244,
+      "y": 440,
+      "resize_source": false
+    }
+  },
+  "36": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "28",
+        0
+      ],
+      "source": [
+        "34",
+        0
+      ],
+      "x": 244,
+      "y": 440,
+      "operation": "add"
+    }
+  },
+  "37": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ],
+      "x": 105,
+      "y": 85,
+      "width": 548,
+      "height": 390
+    }
+  },
+  "38": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "37",
+        0
+      ],
+      "width": 600,
+      "height": 427,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "39": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "48",
+        0
+      ],
+      "x": 105,
+      "y": 85,
+      "width": 548,
+      "height": 390
+    }
+  },
+  "40": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "39",
+        0
+      ],
+      "width": 600,
+      "height": 427,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "41": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "40",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "42": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "35",
+        0
+      ],
+      "source": [
+        "38",
+        0
+      ],
+      "mask": [
+        "41",
+        0
+      ],
+      "x": 84,
+      "y": 55,
+      "resize_source": false
+    }
+  },
+  "43": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "36",
+        0
+      ],
+      "source": [
+        "41",
+        0
+      ],
+      "x": 84,
+      "y": 55,
+      "operation": "add"
+    }
+  },
+  "44": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "43",
+        0
+      ]
+    }
+  },
+  "45": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "42",
+        0
+      ],
+      "alpha": [
+        "44",
+        0
+      ]
+    }
+  },
+  "46": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "55",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRedraw/final_preview"
+    }
+  },
+  "47": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "59",
+        0
+      ],
+      "filename_prefix": "ProjectPA/PoodleRedraw/master"
+    }
+  },
+  "48": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_poodle_finish_head_cutout.png"
+    }
+  },
+  "49": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ],
+      "x": 90,
+      "y": 85,
+      "width": 580,
+      "height": 630
+    }
+  },
+  "50": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "49",
+        0
+      ],
+      "width": 600,
+      "height": 652,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "51": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ],
+      "x": 90,
+      "y": 85,
+      "width": 580,
+      "height": 630
+    }
+  },
+  "52": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "51",
+        0
+      ],
+      "width": 600,
+      "height": 652,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "53": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "52",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "54": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16447471
+    }
+  },
+  "55": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "54",
+        0
+      ],
+      "source": [
+        "50",
+        0
+      ],
+      "mask": [
+        "53",
+        0
+      ],
+      "x": 84,
+      "y": 55,
+      "resize_source": false
+    }
+  },
+  "56": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "57": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "56",
+        0
+      ],
+      "source": [
+        "53",
+        0
+      ],
+      "x": 84,
+      "y": 55,
+      "operation": "add"
+    }
+  },
+  "58": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "57",
+        0
+      ]
+    }
+  },
+  "59": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "55",
+        0
+      ],
+      "alpha": [
+        "58",
+        0
+      ]
+    }
+  }
+}

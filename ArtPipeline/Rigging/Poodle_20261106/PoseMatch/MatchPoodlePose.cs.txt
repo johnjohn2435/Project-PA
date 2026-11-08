@@ -1,0 +1,21 @@
+using UnityEngine;
+using UnityEditor;
+public static class MatchPoodlePose {
+ public static void Build(){
+  AssetDatabase.Refresh();
+  string folder="Assets/_Project/Art/Characters/Playable/char_poodle/";
+  foreach(string part in new[]{"arm_LBlend","arm_RBlend"}){
+   bool left=part=="arm_LBlend";
+   var m=AssetDatabase.LoadAssetAtPath<Mesh>(folder+part+".asset");var v=m.vertices;var uv=m.uv;var w=m.boneWeights;
+   for(int i=0;i<v.Length;i++){
+    float x=Mathf.Lerp(left?200:450,left?330:570,(i%27)/26f),y=Mathf.Lerp(413,590,(i/27)/32f);
+    v[i]=new Vector3((x-384)/256,(710-y)/256,0);uv[i]=new Vector2(x/768,1-y/768);
+    float t=Mathf.SmoothStep(0,1,Mathf.InverseLerp(465,535,y));w[i]=new BoneWeight{boneIndex0=0,weight0=1-t,boneIndex1=1,weight1=t};
+   }
+   m.vertices=v;m.uv=uv;m.boneWeights=w;m.RecalculateBounds();EditorUtility.SetDirty(m);
+  }
+  string path="Assets/_Project/Resources/Characters/char_poodle/Character.prefab";var root=PrefabUtility.LoadPrefabContents(path);
+  try{foreach(var r in root.GetComponentsInChildren<SkinnedMeshRenderer>())r.localBounds=r.sharedMesh.bounds;PrefabUtility.SaveAsPrefabAsset(root,path);}finally{PrefabUtility.UnloadPrefabContents(root);}
+  AssetDatabase.SaveAssets();
+ }
+}

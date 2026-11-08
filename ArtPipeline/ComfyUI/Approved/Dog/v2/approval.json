@@ -1,0 +1,13 @@
+{
+  "updated_on": "2026-11-04",
+  "status": "user_requested_eye_highlight_and_eyebrow_revision",
+  "source": "Dog/v1",
+  "request": "눈에 반사광 같은 것도 넣어주고 눈썹도 넣어줘",
+  "method": "ComfyUI EmptyImage + feathered small masks + ImageCompositeMasked; preserved alpha via JoinImageWithAlpha",
+  "validation": "Edits limited to four eye/brow patches. Outside patches and alpha have at most 1/255 round-trip rounding difference.",
+  "hashes": {
+    "master.png": "50c0fcae3ce82cbb906b6f0d82536d0679070b8c9d37607627ef067206c8856d",
+    "sprite_512.png": "80087c8023507add15d1b32aa6112dc3a1d2266ccc53b316dd63dcaa4a9029ff"
+  },
+  "unity_status": "not_integrated"
+}

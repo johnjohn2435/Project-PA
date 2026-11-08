@@ -1,0 +1,200 @@
+{
+  "prompt": [
+    71,
+    "4988d6cc-a007-435a-bcd3-a45dd5dcd7c8",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": "A minimal ink cartoon model sheet showing three chubby animal friends on an ivory background. All three have identical simple SHORT WIDE BEAN bodies, matching body outlines and equal heights, two tiny oval feet, two tiny oval arms at the sides. All three turn slightly RIGHT. Extra thick uniform DARK BROWN INK outlines. Sparse flat pastel colors, a tiny subtle underside shadow. Tiny dot eyes with tiny white specks and short eyebrows. A tiny smiling mouth. Smooth simple shapes. LEFT: grey CAT with small triangular ears, just two broad grey forehead stripes. CENTER: cream DOG with two short tan floppy ears, completely plain cream forehead and belly. RIGHT: beige HAMSTER with two small round ears, completely plain beige forehead and belly. Same body template repeated three times, only ears and color differ. Short squat silhouettes, wider than tall below the ears. Cozy simple hand drawn animal doodles, as simple as the background animals in a cozy jazz cafe illustration. Clean tailless silhouettes. Plain cheeks. Plain mitten hands. Plain feet. Three separate full bodies, aligned feet. No text."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "15",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "4": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1344,
+          "height": 768,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "Batch 1 / RTX 3080 10GB"
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "seed": 115507,
+          "steps": 28,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "4",
+            0
+          ],
+          "denoise": 1.0
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "16",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "ProjectPA/SharedLineup_20261105/C"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "15": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "16": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "17": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "2",
+            0
+          ],
+          "guidance": 4.0
+        }
+      }
+    },
+    {
+      "client_id": "47bb0996-5946-471e-a002-5459cd4cc719",
+      "create_time": 1793882661481
+    },
+    [
+      "7"
+    ]
+  ],
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "C_00001_.png",
+          "subfolder": "ProjectPA\\SharedLineup_20261105",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 1344,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "4988d6cc-a007-435a-bcd3-a45dd5dcd7c8",
+          "timestamp": 1793882661481
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "3",
+            "4",
+            "15",
+            "16"
+          ],
+          "prompt_id": "4988d6cc-a007-435a-bcd3-a45dd5dcd7c8",
+          "timestamp": 1793882661483
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "4988d6cc-a007-435a-bcd3-a45dd5dcd7c8",
+          "timestamp": 1793882709185
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "7": {
+      "node_id": "7",
+      "display_node": "7",
+      "parent_node": null,
+      "real_node_id": "7"
+    }
+  }
+}

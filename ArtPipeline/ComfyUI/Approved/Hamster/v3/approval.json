@@ -1,0 +1,14 @@
+{
+  "updated_on": "2026-11-04",
+  "status": "user_requested_short_arms_no_tails_revision",
+  "source": "Hamster/v2",
+  "request": "팔 추가, 치이카와 같은 짧은 신체비율·움직임 참고, 꼬리 만들지 않기",
+  "method": "ComfyUI Gaussian mask -> ellipse -> U outline mask -> image composite. Dog tail removed via local symmetric alpha/color and contour repair.",
+  "validation": "Face ROI unchanged within 1/255; RGBA alpha range 0..255; visual review of arms and tail removal.",
+  "hashes": {
+    "master.png": "b6cfc0bf8470719f9bf5d9e2775923087b228382d468d90caa4eb760492fd1b4",
+    "sprite_512.png": "d0b19c234791b10a1fbbf5d539989cdb65b234984c6b816a4f93d3dafb6818eb"
+  },
+  "animation_status": "not_created",
+  "unity_status": "not_integrated"
+}

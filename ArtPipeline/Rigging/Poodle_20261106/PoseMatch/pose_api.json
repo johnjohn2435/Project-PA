@@ -1,0 +1,695 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "head.png"
+    }
+  },
+  "2": {
+    "class_type": "PAPoseRotate",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "mask": [
+        "1",
+        1
+      ],
+      "angle": 8,
+      "pivot_x": 384,
+      "pivot_y": 420
+    }
+  },
+  "3": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "2",
+        1
+      ]
+    }
+  },
+  "4": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "5": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "4",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "mask": [
+        "3",
+        0
+      ],
+      "x": 0,
+      "y": 28,
+      "resize_source": false
+    }
+  },
+  "6": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "7": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "6",
+        0
+      ],
+      "source": [
+        "3",
+        0
+      ],
+      "x": 0,
+      "y": 28,
+      "operation": "add"
+    }
+  },
+  "8": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "7",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "7",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "5",
+        0
+      ],
+      "source_alpha": [
+        "8",
+        0
+      ],
+      "destination": [
+        "5",
+        0
+      ],
+      "destination_alpha": [
+        "9",
+        0
+      ],
+      "mode": "SRC"
+    }
+  },
+  "11": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "alpha": [
+        "10",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "PoodlePose/head"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "arm_L.png"
+    }
+  },
+  "14": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "13",
+        1
+      ]
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "arm_L_blend_mask.png"
+    }
+  },
+  "16": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "15",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "17": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "14",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "18": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "17",
+        0
+      ]
+    }
+  },
+  "19": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "17",
+        0
+      ]
+    }
+  },
+  "20": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "13",
+        0
+      ],
+      "source_alpha": [
+        "18",
+        0
+      ],
+      "destination": [
+        "13",
+        0
+      ],
+      "destination_alpha": [
+        "19",
+        0
+      ],
+      "mode": "SRC"
+    }
+  },
+  "21": {
+    "class_type": "PAPoseRotate",
+    "inputs": {
+      "image": [
+        "20",
+        0
+      ],
+      "mask": [
+        "20",
+        1
+      ],
+      "angle": 26,
+      "pivot_x": 286,
+      "pivot_y": 449
+    }
+  },
+  "22": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "21",
+        0
+      ],
+      "alpha": [
+        "21",
+        1
+      ]
+    }
+  },
+  "23": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ],
+      "filename_prefix": "PoodlePose/arm_L"
+    }
+  },
+  "24": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "arm_R.png"
+    }
+  },
+  "25": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "24",
+        1
+      ]
+    }
+  },
+  "26": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "arm_R_blend_mask.png"
+    }
+  },
+  "27": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "26",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "28": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "25",
+        0
+      ],
+      "source": [
+        "27",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "29": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "28",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "28",
+        0
+      ]
+    }
+  },
+  "31": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "24",
+        0
+      ],
+      "source_alpha": [
+        "29",
+        0
+      ],
+      "destination": [
+        "24",
+        0
+      ],
+      "destination_alpha": [
+        "30",
+        0
+      ],
+      "mode": "SRC"
+    }
+  },
+  "32": {
+    "class_type": "PAPoseRotate",
+    "inputs": {
+      "image": [
+        "31",
+        0
+      ],
+      "mask": [
+        "31",
+        1
+      ],
+      "angle": -26,
+      "pivot_x": 480,
+      "pivot_y": 449
+    }
+  },
+  "33": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "32",
+        0
+      ],
+      "alpha": [
+        "32",
+        1
+      ]
+    }
+  },
+  "34": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "33",
+        0
+      ],
+      "filename_prefix": "PoodlePose/arm_R"
+    }
+  },
+  "35": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "torso_mesh.png"
+    }
+  },
+  "36": {
+    "class_type": "PAPoseRotate",
+    "inputs": {
+      "image": [
+        "35",
+        0
+      ],
+      "mask": [
+        "35",
+        1
+      ],
+      "angle": 0,
+      "pivot_x": 384,
+      "pivot_y": 420
+    }
+  },
+  "37": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "torso_cleanup_mask.png"
+    }
+  },
+  "38": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "37",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "39": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 14525024
+    }
+  },
+  "40": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "36",
+        0
+      ],
+      "source": [
+        "39",
+        0
+      ],
+      "mask": [
+        "38",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "41": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "shoulder_line_mask.png"
+    }
+  },
+  "42": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "41",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "43": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 1118232
+    }
+  },
+  "44": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "40",
+        0
+      ],
+      "source": [
+        "43",
+        0
+      ],
+      "mask": [
+        "42",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "45": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "44",
+        0
+      ],
+      "source_alpha": [
+        "36",
+        1
+      ],
+      "destination": [
+        "44",
+        0
+      ],
+      "destination_alpha": [
+        "36",
+        1
+      ],
+      "mode": "SRC"
+    }
+  },
+  "46": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "45",
+        0
+      ],
+      "alpha": [
+        "45",
+        1
+      ]
+    }
+  },
+  "47": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "46",
+        0
+      ],
+      "filename_prefix": "PoodlePose/torso_mesh"
+    }
+  },
+  "48": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "21",
+        0
+      ],
+      "source_alpha": [
+        "21",
+        1
+      ],
+      "destination": [
+        "45",
+        0
+      ],
+      "destination_alpha": [
+        "45",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "49": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "32",
+        0
+      ],
+      "source_alpha": [
+        "32",
+        1
+      ],
+      "destination": [
+        "48",
+        0
+      ],
+      "destination_alpha": [
+        "48",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "50": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "10",
+        0
+      ],
+      "source_alpha": [
+        "10",
+        1
+      ],
+      "destination": [
+        "49",
+        0
+      ],
+      "destination_alpha": [
+        "49",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "51": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "50",
+        0
+      ],
+      "alpha": [
+        "50",
+        1
+      ]
+    }
+  },
+  "52": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "51",
+        0
+      ],
+      "filename_prefix": "PoodlePose/master"
+    }
+  },
+  "53": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 16381935
+    }
+  },
+  "54": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "50",
+        1
+      ]
+    }
+  },
+  "55": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "53",
+        0
+      ],
+      "source": [
+        "50",
+        0
+      ],
+      "mask": [
+        "54",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "56": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "55",
+        0
+      ],
+      "filename_prefix": "PoodlePose/preview"
+    }
+  }
+}

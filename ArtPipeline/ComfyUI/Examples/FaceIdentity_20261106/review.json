@@ -1,0 +1,19 @@
+{
+  "status": "review_candidates",
+  "tool": "local ComfyUI 8188; mask composites, no external generation API",
+  "hamster": {
+    "source": "../Hamster_New_20261106/round_brows_master.png",
+    "design": "원래 동그란 눈·아치 눈썹 유지. 밝은 볼주머니, 옅은 볼 색, 작은 앞니와 작은 미소.",
+    "preview": "hamster_preview.png",
+    "master": "hamster_master.png",
+    "workflow": "hamster_api.json"
+  },
+  "poodle": {
+    "source": "../../../Rigging/Poodle_20261106/PoseMatch/master.png",
+    "design": "조금 가까운 타원형 눈, 부드러운 아치 눈썹, 둥근 코와 작은 혀. 기존 얼굴 흔적 제거, 목·어깨 외곽선 연결, 발 작은 잡선 정리.",
+    "preview": "poodle_preview.png",
+    "master": "poodle_master.png",
+    "workflow": "poodle_api.json"
+  },
+  "game_integration": "이번 얼굴 변경은 미적용. 기존 푸들 게임 자산·공용 리그 유지. 디자인 검토 후 수정 파츠에 반영 필요."
+}

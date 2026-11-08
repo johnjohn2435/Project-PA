@@ -1,0 +1,914 @@
+{
+  "prompt": [
+    118,
+    "4eb05df4-eacd-4d08-83d6-a8cbab93c37a",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_approved_h_lineup.png"
+        }
+      },
+      "2": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "x": 780,
+          "y": 200,
+          "width": 315,
+          "height": 340
+        }
+      },
+      "3": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "2",
+            0
+          ],
+          "width": 750,
+          "height": 735,
+          "crop": "disabled",
+          "upscale_method": "bicubic"
+        }
+      },
+      "4": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "5": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "4",
+            0
+          ],
+          "source": [
+            "3",
+            0
+          ],
+          "x": 10,
+          "y": 2,
+          "resize_source": false
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_approved_h_head_mask.png"
+        }
+      },
+      "7": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "6",
+            0
+          ],
+          "x": 780,
+          "y": 200,
+          "width": 315,
+          "height": 340
+        }
+      },
+      "8": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "7",
+            0
+          ],
+          "width": 750,
+          "height": 735,
+          "crop": "disabled",
+          "upscale_method": "bicubic"
+        }
+      },
+      "9": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "10": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "9",
+            0
+          ],
+          "source": [
+            "8",
+            0
+          ],
+          "x": 10,
+          "y": 2,
+          "resize_source": false
+        }
+      },
+      "11": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "10",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "12": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "11",
+            0
+          ]
+        }
+      },
+      "13": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "5",
+            0
+          ],
+          "alpha": [
+            "12",
+            0
+          ]
+        }
+      },
+      "15": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_approved_h_torso_mesh_mask.png"
+        }
+      },
+      "16": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "15",
+            0
+          ],
+          "x": 780,
+          "y": 200,
+          "width": 315,
+          "height": 340
+        }
+      },
+      "17": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "16",
+            0
+          ],
+          "width": 750,
+          "height": 735,
+          "crop": "disabled",
+          "upscale_method": "bicubic"
+        }
+      },
+      "18": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "19": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "18",
+            0
+          ],
+          "source": [
+            "17",
+            0
+          ],
+          "x": 10,
+          "y": 2,
+          "resize_source": false
+        }
+      },
+      "20": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "19",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "21": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "20",
+            0
+          ]
+        }
+      },
+      "22": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "5",
+            0
+          ],
+          "alpha": [
+            "21",
+            0
+          ]
+        }
+      },
+      "24": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_approved_h_arm_L_mask.png"
+        }
+      },
+      "25": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "24",
+            0
+          ],
+          "x": 780,
+          "y": 200,
+          "width": 315,
+          "height": 340
+        }
+      },
+      "26": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "25",
+            0
+          ],
+          "width": 750,
+          "height": 735,
+          "crop": "disabled",
+          "upscale_method": "bicubic"
+        }
+      },
+      "27": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "28": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "27",
+            0
+          ],
+          "source": [
+            "26",
+            0
+          ],
+          "x": 10,
+          "y": 2,
+          "resize_source": false
+        }
+      },
+      "29": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "28",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "30": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "29",
+            0
+          ]
+        }
+      },
+      "31": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "5",
+            0
+          ],
+          "alpha": [
+            "30",
+            0
+          ]
+        }
+      },
+      "33": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "pa_approved_h_arm_R_mask.png"
+        }
+      },
+      "34": {
+        "class_type": "ImageCrop",
+        "inputs": {
+          "image": [
+            "33",
+            0
+          ],
+          "x": 780,
+          "y": 200,
+          "width": 315,
+          "height": 340
+        }
+      },
+      "35": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "34",
+            0
+          ],
+          "width": 750,
+          "height": 735,
+          "crop": "disabled",
+          "upscale_method": "bicubic"
+        }
+      },
+      "36": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "37": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "36",
+            0
+          ],
+          "source": [
+            "35",
+            0
+          ],
+          "x": 10,
+          "y": 2,
+          "resize_source": false
+        }
+      },
+      "38": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "37",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "39": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "38",
+            0
+          ]
+        }
+      },
+      "40": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "5",
+            0
+          ],
+          "alpha": [
+            "39",
+            0
+          ]
+        }
+      },
+      "42": {
+        "class_type": "PorterDuffImageComposite",
+        "inputs": {
+          "source": [
+            "5",
+            0
+          ],
+          "source_alpha": [
+            "39",
+            0
+          ],
+          "destination": [
+            "5",
+            0
+          ],
+          "destination_alpha": [
+            "21",
+            0
+          ],
+          "mode": "SRC_OVER"
+        }
+      },
+      "43": {
+        "class_type": "PorterDuffImageComposite",
+        "inputs": {
+          "source": [
+            "5",
+            0
+          ],
+          "source_alpha": [
+            "30",
+            0
+          ],
+          "destination": [
+            "42",
+            0
+          ],
+          "destination_alpha": [
+            "42",
+            1
+          ],
+          "mode": "SRC_OVER"
+        }
+      },
+      "44": {
+        "class_type": "PorterDuffImageComposite",
+        "inputs": {
+          "source": [
+            "5",
+            0
+          ],
+          "source_alpha": [
+            "12",
+            0
+          ],
+          "destination": [
+            "43",
+            0
+          ],
+          "destination_alpha": [
+            "43",
+            1
+          ],
+          "mode": "SRC_OVER"
+        }
+      },
+      "45": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "44",
+            0
+          ],
+          "alpha": [
+            "44",
+            1
+          ]
+        }
+      },
+      "46": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "45",
+            0
+          ],
+          "width": 696,
+          "height": 768,
+          "crop": "disabled",
+          "upscale_method": "lanczos"
+        }
+      },
+      "47": {
+        "class_type": "SplitImageWithAlpha",
+        "inputs": {
+          "image": [
+            "46",
+            0
+          ]
+        }
+      },
+      "48": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 0
+        }
+      },
+      "49": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "48",
+            0
+          ],
+          "source": [
+            "47",
+            0
+          ],
+          "x": 36,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "50": {
+        "class_type": "SolidMask",
+        "inputs": {
+          "value": 1.0,
+          "width": 768,
+          "height": 768
+        }
+      },
+      "51": {
+        "class_type": "MaskComposite",
+        "inputs": {
+          "destination": [
+            "50",
+            0
+          ],
+          "source": [
+            "47",
+            1
+          ],
+          "x": 36,
+          "y": 0,
+          "operation": "multiply"
+        }
+      },
+      "52": {
+        "class_type": "JoinImageWithAlpha",
+        "inputs": {
+          "image": [
+            "49",
+            0
+          ],
+          "alpha": [
+            "51",
+            0
+          ]
+        }
+      },
+      "80": {
+        "class_type": "EmptyImage",
+        "inputs": {
+          "width": 768,
+          "height": 768,
+          "batch_size": 1,
+          "color": 16447471
+        }
+      },
+      "81": {
+        "class_type": "InvertMask",
+        "inputs": {
+          "mask": [
+            "51",
+            0
+          ]
+        }
+      },
+      "82": {
+        "class_type": "ImageCompositeMasked",
+        "inputs": {
+          "destination": [
+            "80",
+            0
+          ],
+          "source": [
+            "49",
+            0
+          ],
+          "mask": [
+            "81",
+            0
+          ],
+          "x": 0,
+          "y": 0,
+          "resize_source": false
+        }
+      },
+      "83": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "82",
+            0
+          ],
+          "filename_prefix": "ProjectPA/NewHamster/reference"
+        }
+      },
+      "101": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux1-dev-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "102": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "115",
+            0
+          ],
+          "text": "One adorable GOLDEN SYRIAN HAMSTER cartoon animal friend, standing upright on two very tiny round feet, full body. Huge wide rounded head with plump pouch cheeks, two TINY circular ears, a very short round muzzle. Soft honey gold fur on the entire forehead and crown, a broad smooth CREAM lower face covering both large cheeks and the muzzle. The forehead is one plain unmarked golden color. Tiny glossy black round dot eyes with one tiny white catchlight each, very small straight eyebrows, a tiny pink nose, a tiny w shaped happy mouth. Round cream belly on a small chubby torso. Two short soft rounded mitten arms at its sides. The silhouette is simple, rounded and compact. Head about two thirds of total height. Clean BOLD BLACK ink outline with one consistent thickness around the head, body and feet. Soft flat pastel colors with one very subtle underside shadow. A simple cozy illustrated cafe animal character. Nearly frontal pose slightly facing right. All four short limbs visible, clear separate head and body. Plain warm ivory background, no objects, no clothes, no text. Smooth unmarked fur, no stripes or head markings. Tail hidden."
+        },
+        "_meta": {
+          "title": "Positive / subject + shared style"
+        }
+      },
+      "103": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "115",
+            0
+          ],
+          "text": ""
+        },
+        "_meta": {
+          "title": "Negative / avoid detail and realism"
+        }
+      },
+      "105": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "101",
+            0
+          ],
+          "seed": 116101,
+          "steps": 24,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "117",
+            0
+          ],
+          "negative": [
+            "103",
+            0
+          ],
+          "latent_image": [
+            "180",
+            0
+          ],
+          "denoise": 0.9
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "106": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "105",
+            0
+          ],
+          "vae": [
+            "116",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "Decode artwork"
+        }
+      },
+      "107": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "106",
+            0
+          ],
+          "filename_prefix": "ProjectPA/NewHamster/A"
+        },
+        "_meta": {
+          "title": "Raw master / preserve for refinement"
+        }
+      },
+      "115": {
+        "class_type": "DualCLIPLoader",
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux"
+        }
+      },
+      "116": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "117": {
+        "class_type": "FluxGuidance",
+        "inputs": {
+          "conditioning": [
+            "102",
+            0
+          ],
+          "guidance": 3.5
+        }
+      },
+      "180": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "82",
+            0
+          ],
+          "vae": [
+            "116",
+            0
+          ]
+        }
+      },
+      "205": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "101",
+            0
+          ],
+          "seed": 116102,
+          "steps": 24,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "positive": [
+            "117",
+            0
+          ],
+          "negative": [
+            "103",
+            0
+          ],
+          "latent_image": [
+            "180",
+            0
+          ],
+          "denoise": 0.94
+        },
+        "_meta": {
+          "title": "FLUX / CFG 1 / guidance 3.5 / fixed seed"
+        }
+      },
+      "206": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "205",
+            0
+          ],
+          "vae": [
+            "116",
+            0
+          ]
+        }
+      },
+      "207": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "206",
+            0
+          ],
+          "filename_prefix": "ProjectPA/NewHamster/B"
+        }
+      }
+    },
+    {
+      "create_time": 1793944467998
+    },
+    [
+      "107",
+      "207",
+      "83"
+    ]
+  ],
+  "outputs": {
+    "83": {
+      "images": [
+        {
+          "filename": "reference_00001_.png",
+          "subfolder": "ProjectPA\\NewHamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "107": {
+      "images": [
+        {
+          "filename": "A_00001_.png",
+          "subfolder": "ProjectPA\\NewHamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    },
+    "207": {
+      "images": [
+        {
+          "filename": "B_00001_.png",
+          "subfolder": "ProjectPA\\NewHamster",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 768
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "4eb05df4-eacd-4d08-83d6-a8cbab93c37a",
+          "timestamp": 1793944468001
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "4eb05df4-eacd-4d08-83d6-a8cbab93c37a",
+          "timestamp": 1793944468064
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "4eb05df4-eacd-4d08-83d6-a8cbab93c37a",
+          "timestamp": 1793944526910
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "83": {
+      "node_id": "83",
+      "display_node": "83",
+      "parent_node": null,
+      "real_node_id": "83"
+    },
+    "107": {
+      "node_id": "107",
+      "display_node": "107",
+      "parent_node": null,
+      "real_node_id": "107"
+    },
+    "207": {
+      "node_id": "207",
+      "display_node": "207",
+      "parent_node": null,
+      "real_node_id": "207"
+    }
+  }
+}

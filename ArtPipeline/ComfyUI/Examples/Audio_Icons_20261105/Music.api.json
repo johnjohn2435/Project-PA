@@ -1,0 +1,1096 @@
+{
+  "1": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "2": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 28,
+      "height": 4
+    }
+  },
+  "3": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "x": 340,
+      "y": 104,
+      "operation": "add"
+    }
+  },
+  "4": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 28,
+      "height": 140
+    }
+  },
+  "5": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "3",
+        0
+      ],
+      "source": [
+        "4",
+        0
+      ],
+      "x": 340,
+      "y": 144,
+      "operation": "add"
+    }
+  },
+  "6": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "7": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "5",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 336,
+      "y": 108,
+      "operation": "add"
+    }
+  },
+  "8": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 56,
+      "height": 4
+    }
+  },
+  "9": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "7",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "x": 312,
+      "y": 112,
+      "operation": "add"
+    }
+  },
+  "10": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 76,
+      "height": 4
+    }
+  },
+  "11": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "10",
+        0
+      ],
+      "x": 292,
+      "y": 116,
+      "operation": "add"
+    }
+  },
+  "12": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 76,
+      "height": 4
+    }
+  },
+  "13": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "11",
+        0
+      ],
+      "source": [
+        "12",
+        0
+      ],
+      "x": 292,
+      "y": 284,
+      "operation": "add"
+    }
+  },
+  "14": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 100,
+      "height": 4
+    }
+  },
+  "15": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "13",
+        0
+      ],
+      "source": [
+        "14",
+        0
+      ],
+      "x": 268,
+      "y": 120,
+      "operation": "add"
+    }
+  },
+  "16": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 124,
+      "height": 4
+    }
+  },
+  "17": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "15",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "x": 244,
+      "y": 124,
+      "operation": "add"
+    }
+  },
+  "18": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 144,
+      "height": 4
+    }
+  },
+  "19": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "17",
+        0
+      ],
+      "source": [
+        "18",
+        0
+      ],
+      "x": 224,
+      "y": 128,
+      "operation": "add"
+    }
+  },
+  "20": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 168,
+      "height": 4
+    }
+  },
+  "21": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "19",
+        0
+      ],
+      "source": [
+        "20",
+        0
+      ],
+      "x": 200,
+      "y": 132,
+      "operation": "add"
+    }
+  },
+  "22": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 176,
+      "height": 8
+    }
+  },
+  "23": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "21",
+        0
+      ],
+      "source": [
+        "22",
+        0
+      ],
+      "x": 192,
+      "y": 136,
+      "operation": "add"
+    }
+  },
+  "24": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 144,
+      "height": 4
+    }
+  },
+  "25": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "23",
+        0
+      ],
+      "source": [
+        "24",
+        0
+      ],
+      "x": 192,
+      "y": 144,
+      "operation": "add"
+    }
+  },
+  "26": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 120,
+      "height": 4
+    }
+  },
+  "27": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "25",
+        0
+      ],
+      "source": [
+        "26",
+        0
+      ],
+      "x": 192,
+      "y": 148,
+      "operation": "add"
+    }
+  },
+  "28": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 100,
+      "height": 4
+    }
+  },
+  "29": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "27",
+        0
+      ],
+      "source": [
+        "28",
+        0
+      ],
+      "x": 192,
+      "y": 152,
+      "operation": "add"
+    }
+  },
+  "30": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 76,
+      "height": 4
+    }
+  },
+  "31": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "29",
+        0
+      ],
+      "source": [
+        "30",
+        0
+      ],
+      "x": 192,
+      "y": 156,
+      "operation": "add"
+    }
+  },
+  "32": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 52,
+      "height": 4
+    }
+  },
+  "33": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "32",
+        0
+      ],
+      "x": 192,
+      "y": 160,
+      "operation": "add"
+    }
+  },
+  "34": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "35": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "33",
+        0
+      ],
+      "source": [
+        "34",
+        0
+      ],
+      "x": 192,
+      "y": 164,
+      "operation": "add"
+    }
+  },
+  "36": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 28,
+      "height": 148
+    }
+  },
+  "37": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "35",
+        0
+      ],
+      "source": [
+        "36",
+        0
+      ],
+      "x": 192,
+      "y": 168,
+      "operation": "add"
+    }
+  },
+  "38": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "39": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "37",
+        0
+      ],
+      "source": [
+        "38",
+        0
+      ],
+      "x": 304,
+      "y": 280,
+      "operation": "add"
+    }
+  },
+  "40": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "41": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "39",
+        0
+      ],
+      "source": [
+        "40",
+        0
+      ],
+      "x": 304,
+      "y": 348,
+      "operation": "add"
+    }
+  },
+  "42": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 80,
+      "height": 4
+    }
+  },
+  "43": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "41",
+        0
+      ],
+      "source": [
+        "42",
+        0
+      ],
+      "x": 288,
+      "y": 288,
+      "operation": "add"
+    }
+  },
+  "44": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 84,
+      "height": 4
+    }
+  },
+  "45": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "43",
+        0
+      ],
+      "source": [
+        "44",
+        0
+      ],
+      "x": 284,
+      "y": 292,
+      "operation": "add"
+    }
+  },
+  "46": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 88,
+      "height": 4
+    }
+  },
+  "47": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "45",
+        0
+      ],
+      "source": [
+        "46",
+        0
+      ],
+      "x": 280,
+      "y": 296,
+      "operation": "add"
+    }
+  },
+  "48": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 92,
+      "height": 4
+    }
+  },
+  "49": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "47",
+        0
+      ],
+      "source": [
+        "48",
+        0
+      ],
+      "x": 276,
+      "y": 300,
+      "operation": "add"
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 96,
+      "height": 24
+    }
+  },
+  "51": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "49",
+        0
+      ],
+      "source": [
+        "50",
+        0
+      ],
+      "x": 272,
+      "y": 304,
+      "operation": "add"
+    }
+  },
+  "52": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "51",
+        0
+      ],
+      "source": [
+        "52",
+        0
+      ],
+      "x": 156,
+      "y": 312,
+      "operation": "add"
+    }
+  },
+  "54": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 32,
+      "height": 4
+    }
+  },
+  "55": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "53",
+        0
+      ],
+      "source": [
+        "54",
+        0
+      ],
+      "x": 156,
+      "y": 380,
+      "operation": "add"
+    }
+  },
+  "56": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 76,
+      "height": 4
+    }
+  },
+  "57": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "55",
+        0
+      ],
+      "source": [
+        "56",
+        0
+      ],
+      "x": 144,
+      "y": 316,
+      "operation": "add"
+    }
+  },
+  "58": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 80,
+      "height": 4
+    }
+  },
+  "59": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "57",
+        0
+      ],
+      "source": [
+        "58",
+        0
+      ],
+      "x": 140,
+      "y": 320,
+      "operation": "add"
+    }
+  },
+  "60": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 84,
+      "height": 4
+    }
+  },
+  "61": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "59",
+        0
+      ],
+      "source": [
+        "60",
+        0
+      ],
+      "x": 136,
+      "y": 324,
+      "operation": "add"
+    }
+  },
+  "62": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 88,
+      "height": 4
+    }
+  },
+  "63": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "61",
+        0
+      ],
+      "source": [
+        "62",
+        0
+      ],
+      "x": 132,
+      "y": 328,
+      "operation": "add"
+    }
+  },
+  "64": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 88,
+      "height": 4
+    }
+  },
+  "65": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "63",
+        0
+      ],
+      "source": [
+        "64",
+        0
+      ],
+      "x": 276,
+      "y": 328,
+      "operation": "add"
+    }
+  },
+  "66": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 92,
+      "height": 4
+    }
+  },
+  "67": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "65",
+        0
+      ],
+      "source": [
+        "66",
+        0
+      ],
+      "x": 128,
+      "y": 332,
+      "operation": "add"
+    }
+  },
+  "68": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 80,
+      "height": 4
+    }
+  },
+  "69": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "67",
+        0
+      ],
+      "source": [
+        "68",
+        0
+      ],
+      "x": 280,
+      "y": 332,
+      "operation": "add"
+    }
+  },
+  "70": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 96,
+      "height": 24
+    }
+  },
+  "71": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "69",
+        0
+      ],
+      "source": [
+        "70",
+        0
+      ],
+      "x": 124,
+      "y": 336,
+      "operation": "add"
+    }
+  },
+  "72": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 72,
+      "height": 4
+    }
+  },
+  "73": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "71",
+        0
+      ],
+      "source": [
+        "72",
+        0
+      ],
+      "x": 284,
+      "y": 336,
+      "operation": "add"
+    }
+  },
+  "74": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 64,
+      "height": 4
+    }
+  },
+  "75": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "73",
+        0
+      ],
+      "source": [
+        "74",
+        0
+      ],
+      "x": 288,
+      "y": 340,
+      "operation": "add"
+    }
+  },
+  "76": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 56,
+      "height": 4
+    }
+  },
+  "77": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "75",
+        0
+      ],
+      "source": [
+        "76",
+        0
+      ],
+      "x": 292,
+      "y": 344,
+      "operation": "add"
+    }
+  },
+  "78": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 88,
+      "height": 4
+    }
+  },
+  "79": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "77",
+        0
+      ],
+      "source": [
+        "78",
+        0
+      ],
+      "x": 128,
+      "y": 360,
+      "operation": "add"
+    }
+  },
+  "80": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 80,
+      "height": 4
+    }
+  },
+  "81": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "79",
+        0
+      ],
+      "source": [
+        "80",
+        0
+      ],
+      "x": 132,
+      "y": 364,
+      "operation": "add"
+    }
+  },
+  "82": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 72,
+      "height": 4
+    }
+  },
+  "83": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "81",
+        0
+      ],
+      "source": [
+        "82",
+        0
+      ],
+      "x": 136,
+      "y": 368,
+      "operation": "add"
+    }
+  },
+  "84": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 64,
+      "height": 4
+    }
+  },
+  "85": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "83",
+        0
+      ],
+      "source": [
+        "84",
+        0
+      ],
+      "x": 140,
+      "y": 372,
+      "operation": "add"
+    }
+  },
+  "86": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 56,
+      "height": 4
+    }
+  },
+  "87": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "85",
+        0
+      ],
+      "source": [
+        "86",
+        0
+      ],
+      "x": 144,
+      "y": 376,
+      "operation": "add"
+    }
+  },
+  "88": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "87",
+        0
+      ]
+    }
+  },
+  "89": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1,
+      "color": 16777215
+    }
+  },
+  "90": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "89",
+        0
+      ],
+      "alpha": [
+        "88",
+        0
+      ]
+    }
+  },
+  "91": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "90",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 128,
+      "height": 128,
+      "crop": "disabled"
+    }
+  },
+  "92": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "91",
+        0
+      ],
+      "filename_prefix": "PocketArcade/AudioIcons/Music"
+    }
+  }
+}

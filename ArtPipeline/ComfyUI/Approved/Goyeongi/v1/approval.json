@@ -1,0 +1,15 @@
+{
+  "name": "고영이",
+  "species": "고등어무늬 고양이",
+  "status": "user_approved_design_and_style",
+  "approved_on": "2026-09-18",
+  "user_decision": "B로가자 앞으로 이런스타일로 찍어낼꺼야",
+  "source": "Examples/Goyeongi_Outline_20260918/B",
+  "visual_authority": "The approved B image takes precedence over its prompt when they differ. Do not shorten or redesign its body unless requested.",
+  "files": {
+    "raw.png": "1bf36110a94182bdfaaac595c3baaaddcf1d7bb2b5651e53d1483de6c1dd3ceb",
+    "master.png": "e247c524d98845857d1177ad0a694a965134bab0cc6e0d507b82e593a9317c9c",
+    "sprite_512.png": "99e81c9f23b9ed50918af450f1a1094c299722bfe828445187d852ed402eaa5a"
+  },
+  "unity_status": "not_integrated"
+}

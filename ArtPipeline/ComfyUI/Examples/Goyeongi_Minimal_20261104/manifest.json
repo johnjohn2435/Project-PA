@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-04",
+  "status": "proposal_awaiting_selection",
+  "name": "고영이",
+  "source_candidate": "F",
+  "generation": "ComfyUI / existing FLUX 05_character_flux",
+  "finishing": "ComfyUI BiRefNet -> GrowMask +11px -> dark #24211f composite -> JoinImageWithAlpha",
+  "iterations": [
+    {
+      "candidate": "A",
+      "prompt": "A minimalist 2D game character sprite of ONE grey mackerel tabby cat, alone, full body, centered on a plain off-white background. Extremely simple bold cartoon like a tiny casual action game icon. VERY THICK uniform almost-black dark brown outline, smooth rounded corners. Short wide squishy body and huge wide head merge into one compact silhouette, two small triangular ears, two tiny rounded feet, one short curved tail. Face has just TWO SMALL SOLID BLACK DOT EYES and ONE SHORT HORIZONTAL DASH for the mouth. Flat pale grey body. Only three short dark forehead stripes and two broad stripes on the tail identify the tabby. Only two fill colors plus the dark outline. Completely flat solid fills, absolutely no shadows or gradients. No cheek blush, no belly patch, no white muzzle patch, no nose, no whiskers, no fingers, no toes, no inner ear detail, no clothing, no props, no words, no texture. The drawing should look effortless, chunky and almost like a simple silhouette with a face, with as few strokes as possible. Cute but expressionless. Wide rather than tall.",
+      "seed": 110401,
+      "status": "success"
+    },
+    {
+      "candidate": "B",
+      "prompt": "A minimalist 2D game character sprite of ONE grey mackerel tabby cat, alone, full body, centered on a plain off-white background. Extremely simple bold cartoon like a tiny casual action game icon. VERY THICK uniform almost-black dark brown outline, smooth rounded corners. Short wide squishy body and huge wide head merge into one compact silhouette, two small triangular ears, two tiny rounded feet, one short curved tail. Face has just TWO SMALL SOLID BLACK DOT EYES and ONE SHORT HORIZONTAL DASH for the mouth. Flat pale grey body. Only three short dark forehead stripes and two broad stripes on the tail identify the tabby. Only two fill colors plus the dark outline. Completely flat solid fills, absolutely no shadows or gradients. No cheek blush, no belly patch, no white muzzle patch, no nose, no whiskers, no fingers, no toes, no inner ear detail, no clothing, no props, no words, no texture. The drawing should look effortless, chunky and almost like a simple silhouette with a face, with as few strokes as possible. Cute but expressionless. Wide rather than tall.",
+      "seed": 110402,
+      "status": "success"
+    },
+    {
+      "candidate": "C",
+      "prompt": "Bold chunky vector icon of one grey tabby cat. Very thick BLACK contour stroke, like a marker drawing. Compact wide rounded rectangle silhouette with two small triangle ears, tiny stubby paws, curved tail. Tiny solid black dot eyes. A single straight short black dash mouth. Solid light grey fill. Three simple dark grey forehead stripes and two tail bands. Extremely minimal flat 2D casual game sprite, only grey and black. Clean sharp edges. Plain white background. Full body. Deadpan expression. Very few strokes. The cat is wider than tall.",
+      "seed": 182902,
+      "status": "success"
+    },
+    {
+      "candidate": "D",
+      "prompt": "Bold chunky vector icon of one grey tabby cat. Very thick BLACK contour stroke, like a marker drawing. Compact wide rounded rectangle silhouette with two small triangle ears, tiny stubby paws, curved tail. Tiny solid black dot eyes. A single straight short black dash mouth. Solid light grey fill. Three simple dark grey forehead stripes and two tail bands. Extremely minimal flat 2D casual game sprite, only grey and black. Clean sharp edges. Plain white background. Full body. Deadpan expression. Very few strokes. The cat is wider than tall.",
+      "seed": 110404,
+      "status": "success"
+    },
+    {
+      "candidate": "E",
+      "prompt": "Minimalist bold vector game icon. A very short wide light-grey bean creature with two tiny pointed ears on top and a little curved tail, and two tiny round feet. The entire character is a single horizontal oval, twice as wide as it is tall. Two small round black dots and a tiny horizontal black dash form the entire face. There are three short charcoal stripes on its forehead and two stripes on the tail. Uniform extra thick black outline around every shape. Flat light-grey fill. Flat charcoal markings. Pure white background. Very simple iconic silhouette, clean crisp graphic shapes, no shading, no highlights, no texture, no other facial details. The character resembles a tiny minimalist cat from a casual mobile action game.",
+      "seed": 110405,
+      "status": "success"
+    },
+    {
+      "candidate": "F",
+      "prompt": "Minimalist bold vector game icon. A very short wide light-grey bean creature with two tiny pointed ears on top and a little curved tail, and two tiny round feet. The entire character is a single horizontal oval, twice as wide as it is tall. Two small round black dots and a tiny horizontal black dash form the entire face. There are three short charcoal stripes on its forehead and two stripes on the tail. Uniform extra thick black outline around every shape. Flat light-grey fill. Flat charcoal markings. Pure white background. Very simple iconic silhouette, clean crisp graphic shapes, no shading, no highlights, no texture, no other facial details. The character resembles a tiny minimalist cat from a casual mobile action game.",
+      "seed": 110406,
+      "status": "success"
+    }
+  ],
+  "note": "Reference used for visual style analysis; text-to-image generation. Python only composites review background, no artwork redraw."
+}

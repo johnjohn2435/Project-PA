@@ -1,0 +1,376 @@
+{
+  "date": "2026-09-18",
+  "status": "proposals_awaiting_user_selection",
+  "recommended": "A",
+  "method": "ComfyUI 01_character + BiRefNet; no new models",
+  "normalization": "alpha > 20 bounds + 2px padding; fit inside 420x420; 512 canvas; bottom at y466; no redraw or recolor",
+  "candidates": [
+    {
+      "label": "A",
+      "exploration_id": "F",
+      "title": "단정한 반다나",
+      "seed": 243518,
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 243518,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "source_alpha_bounds": [
+        241,
+        86,
+        819,
+        912
+      ],
+      "master_mode": "RGBA",
+      "master_size": [
+        1024,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "master_sha256": "2d8fb91028e570807191d80d7552308b670ca12c1d0ea417f54e90e3a68c0766",
+      "status": "not_final",
+      "strength": "크림 몸통, 코랄 삼각 반다나, 좌우 볼 무늬. 정면 팔·발과 꼬리가 분리되어 읽힙니다.",
+      "remaining_work": "몸통을 조금 짧게, 귀 끝을 둥글게. 이마 줄무늬·발가락선·눈 광택을 줄이고 반다나 선을 한 줄로 정리."
+    },
+    {
+      "label": "B",
+      "exploration_id": "H",
+      "title": "동글한 얼굴",
+      "seed": 243520,
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 243520,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "source_alpha_bounds": [
+        243,
+        73,
+        857,
+        935
+      ],
+      "master_mode": "RGBA",
+      "master_size": [
+        1024,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "master_sha256": "862356290d6048831737a948bd19239376a53c62ba4ad7ba2003fb9cc07e3a6a",
+      "status": "not_final",
+      "strength": "A보다 볼과 눈의 인상이 부드럽고 머리 대비 몸이 작습니다.",
+      "remaining_work": "반다나의 미세 문양과 속눈썹을 삭제하고 눈 크기·외곽선 두께를 통일. 꼬리 방향은 선택 후 고정."
+    },
+    {
+      "label": "C",
+      "exploration_id": "I",
+      "title": "포근한 목도리",
+      "seed": 243517,
+      "positive": "(minimalist flat vector icon:1.6), (solid pastel colors:1.4), one (plain ivory white cat:1.5), (tiny coral scarf:1.3), (huge circular head tiny chubby body:1.4), small rounded triangle ears, (tiny dot eyes:1.4), tiny smile, short mitten paws, tiny feet, standing, thick brown outline, smooth simple shapes, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, realistic anatomy, long legs, long arms",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 243517,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "source_alpha_bounds": [
+        179,
+        87,
+        833,
+        927
+      ],
+      "master_mode": "RGBA",
+      "master_size": [
+        1024,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "master_sha256": "fa56165728b076ae01c506460ccb67cf341f336c233a5f3b55f3b0b1b30d2a6d",
+      "status": "not_final",
+      "strength": "갈색 선과 연한 볼, 넓은 크림색 면이 편안합니다.",
+      "remaining_work": "앉은 자세이므로 기본 서 있는 포즈는 별도 제작 필요. 목도리 길이·술 장식·수염을 줄여야 합니다."
+    },
+    {
+      "label": "D",
+      "exploration_id": "O",
+      "title": "활짝 웃는 모모",
+      "seed": 531003,
+      "positive": "(flat vector cartoon:1.5), (minimalist cute game mascot:1.4), (ivory white chubby anthropomorphic kitten:1.4), (oversized round head tiny body:1.4), (small coral neckerchief:1.4), standing on two short legs, tiny mitten hands, small dot eyes, small rounded ears, tiny smile, thick warm brown outline, solid pastel colors, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, tabby, stripes, patterned fur, realistic anatomy, (long scarf:1.5), scarf fringe, (large eyes:1.5), tall, slender",
+      "sampler": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 531003,
+        "steps": 10,
+        "cfg": 2.5,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1.0
+      },
+      "source_alpha_bounds": [
+        238,
+        114,
+        790,
+        912
+      ],
+      "master_mode": "RGBA",
+      "master_size": [
+        1024,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "master_sha256": "17b3b458237edddd46c319d04ca919a25588e71f9b2369e50c25c9be64ff6a9b",
+      "status": "not_final",
+      "strength": "둥근 배와 짧은 팔다리, 열린 웃음이 특징입니다.",
+      "remaining_work": "현재 눈·입과 명암은 목표보다 복잡합니다. 기본 표정은 작은 눈·닫힌 입으로, 명암은 한 단계로 정리."
+    }
+  ],
+  "exploration_count": 20,
+  "explorations": [
+    {
+      "id": "A",
+      "seed": 243518,
+      "status": "success",
+      "prompt_id": "cff60967-3f51-4f86-9ec7-976f4034a3e0",
+      "positive": "one cute original cat mascot, (standing upright on two tiny feet:1.35), front view, (very round wide head:1.3), tiny plump oval body, short rounded triangular ears, (pale cream ivory fur:1.35), (small coral pink triangular neckerchief:1.4), two simple small dark brown dot eyes, tiny smiling mouth, small peach cheeks, short stubby arms at sides, one short curved tail, (minimalist flat 2D vector illustration:1.5), (simple solid pastel color fills:1.4), smooth thick warm dark brown outline, very simple geometric shapes, full body, centered alone on plain white background, ample empty margin",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "B",
+      "seed": 243519,
+      "status": "success",
+      "prompt_id": "5fd2f063-d567-4b6b-8d70-9a68659030b2",
+      "positive": "one cute original cat mascot, (standing upright on two tiny feet:1.35), front view, (very round wide head:1.3), tiny plump oval body, short rounded triangular ears, (pale cream ivory fur:1.35), (small coral pink triangular neckerchief:1.4), two simple small dark brown dot eyes, tiny smiling mouth, small peach cheeks, short stubby arms at sides, one short curved tail, (minimalist flat 2D vector illustration:1.5), (simple solid pastel color fills:1.4), smooth thick warm dark brown outline, very simple geometric shapes, full body, centered alone on plain white background, ample empty margin",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "C",
+      "seed": 243520,
+      "status": "success",
+      "prompt_id": "d6bffc8f-9f7b-4b7b-a718-73482198cb06",
+      "positive": "one cute original cat mascot, (standing upright on two tiny feet:1.35), front view, (very round wide head:1.3), tiny plump oval body, short rounded triangular ears, (pale cream ivory fur:1.35), (small coral pink triangular neckerchief:1.4), two simple small dark brown dot eyes, tiny smiling mouth, small peach cheeks, short stubby arms at sides, one short curved tail, (minimalist flat 2D vector illustration:1.5), (simple solid pastel color fills:1.4), smooth thick warm dark brown outline, very simple geometric shapes, full body, centered alone on plain white background, ample empty margin",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "D",
+      "seed": 243521,
+      "status": "success",
+      "prompt_id": "ce1149c3-18b5-4289-ae07-35b1b7ccc5fb",
+      "positive": "one cute original cat mascot, (standing upright on two tiny feet:1.35), front view, (very round wide head:1.3), tiny plump oval body, short rounded triangular ears, (pale cream ivory fur:1.35), (small coral pink triangular neckerchief:1.4), two simple small dark brown dot eyes, tiny smiling mouth, small peach cheeks, short stubby arms at sides, one short curved tail, (minimalist flat 2D vector illustration:1.5), (simple solid pastel color fills:1.4), smooth thick warm dark brown outline, very simple geometric shapes, full body, centered alone on plain white background, ample empty margin",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "E",
+      "seed": 243517,
+      "status": "success",
+      "prompt_id": "7e5f10b5-ecc6-4996-94e7-f102550a03f4",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "F",
+      "seed": 243518,
+      "status": "success",
+      "prompt_id": "da05cb1b-0387-46b1-a704-d6aa1903daca",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "G",
+      "seed": 243519,
+      "status": "success",
+      "prompt_id": "35751c6d-d0ca-4bd9-9262-d1ee20b637e9",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "H",
+      "seed": 243520,
+      "status": "success",
+      "prompt_id": "b76e80c7-a2fb-4032-ade5-9bedacbef23d",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.4), (thick brown outlines:1.3), one chibi cat mascot, (ivory white body:1.4), (coral pink bandana:1.4), huge round head, tiny plump body, small triangle ears, tiny black dot eyes, tiny mouth, two stubby arms, two tiny feet, standing upright, minimalist 2D game sprite, simple rounded shapes, uniform flat fills, front view, full body centered, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws"
+    },
+    {
+      "id": "I",
+      "seed": 243517,
+      "status": "success",
+      "prompt_id": "6f0382ee-3023-48f3-bbf9-96d7c2c86902",
+      "positive": "(minimalist flat vector icon:1.6), (solid pastel colors:1.4), one (plain ivory white cat:1.5), (tiny coral scarf:1.3), (huge circular head tiny chubby body:1.4), small rounded triangle ears, (tiny dot eyes:1.4), tiny smile, short mitten paws, tiny feet, standing, thick brown outline, smooth simple shapes, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, realistic anatomy, long legs, long arms"
+    },
+    {
+      "id": "J",
+      "seed": 243518,
+      "status": "success",
+      "prompt_id": "220cc33b-14ae-490a-bab0-b168a8ce2eaf",
+      "positive": "(minimalist flat vector icon:1.6), (solid pastel colors:1.4), one (plain ivory white cat:1.5), (tiny coral scarf:1.3), (huge circular head tiny chubby body:1.4), small rounded triangle ears, (tiny dot eyes:1.4), tiny smile, short mitten paws, tiny feet, standing, thick brown outline, smooth simple shapes, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, realistic anatomy, long legs, long arms"
+    },
+    {
+      "id": "K",
+      "seed": 243519,
+      "status": "success",
+      "prompt_id": "aa08fcbc-67af-4e3d-b304-0c503b454f19",
+      "positive": "(minimalist flat vector icon:1.6), (solid pastel colors:1.4), one (plain ivory white cat:1.5), (tiny coral scarf:1.3), (huge circular head tiny chubby body:1.4), small rounded triangle ears, (tiny dot eyes:1.4), tiny smile, short mitten paws, tiny feet, standing, thick brown outline, smooth simple shapes, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, realistic anatomy, long legs, long arms"
+    },
+    {
+      "id": "L",
+      "seed": 243520,
+      "status": "success",
+      "prompt_id": "892f5e0b-d303-4bfa-92ba-446b42d4c5ea",
+      "positive": "(minimalist flat vector icon:1.6), (solid pastel colors:1.4), one (plain ivory white cat:1.5), (tiny coral scarf:1.3), (huge circular head tiny chubby body:1.4), small rounded triangle ears, (tiny dot eyes:1.4), tiny smile, short mitten paws, tiny feet, standing, thick brown outline, smooth simple shapes, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, realistic anatomy, long legs, long arms"
+    },
+    {
+      "id": "M",
+      "seed": 531001,
+      "status": "success",
+      "prompt_id": "fdf9bb1d-27e6-49f6-84ce-dee9f915bff9",
+      "positive": "(flat vector cartoon:1.5), (minimalist cute game mascot:1.4), (ivory white chubby anthropomorphic kitten:1.4), (oversized round head tiny body:1.4), (small coral neckerchief:1.4), standing on two short legs, tiny mitten hands, small dot eyes, small rounded ears, tiny smile, thick warm brown outline, solid pastel colors, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, tabby, stripes, patterned fur, realistic anatomy, (long scarf:1.5), scarf fringe, (large eyes:1.5), tall, slender"
+    },
+    {
+      "id": "N",
+      "seed": 531002,
+      "status": "success",
+      "prompt_id": "78506841-1f40-429d-a024-e2c9ecb0b894",
+      "positive": "(flat vector cartoon:1.5), (minimalist cute game mascot:1.4), (ivory white chubby anthropomorphic kitten:1.4), (oversized round head tiny body:1.4), (small coral neckerchief:1.4), standing on two short legs, tiny mitten hands, small dot eyes, small rounded ears, tiny smile, thick warm brown outline, solid pastel colors, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, tabby, stripes, patterned fur, realistic anatomy, (long scarf:1.5), scarf fringe, (large eyes:1.5), tall, slender"
+    },
+    {
+      "id": "O",
+      "seed": 531003,
+      "status": "success",
+      "prompt_id": "2a25a783-5cc2-4f7d-b915-3a51b58d8fa4",
+      "positive": "(flat vector cartoon:1.5), (minimalist cute game mascot:1.4), (ivory white chubby anthropomorphic kitten:1.4), (oversized round head tiny body:1.4), (small coral neckerchief:1.4), standing on two short legs, tiny mitten hands, small dot eyes, small rounded ears, tiny smile, thick warm brown outline, solid pastel colors, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, tabby, stripes, patterned fur, realistic anatomy, (long scarf:1.5), scarf fringe, (large eyes:1.5), tall, slender"
+    },
+    {
+      "id": "P",
+      "seed": 531004,
+      "status": "success",
+      "prompt_id": "c740dc11-1095-4951-94b8-9155729a56cf",
+      "positive": "(flat vector cartoon:1.5), (minimalist cute game mascot:1.4), (ivory white chubby anthropomorphic kitten:1.4), (oversized round head tiny body:1.4), (small coral neckerchief:1.4), standing on two short legs, tiny mitten hands, small dot eyes, small rounded ears, tiny smile, thick warm brown outline, solid pastel colors, full body front view, white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, tabby, stripes, patterned fur, realistic anatomy, (long scarf:1.5), scarf fringe, (large eyes:1.5), tall, slender"
+    },
+    {
+      "id": "Q",
+      "seed": 243517,
+      "status": "success",
+      "prompt_id": "51a64578-e36c-414a-b0fd-3382f42de57d",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.5), (thick dark brown outlines:1.4), simple rounded geometric shapes, one cute chibi cat, (pale ivory white body:1.4), (coral pink neckerchief:1.4), huge round head, tiny round body, tiny black dot eyes, stubby short limbs, standing upright, uniform color fills, full body centered, plain white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, long legs, long arms"
+    },
+    {
+      "id": "R",
+      "seed": 243518,
+      "status": "success",
+      "prompt_id": "74911276-0431-4c7f-9302-9cd90c418ebe",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.5), (thick dark brown outlines:1.4), simple rounded geometric shapes, one cute chibi cat, (pale ivory white body:1.4), (coral pink neckerchief:1.4), huge round head, tiny round body, tiny black dot eyes, stubby short limbs, standing upright, uniform color fills, full body centered, plain white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, long legs, long arms"
+    },
+    {
+      "id": "S",
+      "seed": 243519,
+      "status": "success",
+      "prompt_id": "f9f57a2d-ddf3-4634-9dec-b9224632c551",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.5), (thick dark brown outlines:1.4), simple rounded geometric shapes, one cute chibi cat, (pale ivory white body:1.4), (coral pink neckerchief:1.4), huge round head, tiny round body, tiny black dot eyes, stubby short limbs, standing upright, uniform color fills, full body centered, plain white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, long legs, long arms"
+    },
+    {
+      "id": "T",
+      "seed": 243520,
+      "status": "success",
+      "prompt_id": "21ccfba3-ea11-416a-a471-5c0d0bdab3be",
+      "positive": "(flat vector illustration:1.6), (solid pastel colors:1.5), (thick dark brown outlines:1.4), simple rounded geometric shapes, one cute chibi cat, (pale ivory white body:1.4), (coral pink neckerchief:1.4), huge round head, tiny round body, tiny black dot eyes, stubby short limbs, standing upright, uniform color fills, full body centered, plain white background",
+      "negative": "(3d render:1.6), (shading:1.4), (gradients:1.4), (realistic:1.4), glossy, shiny, highlights, lighting, shadow, depth, toy, figurine, sculpture, plush, doll, photo, realistic fur, detailed fur, intricate texture, large eyes, sparkly eyes, human, anime girl, text, letters, logo, watermark, multiple characters, duplicate, character sheet, collage, border, cropped feet, busy background, eyelashes, hat, beanie, long scarf, scarf fringe, knitted fabric, stripes, fur tufts, whiskers, claws, sitting, four legs, detailed paws, (tabby:1.5), (stripes:1.5), (brown patches:1.5), patterned fur, bandana patterns, eye highlights, long legs, long arms"
+    }
+  ]
+}

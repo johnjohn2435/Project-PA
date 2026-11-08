@@ -1,0 +1,628 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_approved_char_cat_lineup.png"
+    }
+  },
+  "2": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "x": 24,
+      "y": 185,
+      "width": 360,
+      "height": 369
+    }
+  },
+  "3": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "width": 757,
+      "height": 720,
+      "crop": "disabled",
+      "upscale_method": "bicubic"
+    }
+  },
+  "4": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "5": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "4",
+        0
+      ],
+      "source": [
+        "3",
+        0
+      ],
+      "x": 5,
+      "y": 24,
+      "resize_source": false
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_approved_char_cat_head_mask.png"
+    }
+  },
+  "7": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "x": 24,
+      "y": 185,
+      "width": 360,
+      "height": 369
+    }
+  },
+  "8": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "width": 757,
+      "height": 720,
+      "crop": "disabled",
+      "upscale_method": "bicubic"
+    }
+  },
+  "9": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "10": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "x": 5,
+      "y": 24,
+      "resize_source": false
+    }
+  },
+  "11": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "12": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "11",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "alpha": [
+        "12",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ApprovedInk/char_cat/head"
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_approved_char_cat_arm_L_mask.png"
+    }
+  },
+  "16": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "15",
+        0
+      ],
+      "x": 24,
+      "y": 185,
+      "width": 360,
+      "height": 369
+    }
+  },
+  "17": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "16",
+        0
+      ],
+      "width": 757,
+      "height": 720,
+      "crop": "disabled",
+      "upscale_method": "bicubic"
+    }
+  },
+  "18": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "19": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "18",
+        0
+      ],
+      "source": [
+        "17",
+        0
+      ],
+      "x": 5,
+      "y": 24,
+      "resize_source": false
+    }
+  },
+  "20": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "19",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "21": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "20",
+        0
+      ]
+    }
+  },
+  "22": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "alpha": [
+        "21",
+        0
+      ]
+    }
+  },
+  "23": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ApprovedInk/char_cat/arm_L"
+    }
+  },
+  "24": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_approved_char_cat_arm_R_mask.png"
+    }
+  },
+  "25": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "24",
+        0
+      ],
+      "x": 24,
+      "y": 185,
+      "width": 360,
+      "height": 369
+    }
+  },
+  "26": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ],
+      "width": 757,
+      "height": 720,
+      "crop": "disabled",
+      "upscale_method": "bicubic"
+    }
+  },
+  "27": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "28": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "27",
+        0
+      ],
+      "source": [
+        "26",
+        0
+      ],
+      "x": 5,
+      "y": 24,
+      "resize_source": false
+    }
+  },
+  "29": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "28",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "30": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "29",
+        0
+      ]
+    }
+  },
+  "31": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "alpha": [
+        "30",
+        0
+      ]
+    }
+  },
+  "32": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ApprovedInk/char_cat/arm_R"
+    }
+  },
+  "33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_approved_char_cat_torso_mesh_mask.png"
+    }
+  },
+  "34": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "33",
+        0
+      ],
+      "x": 24,
+      "y": 185,
+      "width": 360,
+      "height": 369
+    }
+  },
+  "35": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "34",
+        0
+      ],
+      "width": 757,
+      "height": 720,
+      "crop": "disabled",
+      "upscale_method": "bicubic"
+    }
+  },
+  "36": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "37": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "36",
+        0
+      ],
+      "source": [
+        "35",
+        0
+      ],
+      "x": 5,
+      "y": 24,
+      "resize_source": false
+    }
+  },
+  "38": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "37",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "39": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "38",
+        0
+      ]
+    }
+  },
+  "40": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "alpha": [
+        "39",
+        0
+      ]
+    }
+  },
+  "41": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ApprovedInk/char_cat/torso_mesh"
+    }
+  },
+  "42": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "5",
+        0
+      ],
+      "source_alpha": [
+        "30",
+        0
+      ],
+      "destination": [
+        "5",
+        0
+      ],
+      "destination_alpha": [
+        "39",
+        0
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "43": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "5",
+        0
+      ],
+      "source_alpha": [
+        "21",
+        0
+      ],
+      "destination": [
+        "42",
+        0
+      ],
+      "destination_alpha": [
+        "42",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "44": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "5",
+        0
+      ],
+      "source_alpha": [
+        "12",
+        0
+      ],
+      "destination": [
+        "43",
+        0
+      ],
+      "destination_alpha": [
+        "43",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "45": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "44",
+        0
+      ],
+      "alpha": [
+        "44",
+        1
+      ]
+    }
+  },
+  "46": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "45",
+        0
+      ],
+      "width": 713,
+      "height": 768,
+      "crop": "disabled",
+      "upscale_method": "lanczos"
+    }
+  },
+  "47": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "46",
+        0
+      ]
+    }
+  },
+  "48": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "49": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "48",
+        0
+      ],
+      "source": [
+        "47",
+        0
+      ],
+      "x": 27,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "51": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "50",
+        0
+      ],
+      "source": [
+        "47",
+        1
+      ],
+      "x": 27,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "52": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "49",
+        0
+      ],
+      "alpha": [
+        "51",
+        0
+      ]
+    }
+  },
+  "53": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "52",
+        0
+      ],
+      "filename_prefix": "ProjectPA/ApprovedInk/char_cat/Portrait"
+    }
+  }
+}

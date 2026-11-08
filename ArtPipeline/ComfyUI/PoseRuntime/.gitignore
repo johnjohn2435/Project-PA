@@ -1,0 +1,7 @@
+input/
+output/
+temp/
+user/
+models/
+*.log
+**/__pycache__/

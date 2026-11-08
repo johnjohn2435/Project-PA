@@ -1,0 +1,593 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_cat_torso_mesh.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_cat_arm_R.png"
+    }
+  },
+  "3": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "2",
+        0
+      ],
+      "source_alpha": [
+        "2",
+        1
+      ],
+      "destination": [
+        "1",
+        0
+      ],
+      "destination_alpha": [
+        "1",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_cat_arm_L.png"
+    }
+  },
+  "5": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "4",
+        0
+      ],
+      "source_alpha": [
+        "4",
+        1
+      ],
+      "destination": [
+        "3",
+        0
+      ],
+      "destination_alpha": [
+        "3",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_cat_head.png"
+    }
+  },
+  "7": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "6",
+        0
+      ],
+      "source_alpha": [
+        "6",
+        1
+      ],
+      "destination": [
+        "5",
+        0
+      ],
+      "destination_alpha": [
+        "5",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "8": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "alpha": [
+        "7",
+        1
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "34",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Playable/cards/char_cat"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_dog_torso_mesh.png"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_dog_arm_R.png"
+    }
+  },
+  "12": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "11",
+        0
+      ],
+      "source_alpha": [
+        "11",
+        1
+      ],
+      "destination": [
+        "10",
+        0
+      ],
+      "destination_alpha": [
+        "10",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_dog_arm_L.png"
+    }
+  },
+  "14": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "13",
+        0
+      ],
+      "source_alpha": [
+        "13",
+        1
+      ],
+      "destination": [
+        "12",
+        0
+      ],
+      "destination_alpha": [
+        "12",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_dog_head.png"
+    }
+  },
+  "16": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "15",
+        0
+      ],
+      "source_alpha": [
+        "15",
+        1
+      ],
+      "destination": [
+        "14",
+        0
+      ],
+      "destination_alpha": [
+        "14",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "17": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "16",
+        0
+      ],
+      "alpha": [
+        "16",
+        1
+      ]
+    }
+  },
+  "18": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "41",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Playable/cards/char_dog"
+    }
+  },
+  "19": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_hamster_torso_mesh.png"
+    }
+  },
+  "20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_hamster_arm_R.png"
+    }
+  },
+  "21": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "20",
+        0
+      ],
+      "source_alpha": [
+        "20",
+        1
+      ],
+      "destination": [
+        "19",
+        0
+      ],
+      "destination_alpha": [
+        "19",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "22": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_hamster_arm_L.png"
+    }
+  },
+  "23": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "22",
+        0
+      ],
+      "source_alpha": [
+        "22",
+        1
+      ],
+      "destination": [
+        "21",
+        0
+      ],
+      "destination_alpha": [
+        "21",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "24": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "pa_card_char_hamster_head.png"
+    }
+  },
+  "25": {
+    "class_type": "PorterDuffImageComposite",
+    "inputs": {
+      "source": [
+        "24",
+        0
+      ],
+      "source_alpha": [
+        "24",
+        1
+      ],
+      "destination": [
+        "23",
+        0
+      ],
+      "destination_alpha": [
+        "23",
+        1
+      ],
+      "mode": "SRC_OVER"
+    }
+  },
+  "26": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ],
+      "alpha": [
+        "25",
+        1
+      ]
+    }
+  },
+  "27": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "48",
+        0
+      ],
+      "filename_prefix": "ProjectPA/Playable/cards/char_hamster"
+    }
+  },
+  "28": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "8",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 713,
+      "height": 768,
+      "crop": "disabled"
+    }
+  },
+  "29": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "28",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "31": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "30",
+        0
+      ],
+      "source": [
+        "29",
+        0
+      ],
+      "x": 27,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "32": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "33": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "32",
+        0
+      ],
+      "source": [
+        "29",
+        1
+      ],
+      "x": 27,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "34": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "31",
+        0
+      ],
+      "alpha": [
+        "33",
+        0
+      ]
+    }
+  },
+  "35": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "17",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 753,
+      "height": 768,
+      "crop": "disabled"
+    }
+  },
+  "36": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "35",
+        0
+      ]
+    }
+  },
+  "37": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "38": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "37",
+        0
+      ],
+      "source": [
+        "36",
+        0
+      ],
+      "x": 7,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "39": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "40": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "39",
+        0
+      ],
+      "source": [
+        "36",
+        1
+      ],
+      "x": 7,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "41": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "38",
+        0
+      ],
+      "alpha": [
+        "40",
+        0
+      ]
+    }
+  },
+  "42": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "26",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 696,
+      "height": 768,
+      "crop": "disabled"
+    }
+  },
+  "43": {
+    "class_type": "SplitImageWithAlpha",
+    "inputs": {
+      "image": [
+        "42",
+        0
+      ]
+    }
+  },
+  "44": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1,
+      "color": 0
+    }
+  },
+  "45": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "44",
+        0
+      ],
+      "source": [
+        "43",
+        0
+      ],
+      "x": 36,
+      "y": 0,
+      "resize_source": false
+    }
+  },
+  "46": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 768,
+      "height": 768
+    }
+  },
+  "47": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "46",
+        0
+      ],
+      "source": [
+        "43",
+        1
+      ],
+      "x": 36,
+      "y": 0,
+      "operation": "multiply"
+    }
+  },
+  "48": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "45",
+        0
+      ],
+      "alpha": [
+        "47",
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "approved_source": "Hamster/v2",
+  "base_color": [
+    252,
+    225,
+    137
+  ],
+  "shadow_color": [
+    219,
+    195,
+    119
+  ],
+  "facing": "right_three_quarter_feature_perspective",
+  "notes": "Existing approved face features repositioned in ComfyUI; no regeneration of identity. Five complete parts."
+}

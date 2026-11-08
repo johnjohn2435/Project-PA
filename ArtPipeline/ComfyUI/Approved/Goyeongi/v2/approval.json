@@ -1,0 +1,16 @@
+{
+  "name": "고영이",
+  "approved_style_date": "2026-11-04",
+  "style_decision": "오 좋은데? 앞으로 캐릭터 디자인풍은 이렇게 가자",
+  "revision_request": "추가로 저 꼬린가? 저건 지워",
+  "status": "style_approved_tail_removal_requested_and_completed",
+  "reference": "master.png",
+  "supersedes": "../v1",
+  "method": "ComfyUI mask/composite: mirrored left silhouette and color used only within right tail rectangle x540 y280 w135 h285; 11px #24211f contour. No generative changes used in final revision.",
+  "validation": "RGBA alpha 0..255; x<529 byte-identical to pre-edit RGBA. Visual review passed.",
+  "hashes": {
+    "master.png": "e6645f349701e36858bed5134a147cb1d8da3d246d27ea4aebb44f78c0227025",
+    "sprite_512.png": "e3911f285eb23378ddf5489da31ce8d4b162bac746df04740f8f862fc35616c0"
+  },
+  "unity_status": "not_integrated"
+}

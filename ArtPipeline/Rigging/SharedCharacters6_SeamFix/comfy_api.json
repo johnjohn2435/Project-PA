@@ -1,0 +1,2390 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_head.png"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_headfur.png"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_headrepair.png"
+    }
+  },
+  "4": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "5": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "4",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_headink.png"
+    }
+  },
+  "7": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_headchin.png"
+    }
+  },
+  "8": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "9": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "5",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_headalpha.png"
+    }
+  },
+  "11": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "12": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "11",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "9",
+        0
+      ],
+      "alpha": [
+        "12",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "13",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/head"
+    }
+  },
+  "15": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_body.png"
+    }
+  },
+  "16": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyskin.png"
+    }
+  },
+  "17": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyinner.png"
+    }
+  },
+  "18": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "17",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "19": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "15",
+        0
+      ],
+      "source": [
+        "16",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "18",
+        0
+      ]
+    }
+  },
+  "20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyrimink.png"
+    }
+  },
+  "21": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyrim.png"
+    }
+  },
+  "22": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "21",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "23": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "19",
+        0
+      ],
+      "source": [
+        "20",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "22",
+        0
+      ]
+    }
+  },
+  "24": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyink.png"
+    }
+  },
+  "25": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodybridge.png"
+    }
+  },
+  "26": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "27": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "23",
+        0
+      ],
+      "source": [
+        "24",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "26",
+        0
+      ]
+    }
+  },
+  "28": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_bodyalpha.png"
+    }
+  },
+  "29": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "28",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "30": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "29",
+        0
+      ]
+    }
+  },
+  "31": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "27",
+        0
+      ],
+      "alpha": [
+        "30",
+        0
+      ]
+    }
+  },
+  "32": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/body"
+    }
+  },
+  "33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_arm_L.png"
+    }
+  },
+  "34": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_arm_Lalpha.png"
+    }
+  },
+  "35": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "34",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "36": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "35",
+        0
+      ]
+    }
+  },
+  "37": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "33",
+        0
+      ],
+      "alpha": [
+        "36",
+        0
+      ]
+    }
+  },
+  "38": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "37",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/arm_L"
+    }
+  },
+  "39": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_arm_R.png"
+    }
+  },
+  "40": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_arm_Ralpha.png"
+    }
+  },
+  "41": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "40",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "42": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "41",
+        0
+      ]
+    }
+  },
+  "43": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "39",
+        0
+      ],
+      "alpha": [
+        "42",
+        0
+      ]
+    }
+  },
+  "44": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "43",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/arm_R"
+    }
+  },
+  "45": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_leg_L.png"
+    }
+  },
+  "46": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Lskin.png"
+    }
+  },
+  "47": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Lhip.png"
+    }
+  },
+  "48": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "47",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "49": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "45",
+        0
+      ],
+      "source": [
+        "46",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "48",
+        0
+      ]
+    }
+  },
+  "50": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Lalpha.png"
+    }
+  },
+  "51": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "50",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "52": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "51",
+        0
+      ]
+    }
+  },
+  "53": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "49",
+        0
+      ],
+      "alpha": [
+        "52",
+        0
+      ]
+    }
+  },
+  "54": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "53",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/leg_L"
+    }
+  },
+  "55": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_cat_leg_R.png"
+    }
+  },
+  "56": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Rskin.png"
+    }
+  },
+  "57": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Rhip.png"
+    }
+  },
+  "58": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "57",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "59": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "55",
+        0
+      ],
+      "source": [
+        "56",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "58",
+        0
+      ]
+    }
+  },
+  "60": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_cat_leg_Ralpha.png"
+    }
+  },
+  "61": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "60",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "62": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "61",
+        0
+      ]
+    }
+  },
+  "63": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "59",
+        0
+      ],
+      "alpha": [
+        "62",
+        0
+      ]
+    }
+  },
+  "64": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "63",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_cat/leg_R"
+    }
+  },
+  "65": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_head.png"
+    }
+  },
+  "66": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_headfur.png"
+    }
+  },
+  "67": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_headrepair.png"
+    }
+  },
+  "68": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "67",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "69": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "65",
+        0
+      ],
+      "source": [
+        "66",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "68",
+        0
+      ]
+    }
+  },
+  "70": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_headink.png"
+    }
+  },
+  "71": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_headchin.png"
+    }
+  },
+  "72": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "71",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "73": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "69",
+        0
+      ],
+      "source": [
+        "70",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "72",
+        0
+      ]
+    }
+  },
+  "74": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_headalpha.png"
+    }
+  },
+  "75": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "74",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "76": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "75",
+        0
+      ]
+    }
+  },
+  "77": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "73",
+        0
+      ],
+      "alpha": [
+        "76",
+        0
+      ]
+    }
+  },
+  "78": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "77",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/head"
+    }
+  },
+  "79": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_body.png"
+    }
+  },
+  "80": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyskin.png"
+    }
+  },
+  "81": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyinner.png"
+    }
+  },
+  "82": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "81",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "83": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "79",
+        0
+      ],
+      "source": [
+        "80",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "82",
+        0
+      ]
+    }
+  },
+  "84": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyrimink.png"
+    }
+  },
+  "85": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyrim.png"
+    }
+  },
+  "86": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "85",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "87": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "83",
+        0
+      ],
+      "source": [
+        "84",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "86",
+        0
+      ]
+    }
+  },
+  "88": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyink.png"
+    }
+  },
+  "89": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodybridge.png"
+    }
+  },
+  "90": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "89",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "91": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "87",
+        0
+      ],
+      "source": [
+        "88",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "90",
+        0
+      ]
+    }
+  },
+  "92": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_bodyalpha.png"
+    }
+  },
+  "93": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "92",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "94": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "93",
+        0
+      ]
+    }
+  },
+  "95": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "91",
+        0
+      ],
+      "alpha": [
+        "94",
+        0
+      ]
+    }
+  },
+  "96": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "95",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/body"
+    }
+  },
+  "97": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_arm_L.png"
+    }
+  },
+  "98": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_arm_Lalpha.png"
+    }
+  },
+  "99": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "98",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "100": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "99",
+        0
+      ]
+    }
+  },
+  "101": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "97",
+        0
+      ],
+      "alpha": [
+        "100",
+        0
+      ]
+    }
+  },
+  "102": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "101",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/arm_L"
+    }
+  },
+  "103": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_arm_R.png"
+    }
+  },
+  "104": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_arm_Ralpha.png"
+    }
+  },
+  "105": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "104",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "106": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "105",
+        0
+      ]
+    }
+  },
+  "107": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "103",
+        0
+      ],
+      "alpha": [
+        "106",
+        0
+      ]
+    }
+  },
+  "108": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "107",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/arm_R"
+    }
+  },
+  "109": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_leg_L.png"
+    }
+  },
+  "110": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Lskin.png"
+    }
+  },
+  "111": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Lhip.png"
+    }
+  },
+  "112": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "111",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "113": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "109",
+        0
+      ],
+      "source": [
+        "110",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "112",
+        0
+      ]
+    }
+  },
+  "114": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Lalpha.png"
+    }
+  },
+  "115": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "114",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "116": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "115",
+        0
+      ]
+    }
+  },
+  "117": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "113",
+        0
+      ],
+      "alpha": [
+        "116",
+        0
+      ]
+    }
+  },
+  "118": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "117",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/leg_L"
+    }
+  },
+  "119": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_dog_leg_R.png"
+    }
+  },
+  "120": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Rskin.png"
+    }
+  },
+  "121": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Rhip.png"
+    }
+  },
+  "122": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "121",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "123": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "119",
+        0
+      ],
+      "source": [
+        "120",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "122",
+        0
+      ]
+    }
+  },
+  "124": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_dog_leg_Ralpha.png"
+    }
+  },
+  "125": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "124",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "126": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "125",
+        0
+      ]
+    }
+  },
+  "127": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "123",
+        0
+      ],
+      "alpha": [
+        "126",
+        0
+      ]
+    }
+  },
+  "128": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "127",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_dog/leg_R"
+    }
+  },
+  "129": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_head.png"
+    }
+  },
+  "130": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_headfur.png"
+    }
+  },
+  "131": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_headrepair.png"
+    }
+  },
+  "132": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "131",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "133": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "129",
+        0
+      ],
+      "source": [
+        "130",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "132",
+        0
+      ]
+    }
+  },
+  "134": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_headink.png"
+    }
+  },
+  "135": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_headchin.png"
+    }
+  },
+  "136": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "135",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "137": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "133",
+        0
+      ],
+      "source": [
+        "134",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "136",
+        0
+      ]
+    }
+  },
+  "138": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_headalpha.png"
+    }
+  },
+  "139": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "138",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "140": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "139",
+        0
+      ]
+    }
+  },
+  "141": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "137",
+        0
+      ],
+      "alpha": [
+        "140",
+        0
+      ]
+    }
+  },
+  "142": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "141",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/head"
+    }
+  },
+  "143": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_body.png"
+    }
+  },
+  "144": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyskin.png"
+    }
+  },
+  "145": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyinner.png"
+    }
+  },
+  "146": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "145",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "147": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "143",
+        0
+      ],
+      "source": [
+        "144",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "146",
+        0
+      ]
+    }
+  },
+  "148": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyrimink.png"
+    }
+  },
+  "149": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyrim.png"
+    }
+  },
+  "150": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "149",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "151": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "147",
+        0
+      ],
+      "source": [
+        "148",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "150",
+        0
+      ]
+    }
+  },
+  "152": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyink.png"
+    }
+  },
+  "153": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodybridge.png"
+    }
+  },
+  "154": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "153",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "155": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "151",
+        0
+      ],
+      "source": [
+        "152",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "154",
+        0
+      ]
+    }
+  },
+  "156": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_bodyalpha.png"
+    }
+  },
+  "157": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "156",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "158": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "157",
+        0
+      ]
+    }
+  },
+  "159": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "155",
+        0
+      ],
+      "alpha": [
+        "158",
+        0
+      ]
+    }
+  },
+  "160": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "159",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/body"
+    }
+  },
+  "161": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_arm_L.png"
+    }
+  },
+  "162": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_arm_Lalpha.png"
+    }
+  },
+  "163": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "162",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "164": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "163",
+        0
+      ]
+    }
+  },
+  "165": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "161",
+        0
+      ],
+      "alpha": [
+        "164",
+        0
+      ]
+    }
+  },
+  "166": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "165",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/arm_L"
+    }
+  },
+  "167": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_arm_R.png"
+    }
+  },
+  "168": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_arm_Ralpha.png"
+    }
+  },
+  "169": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "168",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "170": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "169",
+        0
+      ]
+    }
+  },
+  "171": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "167",
+        0
+      ],
+      "alpha": [
+        "170",
+        0
+      ]
+    }
+  },
+  "172": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "171",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/arm_R"
+    }
+  },
+  "173": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_leg_L.png"
+    }
+  },
+  "174": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Lskin.png"
+    }
+  },
+  "175": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Lhip.png"
+    }
+  },
+  "176": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "175",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "177": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "173",
+        0
+      ],
+      "source": [
+        "174",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "176",
+        0
+      ]
+    }
+  },
+  "178": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Lalpha.png"
+    }
+  },
+  "179": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "178",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "180": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "179",
+        0
+      ]
+    }
+  },
+  "181": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "177",
+        0
+      ],
+      "alpha": [
+        "180",
+        0
+      ]
+    }
+  },
+  "182": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "181",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/leg_L"
+    }
+  },
+  "183": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_char_hamster_leg_R.png"
+    }
+  },
+  "184": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Rskin.png"
+    }
+  },
+  "185": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Rhip.png"
+    }
+  },
+  "186": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "185",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "187": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "183",
+        0
+      ],
+      "source": [
+        "184",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "186",
+        0
+      ]
+    }
+  },
+  "188": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_char_hamster_leg_Ralpha.png"
+    }
+  },
+  "189": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "188",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "190": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "189",
+        0
+      ]
+    }
+  },
+  "191": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "187",
+        0
+      ],
+      "alpha": [
+        "190",
+        0
+      ]
+    }
+  },
+  "192": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "191",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/char_hamster/leg_R"
+    }
+  },
+  "193": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_head.png"
+    }
+  },
+  "194": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_headalpha.png"
+    }
+  },
+  "195": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "194",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "196": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "195",
+        0
+      ]
+    }
+  },
+  "197": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "193",
+        0
+      ],
+      "alpha": [
+        "196",
+        0
+      ]
+    }
+  },
+  "198": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "197",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/head"
+    }
+  },
+  "199": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_body.png"
+    }
+  },
+  "200": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyskin.png"
+    }
+  },
+  "201": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyinner.png"
+    }
+  },
+  "202": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "201",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "203": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "199",
+        0
+      ],
+      "source": [
+        "200",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "202",
+        0
+      ]
+    }
+  },
+  "204": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyrimink.png"
+    }
+  },
+  "205": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyrim.png"
+    }
+  },
+  "206": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "205",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "207": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "203",
+        0
+      ],
+      "source": [
+        "204",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "206",
+        0
+      ]
+    }
+  },
+  "208": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyink.png"
+    }
+  },
+  "209": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodybridge.png"
+    }
+  },
+  "210": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "209",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "211": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "207",
+        0
+      ],
+      "source": [
+        "208",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "210",
+        0
+      ]
+    }
+  },
+  "212": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_bodyalpha.png"
+    }
+  },
+  "213": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "212",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "214": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "213",
+        0
+      ]
+    }
+  },
+  "215": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "211",
+        0
+      ],
+      "alpha": [
+        "214",
+        0
+      ]
+    }
+  },
+  "216": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "215",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/body"
+    }
+  },
+  "217": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_arm_L.png"
+    }
+  },
+  "218": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_arm_Lalpha.png"
+    }
+  },
+  "219": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "218",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "220": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "219",
+        0
+      ]
+    }
+  },
+  "221": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "217",
+        0
+      ],
+      "alpha": [
+        "220",
+        0
+      ]
+    }
+  },
+  "222": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "221",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/arm_L"
+    }
+  },
+  "223": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_arm_R.png"
+    }
+  },
+  "224": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_arm_Ralpha.png"
+    }
+  },
+  "225": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "224",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "226": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "225",
+        0
+      ]
+    }
+  },
+  "227": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "223",
+        0
+      ],
+      "alpha": [
+        "226",
+        0
+      ]
+    }
+  },
+  "228": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "227",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/arm_R"
+    }
+  },
+  "229": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_leg_L.png"
+    }
+  },
+  "230": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Lskin.png"
+    }
+  },
+  "231": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Lhip.png"
+    }
+  },
+  "232": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "231",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "233": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "229",
+        0
+      ],
+      "source": [
+        "230",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "232",
+        0
+      ]
+    }
+  },
+  "234": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Lalpha.png"
+    }
+  },
+  "235": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "234",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "236": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "235",
+        0
+      ]
+    }
+  },
+  "237": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "233",
+        0
+      ],
+      "alpha": [
+        "236",
+        0
+      ]
+    }
+  },
+  "238": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "237",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/leg_L"
+    }
+  },
+  "239": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_sprites_leg_R.png"
+    }
+  },
+  "240": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Rskin.png"
+    }
+  },
+  "241": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Rhip.png"
+    }
+  },
+  "242": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "241",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "243": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "239",
+        0
+      ],
+      "source": [
+        "240",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "242",
+        0
+      ]
+    }
+  },
+  "244": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "seam_inputs_poodle_leg_Ralpha.png"
+    }
+  },
+  "245": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "244",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "246": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "245",
+        0
+      ]
+    }
+  },
+  "247": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": [
+        "243",
+        0
+      ],
+      "alpha": [
+        "246",
+        0
+      ]
+    }
+  },
+  "248": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "247",
+        0
+      ],
+      "filename_prefix": "ProjectPA/SeamFix/poodle/leg_R"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Assets/_Project/Art/Characters/Playable/char_poodle/head.png": "4e1b1759d6b848677723eeedc36cfc223b3979e28e63ff44b3f1dc9729a095d2",
+  "Assets/_Project/Art/Characters/Playable/char_poodle/torso_mesh.png": "8a42e7991bfaefd3fdafb48de7c65f4df01e4e133d1206fccc7309449c1e351b",
+  "Assets/_Project/Art/Characters/Playable/char_poodle/arm_L.png": "270e54b1501d85e8150e6d0ff901b06831aca5ebdbe6f9586716c854f56223b3",
+  "Assets/_Project/Art/Characters/Playable/char_poodle/arm_R.png": "d1e7c8e4327eb13201b28f19e132b380eb4b0feb9dcb072f3747d68ecb8e43fe",
+  "Assets/_Project/Art/Characters/Playable/char_poodle/arm_LBlend.asset": "8fde9054b91f6d788f65a0fdc4cab85d3dcbf184efe9c741f0efe724f2b43950",
+  "Assets/_Project/Art/Characters/Playable/char_poodle/arm_RBlend.asset": "ebfe21e111c8312f2ee74d3a2a51a5dc6b233b75f76b8e83154fa4b35b34740b",
+  "Assets/_Project/Resources/Characters/char_poodle/Portrait.png": "39c80c3ff0590c41797ff2f0d114ad58cd739f851400f68eb0d7fa99a77ba964",
+  "Assets/_Project/Resources/Characters/char_poodle/Character.prefab": "92429e68152e91c06cac80fb94a2c4d1af984508af1873d5504af9f17bf486f4"
+}
