@@ -1,0 +1,11 @@
+{
+  "name": "PocketArcade.UdadaDelivery.Unity",
+  "references": [
+    "PocketArcade.UdadaDelivery",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "Unity.ugui",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem"
+  ]
+}

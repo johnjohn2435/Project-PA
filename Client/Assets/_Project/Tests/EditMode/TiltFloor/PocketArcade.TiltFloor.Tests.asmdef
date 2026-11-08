@@ -1,0 +1,12 @@
+{
+  "name": "PocketArcade.TiltFloor.Tests",
+  "references": [
+    "PocketArcade.TiltFloor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

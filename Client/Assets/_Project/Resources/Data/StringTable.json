@@ -1,0 +1,1050 @@
+{
+  "version": 1,
+  "rows": [
+    {
+      "key": "app.title",
+      "ko": "포켓 아케이드",
+      "en": "POCKET ARCADE"
+    },
+    {
+      "key": "common.ok",
+      "ko": "확인",
+      "en": "OK"
+    },
+    {
+      "key": "common.cancel",
+      "ko": "취소",
+      "en": "Cancel"
+    },
+    {
+      "key": "common.back",
+      "ko": "뒤로",
+      "en": "Back"
+    },
+    {
+      "key": "common.retry",
+      "ko": "다시 시도",
+      "en": "Retry"
+    },
+    {
+      "key": "hub.guest",
+      "ko": "게스트",
+      "en": "Guest"
+    },
+    {
+      "key": "hub.link",
+      "ko": "Google 계정 연결",
+      "en": "Link Google account"
+    },
+    {
+      "key": "hub.choose_game",
+      "ko": "게임 고르기",
+      "en": "Choose a game"
+    },
+    {
+      "key": "hub.characters",
+      "ko": "캐릭터",
+      "en": "Characters"
+    },
+    {
+      "key": "hub.settings",
+      "ko": "설정",
+      "en": "Settings"
+    },
+    {
+      "key": "hub.choose_character",
+      "ko": "함께할 친구를 골라 주세요",
+      "en": "Choose your buddy"
+    },
+    {
+      "key": "hub.pick_game",
+      "ko": "게임을 골라 주세요",
+      "en": "Pick a game"
+    },
+    {
+      "key": "hub.coins",
+      "ko": "코인  {0}",
+      "en": "Coins  {0}"
+    },
+    {
+      "key": "settings.music",
+      "ko": "배경 음악",
+      "en": "Music"
+    },
+    {
+      "key": "settings.sfx",
+      "ko": "효과음",
+      "en": "Sound effects"
+    },
+    {
+      "key": "settings.haptics",
+      "ko": "진동",
+      "en": "Vibration"
+    },
+    {
+      "key": "account.title",
+      "ko": "게스트 계정",
+      "en": "Guest account"
+    },
+    {
+      "key": "account.body",
+      "ko": "Google 계정 연결은 준비 중입니다. 게스트로 계속 플레이할 수 있어요.",
+      "en": "Google linking is coming soon. You can keep playing as a guest."
+    },
+    {
+      "key": "character.locked",
+      "ko": "아직 잠긴 캐릭터예요.",
+      "en": "This character is locked."
+    },
+    {
+      "key": "save.title",
+      "ko": "저장할 수 없어요",
+      "en": "Could not save"
+    },
+    {
+      "key": "save.body",
+      "ko": "기기의 저장 공간을 확인한 후 다시 시도해 주세요.",
+      "en": "Please check device storage and try again."
+    },
+    {
+      "key": "card.selected",
+      "ko": "{0}\n선택됨",
+      "en": "{0}\nSelected"
+    },
+    {
+      "key": "card.select",
+      "ko": "{0}\n선택",
+      "en": "{0}\nSelect"
+    },
+    {
+      "key": "card.play",
+      "ko": "{0}\n플레이",
+      "en": "{0}\nPlay"
+    },
+    {
+      "key": "card.locked",
+      "ko": "{0}\n잠김",
+      "en": "{0}\nLocked"
+    },
+    {
+      "key": "common.select",
+      "ko": "선택",
+      "en": "Select"
+    },
+    {
+      "key": "common.game",
+      "ko": "게임",
+      "en": "Game"
+    },
+    {
+      "key": "game.ready",
+      "ko": "{0}, 준비 완료!\n\n게임 플레이는 다음 단계에서 추가됩니다.",
+      "en": "{0} is ready!\n\nGameplay is coming in the next phase."
+    },
+    {
+      "key": "game.back",
+      "ko": "허브로 돌아가기",
+      "en": "Back to hub"
+    },
+    {
+      "key": "game.coming",
+      "ko": "이 게임은 준비 중이에요.",
+      "en": "This game is coming soon."
+    },
+    {
+      "key": "scene.wait",
+      "ko": "화면을 불러오는 동안 잠시 기다려 주세요.",
+      "en": "Please wait for the scene to load."
+    },
+    {
+      "key": "scene.missing",
+      "ko": "화면을 열 수 없어요. 다시 시작해 주세요.",
+      "en": "Could not open this screen. Please restart the game."
+    },
+    {
+      "key": "boot.loading",
+      "ko": "불러오는 중...",
+      "en": "Loading..."
+    },
+    {
+      "key": "boot.prepare",
+      "ko": "게임을 준비하는 중...",
+      "en": "Preparing the game..."
+    },
+    {
+      "key": "boot.list",
+      "ko": "리소스 목록 확인 중...",
+      "en": "Reading resource list..."
+    },
+    {
+      "key": "boot.ui",
+      "ko": "화면 준비 중...",
+      "en": "Preparing interface..."
+    },
+    {
+      "key": "boot.audio",
+      "ko": "사운드 불러오는 중...",
+      "en": "Loading audio..."
+    },
+    {
+      "key": "boot.characters",
+      "ko": "캐릭터 불러오는 중...",
+      "en": "Loading characters..."
+    },
+    {
+      "key": "boot.assets",
+      "ko": "리소스 불러오는 중...",
+      "en": "Loading resources..."
+    },
+    {
+      "key": "boot.services",
+      "ko": "서비스 시작 중...",
+      "en": "Starting services..."
+    },
+    {
+      "key": "boot.ready",
+      "ko": "준비 완료",
+      "en": "Ready"
+    },
+    {
+      "key": "boot.failed",
+      "ko": "게임을 준비하지 못했어요.\n다시 시도해 주세요.",
+      "en": "Could not prepare the game.\nPlease try again."
+    },
+    {
+      "key": "boot.percent",
+      "ko": "{0}%",
+      "en": "{0}%"
+    },
+    {
+      "key": "boot.detail",
+      "ko": "포켓 아케이드\n불러오는 중 {0}%\n{1}",
+      "en": "Pocket Arcade\nLoading {0}%\n{1}"
+    },
+    {
+      "key": "boot.initial",
+      "ko": "포켓 아케이드\n불러오는 중...",
+      "en": "Pocket Arcade\nLoading..."
+    },
+    {
+      "key": "popup.title",
+      "ko": "팝업",
+      "en": "Popup"
+    },
+    {
+      "key": "popup.body",
+      "ko": "팝업에 맞는 내용을 연결해 주세요.",
+      "en": "Replace this content for a custom popup."
+    },
+    {
+      "key": "character.char_cat.name",
+      "ko": "고영이",
+      "en": "Goyeongi"
+    },
+    {
+      "key": "character.char_dog.name",
+      "ko": "가나지",
+      "en": "Ganaji"
+    },
+    {
+      "key": "character.char_hamster.name",
+      "ko": "다람이",
+      "en": "Darami"
+    },
+    {
+      "key": "game.block_gravity.name",
+      "ko": "블록 그래비티",
+      "en": "Block Gravity"
+    },
+    {
+      "key": "game.coming_soon_1.name",
+      "ko": "준비 중",
+      "en": "Coming Soon"
+    },
+    {
+      "key": "game.coming_soon_2.name",
+      "ko": "준비 중",
+      "en": "Coming Soon"
+    },
+    {
+      "key": "ui.error.definition",
+      "ko": "UI 프리팹 정의를 확인해 주세요.",
+      "en": "Check the UI prefab definition."
+    },
+    {
+      "key": "ui.error.open",
+      "ko": "이미 열려 있는 UI 키입니다: {0}",
+      "en": "The UI key is already open: {0}"
+    },
+    {
+      "key": "ui.error.duplicate",
+      "ko": "UIManager가 이미 존재합니다.",
+      "en": "UIManager already exists."
+    },
+    {
+      "key": "ui.error.initialize",
+      "ko": "UIManager를 먼저 초기화해 주세요.",
+      "en": "Initialize UIManager first."
+    },
+    {
+      "key": "ui.error.host",
+      "ko": "UI 호스트와 비활성 등록 루트를 확인해 주세요.",
+      "en": "Check the UI host and inactive registration root."
+    },
+    {
+      "key": "ui.error.root",
+      "ko": "첫 UI는 Frame 패널이어야 합니다.",
+      "en": "The first UI must be a Frame panel."
+    },
+    {
+      "key": "ui.error.resources",
+      "ko": "부트 리소스 로딩을 먼저 완료해 주세요.",
+      "en": "Complete boot resource loading first."
+    },
+    {
+      "key": "ui.error.prefab",
+      "ko": "부트 캐시에 UI 프리팹이 없습니다: {0}",
+      "en": "UI prefab is absent from the boot cache: {0}"
+    },
+    {
+      "key": "ui.error.key",
+      "ko": "UI 키가 누락되었거나 중복되었습니다: {0}",
+      "en": "The UI key is missing or duplicated: {0}"
+    },
+    {
+      "key": "ui.error.data",
+      "ko": "UI에 전달한 데이터 형식이 올바르지 않습니다.",
+      "en": "The UI user data has an invalid type."
+    },
+    {
+      "key": "ui.error.save",
+      "ko": "저장 실패: {0}",
+      "en": "Save failed: {0}"
+    },
+    {
+      "key": "ui.error.play",
+      "ko": "Play Mode를 종료한 후 실행해 주세요.",
+      "en": "Exit Play Mode before applying UI setup."
+    },
+    {
+      "key": "ui.error.setup",
+      "ko": "UI 프레임 구조 적용을 완료했습니다. 백업: {0}",
+      "en": "UI frame setup completed. Backup: {0}"
+    },
+    {
+      "key": "ui.error.validate",
+      "ko": "UI 프레임·키·정렬 정책·호스트 검증을 통과했습니다.",
+      "en": "UI frames, keys, order policies and hosts validated."
+    },
+    {
+      "key": "ui.error.definition_key",
+      "ko": "UI 프리팹 정의를 확인해 주세요: {0}",
+      "en": "Check the UI prefab definition: {0}"
+    },
+    {
+      "key": "bg.score",
+      "ko": "점수 {0:N0}",
+      "en": "Score {0:N0}"
+    },
+    {
+      "key": "bg.best",
+      "ko": "최고 기록 {0:N0}",
+      "en": "Best {0:N0}"
+    },
+    {
+      "key": "bg.gravity",
+      "ko": "중력 {0}  ·  다음 {1}  ·  {2}회 후 변경",
+      "en": "Gravity {0}  ·  Next {1}  ·  Change in {2}"
+    },
+    {
+      "key": "bg.chain",
+      "ko": "연쇄 ×{0}",
+      "en": "CHAIN ×{0}"
+    },
+    {
+      "key": "bg.ready",
+      "ko": "큰 조각을 대비하세요",
+      "en": "Leave room for large pieces"
+    },
+    {
+      "key": "bg.resolving",
+      "ko": "블록 정리 중",
+      "en": "Resolving blocks"
+    },
+    {
+      "key": "bg.over",
+      "ko": "게임 종료 · 다시 하기로 시작하세요",
+      "en": "Game over · Restart to play again"
+    },
+    {
+      "key": "bg.down",
+      "ko": "아래",
+      "en": "Down"
+    },
+    {
+      "key": "bg.left",
+      "ko": "왼쪽",
+      "en": "Left"
+    },
+    {
+      "key": "bg.up",
+      "ko": "위",
+      "en": "Up"
+    },
+    {
+      "key": "bg.right",
+      "ko": "오른쪽",
+      "en": "Right"
+    },
+    {
+      "key": "bg.pause",
+      "ko": "일시정지",
+      "en": "Pause"
+    },
+    {
+      "key": "bg.resume",
+      "ko": "계속하기",
+      "en": "Resume"
+    },
+    {
+      "key": "bg.home",
+      "ko": "허브로",
+      "en": "Hub"
+    },
+    {
+      "key": "bg.restart",
+      "ko": "다시 하기",
+      "en": "Restart"
+    },
+    {
+      "key": "bg.error.references",
+      "ko": "Block Gravity 프리팹의 필수 참조를 확인해 주세요.",
+      "en": "Check the required Block Gravity prefab references."
+    },
+    {
+      "key": "bg.error.pool",
+      "ko": "블록 표시 슬롯이 부족합니다.",
+      "en": "The block renderer pool is exhausted."
+    },
+    {
+      "key": "bg.error.boot",
+      "ko": "BootScene에서 리소스 준비를 마친 뒤 시작해 주세요.",
+      "en": "Start from BootScene after preloading resources."
+    },
+    {
+      "key": "bg.error.scene",
+      "ko": "허브로 이동할 수 없습니다. 씬 초기화 상태를 확인해 주세요.",
+      "en": "Cannot return to the hub. Check scene initialization."
+    },
+    {
+      "key": "bg.error.font",
+      "ko": "문자열 테이블과 한국어 폰트 적용 메뉴를 먼저 실행해 주세요.",
+      "en": "Apply the string table and Korean font first."
+    },
+    {
+      "key": "bg.error.play",
+      "ko": "Play Mode를 종료한 뒤 실행해 주세요.",
+      "en": "Exit Play Mode before running setup."
+    },
+    {
+      "key": "bg.error.host",
+      "ko": "GameScene에 UISceneHost가 하나 있어야 합니다.",
+      "en": "GameScene must contain exactly one UISceneHost."
+    },
+    {
+      "key": "bg.error.frames",
+      "ko": "UI Frames 적용 메뉴를 먼저 실행해 주세요.",
+      "en": "Apply the UI Frames migration first."
+    },
+    {
+      "key": "bg.setup.done",
+      "ko": "Block Gravity 프리팹과 GameScene 연결을 완료했습니다. 백업: {0}",
+      "en": "Block Gravity prefabs and GameScene configured. Backup: {0}"
+    },
+    {
+      "key": "bg.setup.valid",
+      "ko": "Block Gravity 프리팹과 부트 리소스 목록 검증을 통과했습니다.",
+      "en": "Block Gravity prefabs and boot inventory validated."
+    },
+    {
+      "key": "bg.result.title",
+      "ko": "게임 결과",
+      "en": "Game results"
+    },
+    {
+      "key": "bg.result.score",
+      "ko": "최종 점수 {0:N0}",
+      "en": "Final score {0:N0}"
+    },
+    {
+      "key": "bg.result.coins",
+      "ko": "획득 코인 {0:N0}",
+      "en": "Coins received {0:N0}"
+    },
+    {
+      "key": "bg.result.coins_pending",
+      "ko": "저장 후 받을 코인 {0:N0}",
+      "en": "Coins after saving {0:N0}"
+    },
+    {
+      "key": "bg.result.saved",
+      "ko": "저장 완료",
+      "en": "Saved"
+    },
+    {
+      "key": "bg.result.save_failed",
+      "ko": "저장하지 못했습니다.\n저장을 재시도한 뒤 계속해 주세요.",
+      "en": "Could not save.\nRetry saving before continuing."
+    },
+    {
+      "key": "bg.result.retry",
+      "ko": "저장 재시도",
+      "en": "Retry saving"
+    },
+    {
+      "key": "bg.result.data_missing",
+      "ko": "저장 데이터가 준비되지 않았습니다.",
+      "en": "Save data is not ready."
+    },
+    {
+      "key": "bg.combo",
+      "ko": "{0} 콤보 · 삭제 점수 ×{1}",
+      "en": "{0} COMBO · Clear score ×{1}"
+    },
+    {
+      "key": "bg.exit",
+      "ko": "나가기",
+      "en": "Exit"
+    },
+    {
+      "key": "bg.menu.title",
+      "ko": "잠깐 쉬어가기",
+      "en": "Take a break"
+    },
+    {
+      "key": "bg.menu.continue",
+      "ko": "계속하기",
+      "en": "Continue"
+    },
+    {
+      "key": "bg.settings.value",
+      "ko": "{0}: {1}",
+      "en": "{0}: {1}"
+    },
+    {
+      "key": "bg.settings.on",
+      "ko": "켜짐",
+      "en": "On"
+    },
+    {
+      "key": "bg.settings.off",
+      "ko": "꺼짐",
+      "en": "Off"
+    },
+    {
+      "key": "bg.settings.unavailable",
+      "ko": "설정을 불러올 수 없습니다.",
+      "en": "Settings are unavailable."
+    },
+    {
+      "key": "bg.settings.save_error",
+      "ko": "설정을 저장하지 못했습니다. 다시 눌러 주세요.",
+      "en": "Could not save settings. Please try again."
+    },
+    {
+      "key": "bg.tutorial.title.0",
+      "ko": "블록을 놓아 보세요",
+      "en": "Place a block"
+    },
+    {
+      "key": "bg.tutorial.body.0",
+      "ko": "아래 조각을 끌어 보드의 빈칸에 놓으세요.\n놓을 수 있는 위치는 미리 표시돼요.",
+      "en": "Drag a piece from the tray onto empty board cells.\nA preview shows where it can fit."
+    },
+    {
+      "key": "bg.tutorial.title.1",
+      "ko": "줄을 채우면 사라져요",
+      "en": "Fill a line to clear it"
+    },
+    {
+      "key": "bg.tutorial.body.1",
+      "ko": "가로나 세로 한 줄을 빈틈없이 채우면 블록이 사라져요.\n조각 3개 안에서 줄을 지우면 콤보를 이어갈 수 있어요.",
+      "en": "Complete a horizontal or vertical line to clear it.\nClear within each set of three pieces to keep your combo."
+    },
+    {
+      "key": "bg.tutorial.title.2",
+      "ko": "중력 방향을 확인하세요",
+      "en": "Watch the gravity"
+    },
+    {
+      "key": "bg.tutorial.body.2",
+      "ko": "5회마다 중력 방향이 바뀌어요.\n6·18·36회 배치부터 더 큰 조각이 나와요.\n3×3 공간을 남겨 두세요. 놓을 곳이 없으면 종료!",
+      "en": "Gravity turns every five placements.\nLarger pieces arrive after 6, 18 and 36 placements.\nLeave 3×3 spaces. No valid moves means game over!"
+    },
+    {
+      "key": "bg.tutorial.progress",
+      "ko": "{0} / {1}",
+      "en": "{0} / {1}"
+    },
+    {
+      "key": "bg.tutorial.next",
+      "ko": "다음",
+      "en": "Next"
+    },
+    {
+      "key": "bg.tutorial.previous",
+      "ko": "이전",
+      "en": "Previous"
+    },
+    {
+      "key": "bg.tutorial.start",
+      "ko": "시작하기",
+      "en": "Start playing"
+    },
+    {
+      "key": "bg.tutorial.later",
+      "ko": "나중에 보기",
+      "en": "Show me later"
+    },
+    {
+      "key": "bg.tutorial.help",
+      "ko": "?",
+      "en": "?"
+    },
+    {
+      "key": "bg.tutorial.save_error",
+      "ko": "안내 완료를 저장하지 못했어요. 다시 시도하거나 나중에 보기를 눌러 주세요.",
+      "en": "Could not save tutorial completion. Retry or choose Show me later."
+    },
+    {
+      "key": "bg.tutorial.data_missing",
+      "ko": "저장 데이터를 준비하지 못했어요. 나중에 보기를 눌러 주세요.",
+      "en": "Save data is unavailable. Choose Show me later."
+    },
+    {
+      "key": "character.error.layer",
+      "ko": "캐릭터 미리보기용 레이어를 추가할 공간이 없어요.",
+      "en": "No layer slot is available for character previews."
+    },
+    {
+      "key": "game.udada_delivery.name",
+      "ko": "우다다 배달",
+      "en": "Udada Delivery"
+    },
+    {
+      "key": "ud.score",
+      "ko": "점수 {0:N0}  ·  배달 {1}회",
+      "en": "Score {0:N0}  ·  {1} deliveries"
+    },
+    {
+      "key": "ud.timer",
+      "ko": "남은 시간 {0}초",
+      "en": "Time left: {0}s"
+    },
+    {
+      "key": "ud.hearts",
+      "ko": "남은 기회 {0}",
+      "en": "Hearts: {0}"
+    },
+    {
+      "key": "ud.instructions",
+      "ko": "달리다가 누르면 급정거하며 택배가 날아가요.\n착지 표시를 초록 현관에 맞춰 집 세 채에 배달하세요!",
+      "en": "Brake while running to slide a parcel forward.\nLine up the landing marker with the green doorstep. Deliver to three houses!"
+    },
+    {
+      "key": "ud.start",
+      "ko": "배달 시작",
+      "en": "Start delivery"
+    },
+    {
+      "key": "ud.in_progress",
+      "ko": "누르면 급정거·택배 발사 / 떼면 다시 달리기",
+      "en": "Hold to brake and launch · Release to run"
+    },
+    {
+      "key": "ud.running",
+      "ko": "달리는 중! 빈틈을 보고 통과하세요.",
+      "en": "Running! Time your way through the gaps."
+    },
+    {
+      "key": "ud.braking",
+      "ko": "감속 중 · 떼면 다시 달려요.\n멈춰서 누르면 발사되지 않아요.",
+      "en": "Braking · Release to run again.\nBuild up speed before launching."
+    },
+    {
+      "key": "ud.hit",
+      "ko": "앗! 기회 -1 · 부딪힌 장애물은 지나가요.",
+      "en": "Ouch! Lost a heart · Moving past the obstacle."
+    },
+    {
+      "key": "ud.result",
+      "ko": "배달 결과",
+      "en": "Delivery results"
+    },
+    {
+      "key": "ud.summary",
+      "ko": "점수 {0:N0}\n성공 {1}곳 · 정확한 배달 {2}곳\n획득 코인 {3}",
+      "en": "Score {0:N0}\n{1} deliveries · {2} perfect landings\nCoins earned: {3}"
+    },
+    {
+      "key": "ud.saved",
+      "ko": "최고 기록과 코인 저장 완료",
+      "en": "High score and coins saved"
+    },
+    {
+      "key": "ud.save_failed",
+      "ko": "저장하지 못했어요. 재시도해 주세요.",
+      "en": "Could not save. Please try again."
+    },
+    {
+      "key": "ud.retry_save",
+      "ko": "저장 재시도",
+      "en": "Retry save"
+    },
+    {
+      "key": "ud.home_failed",
+      "ko": "허브로 이동하지 못했어요. 저장 상태를 확인하고 다시 시도해 주세요.",
+      "en": "Could not return to the hub. Check saving and try again."
+    },
+    {
+      "key": "ud.error.references",
+      "ko": "우다다 배달의 부트 리소스와 프리팹 참조를 확인해 주세요.",
+      "en": "Check Udada Delivery boot resources and prefab references."
+    },
+    {
+      "key": "ud.setup.done",
+      "ko": "우다다 배달 프로토타입을 연결했습니다. 백업: {0}",
+      "en": "Udada Delivery prototype configured. Backup: {0}"
+    },
+    {
+      "key": "ud.setup.valid",
+      "ko": "우다다 배달 프리팹과 부트 목록 검증을 통과했습니다.",
+      "en": "Udada Delivery prefabs and boot inventory validated."
+    },
+    {
+      "key": "ud.route",
+      "ko": "완료 {0}/{1}곳 · 적재 {2}단계",
+      "en": "Stops {0}/{1} · Load {2}"
+    },
+    {
+      "key": "ud.target",
+      "ko": "다음 집까지 {1:0.0}m · 속도 {2:0.0}\n착지 표시가 현관과 겹치면 누르세요.",
+      "en": "Next doorstep: {1:0.0}m · Speed {2:0.0}\nBrake when the landing marker meets the doorstep."
+    },
+    {
+      "key": "ud.parcel_flying",
+      "ko": "택배 이동 중! 착지할 때까지 기다려요.\n손을 떼면 다음 집으로 달릴 수 있어요.",
+      "en": "Parcel on the move! Wait for the landing.\nRelease to run toward the next house."
+    },
+    {
+      "key": "ud.perfect",
+      "ko": "딱 맞았어요! 정확한 배달!\n다음 묶음은 무거워져 더 멀리 미끄러져요.",
+      "en": "Perfect landing!\nThe next heavier load slides farther."
+    },
+    {
+      "key": "ud.delivered",
+      "ko": "배달 성공!\n다음 묶음은 무거워져 더 멀리 미끄러져요.",
+      "en": "Delivered!\nThe next heavier load slides farther."
+    },
+    {
+      "key": "ud.too_short",
+      "ko": "조금 일찍 눌렀어요. 택배가 못 미쳤어요.\n다음 집에서는 더 가까이 가서 눌러 보세요.",
+      "en": "Too short! You braked too early.\nGet closer before braking at the next house."
+    },
+    {
+      "key": "ud.too_far",
+      "ko": "조금 늦게 눌렀어요. 현관을 지나쳤어요.\n다음 집에서는 조금 일찍 눌러 보세요.",
+      "en": "Too far! You braked too late.\nBrake a little earlier at the next house."
+    },
+    {
+      "key": "ud.skipped",
+      "ko": "이번 집을 놓쳤어요. 다음 집으로 가요!",
+      "en": "Missed this house. Try the next one!"
+    },
+    {
+      "key": "ud.brake.setup",
+      "ko": "급정거 배달의 집·택배·착지 표시 프리팹을 구성했습니다. 백업: {0}",
+      "en": "Brake delivery houses, parcels and landing guide configured. Backup: {0}"
+    },
+    {
+      "key": "game.tilt_floor.name",
+      "ko": "원판 생존전",
+      "en": "Tilt Survival"
+    },
+    {
+      "key": "floor.instructions",
+      "ko": "붉은 표시는 적이 떨어질 자리예요.\n착지한 적에 닿으면 바로 끝나요. 기울여 낙사시키세요!\n노란 보너스는 추가 점수를 줘요.",
+      "en": "Red marks show where enemies will land.\nTouching a landed enemy ends the run. Tilt them off!\nYellow bonuses give extra points."
+    },
+    {
+      "key": "floor.progress",
+      "ko": "목표 {0} / {1}",
+      "en": "Targets {0} / {1}"
+    },
+    {
+      "key": "floor.balance",
+      "ko": "판 기울기 {0}° · 낮은 쪽으로 물건이 쏠려요",
+      "en": "Tilt {0}° · Loose objects slide downhill"
+    },
+    {
+      "key": "floor.playing",
+      "ko": "버티는 동안 점수가 계속 올라가요.\n적을 가장자리로 유인하고 안쪽으로 빠져나오세요.",
+      "en": "Your score grows while you survive.\nLure enemies toward the edge, then escape inward."
+    },
+    {
+      "key": "floor.warning",
+      "ko": "경사가 심해요! 적도 나도 미끄러져요.\n방향을 바꿔 원판 안으로 돌아오세요.",
+      "en": "Steep tilt! Everyone is sliding.\nChange direction and move back onto the disc."
+    },
+    {
+      "key": "floor.cleared",
+      "ko": "전부 모았어요!\n다시 해보거나 메뉴에서 허브로 돌아갈 수 있어요.",
+      "en": "All collected!\nTry again or return to the hub from the menu."
+    },
+    {
+      "key": "floor.fell",
+      "ko": "판 밖으로 떨어졌어요.\n미끄러지기 전에 반대 방향으로 움직여 보세요.",
+      "en": "You fell off the floor.\nSteer against the slide before reaching the edge."
+    },
+    {
+      "key": "floor.overturned",
+      "ko": "한쪽으로 너무 오래 쏠렸어요!\n목표를 모은 뒤 중앙으로 돌아와 보세요.",
+      "en": "The floor tipped too far for too long!\nReturn toward the center after collecting a target."
+    },
+    {
+      "key": "floor.start",
+      "ko": "생존 시작",
+      "en": "Start surviving"
+    },
+    {
+      "key": "floor.retry",
+      "ko": "다시 해보기",
+      "en": "Try again"
+    },
+    {
+      "key": "floor.controls",
+      "ko": "드래그 이동 · PC는 WASD / 방향키",
+      "en": "Drag to move · WASD / arrow keys on PC"
+    },
+    {
+      "key": "floor.error.references",
+      "ko": "흔들리는 바닥의 프리팹과 부트 참조를 확인해 주세요.",
+      "en": "Check Wobbly Floor prefab and boot references."
+    },
+    {
+      "key": "floor.error.home",
+      "ko": "허브로 이동하지 못했어요. 다시 시도해 주세요.",
+      "en": "Could not return to the hub. Try again."
+    },
+    {
+      "key": "floor.setup.done",
+      "ko": "흔들리는 바닥 실험을 구성했습니다. 백업: {0}",
+      "en": "Wobbly Floor experiment configured. Backup: {0}"
+    },
+    {
+      "key": "floor.setup.valid",
+      "ko": "흔들리는 바닥 프리팹과 부트 목록 검증을 통과했습니다.",
+      "en": "Wobbly Floor prefabs and boot inventory validated."
+    },
+    {
+      "key": "floor.survival_score",
+      "ko": "점수 {0:N0} · 생존 {1:0.0}초",
+      "en": "Score {0:N0} · {1:0.0}s survived"
+    },
+    {
+      "key": "floor.survival_info",
+      "ko": "단계 {0} · 적 {1} · 낙사 {2} · 아이템 {3}\n기울기 {4}°",
+      "en": "Stage {0} · Enemies {1} · Knock-offs {2} · Items {3}\nTilt {4}°"
+    },
+    {
+      "key": "floor.survival_over",
+      "ko": "원판 밖으로 떨어졌어요!\n최종 {0:N0}점 · 생존 {1:0.0}초\n아이템 보너스 {2:N0}점",
+      "en": "You fell off the disc!\nFinal score {0:N0} · Survived {1:0.0}s\nItem bonus {2:N0} points"
+    },
+    {
+      "key": "floor.survival_bonus",
+      "ko": "아이템 보너스 +{0:N0}점!\n다음 낙하 표시도 확인하세요.",
+      "en": "Item bonus +{0:N0}!\nKeep watching the landing warnings."
+    },
+    {
+      "key": "floor.survival.setup",
+      "ko": "원판·적 낙하·생존 점수 모드를 구성했습니다. 백업: {0}",
+      "en": "Disc, enemy drops and survival scoring configured. Backup: {0}"
+    },
+    {
+      "key": "game.echo_room.name",
+      "ko": "10초 전의 나",
+      "en": "Me, Ten Seconds Ago"
+    },
+    {
+      "key": "echo.instructions",
+      "ko": "물건에 닿아 들고 중앙 초록 구역으로 돌아와요.\n10초마다 내 동선을 반복하는 분신이 생겨요.\n같은 색 발판을 밟으면 문이 잠시 열려요.",
+      "en": "Touch a parcel, then bring it to the green center.\nEvery ten seconds, a ghost replays your route.\nStep on a matching pad to open its gate briefly."
+    },
+    {
+      "key": "echo.progress",
+      "ko": "회수 {0}/{1} · 분신 {2}명\n분신이 운반한 물건 {3}개",
+      "en": "Returned {0}/{1} · Ghosts {2}\nGhost deliveries: {3}"
+    },
+    {
+      "key": "echo.timer",
+      "ko": "구간 {0}/{1} · 다음 분신까지 {2:0.0}초\n전체 남은 시간 {3:0.0}초",
+      "en": "Loop {0}/{1} · Next ghost in {2:0.0}s\nTotal time left: {3:0.0}s"
+    },
+    {
+      "key": "echo.complete",
+      "ko": "협동 회수 성공! 총 {0}개를 모았어요.\n이 중 분신이 운반한 물건은 {1}개예요.",
+      "en": "Recovery complete! {0} parcels returned.\nYour ghosts delivered {1} of them."
+    },
+    {
+      "key": "echo.time_up",
+      "ko": "시간 종료! {0}/{1}개를 모았어요.\n분신 운반 {2}개 · 다음에는 동선을 나눠 보세요.",
+      "en": "Time up! Returned {0}/{1}.\nGhosts delivered {2}. Try splitting your routes."
+    },
+    {
+      "key": "echo.new_ghost",
+      "ko": "분신 {0}명이 이전 동선을 반복해요!\n물건과 내 위치가 초기화됐어요. 다른 동선을 노려요.",
+      "en": "{0} ghosts are replaying your routes!\nParcels and your position reset. Try a new route."
+    },
+    {
+      "key": "echo.reset_warning",
+      "ko": "곧 다음 구간! 들고만 있는 물건은 회수되지 않아요.\n분신의 동작도 다음 구간에 다시 시작돼요.",
+      "en": "Next loop soon! Carrying alone does not count.\nGhost routes also restart in the next loop."
+    },
+    {
+      "key": "echo.playing",
+      "ko": "물건은 한 번에 하나, 중앙에 가져와야 회수돼요.\n분신도 물건을 가져가고 문을 열며 길을 막아요.",
+      "en": "Carry one parcel at a time back to the center.\nGhosts carry parcels, open gates and block your way."
+    },
+    {
+      "key": "echo.start",
+      "ko": "동선 기록 시작",
+      "en": "Start recording"
+    },
+    {
+      "key": "echo.controls",
+      "ko": "드래그 이동 · PC는 WASD / 방향키",
+      "en": "Drag to move · WASD / arrow keys on PC"
+    },
+    {
+      "key": "echo.error.references",
+      "ko": "시간 분신 게임의 부트 리소스와 프리팹을 확인해 주세요.",
+      "en": "Check time-echo boot resources and prefab references."
+    },
+    {
+      "key": "echo.error.home",
+      "ko": "허브로 이동하지 못했어요. 다시 시도해 주세요.",
+      "en": "Could not return to the hub. Try again."
+    },
+    {
+      "key": "echo.setup.done",
+      "ko": "시간 분신 게임을 세 번째 카드에 연결했습니다. 백업: {0}",
+      "en": "Time-echo game connected to the third card. Backup: {0}"
+    },
+    {
+      "key": "echo.setup.valid",
+      "ko": "시간 분신 게임 프리팹과 부트 목록 검증을 통과했습니다.",
+      "en": "Time-echo prefabs and boot inventory validated."
+    },
+    {
+      "key": "hub.brand_pocket",
+      "ko": "포켓",
+      "en": "POCKET"
+    },
+    {
+      "key": "hub.brand_arcade",
+      "ko": "아케이드",
+      "en": "ARCADE"
+    },
+    {
+      "key": "hub.choose_friend",
+      "ko": "함께할 친구",
+      "en": "Pick a pal"
+    },
+    {
+      "key": "hub.start_game",
+      "ko": "{0} 시작",
+      "en": "Play {0}"
+    },
+    {
+      "key": "hub.coin_amount",
+      "ko": "{0:N0}",
+      "en": "{0:N0}"
+    },
+    {
+      "key": "hub.all_games",
+      "ko": "전체 게임",
+      "en": "All games"
+    },
+    {
+      "key": "floor.hit_over",
+      "ko": "적에 닿았어요!\n최종 {0:N0}점 · 생존 {1:0.0}초\n아이템 보너스 {2:N0}점",
+      "en": "An enemy caught you!\nFinal score {0:N0} · Survived {1:0.0}s\nItem bonus {2:N0} points"
+    },
+    {
+      "key": "bg.difficulty_status",
+      "ko": "단계 {0} · {1}",
+      "en": "Level {0} · {1}"
+    },
+    {
+      "key": "character.char_poodle.name",
+      "ko": "푸들",
+      "en": "Poodle"
+    },
+    {
+      "key": "park.title",
+      "ko": "포켓 파크",
+      "en": "POCKET PARK"
+    },
+    {
+      "key": "park.subtitle",
+      "ko": "어디부터 놀러 갈까?",
+      "en": "Where shall we play?"
+    },
+    {
+      "key": "park.walk_hint",
+      "ko": "입구까지 걸어가 보세요",
+      "en": "Walk to an attraction"
+    },
+    {
+      "key": "park.explore",
+      "ko": "둘러보는 중",
+      "en": "Exploring"
+    },
+    {
+      "key": "park.enter",
+      "ko": "입장하기",
+      "en": "Enter"
+    },
+    {
+      "key": "park.friends",
+      "ko": "친구 선택",
+      "en": "Choose friend"
+    },
+    {
+      "key": "park.friend_hint",
+      "ko": "함께 산책할 친구를 골라요",
+      "en": "Choose a friend for your stroll"
+    },
+    {
+      "key": "park.friend_count",
+      "ko": "친구 {0}명",
+      "en": "{0} friends"
+    },
+    {
+      "key": "park.move",
+      "ko": "이동",
+      "en": "Move"
+    },
+    {
+      "key": "park.plaza",
+      "ko": "만남의 광장",
+      "en": "MEETING PLAZA"
+    },
+    {
+      "key": "hub.swipe_games",
+      "ko": "좌우로 넘겨보세요",
+      "en": "Swipe to browse"
+    }
+  ]
+}

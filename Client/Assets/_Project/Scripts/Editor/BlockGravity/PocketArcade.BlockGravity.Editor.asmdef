@@ -1,0 +1,6 @@
+{
+  "name": "PocketArcade.BlockGravity.Editor",
+  "rootNamespace": "PocketArcade.BlockGravity.Editor",
+  "references": ["PocketArcade.BlockGravity", "PocketArcade.BlockGravity.Unity", "PocketArcade.Editor", "PocketArcade.Runtime", "PocketArcade.Core", "Unity.ugui", "Unity.TextMeshPro"],
+  "includePlatforms": ["Editor"]
+}

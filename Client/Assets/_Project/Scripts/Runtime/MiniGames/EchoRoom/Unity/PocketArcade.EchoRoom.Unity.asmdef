@@ -1,0 +1,11 @@
+{
+  "name": "PocketArcade.EchoRoom.Unity",
+  "references": [
+    "PocketArcade.EchoRoom",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "Unity.ugui",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem"
+  ]
+}

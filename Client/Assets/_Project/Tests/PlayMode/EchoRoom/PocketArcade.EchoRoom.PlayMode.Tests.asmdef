@@ -1,0 +1,13 @@
+{
+  "name": "PocketArcade.EchoRoom.PlayMode.Tests",
+  "references": [
+    "PocketArcade.EchoRoom",
+    "PocketArcade.EchoRoom.Unity",
+    "PocketArcade.Runtime",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

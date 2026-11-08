@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.TiltFloor.Editor",
+  "references": [
+    "PocketArcade.TiltFloor",
+    "PocketArcade.TiltFloor.Unity",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "PocketArcade.Editor",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

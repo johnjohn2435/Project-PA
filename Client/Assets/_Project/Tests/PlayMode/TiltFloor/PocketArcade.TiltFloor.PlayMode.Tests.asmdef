@@ -1,0 +1,13 @@
+{
+  "name": "PocketArcade.TiltFloor.PlayMode.Tests",
+  "references": [
+    "PocketArcade.TiltFloor",
+    "PocketArcade.TiltFloor.Unity",
+    "PocketArcade.Runtime",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

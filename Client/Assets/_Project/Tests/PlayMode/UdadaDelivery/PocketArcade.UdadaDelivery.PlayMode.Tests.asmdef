@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.UdadaDelivery.PlayMode.Tests",
+  "references": [
+    "PocketArcade.UdadaDelivery",
+    "PocketArcade.UdadaDelivery.Unity",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "Unity.ugui",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

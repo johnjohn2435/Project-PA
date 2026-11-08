@@ -4,6 +4,7 @@
   "references": [
     "PocketArcade.Core",
     "Unity.ugui",
-    "Unity.InputSystem"
+    "Unity.InputSystem",
+    "Unity.TextMeshPro"
   ]
 }

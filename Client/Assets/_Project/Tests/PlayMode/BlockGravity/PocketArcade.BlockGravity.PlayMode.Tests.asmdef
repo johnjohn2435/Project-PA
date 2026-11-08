@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.BlockGravity.PlayMode.Tests",
+  "references": [
+    "PocketArcade.BlockGravity",
+    "PocketArcade.BlockGravity.Unity",
+    "PocketArcade.Runtime",
+    "Unity.ugui",
+    "Unity.InputSystem",
+    "PocketArcade.Core",
+    "Unity.TextMeshPro"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

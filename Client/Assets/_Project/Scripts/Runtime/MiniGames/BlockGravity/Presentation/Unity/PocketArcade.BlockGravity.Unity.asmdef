@@ -1,0 +1,5 @@
+{
+  "name": "PocketArcade.BlockGravity.Unity",
+  "rootNamespace": "PocketArcade.BlockGravity.Unity",
+  "references": ["PocketArcade.BlockGravity", "PocketArcade.Runtime", "PocketArcade.Core", "Unity.ugui", "Unity.TextMeshPro", "Unity.InputSystem"]
+}

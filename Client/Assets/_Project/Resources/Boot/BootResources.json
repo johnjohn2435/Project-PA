@@ -1,0 +1,365 @@
+{
+    "version": 1,
+    "resources": [
+        {
+            "path": "Audio/BGM/Game",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/BGM/Hub",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Cancel",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Clear",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Combo",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Confirm",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/GameOver",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Gravity",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/SFX/Place",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Audio/UI/Click",
+            "kind": "AudioClip",
+            "required": false
+        },
+        {
+            "path": "Characters/Shared/PreviewCamera",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Character",
+            "kind": "Prefab",
+            "required": false
+        },
+        {
+            "path": "Characters/char_cat/Parts/arm_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Parts/arm_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Parts/body",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Parts/leg_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Parts/leg_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_cat/Portrait",
+            "kind": "Sprite",
+            "required": false
+        },
+        {
+            "path": "Characters/char_dog/Character",
+            "kind": "Prefab",
+            "required": false
+        },
+        {
+            "path": "Characters/char_dog/Parts/arm_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_dog/Parts/arm_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_dog/Parts/body",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_dog/Parts/leg_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_dog/Parts/leg_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_dog/Portrait",
+            "kind": "Sprite",
+            "required": false
+        },
+        {
+            "path": "Characters/char_hamster/Character",
+            "kind": "Prefab",
+            "required": false
+        },
+        {
+            "path": "Characters/char_hamster/Parts/arm_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_hamster/Parts/arm_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_hamster/Parts/body",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_hamster/Parts/leg_L",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_hamster/Parts/leg_R",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Characters/char_hamster/Portrait",
+            "kind": "Sprite",
+            "required": false
+        },
+        {
+            "path": "Characters/char_poodle/Character",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "Characters/char_poodle/Portrait",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "Data/StringTable",
+            "kind": "Asset",
+            "required": true
+        },
+        {
+            "path": "Hub/ParkWorld",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/BlockGravity/Cell",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "MiniGames/BlockGravity/Playfield",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/EchoRoom/Playfield",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/TiltFloor/Playfield",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/UdadaDelivery/House",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/UdadaDelivery/Parcel",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/UdadaDelivery/Player",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "MiniGames/UdadaDelivery/Playfield",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/Button",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/CharacterCard",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/GameMedalCard",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/MiniGameCard",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/ParkCharacterCard",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Common/Toggle",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Icons/Audio/Effects",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "UI/Icons/Audio/Music",
+            "kind": "Sprite",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/BlockGravityPause",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/BlockGravityResult",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/BlockGravityTutorial",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/EchoRoomMenu",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/MessageBox",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/Popup",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/TiltFloorMenu",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/Toast",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/Tooltip",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Overlays/UdadaDeliveryDialog",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Panels/Characters",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Panels/Games",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Panels/Home",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Panels/Settings",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/BlockGravity",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/EchoRoom",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/GameEntry",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/Hub",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/TiltFloor",
+            "kind": "Prefab",
+            "required": true
+        },
+        {
+            "path": "UI/Screens/UdadaDelivery",
+            "kind": "Prefab",
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "PocketArcade.EchoRoom.Tests",
+  "references": [
+    "PocketArcade.EchoRoom"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

@@ -4,7 +4,9 @@
   "references": [
     "PocketArcade.Core",
     "PocketArcade.Runtime",
-    "Unity.ugui"
+    "Unity.ugui",
+    "Unity.TextMeshPro",
+    "PocketArcade.Editor"
   ],
   "includePlatforms": [
     "Editor"

@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.UdadaDelivery.Editor",
+  "references": [
+    "PocketArcade.UdadaDelivery",
+    "PocketArcade.UdadaDelivery.Unity",
+    "PocketArcade.Editor",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

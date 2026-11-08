@@ -5,7 +5,8 @@
     "PocketArcade.Core",
     "PocketArcade.Runtime",
     "Unity.ugui",
-    "Unity.InputSystem"
+    "Unity.InputSystem",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [
     "Editor"

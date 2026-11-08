@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93292fc7eee70841ac98dcb53949ab6, type: 3}
+  m_Name: GameCatalog
+  m_EditorClassIdentifier: PocketArcade.Runtime::PocketArcade.Meta.GameCatalog
+  characters:
+  - {fileID: 11400000, guid: 7dcc700a78b166d4b8a02a5ab20062c4, type: 2}
+  - {fileID: 11400000, guid: 30e6c99d6e6c9c44dbb7a0c4bc3567b9, type: 2}
+  - {fileID: 11400000, guid: f434461563fcceb4ca8025428a363430, type: 2}
+  - {fileID: 11400000, guid: 110c686b9bc196443a7611a39c1057c0, type: 2}
+  miniGames:
+  - {fileID: 11400000, guid: 83288ece6179b574f9336a727aebe100, type: 2}
+  - {fileID: 11400000, guid: 80f8aceb46027784398e49877a2dab29, type: 2}
+  - {fileID: 11400000, guid: 5fb8cd2db01c251459fe2c6f11d0c3e4, type: 2}

@@ -1,0 +1,12 @@
+{
+  "name": "PocketArcade.UdadaDelivery.EditMode.Tests",
+  "references": [
+    "PocketArcade.UdadaDelivery"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

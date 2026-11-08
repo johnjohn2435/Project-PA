@@ -1,0 +1,19 @@
+{
+  "name": "PocketArcade.BlockGravity.Presentation.Tests",
+  "references": [
+    "PocketArcade.BlockGravity",
+    "PocketArcade.BlockGravity.Unity",
+    "PocketArcade.BlockGravity.Editor",
+    "PocketArcade.Runtime",
+    "PocketArcade.Editor",
+    "Unity.ugui",
+    "Unity.TextMeshPro",
+    "PocketArcade.Core"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

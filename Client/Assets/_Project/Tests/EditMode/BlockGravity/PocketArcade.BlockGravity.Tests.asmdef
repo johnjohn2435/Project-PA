@@ -1,0 +1,7 @@
+{
+  "name": "PocketArcade.BlockGravity.Tests",
+  "rootNamespace": "PocketArcade.Tests.BlockGravity",
+  "references": ["PocketArcade.BlockGravity"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

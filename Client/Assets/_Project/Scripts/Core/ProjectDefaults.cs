@@ -4,7 +4,7 @@ namespace PocketArcade.Core
     {
         public const int ReferenceWidth = 1080;
         public const int ReferenceHeight = 1920;
-        public const int TargetFrameRate = 60;
+        public const int TargetFrameRate = 120;
         public const string ProductName = "PocketArcade";
         public const string AndroidApplicationId = "com.johnjohn2435.pocketarcade";
     }

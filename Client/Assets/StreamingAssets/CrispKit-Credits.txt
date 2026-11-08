@@ -1,0 +1,5 @@
+Crisp Kit Free Theme by Anipixels (c) 2026.
+Source: https://github.com/Anipixels/crisp-kit-free-theme
+Asset license: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+The original PNGs are used in the Pocket Arcade hub with Unity tinting and 9-slice scaling.

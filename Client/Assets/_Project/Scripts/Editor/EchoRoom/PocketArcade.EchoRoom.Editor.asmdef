@@ -1,0 +1,15 @@
+{
+  "name": "PocketArcade.EchoRoom.Editor",
+  "references": [
+    "PocketArcade.EchoRoom",
+    "PocketArcade.EchoRoom.Unity",
+    "PocketArcade.Runtime",
+    "PocketArcade.Core",
+    "PocketArcade.Editor",
+    "Unity.ugui",
+    "Unity.TextMeshPro"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}
