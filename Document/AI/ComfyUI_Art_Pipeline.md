@@ -106,3 +106,29 @@ seed 고정은 재현에 도움을 주지만 프롬프트가 바뀐 캐릭터의
 - [시각적 참고: 고양이 스낵바](https://play.google.com/store/apps/details?id=com.tree.idle.catsnackbar)
 
 모델의 라이선스 원문은 위 모델 카드에서 확인할 수 있다. 생성 이미지 품질과 게임 적용 여부는 별도 검수한다.
+
+
+## 2026-09-18 — 대표 캐릭터 디자인 탐색
+
+기존 모델과 01_character를 재사용해 모모 후보 20장을 탐색하고 4장을 제시했다. 최종 디자인은 미확정이다. [AI 검토 기록](Momo_Design_Review.md), [사람용 시안 비교](../Human/Momo_Design_Review.html)를 참조한다. 추천안 A는 제안이며 사용자 승인 원화가 아니다. 기존 프리셋·워크플로우·Unity 더미는 유지했다.
+
+
+## 이미지 생성 도구 정책 (2026-09-18)
+
+사용자 결정에 따라 토큰 절약을 위해 이미지 생성은 ComfyUI만 사용한다. 내장 image_gen이나 다른 이미지 생성 API로 임의 전환하지 않는다. 기존 모델과 워크플로우를 재사용하고 ComfyUI에 문제가 있으면 복구한다.
+
+
+## 최신 승인 스타일 (2026-09-18)
+
+고영이 B가 디자인 및 후속 캐릭터의 공통 스타일로 승인되었다. 신규 캐릭터는 [승인 스타일 규칙](Approved_Character_Style.md), Workflows/05_character_flux.json, approved_style_presets.json을 우선 사용한다. 위 DreamShaper 설정과 01~04는 기존 탐색 파이프라인이며 현재 승인 B는 FLUX 결과다. [사람용 안내](../Human/Approved_Character_Style.html).
+
+
+## 2026-11-05 — 공통 본 애니메이션용 5파츠와 좌우 방향
+
+- 사용자 확정 제작 방향: 몸(머리 포함), 좌우 팔, 좌우 다리를 분리하고 공통 본과 애니메이션을 돌려쓴다. 정면 대신 좌우 이동에 어울리는 방향이 필요하며 상하는 우선 같은 그림을 쓴다.
+- 기본은 오른쪽을 보는 3/4풍 배치, 왼쪽은 리그 루트 전체 X 반전, 위/아래는 마지막 좌우 방향 유지로 준비했다. 전 캐릭터 꼬리 없음.
+- 고영이·강아지·햄스터 각 5개 PNG, 동일 본 계층·관절 피벗·PPU256, 공통 걷기 곡선 및 조립 미리보기 제작. ArtPipeline/Rigging/Characters_20261105와 ZIP.
+- 정확한 기본 원화는 기존 Approved를 보존하며, 이번 방향·파츠는 리깅 준비용 시안이다. 생성 측면 초안은 디자인이 달라 채택하지 않고 기존 원본의 얼굴 배치를 ComfyUI에서 조정했다. 완전한 해부학적 측면 원화가 새로 승인된 것은 아니다.
+- 원화 편집·15개 파츠 출력은 ComfyUI. Python은 검증·배치·조립 회전/GIF 렌더에만 사용.
+- 15개 RGBA·공통 크기/피벗·관절 겹침 검사와 같은 16프레임 걷기 렌더 시각 확인 완료. Unity importer 소스는 준비했지만 Client 설치·컴파일·실행 및 SpriteSkin 메시/가중치 작업은 미실행.
+- 상세: Character_Shared_Rig_Status.md, ../Human/Character_Shared_Rig_Guide.html. 씬·게임 이동·카탈로그·부트 리소스 등록은 변경하지 않았다.

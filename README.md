@@ -1,34 +1,25 @@
-# Project PA
+# Project PA · Pocket Arcade
 
-Pocket Arcade 모바일 미니게임 허브 프로젝트입니다.
+세로 화면 모바일 미니게임 허브입니다. Unity 프로젝트는 `Client/`, 실제 저장소는 `D:\Project PA`입니다.
 
-## 폴더 구조
-
-- `Document/`: 기획 및 개발 명세
-- `Client/`: Unity 클라이언트 프로젝트 (Universal 2D), 내부에 `Assets/`, `Packages/`, `ProjectSettings/` 위치
+- [프로젝트 구조와 코드 진입점](ARCHITECTURE.md)
+- [에이전트 공통 지침](AGENTS.md) · [기능별 계약](Agent_Instruction/README.md) · [읽는 흐름](00_FLOW.md)
+- [지침 적용·사용 안내](Document/Human/Agent_Instruction_Guide.html) · [문서 색인](Document/AI/README.md) · [남은 작업](Document/AI/TODO.md)
 
 ## 프로젝트 열기
 
-1. Unity Hub에서 로그인하고 유효한 Unity Editor 라이선스를 활성화합니다.
-2. Unity Editor `6000.3.16f1`과 Android Build Support, SDK/NDK, OpenJDK를 설치합니다.
-3. Unity Hub의 프로젝트 추가에서 `D:\Project PA\Client` 폴더를 선택합니다.
-4. 첫 실행의 패키지 설치와 임포트가 끝날 때까지 기다립니다.
+Unity Hub에서 `D:\Project PA\Client`를 엽니다. 에디터 버전은 [ProjectVersion.txt](Client/ProjectSettings/ProjectVersion.txt), 패키지는 [manifest.json](Client/Packages/manifest.json)이 기준입니다. 현재 설정은 Unity 6000.3.16f1/URP 17.3.0이며 Android 작업에는 해당 버전의 Build Support·SDK/NDK·OpenJDK가 필요합니다.
 
-현재 생성에 사용한 에디터는 PC에 설치된 `6000.3.16f1`입니다. 개발 명세의 기준 버전은 `6000.3.23f1` 이상이므로 본격적인 개발 전에 버전을 맞춰야 합니다.
+## 현재 플레이 흐름
 
-## 초기 상태
+`BootScene → SelectScene → GameScene`. 게스트로 로컬 플레이하며 모든 게임 리소스를 부트에서 준비합니다. 허브의 원형 배지로 블록 그래비티·원판 생존전·10초 전의 나를 선택한 뒤 시작합니다. 별도 친구 선택창을 사용합니다. 산책 공원과 급정거 배달은 보관 중인 실험입니다.
 
-Universal 2D 템플릿으로 프로젝트를 생성하고 Unity Editor의 초기 임포트와 배치 실행 정상 종료를 확인했습니다. Play Mode 테스트와 Android 빌드는 아직 수행하지 않았습니다. 초기 변환에서 자동 추가된 광고·결제·분석·내비게이션·멀티플레이 센터·XR 보조 패키지는 MVP 범위에 맞게 제외했습니다.
+원격 패치/Addressables는 사용하지 않습니다. Google 선택적 계정 연동의 실제 인증 SDK·서버·클라우드 저장은 미정입니다. 과거 최초 명세보다 [최신 사용자 결정](Document/AI/Project_Decisions.md)을 우선합니다.
 
-Git은 저장소 루트에서 문서와 클라이언트를 함께 관리합니다. Unity 캐시, 사용자별 설정, IDE 생성 파일과 빌드 결과물은 제외합니다.
+## 문서·원화
 
-## 기반 설정 및 결정 기록
+- `Agent_Instruction/`: 현재 기능 계약, `Document/AI/`: 명세·계획·과거 검증, `Document/Human/`: HTML 안내.
+- [현재 허브 안내](Document/Human/Hub_UI.html), [캐릭터 테이블](Document/Human/Character_Table_Guide.html), [ComfyUI 안내](Document/Human/ComfyUI_Art_Guide.html).
+- 이미지 생성은 기존 ComfyUI 워크플로우를 사용합니다. 승인 원본·검토본·게임 적용 자산을 구분합니다.
 
-- [Phase 0 설정 절차](Document/Phase0_Setup.md): Unity 메뉴에서 기본 씬과 모바일 설정 적용.
-- [최신 결정 기록](Document/Project_Decisions.md): Addressables 패치 방향 및 미정인 서버 검토안.
-- 현재 씬 생성과 Player Settings 적용은 위 절차의 사용자 실행을 기다리고 있습니다.
-- [Phase 0 작업 결과](Document/Phase0_Status.md): 실제 테스트 결과와 남은 완료 조건.
-
-## 씬과 플레이 진입
-
-`BootScene → SelectScene → GameScene` 흐름을 사용합니다. 로그인 없이 게스트로 플레이하며, Google 계정 연동은 SelectScene에서 선택적으로 제공할 예정입니다. 실제 인증 기능은 아직 구현하지 않았습니다.
+과거 테스트 수치는 해당 시점의 결과입니다. 재실행 방법과 범위는 [검증 안내](Agent_Instruction/Verification.md)를 따릅니다. 지침 문서 적용이 게임 테스트/Android 실기기 검증을 의미하지 않습니다.

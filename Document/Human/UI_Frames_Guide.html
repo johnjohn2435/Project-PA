@@ -1,0 +1,41 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UIManager · 프레임과 명령 큐</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f3ed;color:#263b32;font:16px/1.8 'Segoe UI','Malgun Gothic',sans-serif}main{max-width:1080px;margin:auto;padding:42px 28px}h1{font-size:38px;line-height:1.3;letter-spacing:-.035em}h2{font-size:24px;margin-top:0}section{border-top:1px solid #d4ded0;padding:28px 0}.note{background:#dcebd9;border-left:4px solid #4f7858;padding:18px 24px;margin:22px 0}.pending{background:#f4e8cd;border-color:#b18a41}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:white;padding:22px;border-radius:10px}pre{background:#213b2e;color:#f1f5ee;padding:22px;border-radius:10px;overflow:auto;line-height:1.7}code{font:14px/1.7 Consolas,monospace;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;background:white}td,th{text-align:left;vertical-align:top;padding:12px 16px;border-bottom:1px solid #dce4d6}th{background:#dcebd9}.small{color:#627362;font-size:14px}a{color:#286542}li{margin:7px 0}@media(max-width:720px){main{padding:24px 16px}.grid{grid-template-columns:1fr}h1{font-size:30px}.scroll{overflow:auto}table{min-width:650px}}</style><main>
+<p class="small">POCKET ARCADE · UI FRAMES · 2026-11-04</p><h1>UI 명령은 순서대로,<br>패널과 팝업은 프레임으로.</h1><p>기존 enum 이력 기반 UIManager를 FIFO 비동기 큐와 PanelFrame 구조로 교체했습니다. UIManager는 기존처럼 독립 싱글톤/DDOL 매니저입니다.</p>
+<div class="note">코드·호출부·프리팹 전환 도구 구현 완료. Android Edit Mode 187/187 통과 · UIManager 계약 검사 30개 포함 · 컴파일 오류·경고 없음.</div>
+<div class="note pending">실제 프로젝트의 씬·프리팹 전환 메뉴는 아직 자동 실행하지 않았습니다. Unity MCP 미연결 시 Editor 코드와 실행 절차까지 준비한다는 프로젝트 규칙에 따라 아래 메뉴 적용이 필요합니다. 적용 전 Play하면 새 UI 정의·호스트가 없다는 오류가 발생할 수 있습니다.</div>
+<section><h2>Unity에서 적용할 순서</h2><ol><li>Play Mode를 종료하고 컴파일이 끝날 때까지 기다립니다.</li><li><code>Pocket Arcade → UI Frames → 1. Migrate Prefabs And Hosts</code>를 실행합니다.</li><li><code>Pocket Arcade → Localization → 1. Apply String Table And Korean Font</code>로 부팅 팝업과 추가 문자열의 폰트를 연결합니다.</li><li><code>UI Frames → 2. Validate Frames</code>와 <code>Localization → 2. Validate String Table</code>을 실행합니다.</li><li>BootScene에서 Play 후 아래 실제 화면 확인 항목을 진행합니다.</li></ol><p>UI 프리팹과 세 씬은 <code>Client/Logs/UIFramesBackup/</code>에 백업합니다. 전환은 기존 프리팹에 키·Canvas·CanvasGroup·Raycaster·UIPanel 및 호스트의 Live/Inactive 루트를 연결하며 기존 버튼·데이터 참조를 유지합니다. 런타임에는 UI GameObject나 컴포넌트를 코드로 조립하지 않습니다.</p></section>
+<section><h2>한 명령이 끝나야 다음 명령 시작</h2><pre>Open(A) → Open(Popup) → Back → Home
+   │          대기        대기    대기
+   └─ await 프리팹 확보 → 중첩 UI 검증 → 등록 → OnOpen/OnShow
+                            완료 후 다음 명령 실행</pre><p><code>Open / Close / Back / Home</code>은 모두 같은 큐에 들어갑니다. 메시지박스의 사용자 응답 대기는 큐 바깥에서 처리하므로 Back·Close를 막지 않습니다. 한 명령이 실패해도 다음 명령은 계속 처리합니다.</p><p>현재 프리팹 공급자는 부트 완료된 <code>ResourceManager.GetLoaded</code>만 조회합니다. 비동기 공급자 인터페이스와 지연 로드 테스트를 갖추었으며, 새로운 런타임 Resources.Load나 원격 다운로드는 추가하지 않았습니다. API는 Unity 메인 스레드에서 호출합니다.</p></section>
+<section><h2>프레임을 숨겼다가 그대로 복원</h2><div class="grid"><article class="card"><b>다음 패널을 열었을 때</b><pre>Frame 0 · Home       Open / Hidden
+ └─ MessageBox       Open / Hidden
+Frame 1 · Settings   Open / Visible
+
+Independent Overlay Open / Visible</pre><p>이전 패널과 소속 팝업은 OnHide만 호출합니다. 열린 상태와 팝업 목록을 유지합니다.</p></article><article class="card"><b>Settings를 닫았을 때</b><pre>Frame 0 · Home       Open / Visible
+ └─ MessageBox       Open / Visible
+Settings 캐시        Closed / Hidden
+
+Independent Overlay Open / Visible</pre><p>아래 프레임은 OnShow로 복원합니다. Home은 루트 프레임이므로 Close로 닫을 수 없습니다.</p></article></div><p>Home 명령은 독립 오버레이, 상위 프레임, 루트의 팝업을 닫고 루트 패널만 남깁니다. 닫힌 인스턴스는 같은 씬 호스트의 캐시에 유지합니다. 씬 호스트가 제거되거나 매니저가 종료되면 캐시 인스턴스를 정리합니다. 부트의 프리팹 에셋 캐시는 그대로 유지됩니다.</p></section>
+<section><h2>창 클래스와 생명주기</h2><pre>UIBase (abstract)
+ ├─ UIPanel
+ └─ UIPopup
+     ├─ PopupView
+     ├─ MessageBoxView
+     └─ TransientTextView</pre><p>기존 <code>UIPanel</code> enum은 <code>UIPage</code>로 변경했습니다. HubView / GameEntryView는 기존 표시·입력 연결을 유지하고, 창 수명과 활성화는 UIManager가 제어합니다.</p><div class="scroll"><table><tr><th>훅</th><th>호출 시점</th></tr><tr><td>OnOpen(object userData)</td><td>닫힌 인스턴스를 열 때 한 번. 숨겼다가 복원할 때는 다시 호출하지 않음</td></tr><tr><td>OnShow / OnHide</td><td>실제 표시 상태 변경. IsOpen과 IsVisible은 별개</td></tr><tr><td>OnClose</td><td>논리적인 닫기. 오브젝트는 캐시에 유지</td></tr><tr><td>bool OnBackRequested()</td><td>true: 창이 Back을 소비하여 기본 닫기 생략. false: 매니저 기본 처리 진행</td></tr></table></div><p>훅은 protected virtual, 실행 메서드는 internal입니다. 창 코드에서 SetActive를 호출하지 않습니다. Canvas·CanvasGroup·RectTransform은 프리팹에 있어야 하며 누락된 컴포넌트를 런타임에 덧붙이지 않습니다.</p></section>
+<section><h2>정렬과 Back 규칙</h2><div class="scroll"><table><tr><th>Placement</th><th>OrderPolicy</th><th>처리</th></tr><tr><td>Frame</td><td>Managed</td><td>현재 PanelFrame 소속. Panel은 기준값 100, 팝업은 110 → 120 → …로 매번 재배정</td></tr><tr><td>Independent</td><td>Fixed</td><td>프레임 밖 오버레이. 프리팹의 sortingOrder 유지. UIPanel에는 사용하지 않음</td></tr><tr><td>나머지 조합</td><td>—</td><td>Open 거부, 등록 중이면 전체 롤백</td></tr></table></div><pre>ESC + 입력창 선택 → 포커스만 해제
+그 외 Back → Independent(높은 Fixed order, 동률이면 최근 창)
+          → 현재 프레임 최상단 Popup
+          → 현재 Panel
+          → 루트 Back 이벤트</pre><p><code>closeOnBack=false</code>인 오버레이도 Back을 소비합니다. 일반 Close와 Home은 이 옵션과 별개입니다. <code>blocksInput</code>은 아래 UI 입력 차단, <code>acceptsRaycasts</code>는 해당 창의 포인터 수신 여부입니다. 토스트·툴팁은 포인터를 통과시킵니다.</p></section>
+<section><h2>키 등록과 캐시</h2><ol><li>프리팹을 비활성 Inactive 루트 아래 Instantiate합니다.</li><li>중첩된 모든 UIBase의 키·타입·정렬 정책·필수 컴포넌트를 검사합니다.</li><li>프리팹 내부 중복 또는 기존 캐시와 충돌하면 생성분을 모두 제거하고 기존 상태를 유지합니다.</li><li>검사 성공 후 모든 키를 등록하고 Live 루트로 옮긴 뒤 요청한 UI만 엽니다.</li><li>Close는 숨기고 캐시에 보관합니다. 같은 키를 다시 열면 기존 인스턴스를 사용합니다.</li></ol><p>중첩 UIBase도 개별 창으로 등록하며, 등록 후 각각 Live 루트의 자식이 됩니다. UIBase의 RectTransform은 호스트 기준으로 작성하세요. 중첩 등록은 자동으로 모두 열겠다는 의미가 아닙니다. 이미 열린 키에 다시 Open하면 거부합니다.</p><p>씬 종료 중인 로드는 취소되고, 늦게 완료된 공급자가 새 세션에 UI를 등록하지 못하도록 세션 번호를 검사합니다.</p></section>
+<section><h2>부팅 UI는 별도</h2><p>BootStatusView와 새 BootDialogSystem은 UIManager에 등록하지 않습니다. 로딩바·재시도와 부팅 실패 공용 팝업은 BootScene에서 직접 참조한 프리팹으로 동작합니다. BootDialog는 매니저 초기화 실패 시에도 표시할 수 있도록 별도 시스템으로 둡니다.</p></section>
+<section><h2>사용 예</h2><pre>await UIManager.Instance.Open("UI/Panels/Settings");
+await UIManager.Instance.Open("UI/Overlays/Popup", userData);
+await UIManager.Instance.Close("UI/Overlays/Popup");
+await UIManager.Instance.Back();
+await UIManager.Instance.Home();
+
+// 키와 프리팹 경로가 다른 새 창
+await UIManager.Instance.Open("inventory", data, "UI/Custom/Inventory");</pre><p>예제의 새 프리팹도 부트 목록에 먼저 등록해야 합니다. 매니저·창의 새 오류 문구는 StringTable.json에 추가했습니다. 실제 표시 문장을 코드에 추가하지 않습니다.</p></section>
+<section><h2>검증과 남은 확인</h2><p id="test-result">Unity 6000.3.16f1 · Android 타깃 Edit Mode 187/187 통과, skipped 0. UIManager 계약 검사 30개로 FIFO 지연 로드, 프레임 복원, 캐시 재사용, 원자 등록/롤백, Back/ESC, 메시지박스/토스트, 취소 후 재진입을 확인했습니다. 현재 작업공간에 별도로 추가된 Block Gravity 검사 53개도 전체 결과에 포함되어 있으며 해당 게임 코드는 이 UI 작업에서 변경하지 않았습니다.</p><p>새 프레임 계약 테스트가 기존 enum 이력·팝업 파괴 테스트를 대체합니다. 리소스·저장·문자열·UI 참조 관련 회귀 검사는 유지했습니다.</p><ul><li>실제 프로젝트에서 전환 메뉴와 검증 메뉴 실행</li><li>허브 버튼·캐릭터 선택·설정 저장·게임 왕복 정상 동작</li><li>팝업을 띄운 프레임 위에 다른 패널을 연 뒤 Back으로 원래 팝업까지 복원</li><li>독립 오버레이와 입력창에서 ESC 우선순위 확인</li><li>부트 실패·재시도 팝업, 한글·영어 글자와 Android 화면 배치 확인</li></ul><p class="small">자동 검사는 별도 Unity 검증 복사본의 Edit Mode에서 수행했습니다. 실제 프로젝트의 프리팹 전환 메뉴와 기기 화면 검증을 실행했다는 뜻은 아닙니다.</p></section><footer><a href="String_Table_Guide.html">문자열 테이블</a> · <a href="Independent_Managers_Guide.html">독립 매니저</a></footer></main></html>

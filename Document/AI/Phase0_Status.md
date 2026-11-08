@@ -16,8 +16,8 @@ Unity MCP 미연결 시 사용자에게 에디터 스크립트 실행 절차를 
 - `Tests/EditMode/SafeAreaLayoutTests.cs`: Safe Area 테스트 11개.
 - `Client/Assets/Settings/UniversalRP.asset`: 설치된 URP가 임포트 중 수행한 포맷 버전 12→13 직렬화 갱신.
 - `AGENTS.md`: 한글 Git 커밋 규칙과 최신 결정 문서 참조.
-- `Document/Project_Decisions.md`: Addressables 패치 방향, 미정인 Supabase·웹서버 검토안.
-- `Document/Phase0_Setup.md`, 최초 명세, `README.md`: 적용 절차 및 최신 결정 반영.
+- `Document/AI/Project_Decisions.md`: Addressables 패치 방향, 미정인 Supabase·웹서버 검토안.
+- `Document/AI/Phase0_Setup.md`, 최초 명세, `README.md`: 적용 절차 및 최신 결정 반영.
 
 위 Scripts/Tests 경로는 `Client/Assets/_Project/` 기준이다.
 

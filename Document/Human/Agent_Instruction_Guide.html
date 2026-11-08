@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pocket Arcade · 에이전트 지침 안내</title>
+<style>
+:root{color-scheme:light;--ink:#243d34;--muted:#60746b;--line:#d5ded4;--paper:#f5f3ec;--accent:#286d55}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 'Segoe UI','Malgun Gothic',sans-serif}main{max-width:1040px;margin:auto;padding:48px 26px 80px}h1{font-size:38px;line-height:1.3;letter-spacing:-.04em}h2{font-size:24px;margin-top:0}p{margin:10px 0 18px}.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--accent)}.lead{font-size:20px;color:var(--muted)}section{padding:28px 0;border-top:1px solid var(--line)}a{color:var(--accent);text-underline-offset:3px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card,.notice,details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}.notice{border-left:5px solid var(--accent);margin:24px 0}.card h3{margin:0 0 8px}.card p{margin:0}.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:20px 0}.flow strong{padding:10px 16px;background:#dfeadd;border-radius:8px}.table{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid var(--line);padding:12px;vertical-align:top}th{background:#e7ecdf}code{overflow-wrap:anywhere;background:#e6ecdf;padding:2px 5px;font:14px/1.7 Consolas,monospace}summary{cursor:pointer;font-weight:600}.muted{color:var(--muted);font-size:14px}li{margin:7px 0}@media(max-width:700px){main{padding:28px 18px}h1{font-size:30px}.cards{grid-template-columns:1fr}th,td{min-width:135px}}@media print{section,.card,details{break-inside:avoid}main{padding:10px}}
+</style></head><body><main>
+<div class="eyebrow">POCKET ARCADE / AGENT INSTRUCTIONS</div><h1>프로젝트를 읽는 순서와<br>지켜야 할 계약을 정리했습니다</h1>
+<p class="lead">AgentInstructionKit2까지 반영해 반복 작업 순서, 함께 확인할 위치, 중요한 구조 결정의 기록 기준을 추가했습니다.</p>
+<div class="notice"><b>적용 범위: 지침과 문서</b><br>실제 저장소는 <code>D:\Project PA</code>, Unity 프로젝트는 <code>Client</code>입니다. 기존 문서 위치와 게임 코드·씬·프리팹·패키지를 유지합니다.</div>
+<section><h2>다음 작업부터 이렇게 읽습니다</h2><div class="flow"><strong>공통 지침</strong><span>→</span><strong>구조·진입점</strong><span>→</span><strong>관련 기능 계약</strong><span>→</span><strong>코드 확인·검증</strong></div>
+<div class="cards"><article class="card"><h3>공통 작업 방식</h3><p>기존 변경 보호, 필요한 부분만 수정, 실제 검증 구분, 한국어 보고와 커밋 정책을 한곳에 둡니다.</p></article><article class="card"><h3>현재 기능 계약</h3><p>부트·UI·저장·미니게임·캐릭터 문서를 나누어 필요한 영역부터 읽습니다.</p></article><article class="card"><h3>다시 실행할 검증</h3><p>실제 테스트 이름과 CLI 예시, 씬 진입·조작·기대 결과, 기기 검증의 한계를 안내합니다.</p></article></div></section>
+<section><h2>기존 프로젝트에 맞춘 부분</h2><div class="table"><table><thead><tr><th>항목</th><th>현재 적용 기준</th></tr></thead><tbody>
+<tr><td>리소스</td><td>로컬 빌드에 포함하고 부트에서 준비합니다. 플레이 중 즉석 로딩이나 원격 패치를 추가하지 않습니다.</td></tr>
+<tr><td>문자열</td><td>JSON 테이블의 한국어·영어가 원본입니다. 로그·오류도 기존 사용자 규칙을 따릅니다. 부트 최초 문구는 테이블에서 프리팹에 구운 값을 유지합니다.</td></tr>
+<tr><td>UI</td><td>프리팹, UIManager의 FIFO 명령·프레임·수명, 현재 원형 게임 배지와 별도 친구 선택창을 유지합니다.</td></tr>
+<tr><td>캐릭터·게임</td><td>다람이의 기존 저장 ID, 푸들 추가, 원판 접촉 사망, 시간 분신의 길막 전용 규칙 등 최신 결정에 맞췄습니다.</td></tr>
+<tr><td>문서</td><td>기존 AI Markdown / 사람용 HTML 배치를 보존하고 구조 안내·기능 색인·TODO를 연결했습니다.</td></tr>
+<tr><td>제외한 템플릿 예시</td><td>서버 분리·ECS·Addressables·존재하지 않는 로그 래퍼/이벤트 버스는 구현 규칙으로 추가하지 않았습니다.</td></tr>
+</tbody></table></div></section>
+<section><h2>두 번째 묶음에서 추가한 것</h2><div class="cards">
+<article class="card"><h3>반복 작업 순서</h3><p>문자열, UI, 캐릭터, 미니게임 추가를 실제 코드와 도구 기준의 네 가지 절차로 정리했습니다.</p></article>
+<article class="card"><h3>동시 수정 체크리스트</h3><p>저장 해금·게임 라우팅·UI 수명·문자열·부트·렌더러의 여섯 항목에서 검사로 잡히는 부분과 남는 빈틈을 구분했습니다.</p></article>
+<article class="card"><h3>구조 결정 기록</h3><p>선택한 이유와 기각한 대안을 남기는 ADR 틀과 색인을 마련했습니다. 기존 결정을 새 승인으로 만들지 않습니다.</p></article>
+</div><p>기능 문서는 실행 흐름 중심으로 작성하고 실제 수정하는 문서만 점진적으로 바꿉니다. 빠른 규칙 검사와 엔진 통합 검사를 구분하며, 도구 변경은 작은 실제 입력으로도 확인합니다.</p></section>
+<section><h2>충돌 규칙은 이렇게 조정했습니다</h2><div class="table"><table><thead><tr><th>항목</th><th>적용한 기준</th></tr></thead><tbody>
+<tr><td>커밋·푸시</td><td>사용자 변경 자동 포함 금지. 현재 브랜치와 원격 대상을 확인하고 필요한 통합·검증 후 전송 결과를 확인합니다. 기본 브랜치 갱신은 강제하지 않습니다.</td></tr>
+<tr><td>문서 원본</td><td>별도 작성 HTML은 계속 원본으로 편집합니다. 실제 변환기와 명령이 있는 출력만 생성물로 취급합니다. 문서를 일괄 이동하지 않습니다.</td></tr>
+<tr><td>검증</td><td>정적·수동·자동 확인을 구분해 보고합니다. 변경 영향에 맞춰 검사하고 넓은 공용 변경에서 전체 테스트로 확대합니다.</td></tr>
+<tr><td>하위 에이전트</td><td>명시적 요청·지정이 있을 때 범위를 나눠 사용합니다. 큰 작업이라는 이유만으로 자동 실행하지 않습니다.</td></tr>
+</tbody></table></div></section>
+<section><h2>어디서 찾나요?</h2><ul>
+<li><a href="../../AGENTS.md">AGENTS.md</a> — 모든 작업에 적용하는 공통 규칙</li>
+<li><a href="../../ARCHITECTURE.md">ARCHITECTURE.md</a> — 작업 영역별 코드 진입점</li>
+<li><a href="../../Agent_Instruction/README.md">기능별 계약 색인</a> — UI·부트·저장·게임·캐릭터</li>
+<li><a href="../../Agent_Instruction/Common-Changes.md">반복 작업 절차</a> · <a href="../../Agent_Instruction/Change-Checklist.md">동시 수정 체크리스트</a> · <a href="../AI/adr/README.md">구조 결정 기록</a></li>
+<li><a href="../../Agent_Instruction/Verification.md">검증 안내</a> · <a href="../../Agent_Instruction/Pitfalls.md">환경·자산 함정</a> · <a href="../../Agent_Instruction/Refactoring-Review.md">리뷰 체크리스트</a></li>
+<li><a href="../AI/README.md">기존 문서 색인</a> · <a href="../AI/TODO.md">남은 작업과 보류 결정</a> · <a href="Hub_UI.html">현재 허브 화면 안내</a></li>
+</ul></section>
+<section><h2>검증과 남은 범위</h2><p>이번 적용의 확인 대상은 문서의 로컬 링크·경로, 템플릿 빈칸, 자동 진입 파일, 기존 코드·설정과의 일치입니다. Unity 게임 테스트, 화면 조작, Android 빌드·실기기 확인은 이번 문서 변경에 포함하지 않습니다.</p>
+<p class="muted">과거 문서의 테스트 통과 수는 당시 결과입니다. 기존 로그 문구와 생성 도구의 오래된 백업 경로는 후속 검토 항목으로 구분했습니다.</p>
+<details><summary>원본 보존과 운영 방식</summary><p>기존 명세·결정·상태 기록과 사람용 문서는 옮기지 않습니다. 새 현재 계약에서 근거 문서로 연결합니다. 공통 규칙을 기능별 문서에 반복하지 않고 바뀐 계약만 해당 위치에서 갱신합니다.</p><p>CLAUDE.md는 AGENTS.md 한 줄 참조를 사용합니다. Client 폴더에서 시작할 때도 상위 지침으로 연결됩니다. 새 기능 문서 틀은 필요할 때만 복사합니다.</p></details>
+</section></main></body></html>
